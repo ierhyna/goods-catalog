@@ -13,18 +13,18 @@ function create_goods() {
     register_post_type( 'goods',
         array(
             'labels' => array(
-                'name' => 'Товары',
-                'singular_name' => 'Товар',
-                'add_new' => 'Добавить',
-                'add_new_item' => 'Добавить новый товар',
-                'edit' => 'Редактировать',
-                'edit_item' => 'Редактировать товар',
-                'new_item' => 'Новый товар',
-                'view' => 'Вид',
-                'view_item' => 'Вид товаров',
-                'search_items' => 'Поиск товаров',
-                'not_found' => 'Товары не найдены',
-                'not_found_in_trash' => 'Товары в корзине не найдены',
+                'name' => 'Goods',
+                'singular_name' => 'Item',
+                'add_new' => 'Add',
+                'add_new_item' => 'Add new item',
+                'edit' => 'Edit',
+                'edit_item' => 'Edit item',
+                'new_item' => 'New item',
+                'view' => 'View',
+                'view_item' => 'View of items',
+                'search_items' => 'Search items',
+                'not_found' => 'Items not found',
+                'not_found_in_trash' => 'Item is not found in trash',
             ),
             'public' => true,
             'menu_position' => 30,
@@ -51,11 +51,11 @@ function display_goods_meta_box( $goods_options ) {
     ?>
     <table>
         <tr>
-            <td style="width: 150px;">Цена</td>
+            <td style="width: 150px;">Price</td>
             <td><input type="text" size="10" name="goods_price_set" value="<?php echo $goods_price; ?>" /></td>
         </tr>
         <tr>
-            <td style="width: 150px;">Краткое описание</td>
+            <td style="width: 150px;">Short description</td>
             <td><input type="text" size="150"  name="goods_second_set" value="<?php echo $goods_second; ?>" /></td>
         </tr>
     </table>
@@ -106,9 +106,9 @@ function create_my_taxonomies() {
         'goods',
         array(
             'labels' => array(
-                'name' => 'Категории',
-                'add_new_item' => 'Добавить категорию',
-                'new_item_name' => "Новая категория"
+                'name' => 'Category',
+                'add_new_item' => 'Add category',
+                'new_item_name' => "New category"
             ),
             'show_ui' => true,
             'show_tagcloud' => false,
