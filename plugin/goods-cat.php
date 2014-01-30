@@ -79,20 +79,11 @@ function add_goods_options_fields( $goods_options_id, $goods_options ) {
 function include_template_function( $template_path ) {
     if ( get_post_type() == 'goods' ) {
         if ( is_single() ) {
-            // checks if the file exists in the theme first,
-            // otherwise serve the file from the plugin
-            if ( $theme_file = locate_template( array ( 'single-goods.php' ) ) ) {
-                $template_path = $theme_file;
-            } else {
+            // serve the file from the plugin
                 $template_path = plugin_dir_path( __FILE__ ) . '/single-goods.php';
-            }
         }
         elseif ( is_archive() ) {
-            if ( $theme_file = locate_template( array ( 'archive-catalog.php' ) ) ) {
-                $template_path = $theme_file;
-            } else { $template_path = plugin_dir_path( __FILE__ ) . '/archive-catalog.php';
-            }
-        }
+            $template_path = plugin_dir_path( __FILE__ ) . '/archive-catalog.php';
     }
     return $template_path;
 }
