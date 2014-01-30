@@ -1,0 +1,69 @@
+/* Grid catalog */
+.list-catalog,
+.grid .goods {
+width: 154px;
+height: 310px;
+background-color: #f5f5f5;
+padding: 5px;
+float: left;
+margin: 19px 0 0 19px;
+position: relative;
+overflow: hidden;
+cursor: pointer;
+}
+
+/* Style categories */
+.list-catalog h3 {
+text-align: center;
+padding: 15px 5px 5px 5px;
+margin: 0px;
+}
+.list-catalog h3 a {
+font-size: 16px !important;
+text-decoration: none;
+color: #28536C !important;
+}
+.categoryoverview {
+margin: 7px 0 7px 0 !important;
+border: 1px solid #aaa;
+padding: 1px;
+background: #fff;
+float: left;
+}
+.categoryoverview img {
+margin: 0px;
+}
+
+/* Style goods */
+.grid .art-postheader {
+text-align: center;
+}
+
+.grid .art-postheader a,
+.grid .art-postheader a:link, 
+.grid .art-postheader a:visited, 
+.grid .art-postheader a.visited, 
+.grid .art-postheader a:hover, 
+.grid .art-postheader a.hovered {
+font-size: 16px;
+}
+
+.grid div.avatar {
+position: relative;
+margin: 7px 0 7px 0 !important;
+border: 1px solid #aaa;
+padding: 1px;
+background: #fff;
+float: left;
+}
+
+/* Pagination */
+.pagination{clear:both;padding: 5px 0 5px 20px;position:relative;font-size:11px;line-height:13px;}
+.pagination span, .pagination a{display:block;float:left;margin:2px 2px 2px 0;padding:6px 9px 5px 9px;font-weight:normal;text-decoration:none;width:auto;color:#333;background:#F5F5F5;}
+.pagination a:hover{color:#FFF;background:#999;}
+.pagination .current{padding:6px 9px 5px 9px;background:#999;color:#FFF;}
+
+span.wpcf7-list-item {
+margin-left: 0.5em;
+display: block;
+}
