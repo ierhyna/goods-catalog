@@ -1,7 +1,6 @@
-goods-cat
+Goods Catalog
 =========
 
-The catalog of goods for WordPress
+The catalog of goods for WordPress.
 
-1. In /plugin folder is the plugin
-2. In root folder are theme files
+It also works fine with Taxonomy Images (http://wordpress.org/plugins/taxonomy-images/) Wordpress plugin.
