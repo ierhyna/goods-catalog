@@ -35,7 +35,7 @@ function create_goods() {
         'supports' => array('title', 'editor', 'comments', 'thumbnail'),
         'taxonomies' => array('goods_category'),
         'has_archive' => true,
-        'rewrite' => array('slug' => 'goods', 'with_front' => false)
+        'rewrite' => array('slug' => 'catalog', 'with_front' => false)
             )
     );
 }
@@ -150,7 +150,7 @@ function create_goods_category() {
         'show_ui' => true,
         'show_tagcloud' => false,
         'hierarchical' => true,
-        'rewrite' => array('slug' => 'catalog')
+        'rewrite' => array('slug' => '')
             )
     );
 }
