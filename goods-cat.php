@@ -113,7 +113,7 @@ function goods_save_data($post_id) {
         return $post_id;
     }
     // check permissions
-    if ('page' == $_POST['post_type']) {
+    if ('page' == isset($_POST['post_type'])) {
         if (!current_user_can('edit_page', $post_id)) {
             return $post_id;
         }
@@ -121,11 +121,13 @@ function goods_save_data($post_id) {
         return $post_id;
     }
     foreach ($meta_box['fields'] as $field) {
-        $old = get_post_meta($post_id, $field['id'], true);
-        $new = $_POST[$field['id']];
-        if ($new && $new != $old) {
+        if (isset($_POST[$field['id']])) {
+            // POST field sent - update
+            $new = $_POST[$field['id']];
             update_post_meta($post_id, $field['id'], $new);
-        } elseif ('' == $new && $old) {
+        } else {
+            // POST field not sent - delete
+            $old = get_post_meta($post_id, $field['id'], true);
             delete_post_meta($post_id, $field['id'], $old);
         }
     }
