@@ -42,10 +42,10 @@ $args = array(
 
 $catlist = get_categories($args);
 
-echo "<div class='grid'>";
+echo "<div>";
 
 foreach ($catlist as $categories_item) {
-    echo '<div class="list-catalog"><h3><a href="' . esc_url(get_term_link($categories_item, $categories_item->taxonomy)) . '" title="' . sprintf(__("Click the image to go to %s"), $categories_item->name) . '" ' . '>' . $categories_item->name . '</a> </h3> ';
+    echo '<div class="grid"><div class="goods-category-list-title"><a href="' . esc_url(get_term_link($categories_item, $categories_item->taxonomy)) . '" title="' . sprintf(__("Click the image to go to %s"), $categories_item->name) . '" ' . '>' . $categories_item->name . '</a></div> ';
 
     echo '<div class="categoryoverview clearfix">';
     $terms = apply_filters('taxonomy-images-get-terms', '', array('taxonomy' => 'goods_category'));
@@ -53,7 +53,7 @@ foreach ($catlist as $categories_item) {
 
         foreach ((array) $terms as $term) {
             if ($term->term_id == $categories_item->term_id) {
-                print '<a href="' . esc_url(get_term_link($term, $term->taxonomy)) . '" title="Нажмите, чтобы перейти в рубрику">' . wp_get_attachment_image($term->image_id, 'thumbnail');
+                echo '<a href="' . esc_url(get_term_link($term, $term->taxonomy)) . '" title="Нажмите, чтобы перейти в рубрику">' . wp_get_attachment_image($term->image_id, 'thumbnail');
                 echo '</a>';
             }
         }
@@ -65,27 +65,54 @@ foreach ($catlist as $categories_item) {
 echo "</div>";
 /* end  */
 // the end of sub-cats list
-
 // error here
 //theme_post_wrapper(array('content' => ob_get_clean(), 'class' => 'breadcrumbs'));
-
 // Display navigation to next/previous pages when applicable
 ?>
 <div class="navigation"><?php posts_nav_link(); ?></div>
 
-<div class="cleared"></div><?php
+<div class="clear"></div><?php
 // Start the Loop 
 while (have_posts()) {
     the_post();
     ?>
     <div class="grid">
-        <?php get_template_part('content-goods_category', get_post_format()); ?>
+        <article <?php post_class(); ?>>
+            <header>
+                <div class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
+            </header>
+            <div class="entry-content">
+                <?php
+                // show thumbnails
+                if (has_post_thumbnail()) {
+                    ?><a href="<?php the_permalink(); ?>">
+                        <?php
+                        the_post_thumbnail(array(150, 150));
+                        ?>
+                    </a>
+                    <?php
+                }
+                // get price and description from metabox
+                $price = get_post_meta(get_the_ID(), 'gc_price', true);
+                $descr = get_post_meta(get_the_ID(), 'gc_descr', true);
+                if ((isset($price)) && ($price != '')) {
+                    echo "<div class=\"goods-price\">Price: $price</div>";
+                }
+                if ((isset($descr)) && ($descr != '')) {
+                    echo "<div class=\"goods-descr\">$descr</div>";
+                }
+                ?>
+            </div>
+            <footer></footer>
+        </article>
     </div>
+
     <?php
 }
 
 // Display navigation to next/previous pages when applicable
 ?>
+<div class="clear"></div>
 <div class="navigation"><?php posts_nav_link(); ?></div>
 <p>The page is generated with taxomony-goods_category.php template</p>
 <?php

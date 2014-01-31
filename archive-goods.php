@@ -30,10 +30,10 @@ $args = array(
 // descriptive cat list
 $cat_id = get_query_var('cat');
 $catlist = get_categories('hide_empty=0&type=goods&taxonomy=goods_category&parent=0' . $cat_id);
-echo "<div class='grid'>";
+echo "<div>";
 
 foreach ($catlist as $categories_item) {
-    echo '<div class="list-catalog"><h3><a href="' . esc_url(get_term_link($categories_item, $categories_item->taxonomy)) . '" title="' . sprintf(__("Go to cetegory %s"), $categories_item->name) . '" ' . '>' . $categories_item->name . '</a> </h3> ';
+    echo '<div class="grid"><div class="goods-category-list-title"><a href="' . esc_url(get_term_link($categories_item, $categories_item->taxonomy)) . '" title="' . sprintf(__("Go to cetegory %s"), $categories_item->name) . '" ' . '>' . $categories_item->name . '</a></div> ';
 
     echo '<div class="categoryoverview clearfix">';
     $terms = apply_filters('taxonomy-images-get-terms', '', array('taxonomy' => 'goods_category'));
@@ -50,7 +50,7 @@ foreach ($catlist as $categories_item) {
     echo '<p>' . $categories_item->category_description;
     echo '</p></div>';
 }
-echo "</div>";
+echo "</div><div class=\"clear\"></div>";
 /* end  */
 ?>  
 <p>The page is generated with archive-goods.php template</p>

@@ -1,0 +1,70 @@
+/* Grid catalog */
+.grid {
+    width: 200px;
+    min-height: 200px;
+    background-color: #f5f5f5;
+    padding: 10px;
+    float: left;
+    margin: 20px 0 0 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Style categories */
+.goods-category-list-title {
+    text-align: center;
+    padding: 15px;
+    margin: 0px;
+    font-size: 16px;
+}
+
+.categoryoverview {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.categoryoverview img {
+    border: 1px solid #aaa;
+}
+
+/* Pagination */
+.pagination {
+    clear: both;
+    padding: 5px 0 5px 20px;
+    position: relative;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+.pagination span, .pagination a {
+    display: block;
+    float: left;
+    margin: 2px 2px 2px 0;
+    padding: 6px 9px 5px 9px;
+    font-weight: normal;
+    text-decoration: none;
+    width: auto;
+    color: #333;
+    background: #F5F5F5;
+}
+
+.pagination a:hover {
+    color: #FFF;
+    background: #999;
+}
+
+.pagination .current {
+    padding: 6px 9px 5px 9px;
+    background: #999;
+    color: #FFF;
+}
+
+span.wpcf7-list-item {
+    margin-left: 0.5em;
+    display: block;
+}
+
+.clear {
+    clear: both;
+}

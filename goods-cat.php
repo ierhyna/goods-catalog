@@ -8,12 +8,13 @@
   Author: Irina Sokolovskaya
   Author URI: http://oriolo.ru/
   License: GPLv2
-*/
+ */
 
 // debug only
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+// create post type
 function create_goods() {
     register_post_type('goods', array(
         'labels' => array(
@@ -136,7 +137,6 @@ function goods_save_data($post_id) {
 // save metabox data
 add_action('save_post', 'goods_save_data');
 
-
 // Goods Categories
 
 function create_goods_category() {
@@ -166,7 +166,7 @@ function goods_archive_template($archive) {
     global $wp_query, $post;
 
 // Checks for single template by post type
-    if ( is_post_type_archive('goods') ) {
+    if (is_post_type_archive('goods')) {
         if (file_exists(plugin_dir_path(__FILE__) . '/archive-goods.php'))
             return plugin_dir_path(__FILE__) . '/archive-goods.php';
     }
@@ -194,7 +194,7 @@ function goods_taxonomy_template($taxonomy) {
     global $wp_query, $post;
 
 // Checks for single template by post type
-    if ( is_tax('goods_category') ) {
+    if (is_tax('goods_category')) {
         if (file_exists(plugin_dir_path(__FILE__) . '/taxonomy-goods_category.php'))
             return plugin_dir_path(__FILE__) . '/taxonomy-goods_category.php';
     }
@@ -203,4 +203,12 @@ function goods_taxonomy_template($taxonomy) {
 
 add_action('init', 'create_goods');
 add_action('init', 'create_goods_category', 0);
+
+// use style for catalog
+add_action('wp_enqueue_scripts', 'goods_add_stylesheet');
+
+function goods_add_stylesheet() {
+    wp_enqueue_style('prefix-style', plugins_url('catalog-style.css', __FILE__));
+}
+
 ?>
