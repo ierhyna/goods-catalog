@@ -14,7 +14,7 @@
 				'title' => '<a href="' . get_permalink( $post->ID ) . '" rel="bookmark" title="' . strip_tags(get_the_title()) . '">' . get_the_title() . '</a>', 
         'heading' => theme_get_option('theme_'.(is_single()?'single':'posts').'_article_title_tag'),
 				'before' => theme_get_metadata_icons( '', 'header' ),
-				'content' => '<p><b>Цена: ' . $price . '</b></p>', 
+				'content' => '<p><b>Price: ' . $price . '</b></p>', 
 				'after' => '<p>' . $descrip . '</p>'
 		)
 	);
