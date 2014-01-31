@@ -11,8 +11,7 @@ if (have_posts()) {
 
         // start functions
         $price = get_post_meta(get_the_ID(), 'gc_price', true);
-
-        ?>		
+        ?>
         <article <?php post_class(); ?>>
             <header>
                 <h1 class="entry-title"><?php the_title(); ?></h1>
@@ -20,13 +19,13 @@ if (have_posts()) {
             <div class="entry-content">
                 <?php
                 if ((isset($price)) && ($price != '')) {
-                        echo "Price: $price";
+                    echo "Price: $price";
                 }
                 the_content();
                 ?>
             </div>
             <footer>
-
+                <p>The page is generated with single-goods.php template</p>
             </footer>
         </article>
         <?php
@@ -39,4 +38,5 @@ if (have_posts()) {
 } else {
     get_404_template();
 }
-get_footer(); ?>
+get_footer();
+?>

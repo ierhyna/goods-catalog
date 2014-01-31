@@ -1,28 +1,7 @@
 <?php
-/**
- *
- * archive.php
- *
- * The archive template. Used when a category, author, or date is queried.
- * Note that this template will be overridden by category.php, author.php, and date.php for their respective query types. 
- *
- * More detailed information about template’s hierarchy: http://codex.wordpress.org/Template_Hierarchy
- *
- */
 get_header();
 $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
-?>
-<div class="art-layout-wrapper">
-    <div class="art-content-layout">
-        <div class="art-content-layout-row">
-            <div class="art-layout-cell art-sidebar1">
-                <?php get_sidebar('default'); ?>
-                <div class="cleared"></div>
-            </div>
-            <div class="art-layout-cell art-content">
-                <?php get_sidebar('top'); ?>
 
-                <?php
 //list terms in a given taxonomy using wp_list_categories (also useful as a widget if using a PHP Code plugin)
 
                 $taxonomy = 'goods_category';
@@ -72,19 +51,6 @@ foreach ($catlist as $categories_item) {
 echo "</div>";
 /* end  */
 ?>  
-
-
-
-<?php get_sidebar('bottom'); ?>
-                <div class="cleared"></div>
-            </div>
-            <div class="art-layout-cell art-sidebar2">
-<?php get_sidebar('secondary'); ?>
-                <div class="cleared"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="cleared"></div>
+<p>The page is generated with archive-goods.php template</p>
 <?php
 get_footer();

@@ -8,7 +8,7 @@
   Author: Irina Sokolovskaya
   Author URI: http://oriolo.ru/
   License: GPLv2
- */
+*/
 
 // debug only
 error_reporting(E_ALL);
@@ -136,20 +136,6 @@ function goods_save_data($post_id) {
 // save metabox data
 add_action('save_post', 'goods_save_data');
 
-// Use custom templates for goods and catalog
-// Filter the single_template with our custom function
-add_filter('single_template', 'goods_custom_template');
-
-function goods_custom_template($single) {
-    global $wp_query, $post;
-
-// Checks for single template by post type
-    if ($post->post_type == "goods") {
-        if (file_exists(plugin_dir_path(__FILE__) . '/single-goods.php'))
-            return plugin_dir_path(__FILE__) . '/single-goods.php';
-    }
-    return $single;
-}
 
 // Goods Categories
 
@@ -167,6 +153,52 @@ function create_goods_category() {
         'rewrite' => array('slug' => 'catalog')
             )
     );
+}
+
+/*
+ *  Use custom templates for goods and catalog
+ */
+
+// Filter the taxonomy-goods_category
+add_filter('archive_template', 'goods_archive_template');
+
+function goods_archive_template($archive) {
+    global $wp_query, $post;
+
+// Checks for single template by post type
+    if ( is_post_type_archive('goods') ) {
+        if (file_exists(plugin_dir_path(__FILE__) . '/archive-goods.php'))
+            return plugin_dir_path(__FILE__) . '/archive-goods.php';
+    }
+    return $archive;
+}
+
+// Filter the single_template
+add_filter('single_template', 'goods_custom_single_template');
+
+function goods_custom_single_template($single) {
+    global $wp_query, $post;
+
+// Checks for single template by post type
+    if ($post->post_type == "goods") {
+        if (file_exists(plugin_dir_path(__FILE__) . '/single-goods.php'))
+            return plugin_dir_path(__FILE__) . '/single-goods.php';
+    }
+    return $single;
+}
+
+// Filter the taxonomy-goods_category
+add_filter('taxonomy_template', 'goods_taxonomy_template');
+
+function goods_taxonomy_template($taxonomy) {
+    global $wp_query, $post;
+
+// Checks for single template by post type
+    if ( is_tax('goods_category') ) {
+        if (file_exists(plugin_dir_path(__FILE__) . '/taxonomy-goods_category.php'))
+            return plugin_dir_path(__FILE__) . '/taxonomy-goods_category.php';
+    }
+    return $taxonomy;
 }
 
 add_action('init', 'create_goods');

@@ -11,7 +11,7 @@ if (have_posts()) {
     ob_start();
 
     // if is taxonomy query for 'goods_category' taxonomy, modify query so only posts in that collection (not posts in subcollections) are shown.
-    if (is_taxonomy('goods_category')) {
+    if (taxonomy_exists('goods_category')) { //was is_taxonomy instead of taxonomy_exists()
         if (get_query_var('goods_category')) {
             $taxonomy_term_id = $wp_query->queried_object_id;
             $taxonomy = 'goods_category';
@@ -45,7 +45,7 @@ $catlist = get_categories($args);
 echo "<div class='grid'>";
 
 foreach ($catlist as $categories_item) {
-    echo '<div class="list-catalog"><h3><a href="' . esc_url(get_term_link($categories_item, $categories_item->taxonomy)) . '" title="' . sprintf(__("Нажмите на изображение, чтобы перейти в рубрику %s"), $categories_item->name) . '" ' . '>' . $categories_item->name . '</a> </h3> ';
+    echo '<div class="list-catalog"><h3><a href="' . esc_url(get_term_link($categories_item, $categories_item->taxonomy)) . '" title="' . sprintf(__("Click the image to go to %s"), $categories_item->name) . '" ' . '>' . $categories_item->name . '</a> </h3> ';
 
     echo '<div class="categoryoverview clearfix">';
     $terms = apply_filters('taxonomy-images-get-terms', '', array('taxonomy' => 'goods_category'));
@@ -66,30 +66,27 @@ echo "</div>";
 /* end  */
 // the end of sub-cats list
 
-theme_post_wrapper(array('content' => ob_get_clean(), 'class' => 'breadcrumbs'));
+// error here
+//theme_post_wrapper(array('content' => ob_get_clean(), 'class' => 'breadcrumbs'));
 
 // Display navigation to next/previous pages when applicable
-if (theme_get_option('theme_top_posts_navigation')) {
-    texguard_pagination();
-}
-?><div class="cleared"></div><?php
+?>
+<div class="navigation"><?php posts_nav_link(); ?></div>
+
+<div class="cleared"></div><?php
 // Start the Loop 
 while (have_posts()) {
     the_post();
     ?>
     <div class="grid">
-    <?php get_template_part('content-goods', get_post_format()); ?>
+        <?php get_template_part('content-goods_category', get_post_format()); ?>
     </div>
-        <?php
-    }
+    <?php
+}
 
-    // Display navigation to next/previous pages when applicable
-    if (theme_get_option('theme_bottom_posts_navigation')) {
-        texguard_pagination();
-    } else {
-        theme_404_content();
-    }
-    ?>
-<?php get_sidebar(); ?>
+// Display navigation to next/previous pages when applicable
+?>
+<div class="navigation"><?php posts_nav_link(); ?></div>
+<p>The page is generated with taxomony-goods_category.php template</p>
 <?php
 get_footer();
