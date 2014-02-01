@@ -1,10 +1,9 @@
 Goods Catalog
 =========
 
-The catalog of goods for WordPress.
+The plugin creates catalog of products for WordPress.
+Main page of the catalog is http://yoursite.ru/catalog/
 
-<<<<<<< HEAD
-It also works fine with Taxonomy Images (http://wordpress.org/plugins/taxonomy-images/) Wordpress plugin.
-=======
-It also works fine with Taxonomy Images (http://wordpress.org/plugins/taxonomy-images/) Wordpress plugin.
->>>>>>> 30224844f10454679347f035629ca9eb842ef2ef
+You can create unlimited categories and subcategories of products.
+For every category in the page firstly are displaying list of subcategories and then list of products.
+You can add image for every category with Taxonomy Images (http://wordpress.org/plugins/taxonomy-images/) plugin.
