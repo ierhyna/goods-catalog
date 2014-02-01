@@ -8,6 +8,7 @@
   Author: Irina Sokolovskaya
   Author URI: http://oriolo.ru/
   License: GPLv2
+  Images by crisg from https://openclipart.org. (https://openclipart.org/detail/183014/box-2-by-crisg-183014, https://openclipart.org/detail/188919/price-tag-by-crisg-188919). 
  */
 
 // debug only
@@ -211,4 +212,4 @@ function goods_add_stylesheet() {
     wp_enqueue_style('prefix-style', plugins_url('catalog-style.css', __FILE__));
 }
 
-?>
+// breadcrumbs
