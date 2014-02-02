@@ -2,35 +2,59 @@
 
 /*
   Plugin Name: Goods Catalog
-  Plugin URI: http://oriolo.ru/
+  Plugin URI: http://oriolo.ru/wordpress/goods-catalog/
   Description: Plugin that creates simple catalog of goods.
-  Version: 0.1
+  Version: 0.1.6
   Author: Irina Sokolovskaya
   Author URI: http://oriolo.ru/
-  License: GPLv2
-  Images by crisg from https://openclipart.org. (https://openclipart.org/detail/183014/box-2-by-crisg-183014, https://openclipart.org/detail/188919/price-tag-by-crisg-188919).
+  License: GNU General Public License v2 or later
+  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+/*
+  Copyright 2014  Irina Sokolovskaya  (email : sokolovskaja.irina@gmail.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License, version 2, as
+  published by the Free Software Foundation.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
+/*
+  Images by crisg from https://openclipart.org/detail/183014/box-2-by-crisg-183014 and https://openclipart.org/detail/188919/price-tag-by-crisg-188919.
  */
 
 // debug only
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+// languages
+load_plugin_textdomain('gcat', false, basename(dirname(__FILE__)) . '/languages');
+
 // create post type
 function create_goods() {
     register_post_type('goods', array(
         'labels' => array(
-            'name' => 'Goods',
-            'singular_name' => 'Item',
-            'add_new' => 'Add',
-            'add_new_item' => 'Add new item',
-            'edit' => 'Edit',
-            'edit_item' => 'Edit item',
-            'new_item' => 'New item',
-            'view' => 'View',
-            'view_item' => 'View of items',
-            'search_items' => 'Search items',
-            'not_found' => 'Items not found',
-            'not_found_in_trash' => 'Item is not found in trash',
+            'name' => __('Goods', 'gcat'),
+            'singular_name' => __('Item', 'gcat'),
+            'add_new' => __('Add', 'gcat'),
+            'add_new_item' => __('Add new item', 'gcat'),
+            'edit' => __('Edit', 'gcat'),
+            'edit_item' => __('Edit item', 'gcat'),
+            'new_item' => __('New item', 'gcat'),
+            'view' => __('View', 'gcat'),
+            'view_item' => __('View of items', 'gcat'),
+            'search_items' => __('Search items', 'gcat'),
+            'not_found' => __('Items not found', 'gcat'),
+            'not_found_in_trash' => __('Item is not found in trash', 'gcat'),
         ),
         'public' => true,
         'menu_position' => 30,
@@ -46,21 +70,21 @@ function create_goods() {
 $prefix = 'gc_';
 $meta_box = array(
     'id' => 'goods_meta_box',
-    'title' => 'Item Options',
+    'title' => __('Item Options', 'gcat'),
     'post_type' => 'goods',
     'context' => 'normal',
     'priority' => 'high',
     'fields' => array(
         array(
-            'name' => 'Price',
-            'desc' => 'Enter price here',
+            'name' => __('Price', 'gcat'),
+            'desc' => __('Enter price here', 'gcat'),
             'id' => $prefix . 'price',
             'type' => 'text',
             'std' => ''
         ),
         array(
-            'name' => 'Short Description',
-            'desc' => 'Enter description here',
+            'name' => __('Short Description', 'gcat'),
+            'desc' => __('Enter description here', 'gcat'),
             'id' => $prefix . 'descr',
             'type' => 'textarea',
             'std' => ''
@@ -143,10 +167,10 @@ add_action('save_post', 'goods_save_data');
 function create_goods_category() {
     register_taxonomy(
             'goods_category', 'goods', array(
-        'labels' => array(
-            'name' => 'Categories',
-            'add_new_item' => 'Add category',
-            'new_item_name' => "New category"
+            'labels' => array(
+            'name' => __('Categories', 'gcat'),
+            'add_new_item' => __('Add category', 'gcat'),
+            'new_item_name' => __('New category', 'gcat')
         ),
         'show_ui' => true,
         'show_tagcloud' => false,
@@ -222,7 +246,7 @@ function get_term_parents($id, $taxonomy, $link = false, $separator = '/', $nice
             throw new Exception('is_wp_error($parent) has throw error ' . $parent->get_error_message());
         }
     } catch (exception $e) {
-        echo 'Caught exception: ', $e->getMessage(), "\n";
+        echo __('Caught exception: ', 'gcat'), $e->getMessage(), "\n";
         // use something less drastic than die() in production code
         //die();
     }
@@ -253,7 +277,7 @@ function my_breadcrumb($id = null) {
     echo '<a href="';
     echo '/catalog';
     echo '">';
-    echo 'Catalog';
+    echo __('Catalog', 'gcat');
     echo "</a> &gt; ";
     if (is_category() || is_single() || is_tax()) {
         if (is_single()) {

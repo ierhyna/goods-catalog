@@ -84,7 +84,9 @@ if (have_posts()) {
                     $descr = get_post_meta(get_the_ID(), 'gc_descr', true);
                     // show price and description
                     if ((isset($price)) && ($price != '')) {
-                        echo "<div class=\"goods-price\">Price: $price</div>";
+                        echo "<div class=\"goods-price-single\">";
+                        echo __('Price:', 'gcat');
+                        echo " $price</div>";
                     }
                     if ((isset($descr)) && ($descr != '')) {
                         echo "<div class=\"goods-descr\">$descr</div>";
@@ -98,12 +100,11 @@ if (have_posts()) {
         <?php
     }
 } else {
-    echo 'There are no products in the category.';
+    echo __('There are no products in the category.', 'gcat');
 }
 // Display navigation to next/previous pages when applicable
 ?>
 <div class="clear"></div>
 <div class="navigation"><?php posts_nav_link(); ?></div>
-<p>The page is generated with taxomony-goods_category.php template</p>
 <?php
 get_footer();

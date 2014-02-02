@@ -43,27 +43,29 @@ if (have_posts()) {
                 <h2 class="entry-title"><?php the_title(); ?></h2>
                 <?php
                 if ((isset($price)) && ($price != '')) {
-                    echo "<div class=\"goods-price-single\">Price: $price</div>";
+                    echo "<div class=\"goods-price-single\">";
+                    echo __('Price:', 'gcat');
+                    echo " $price</div>";
                 }
                 if ((isset($descr)) && ($descr != '')) {
                     echo "<div class=\"goods-descr-single\">$descr</div>";
                 }
                 // show category
                 $terms_list = wp_get_post_terms($post->ID, 'goods_category', array("fields" => "all"));
-                echo 'Categories: ';
-                // узнаю количество элементов
+                echo __('Categories:&nbsp;', 'gcat');
+                // count elements
                 $count_terms = count($terms_list);
                 foreach ($terms_list as $term) {
                     $term_link = get_term_link($term, 'goods_categoty');
                     if (is_wp_error($term_link))
                         continue;
-                    //уменьшаю кол-во элементов на 1
+                    // elements -1
                     --$count_terms;
-                    //если больше 0
+                    // if > 0
                     if ($count_terms != 0) {
                         echo '<a href="' . $term_link . '">' . $term->name . '</a>, ';
                     } else {
-                        //если элемет полседний, запятую не выводим.
+                        // do not show comma at the last element
                         echo '<a href="' . $term_link . '">' . $term->name . '</a>';
                     }
                 }
@@ -75,7 +77,6 @@ if (have_posts()) {
                 ?>
             </div>
             <footer>
-                <p>The page is generated with single-goods.php template</p>
             </footer>
         </article>
         <?php

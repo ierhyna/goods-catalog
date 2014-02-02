@@ -4,7 +4,7 @@ echo "<div>";
 foreach ($category_list as $categories_item) {
 
     // show categories titles
-    echo '<div class="grid"><div class="goods-category-list-title"><a href="' . esc_url(get_term_link($categories_item, $categories_item->taxonomy)) . '" title="' . sprintf(__("Go to cetegory %s"), $categories_item->name) . '" ' . '>' . $categories_item->name . '</a></div> ';
+    echo '<div class="grid"><div class="goods-category-list-title"><a href="' . esc_url(get_term_link($categories_item, $categories_item->taxonomy)) . '" title="' . sprintf(__("Go to cetegory %s", 'gcat'), $categories_item->name) . '" ' . '>' . $categories_item->name . '</a></div> ';
 
     // show categories images
     echo '<div class="goods-category-thumb-container">';
