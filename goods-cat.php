@@ -213,8 +213,7 @@ function goods_add_stylesheet() {
 }
 
 // breadcrumbs
-// based on https://gist.github.com/TCotton/4723438
-
+// based on http://snipplr.com/view/57988/ and https://gist.github.com/TCotton/4723438
 function get_term_parents($id, $taxonomy, $link = false, $separator = '/', $nicename = false, $visited = array()) {
     $chain = '';
     $parent = &get_term($id, $taxonomy);
@@ -258,21 +257,41 @@ function my_breadcrumb($id = null) {
     echo "</a> &gt; ";
     if (is_category() || is_single() || is_tax()) {
         if (is_single()) {
-            $cat = wp_get_post_terms(' &gt; ', 'multiple');
-            //$term_link = get_term_link('', 'goods_categoty');
-           //echo '<a href="' . $term_link . '">' . $term_link->name . '</a>';
-            echo $cat;
-            echo '  &gt; ';
+            $cat = get_the_term_list(isset($post->ID), 'goods_category', '', ', ', '');
+            // make sure uncategorised is not used
+            if (!stristr($cat, 'Uncategorized')) {
+                echo $cat;
+                echo '  &gt; ';
+            }
             echo '<a href="' . get_permalink(get_the_ID()) . '">';
             the_title();
             echo '</a>';
         }
+        if (is_category()) {
+            $cat = get_category_parents(get_query_var('cat'), true, ' &gt; ');
+            // remove last &gt;
+            echo preg_replace('/&gt;\s$|&gt;$/', '', $cat);
+        }
         if (is_tax()) {
             $tag = single_tag_title('', false);
             $tag = get_tag_id($tag);
-            $term_cat = get_term_parents($tag, get_query_var('taxonomy'), true, ' &gt; ');
+            $term = get_term_parents($tag, get_query_var('taxonomy'), true, ' &gt; ');
             // remove last &gt;
-            echo preg_replace('/&gt;\s$|&gt;$/', '', $term_cat);
+            echo preg_replace('/&gt;\s$|&gt;$/', '', $term);
         }
+    } elseif (is_page()) {
+        if ($id != null) {
+            $an = get_post_ancestors($id);
+            if (isset($an['0'])) {
+                $parent = '<a href="' . get_permalink($an['0']) . '">' . ucwords(get_the_title($an['0'])) . '</a>';
+                echo!is_null($parent) ? $parent . " &gt; " : null;
+            }
+            $parent = get_the_title($id);
+            $parent = '<a href="' . get_permalink($id) . '">' . ucwords($parent) . '</a>';
+            echo!is_null($parent) ? $parent . " &gt; " : null;
+        }
+        echo '<a href="' . get_permalink(get_the_ID()) . '">';
+        ucwords(the_title());
+        echo '</a>';
     }
 }

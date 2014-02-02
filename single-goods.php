@@ -2,9 +2,11 @@
 get_header();
 
 if (have_posts()) {
+    while (have_posts()) {
+        the_post();
     // Display navigation next/previous
-    ?>
-<div id="breadcrumb">
+?>
+<div class="breadcrumbs">
     <?php if (!is_search() || !is_404()) {
         global $post;
         if ($post != null) {
@@ -14,12 +16,11 @@ if (have_posts()) {
         }
     } else {
         print ' ';
-    } ?>
+    }
+    ?>
 </div>
-<?php
-    while (have_posts()) {
-        the_post();
 
+        <?php
         // start functions
         $price = get_post_meta(get_the_ID(), 'gc_price', true);
         $descr = get_post_meta(get_the_ID(), 'gc_descr', true);

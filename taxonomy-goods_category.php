@@ -3,7 +3,22 @@ get_header();
 $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
 
 if (have_posts()) {
-
+    ?>
+    <div class="breadcrumbs">
+        <?php
+        if (!is_search() || !is_404()) {
+            global $post;
+            if ($post != null) {
+                my_breadcrumb($post->post_parent);
+            } else {
+                my_breadcrumb();
+            }
+        } else {
+            print ' ';
+        }
+        ?>
+    </div>
+    <?php
     global $posts;
     $post = $posts[0];
 
@@ -82,8 +97,7 @@ if (have_posts()) {
 
         <?php
     }
-}
- else {
+} else {
     echo 'There are no products in the category.';
 }
 // Display navigation to next/previous pages when applicable
