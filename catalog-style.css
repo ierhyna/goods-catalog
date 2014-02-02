@@ -25,14 +25,27 @@
     margin: 10px 0;
     text-align: center;
 }
+.goods-single-thumb-container {
+    float: left;
+    margin: 0 20px 20px 0;
+}
 
 .goods-category-thumb,
-.goods-item-thumb {
+.goods-item-thumb,
+.goods-single-thumb {
     border: 1px solid #aaa;
 }
 
 .goods-price {
     font-weight: bold;
+}
+.goods-price-single {
+    font-size: 16px;
+    color: #A60000;
+}
+.goods-descr-single,
+.goods-price-single{
+    margin: 10px 0 10px 0;
 }
 
 /* Pagination */

@@ -1,9 +1,7 @@
-Goods Catalog
+goods-cat
 =========
 
-The plugin creates catalog of products for WordPress.
-Main page of the catalog is http://yoursite.ru/catalog/
+The catalog of goods for WordPress
 
-You can create unlimited categories and subcategories of products.
-For every category in the page firstly are displaying list of subcategories and then list of products.
-You can add image for every category with Taxonomy Images (http://wordpress.org/plugins/taxonomy-images/) plugin.
+1. In /plugin folder is the plugin
+2. In root folder are theme files
