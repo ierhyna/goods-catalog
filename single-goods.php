@@ -4,21 +4,22 @@ get_header();
 if (have_posts()) {
     while (have_posts()) {
         the_post();
-    // Display navigation next/previous
-?>
-<div class="breadcrumbs">
-    <?php if (!is_search() || !is_404()) {
-        global $post;
-        if ($post != null) {
-            my_breadcrumb($post->post_parent);
-        } else {
-            my_breadcrumb();
-        }
-    } else {
-        print ' ';
-    }
-    ?>
-</div>
+        // Display navigation next/previous
+        ?>
+        <div class="breadcrumbs">
+            <?php
+            if (!is_search() || !is_404()) {
+                global $post;
+                if ($post != null) {
+                    my_breadcrumb($post->post_parent);
+                } else {
+                    my_breadcrumb();
+                }
+            } else {
+                print ' ';
+            }
+            ?>
+        </div>
 
         <?php
         // start functions

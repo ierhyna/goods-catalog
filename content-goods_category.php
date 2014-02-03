@@ -1,4 +1,5 @@
 <?php
+
 echo "<div>";
 
 foreach ($category_list as $categories_item) {

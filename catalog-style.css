@@ -47,20 +47,23 @@
 .goods-price-single{
     margin: 10px 0 10px 0;
 }
-
-/* Pagination */
-.pagination {
-    clear: both;
-    padding: 5px 0 5px 20px;
-    position: relative;
-    font-size: 11px;
-    line-height: 13px;
+.single-category-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0 20px 0;
 }
 
-.pagination span, .pagination a {
+/* Pagination */
+.goods-pagination {
+    clear: both;
+    padding: 20px 0 20px 0;
+    position: relative;
+}
+
+.goods-pagination span, .goods-pagination a {
     display: block;
     float: left;
-    margin: 2px 2px 2px 0;
+    margin: 2px 5px 2px 0;
     padding: 6px 9px 5px 9px;
     font-weight: normal;
     text-decoration: none;
@@ -69,20 +72,15 @@
     background: #F5F5F5;
 }
 
-.pagination a:hover {
+.goods-pagination a:hover {
     color: #FFF;
     background: #999;
 }
 
-.pagination .current {
+.goods-pagination .current {
     padding: 6px 9px 5px 9px;
     background: #999;
     color: #FFF;
-}
-
-span.wpcf7-list-item {
-    margin-left: 0.5em;
-    display: block;
 }
 
 /* Common */

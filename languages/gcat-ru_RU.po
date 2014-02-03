@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Goods Catalog\n"
-"POT-Creation-Date: 2014-02-02 23:14+0600\n"
-"PO-Revision-Date: 2014-02-02 23:20+0600\n"
+"POT-Creation-Date: 2014-02-03 11:48+0600\n"
+"PO-Revision-Date: 2014-02-03 11:48+0600\n"
 "Last-Translator: Irina Sokolovskaya <sokolovskaja.irina@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../content-goods_category.php:7
+#: ../content-goods_category.php:8
 #, php-format
 msgid "Go to cetegory %s"
 msgstr "Перейти в рубрику  %s"
@@ -108,14 +108,18 @@ msgstr "Внимание:"
 msgid "Catalog"
 msgstr "Каталог"
 
-#: ../single-goods.php:47 ../taxonomy-goods_category.php:88
+#: ../goods-cat.php:337
+msgid "Pages:"
+msgstr "Страницы:"
+
+#: ../single-goods.php:48 ../taxonomy-goods_category.php:90
 msgid "Price:"
 msgstr "Цена:"
 
-#: ../single-goods.php:55
+#: ../single-goods.php:56
 msgid "Categories:&nbsp;"
 msgstr "Рубрики:&nbsp;"
 
-#: ../taxonomy-goods_category.php:103
+#: ../taxonomy-goods_category.php:105
 msgid "There are no products in the category."
 msgstr "В этой рубрике нет товаров."

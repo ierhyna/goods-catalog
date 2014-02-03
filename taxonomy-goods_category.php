@@ -37,28 +37,30 @@ if (have_posts()) {
         }
     } //end of is_taxonomy
 
-    echo '<h4>' . single_cat_title('', false) . '</h4>';
+    echo '<div class="single-category-title">' . single_cat_title('', false) . '</div>';
     echo '<p>' . category_description() . '</p>';
 
+    // show sub-categories only in first page, if paged
+    if (!is_paged()) {
+        // show sub-categories list
+        $current_term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
+        $args = array(
+            'parent' => $current_term->term_id,
+            'taxonomy' => $current_term->taxonomy,
+            'hide_empty' => 0,
+            'hierarchical' => true,
+            'depth' => 1
+        );
 
-// show sub-categories list
-    $current_term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
-    $args = array(
-        'parent' => $current_term->term_id,
-        'taxonomy' => $current_term->taxonomy,
-        'hide_empty' => 0,
-        'hierarchical' => true,
-        'depth' => 1
-    );
+        $category_list = get_categories($args);
+        // include
+        include 'content-goods_category.php';
 
-    $category_list = get_categories($args);
-// include
-    include 'content-goods_category.php';
-
-    echo "<hr>";
-
-// Start the Loop 
+        echo "<hr>";
+    }
+    // Start the Loop 
     while (have_posts()) {
+        
         the_post();
         ?>
         <div class="grid">
@@ -105,6 +107,12 @@ if (have_posts()) {
 // Display navigation to next/previous pages when applicable
 ?>
 <div class="clear"></div>
-<div class="navigation"><?php posts_nav_link(); ?></div>
+<div class="navigation">
+    <?php if (function_exists('goods_pagination'))
+        goods_pagination();
+    else
+        posts_nav_link();
+    ?>
+</div>
 <?php
 get_footer();
