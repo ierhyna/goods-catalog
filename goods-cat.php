@@ -33,8 +33,8 @@
  */
 
 // debug only
-error_reporting(0);
-ini_set('display_errors', 0);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 // languages
 load_plugin_textdomain('gcat', false, basename(dirname(__FILE__)) . '/languages');
@@ -351,3 +351,5 @@ function goods_pagination($pages = '', $range = 2) {
         echo "</div>\n";
     }
 }
+
+include 'goods-options.php';
