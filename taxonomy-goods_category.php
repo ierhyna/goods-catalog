@@ -31,9 +31,6 @@ if (have_posts()) {
             $taxonomy = 'goods_category';
             $unwanted_children = get_term_children($taxonomy_term_id, $taxonomy);
             $unwanted_post_ids = get_objects_in_term($unwanted_children, $taxonomy);
-
-            // merge with original query to preserve pagination, etc.
-            query_posts(array_merge(array('post__not_in' => $unwanted_post_ids), $wp_query->query));
         }
     } //end of is_taxonomy
 
@@ -65,9 +62,7 @@ if (have_posts()) {
         ?>
         <div class="grid">
             <article <?php post_class(); ?>>
-                <header>
-                    <div class="goods-item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
-                </header>
+                <div class="goods-item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                 <div class="goods-item-content">
                     <?php
                     // show thumbnails
@@ -95,7 +90,6 @@ if (have_posts()) {
                     }
                     ?>
                 </div>
-                <footer></footer>
             </article>
         </div>
 
