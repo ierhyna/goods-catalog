@@ -28,7 +28,7 @@ class GoodsSettingsPage
     {
         // This page will be under "Settings"
         add_options_page(
-            'Settings Admin', 
+            __('Goods Catalog Settings', 'gcat'), 
             'Goods Catalog', 
             'manage_options', 
             'goods-setting-admin', 

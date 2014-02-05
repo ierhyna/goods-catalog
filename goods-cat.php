@@ -9,6 +9,7 @@
   Author URI: http://oriolo.ru/
   License: GNU General Public License v2 or later
   License URI: http://www.gnu.org/licenses/gpl-2.0.html
+  Domain Path: /languages
  */
 
 /*
@@ -37,10 +38,18 @@ error_reporting(0);
 ini_set('display_errors', 0);
 
 // languages
-load_plugin_textdomain('gcat', false, basename(dirname(__FILE__)) . '/languages');
+add_action('init', 'localizationsample_init');
+function localizationsample_init() {
+    $path = dirname(plugin_basename( __FILE__ )) . '/languages';
+    $loaded = load_plugin_textdomain( 'gcat', false, $path);
+    if ($_GET['page'] == basename(__FILE__) && !$loaded) {          
+        echo '<div class="error">' . __('Could not load the localization file: ' . $path, 'localizationsample') . '</div>';
+        return;
+    } 
+} 
 
 // options page
-include 'goods-options.php';
+include ( plugin_dir_path( __FILE__ ) . 'goods-options.php' );
 
 // create post type
 function create_goods() {
