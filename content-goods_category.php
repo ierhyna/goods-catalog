@@ -23,6 +23,10 @@ foreach ($category_list as $categories_item) {
             echo '<a href="' . esc_url(get_term_link($categories_item, $categories_item->taxonomy)) . '"><img class="goods-item-thumb" src="' . plugins_url('img/gc.png', __FILE__) . '" alt=""></a>';
         }
     }
+    // show images if plugin Taxonomy Images not installed
+    else {
+        echo '<a href="' . esc_url(get_term_link($categories_item, $categories_item->taxonomy)) . '"><img class="goods-item-thumb" src="' . plugins_url('img/gc.png', __FILE__) . '" alt=""></a>';
+    }
 
     // show categories description
     echo '</div><p>' . $categories_item->category_description . '</p></div>';

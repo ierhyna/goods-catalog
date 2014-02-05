@@ -4,11 +4,12 @@
   Plugin Name: Goods Catalog
   Plugin URI: http://oriolo.ru/wordpress/goods-catalog/
   Description: Plugin that creates simple catalog of goods.
-  Version: 0.2.1
+  Version: 0.3-beta
   Author: Irina Sokolovskaya
   Author URI: http://oriolo.ru/
   License: GNU General Public License v2 or later
   License URI: http://www.gnu.org/licenses/gpl-2.0.html
+  Domain Path: /languages
  */
 
 /*
@@ -37,7 +38,18 @@ error_reporting(0);
 ini_set('display_errors', 0);
 
 // languages
-load_plugin_textdomain('gcat', false, basename(dirname(__FILE__)) . '/languages');
+add_action('init', 'localizationsample_init');
+function localizationsample_init() {
+    $path = dirname(plugin_basename( __FILE__ )) . '/languages';
+    $loaded = load_plugin_textdomain( 'gcat', false, $path);
+    if ($_GET['page'] == basename(__FILE__) && !$loaded) {          
+        echo '<div class="error">' . __('Could not load the localization file: ' . $path, 'localizationsample') . '</div>';
+        return;
+    } 
+} 
+
+// options page
+include ( plugin_dir_path( __FILE__ ) . 'goods-options.php' );
 
 // create post type
 function create_goods() {
@@ -351,3 +363,17 @@ function goods_pagination($pages = '', $range = 2) {
         echo "</div>\n";
     }
 }
+
+// items per page
+function goods_pagesize( $query ) {
+    if ( is_admin() || ! $query->is_main_query() )
+        return;
+
+    if ( is_tax( 'goods_category' ) ) {
+        // Display 12 posts
+        $p = get_option('goods_option_name');
+        $query->set( 'posts_per_page', $p['items_per_page'] );
+        return;
+    }
+}
+add_action( 'pre_get_posts', 'goods_pagesize', 1 );
