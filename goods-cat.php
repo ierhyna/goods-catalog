@@ -39,6 +39,9 @@ ini_set('display_errors', 1);
 // languages
 load_plugin_textdomain('gcat', false, basename(dirname(__FILE__)) . '/languages');
 
+// options page
+include 'goods-options.php';
+
 // create post type
 function create_goods() {
     register_post_type('goods', array(
@@ -352,4 +355,16 @@ function goods_pagination($pages = '', $range = 2) {
     }
 }
 
-include 'goods-options.php';
+// items per page
+function goods_pagesize( $query ) {
+    if ( is_admin() || ! $query->is_main_query() )
+        return;
+
+    if ( is_tax( 'goods_category' ) ) {
+        // Display 12 posts
+        $p = get_option('goods_option_name');
+        $query->set( 'posts_per_page', $p['items_per_page'] );
+        return;
+    }
+}
+add_action( 'pre_get_posts', 'goods_pagesize', 1 );
