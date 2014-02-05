@@ -85,13 +85,20 @@ class GoodsSettingsPage
             'setting_section_id' // Section           
         );      
 
-//        add_settings_field(
-//            'title', 
-//            'Title', 
-//            array( $this, 'title_callback' ), 
-//            'goods-setting-admin', 
-//            'setting_section_id'
-//        );      
+        add_settings_field(
+            'tags_before', 
+            'Tags before catalog', 
+            array( $this, 'tags_before_callback' ), 
+            'goods-setting-admin', 
+            'setting_section_id'
+        );
+        add_settings_field(
+            'tags_after', 
+            'Tags after catalog', 
+            array( $this, 'tags_after_callback' ), 
+            'goods-setting-admin', 
+            'setting_section_id'
+        );  
     }
 
     /**
@@ -105,8 +112,11 @@ class GoodsSettingsPage
         if( isset( $input['items_per_page'] ) )
             $new_input['items_per_page'] = absint( $input['items_per_page'] );
 
-//        if( isset( $input['title'] ) )
-//            $new_input['title'] = sanitize_text_field( $input['title'] );
+        if( isset( $input['tags_before'] ) )
+            $new_input['tags_before'] = sanitize_text_field( $input['tags_before'] );
+
+        if( isset( $input['tags_after'] ) )
+            $new_input['tags_after'] = sanitize_text_field( $input['tags_after'] );
 
         return $new_input;
     }
@@ -133,11 +143,22 @@ class GoodsSettingsPage
     /** 
      * Get the settings option array and print one of its values
      */
-    public function title_callback()
+    public function tags_before_callback()
     {
         printf(
-            '<input type="text" id="title" name="goods_option_name[title]" value="%s" />',
-            isset( $this->options['title'] ) ? esc_attr( $this->options['title']) : ''
+            '<input type="text" id="tags_before" name="goods_option_name[tags_before]" value="%s" />',
+            isset( $this->options['tags_before'] ) ? esc_attr( $this->options['tags_before']) : ''
+        );
+    }
+
+    /** 
+     * Get the settings option array and print one of its values
+     */
+    public function tags_after_callback()
+    {
+        printf(
+            '<input type="text" id="tags_after" name="goods_option_name[tags_after]" value="%s" />',
+            isset( $this->options['tags_after'] ) ? esc_attr( $this->options['tags_after']) : ''
         );
     }
 }
