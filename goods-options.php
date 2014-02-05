@@ -29,7 +29,7 @@ class GoodsSettingsPage
         // This page will be under "Settings"
         add_options_page(
             'Settings Admin', 
-            'Goods Catalog Settings', 
+            'Goods Catalog', 
             'manage_options', 
             'goods-setting-admin', 
             array( $this, 'create_admin_page' )
@@ -46,7 +46,7 @@ class GoodsSettingsPage
         ?>
         <div class="wrap">
             <?php screen_icon(); ?>
-            <h2>Goods Catalog Plugin Settings</h2>           
+            <h2><?php echo __('Goods Catalog Plugin Settings', 'gcat'); ?></h2>           
             <form method="post" action="options.php">
             <?php
                 // This prints out all hidden setting fields
@@ -72,14 +72,14 @@ class GoodsSettingsPage
 
         add_settings_section(
             'setting_section_id', // ID
-            'Catalog View Settings', // Title
+            __('Catalog View Settings', 'gcat'), // Title
             array( $this, 'print_section_info' ), // Callback
             'goods-setting-admin' // Page
         );  
 
         add_settings_field(
             'items_per_page', // ID
-            'Products per page', // Title 
+            __('Products per page', 'gcat'), // Title 
             array( $this, 'items_per_page_callback' ), // Callback
             'goods-setting-admin', // Page
             'setting_section_id' // Section           
@@ -127,7 +127,7 @@ class GoodsSettingsPage
      */
     public function print_section_info()
     {
-        print 'Enter your settings below:';
+        print __('Enter your settings below:', 'gcat');
     }
 
     /** 
