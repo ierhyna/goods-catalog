@@ -84,7 +84,7 @@ class GoodsSettingsPage
             'goods-setting-admin', // Page
             'setting_section_id' // Section           
         );      
-
+/*
         add_settings_field(
             'tags_before', 
             'Tags before catalog', 
@@ -99,6 +99,7 @@ class GoodsSettingsPage
             'goods-setting-admin', 
             'setting_section_id'
         );  
+*/
     }
 
     /**
@@ -111,13 +112,13 @@ class GoodsSettingsPage
         $new_input = array();
         if( isset( $input['items_per_page'] ) )
             $new_input['items_per_page'] = absint( $input['items_per_page'] );
-
+/*
         if( isset( $input['tags_before'] ) )
             $new_input['tags_before'] = sanitize_text_field( $input['tags_before'] );
 
         if( isset( $input['tags_after'] ) )
             $new_input['tags_after'] = sanitize_text_field( $input['tags_after'] );
-
+*/
         return $new_input;
     }
 
@@ -142,18 +143,18 @@ class GoodsSettingsPage
 
     /** 
      * Get the settings option array and print one of its values
-     */
-    public function tags_before_callback()
+
+        public function tags_before_callback()
     {
         printf(
             '<input type="text" id="tags_before" name="goods_option_name[tags_before]" value="%s" />',
             isset( $this->options['tags_before'] ) ? esc_attr( $this->options['tags_before']) : ''
         );
     }
-
+     */
     /** 
      * Get the settings option array and print one of its values
-     */
+
     public function tags_after_callback()
     {
         printf(
@@ -161,6 +162,7 @@ class GoodsSettingsPage
             isset( $this->options['tags_after'] ) ? esc_attr( $this->options['tags_after']) : ''
         );
     }
+     */
 }
 
 if( is_admin() )
