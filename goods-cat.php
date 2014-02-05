@@ -4,7 +4,7 @@
   Plugin Name: Goods Catalog
   Plugin URI: http://oriolo.ru/wordpress/goods-catalog/
   Description: Plugin that creates simple catalog of goods.
-  Version: 0.2.1
+  Version: 0.3-beta
   Author: Irina Sokolovskaya
   Author URI: http://oriolo.ru/
   License: GNU General Public License v2 or later
