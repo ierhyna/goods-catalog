@@ -24,16 +24,6 @@ if (have_posts()) {
 
     ob_start();
 
-    // if is taxonomy query for 'goods_category' taxonomy, modify query so only posts in that collection (not posts in subcollections) are shown.
-    if (taxonomy_exists('goods_category')) { //was is_taxonomy instead of taxonomy_exists()
-        if (get_query_var('goods_category')) {
-            $taxonomy_term_id = $wp_query->queried_object_id;
-            $taxonomy = 'goods_category';
-            $unwanted_children = get_term_children($taxonomy_term_id, $taxonomy);
-            $unwanted_post_ids = get_objects_in_term($unwanted_children, $taxonomy);
-        }
-    } //end of is_taxonomy
-
     echo '<div class="single-category-title">' . single_cat_title('', false) . '</div>';
     echo '<p>' . category_description() . '</p>';
 
@@ -55,10 +45,27 @@ if (have_posts()) {
 
         echo "<hr>";
     }
-    // Start the Loop 
-    while (have_posts()) {
-        
-        the_post();
+
+// query
+$current_term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
+$p = get_option('goods_option_name');
+$no_children = array(
+	'posts_per_page' => $p['items_per_page'],
+	'post_type' => 'goods',
+	'tax_query' => array(
+		array(
+			'taxonomy' => 'goods_category',
+			'field' => 'term_id',
+			'terms' => $current_term->term_id,
+			'include_children' => false,
+		)
+	)
+);
+$tax_query = new WP_Query( $no_children );
+
+// Start the Loop 
+while ( $tax_query->have_posts() ) {
+		$tax_query->the_post();
         ?>
         <div class="grid">
             <article <?php post_class(); ?>>
