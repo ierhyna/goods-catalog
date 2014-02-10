@@ -46,26 +46,9 @@ if (have_posts()) {
         echo "<hr>";
     }
 
-// query
-$current_term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
-$p = get_option('goods_option_name');
-$no_children = array(
-	'posts_per_page' => $p['items_per_page'],
-	'post_type' => 'goods',
-	'tax_query' => array(
-		array(
-			'taxonomy' => 'goods_category',
-			'field' => 'term_id',
-			'terms' => $current_term->term_id,
-			'include_children' => false,
-		)
-	)
-);
-$tax_query = new WP_Query( $no_children );
-
-// Start the Loop 
-while ( $tax_query->have_posts() ) {
-		$tax_query->the_post();
+// Start the Loop
+while ( have_posts() ) {
+		the_post();
         ?>
         <div class="grid">
             <article <?php post_class(); ?>>
@@ -102,11 +85,13 @@ while ( $tax_query->have_posts() ) {
 
         <?php
     }
-} else {
+}
+ else {
     echo __('There are no products in the category.', 'gcat');
 }
 // Display navigation to next/previous pages when applicable
 ?>
+
 <div class="clear"></div>
 <div class="navigation">
     <?php if (function_exists('goods_pagination'))
