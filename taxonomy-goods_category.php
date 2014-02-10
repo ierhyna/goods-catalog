@@ -24,16 +24,6 @@ if (have_posts()) {
 
     ob_start();
 
-    // if is taxonomy query for 'goods_category' taxonomy, modify query so only posts in that collection (not posts in subcollections) are shown.
-    if (taxonomy_exists('goods_category')) { //was is_taxonomy instead of taxonomy_exists()
-        if (get_query_var('goods_category')) {
-            $taxonomy_term_id = $wp_query->queried_object_id;
-            $taxonomy = 'goods_category';
-            $unwanted_children = get_term_children($taxonomy_term_id, $taxonomy);
-            $unwanted_post_ids = get_objects_in_term($unwanted_children, $taxonomy);
-        }
-    } //end of is_taxonomy
-
     echo '<div class="single-category-title">' . single_cat_title('', false) . '</div>';
     echo '<p>' . category_description() . '</p>';
 
@@ -55,10 +45,10 @@ if (have_posts()) {
 
         echo "<hr>";
     }
-    // Start the Loop 
-    while (have_posts()) {
-        
-        the_post();
+
+// Start the Loop
+while ( have_posts() ) {
+		the_post();
         ?>
         <div class="grid">
             <article <?php post_class(); ?>>
@@ -95,11 +85,13 @@ if (have_posts()) {
 
         <?php
     }
-} else {
+}
+ else {
     echo __('There are no products in the category.', 'gcat');
 }
 // Display navigation to next/previous pages when applicable
 ?>
+
 <div class="clear"></div>
 <div class="navigation">
     <?php if (function_exists('goods_pagination'))
