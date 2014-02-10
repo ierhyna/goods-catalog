@@ -4,7 +4,7 @@
   Plugin Name: Goods Catalog
   Plugin URI: http://oriolo.ru/wordpress/goods-catalog/
   Description: Plugin that creates simple catalog of goods.
-  Version: 0.3-beta
+  Version: 0.3-beta.1
   Author: Irina Sokolovskaya
   Author URI: http://oriolo.ru/
   License: GNU General Public License v2 or later
@@ -364,13 +364,32 @@ function goods_pagination($pages = '', $range = 2) {
     }
 }
 
+// exclude children
+function exclude_children ( $query ) {
+    if( is_tax( 'goods_category' ) ):
+
+    $tax_obj = $query->get_queried_object();
+
+    $tax_query = array(
+                    'taxonomy' => $tax_obj->taxonomy,
+                    'field' => 'slug',
+                    'terms' => $tax_obj->slug,
+                    'include_children' => FALSE
+            );
+   $query->tax_query->queries[] = $tax_query;
+   $query->query_vars['tax_query'] = $query->tax_query->queries;
+
+   endif;
+}
+add_action( 'pre_get_posts', 'exclude_children' );
+
 // items per page
 function goods_pagesize( $query ) {
     if ( is_admin() || ! $query->is_main_query() )
         return;
 
     if ( is_tax( 'goods_category' ) ) {
-        // Display 12 posts
+        // display number of posts
         $p = get_option('goods_option_name');
         $query->set( 'posts_per_page', $p['items_per_page'] );
         return;
