@@ -363,17 +363,3 @@ function goods_pagination($pages = '', $range = 2) {
         echo "</div>\n";
     }
 }
-
-// items per page
-function goods_pagesize( $query ) {
-    if ( is_admin() || ! $query->is_main_query() )
-        return;
-
-    if ( is_tax( 'goods_category' ) ) {
-        // Display 12 posts
-        $p = get_option('goods_option_name');
-        $query->set( 'posts_per_page', $p['items_per_page'] );
-        return;
-    }
-}
-add_action( 'pre_get_posts', 'goods_pagesize', 1 );
