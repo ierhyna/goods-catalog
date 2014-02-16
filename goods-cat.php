@@ -366,7 +366,7 @@ function goods_pagination($pages = '', $range = 2) {
 
 // exclude children
 function exclude_children ( $query ) {
-    if( is_tax( 'goods_category' ) ):
+    if( $query->is_main_query() && $query->is_tax( 'goods_category' ) ):
 
     $tax_obj = $query->get_queried_object();
 
