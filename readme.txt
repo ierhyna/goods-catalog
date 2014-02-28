@@ -1,6 +1,7 @@
 === Goods Catalog ===
 Contributors: oriolo
 Tags: catalog, products, goods, products catalog, goods catalog
+Stable tag: v0.4
 Requires at least: 3.3.0
 Tested up to: 3.8.1
 License: GNU General Public License v2 or later
@@ -15,19 +16,42 @@ The plugin creates simple catalog of goods, looking like Explorer in Windows. Th
 Download plugin in .zip archive and install in Console.
 
 == Screenshots ==
-1. http://oriolo.ru/wp-content/uploads/2014/02/2-540x310.jpg
-2. http://oriolo.ru/wp-content/uploads/2014/02/1-21-540x244.jpg
-3. http://oriolo.ru/wp-content/uploads/2014/02/4-540x318.jpg
+1. http://oriolo.ru/wp-content/uploads/2014/02/1-540x290.jpg
+2. http://oriolo.ru/wp-content/uploads/2014/02/3.jpg
+3. http://oriolo.ru/wp-content/uploads/2014/02/4.jpg
+
+== Frequently Asked Questions ==
+= There is 404 on /catalog or products page =
+You need to update your permalinks. Just go to Console -> Settings -> Permalinks and press "Save". You don't need to change it.
 
 == Changelog ==
-v0.3-beta
+
+= v0.4 =
+
+* Bugs fixed
+* Updated readme.txt
+
+= v0.3-beta.2 =
+
+Small bug fix:
+
+* Fixed missed menu in category page
+
+= v0.3-beta.1 =
+
+* Fixed pagination
+
+= v0.3-beta =
+
 * Added Plugin Settings page
 * Change products per page
 * Show categories images if plugin Taxonomy Images not installed
 
-v0.2-beta.1
+= v0.2-beta.1 =
+
 Small update:
 * removed displaying of PHP errors
 
-v0.2-beta
+= v0.2-beta =
+
 First public release
