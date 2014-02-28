@@ -72,7 +72,8 @@ if (have_posts()) {
                 }
                 ?>
             </header>
-            <div class="entry-content clear">
+            <div class="clear"></div>
+            <div class="entry-content">
                 <?php
                 the_content();
                 ?>
