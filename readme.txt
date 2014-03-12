@@ -1,6 +1,6 @@
 === Goods Catalog ===
 Contributors: oriolo
-Tags: catalog, products, goods, products catalog, goods catalog
+Tags: catalog, catalogue, product, products, goods, product catalog, product catalogue, catalog of goods
 Stable tag: v0.4
 Requires at least: 3.3.0
 Tested up to: 3.8.1
