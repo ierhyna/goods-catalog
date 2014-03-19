@@ -24,7 +24,7 @@ class GoodsSettingsPage {
     public function add_plugin_page() {
         // This page will be under "Settings"
         add_submenu_page(
-                'edit.php?post_type=goods', __('Goods Catalog Settings', 'gcat'), 'Goods Catalog Settings', 'manage_options', 'goods-setting-admin', array($this, 'create_admin_page')
+                'edit.php?post_type=goods', __('Goods Catalog Settings', 'gcat'),  __('Goods Catalog Settings', 'gcat'), 'manage_options', 'goods-setting-admin', array($this, 'create_admin_page')
         );
     }
 

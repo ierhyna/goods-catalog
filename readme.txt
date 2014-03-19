@@ -1,7 +1,7 @@
 === Goods Catalog ===
 Contributors: oriolo
 Tags: catalog, catalogue, product, products, goods, product catalog, product catalogue, catalog of goods
-Stable tag: v0.4.5
+Stable tag: v0.4.6
 Requires at least: 3.3.0
 Tested up to: 3.8.1
 License: GNU General Public License v2 or later
@@ -27,9 +27,10 @@ Languages:
 * Then you need to update your permalinks to prevent 404 errors. Just go to Console -> Settings -> Permalinks and press "Save". You don't need to change your permalinks.
 
 == Screenshots ==
-1. Categories of products
-2. Products list
-3. Singe product
+1. Main page of catalog
+2. Page of category with subcategories and products
+3. Singe product page
+4. Admin page
 
 == Frequently Asked Questions ==
 = There is 404 on /catalog or products page =
@@ -37,7 +38,11 @@ You need to update your permalinks. Just go to Console -> Settings -> Permalinks
 
 == Changelog ==
 
-= v0.4.4 =
+= v0.4.5 =
+
+* Localization bug fixed
+
+= v0.4.5 =
 
 * Added tags
 * Added columns with tags and categories to admin menu
