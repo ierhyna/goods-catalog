@@ -1,5 +1,8 @@
+/* Container */
+.goods-catalog {}
+
 /* Grid catalog */
-.grid {
+.goods-catalog .grid {
     width: 200px;
     min-height: 200px;
     background-color: #f5f5f5;
@@ -12,6 +15,15 @@
 }
 
 /* Style products and categories */
+.goods-catalog h2 {
+    font-size: 26px;
+    margin: 0 0 25px 0;
+}
+.goods-catalog p {
+    margin: 10px 0 10px 0;
+    line-height: 1.5;
+}
+
 .goods-category-list-title, 
 .goods-item-title {
     text-align: center;
@@ -35,18 +47,20 @@
 .goods-single-thumb {
     border: 1px solid #aaa;
 }
-
+/* set width */
+.goods-info {
+    float: left;
+    max-width: 60%;
+}
 .goods-price {
     font-weight: bold;
 }
 .goods-price-single {
     font-size: 16px;
     color: #A60000;
+    font-weight: bold;
 }
-.goods-descr-single,
-.goods-price-single{
-    margin: 10px 0 10px 0;
-}
+
 .single-category-title {
     font-size: 20px;
     font-weight: bold;
@@ -81,6 +95,13 @@
     padding: 6px 9px 5px 9px;
     background: #999;
     color: #FFF;
+}
+
+/*
+* Breadcrumbs
+*/
+.goods-catalog .breadcrumbs {
+    margin: 10px 0 20px 0;
 }
 
 /* Common */

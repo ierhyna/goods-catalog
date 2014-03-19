@@ -1,6 +1,11 @@
 <?php
+/*
+ * Template: Single product page
+ */
+
 get_header();
 
+echo '<div class="goods-catalog">';
 if (have_posts()) {
     while (have_posts()) {
         the_post();
@@ -42,6 +47,7 @@ if (have_posts()) {
                 }
                 echo '</div>';
                 ?>
+<<<<<<< HEAD
                 <h2 class="entry-title"><?php the_title(); ?></h2>
                 <?php
                 if ((isset($price)) && ($price != '')) {
@@ -74,9 +80,36 @@ if (have_posts()) {
                     } else {
                         // do not show comma at the last element
                         echo '<a href="' . $term_link . '">' . $term->name . '</a>';
+=======
+                <div class="goods-info">
+                    <h2 class="entry-title"><?php the_title(); ?></h2>
+                    <?php
+                    if ((isset($price)) && ($price != '')) {
+                        echo "<p class=\"goods-price-single\">";
+                        echo __('Price:', 'gcat');
+                        echo " $price</p>";
+>>>>>>> origin/dev
                     }
-                }
-                ?>
+                    if ((isset($sku)) && ($sku != '')) {
+                        echo "<p class=\"goods-sku\">";
+                        echo __('SKU:', 'gcat');
+                        echo " $sku</p>";
+                    }
+                    if ((isset($descr)) && ($descr != '')) {
+                        echo "<p class=\"goods-descr-single\">$descr</p>";
+                    }
+
+                    // show category
+                    echo '<p>';
+                    get_goods_taxomonies('goods_category', $post->ID);
+                    echo '</p>';
+
+                    // show tags
+                    echo '<p>';
+                    get_goods_taxomonies('goods_tag', $post->ID);
+                    echo '</p>';
+                    ?>
+                </div>
             </header>
             <div class="clear"></div>
             <div class="entry-content">
@@ -94,6 +127,7 @@ if (have_posts()) {
     ?>
     <div class="navigation"><?php posts_nav_link(); ?></div>
     <?php
+    echo '</div>';
 } else {
     get_404_template();
 }

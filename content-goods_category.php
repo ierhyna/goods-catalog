@@ -1,7 +1,6 @@
 <?php
 
-echo "<div>";
-
+echo '<div>';
 foreach ($category_list as $categories_item) {
 
     // show categories titles
