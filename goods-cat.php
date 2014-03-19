@@ -4,7 +4,7 @@
   Plugin Name: Goods Catalog
   Plugin URI: http://oriolo.ru/wordpress/goods-catalog/
   Description: Plugin that creates simple catalog of goods.
-  Version: 0.4
+  Version: 0.4.1
   Author: Irina Sokolovskaya
   Author URI: http://oriolo.ru/
   License: GNU General Public License v2 or later
@@ -241,12 +241,14 @@ function goods_taxonomy_template($taxonomy) {
 add_action('init', 'create_goods');
 add_action('init', 'create_goods_category', 0);
 
+// load stylesheet for the catalog pages
+function goods_add_stylesheet() {
+    if ( is_tax('goods_category') || is_post_type_archive('goods') || is_singular('goods') ) {
+    wp_enqueue_style('catalog-style', plugins_url('catalog-style.css', __FILE__));
+    }
+}
 // use style for catalog
 add_action('wp_enqueue_scripts', 'goods_add_stylesheet');
-
-function goods_add_stylesheet() {
-    wp_enqueue_style('prefix-style', plugins_url('catalog-style.css', __FILE__));
-}
 
 // breadcrumbs
 // based on http://snipplr.com/view/57988/ and https://gist.github.com/TCotton/4723438
