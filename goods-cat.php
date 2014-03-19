@@ -192,9 +192,11 @@ function create_goods_category() {
             'new_item_name' => __('New category', 'gcat')
         ),
         'show_ui' => true,
+        'show_admin_column' => true,
+        'show_in_nav_menus' => true,
         'show_tagcloud' => false,
         'hierarchical' => true,
-        'rewrite' => array('slug' => '')
+        'rewrite' => array('slug' => 'goods_category')
             )
     );
 }
