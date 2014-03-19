@@ -47,40 +47,6 @@ if (have_posts()) {
                 }
                 echo '</div>';
                 ?>
-<<<<<<< HEAD
-                <h2 class="entry-title"><?php the_title(); ?></h2>
-                <?php
-                if ((isset($price)) && ($price != '')) {
-                    echo "<div class=\"goods-price-single\">";
-                    echo __('Price:', 'gcat');
-                    echo " $price</div>";
-                }
-                if ((isset($sku)) && ($sku != '')) {
-                        echo "<div class=\"goods-sku\">";
-                        echo __('SKU:', 'gcat');
-                        echo " $sku</div>";
-                    }
-                if ((isset($descr)) && ($descr != '')) {
-                    echo "<div class=\"goods-descr-single\">$descr</div>";
-                }
-                // show category
-                $terms_list = wp_get_post_terms($post->ID, 'goods_category', array("fields" => "all"));
-                echo __('Categories:&nbsp;', 'gcat');
-                // count elements
-                $count_terms = count($terms_list);
-                foreach ($terms_list as $term) {
-                    $term_link = get_term_link($term, 'goods_categoty');
-                    if (is_wp_error($term_link))
-                        continue;
-                    // elements -1
-                    --$count_terms;
-                    // if > 0
-                    if ($count_terms != 0) {
-                        echo '<a href="' . $term_link . '">' . $term->name . '</a>, ';
-                    } else {
-                        // do not show comma at the last element
-                        echo '<a href="' . $term_link . '">' . $term->name . '</a>';
-=======
                 <div class="goods-info">
                     <h2 class="entry-title"><?php the_title(); ?></h2>
                     <?php
@@ -88,7 +54,6 @@ if (have_posts()) {
                         echo "<p class=\"goods-price-single\">";
                         echo __('Price:', 'gcat');
                         echo " $price</p>";
->>>>>>> origin/dev
                     }
                     if ((isset($sku)) && ($sku != '')) {
                         echo "<p class=\"goods-sku\">";

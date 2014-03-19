@@ -335,12 +335,6 @@ function goods_tag_template($taxonomy) {
 
 add_action('init', 'create_goods');
 
-<<<<<<< HEAD
-// load stylesheet for the catalog pages
-function goods_add_stylesheet() {
-    if ( is_tax('goods_category') || is_post_type_archive('goods') || is_singular('goods') ) {
-    wp_enqueue_style('catalog-style', plugins_url('catalog-style.css', __FILE__));
-=======
 // register hook 'wp_print_styles'
 add_action('wp_print_styles', 'goods_add_stylesheet');
 
@@ -349,11 +343,8 @@ function goods_add_stylesheet() {
     if (is_tax('goods_category') || is_tax('goods_tag') || is_post_type_archive('goods') || is_singular('goods')) {
         wp_register_style('catalog-style', plugins_url('catalog-style.css', __FILE__));
         wp_enqueue_style('catalog-style');
->>>>>>> origin/dev
     }
 }
-// use style for catalog
-add_action('wp_enqueue_scripts', 'goods_add_stylesheet');
 
 // breadcrumbs
 // based on http://snipplr.com/view/57988/ and https://gist.github.com/TCotton/4723438

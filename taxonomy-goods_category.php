@@ -53,50 +53,6 @@ $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
         }
 
 // Start the Loop
-<<<<<<< HEAD
-while ( have_posts() ) {
-		the_post();
-        ?>
-        <div class="grid">
-            <article <?php post_class(); ?>>
-                <div class="goods-item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
-                <div class="goods-item-content">
-                    <?php
-                    // show thumbnails
-                    echo '<div class="goods-item-thumb-container">';
-                    if (has_post_thumbnail()) {
-                        echo '<a href="' . get_permalink() . '">';
-                        the_post_thumbnail(array(150, 150), array('class' => 'goods-item-thumb'));
-                        echo '</a>';
-                    } else {
-                        // show default image if the thumbnail is not found
-                        echo '<a href="' . get_permalink() . '"><img class="goods-item-thumb" src="' . plugins_url('img/gi.png', __FILE__) . '" alt=""></a>';
-                    }
-                    echo '</div>';
-                    // get fields from metabox
-                    $price = get_post_meta(get_the_ID(), 'gc_price', true);
-                    $sku = get_post_meta(get_the_ID(), 'gc_sku', true);
-                    $descr = get_post_meta(get_the_ID(), 'gc_descr', true);
-                    
-                    // show fields values
-                    if ((isset($price)) && ($price != '')) {
-                        echo "<div class=\"goods-price-single\">";
-                        echo __('Price:', 'gcat');
-                        echo " $price</div>";
-                    }
-                    if ((isset($sku)) && ($sku != '')) {
-                        echo "<div class=\"goods-sku\">";
-                        echo __('SKU:', 'gcat');
-                        echo " $sku</div>";
-                    }
-                    if ((isset($descr)) && ($descr != '')) {
-                        echo "<div class=\"goods-descr\">$descr</div>";
-                    }
-                    ?>
-                </div>
-            </article>
-        </div>
-=======
         while (have_posts()) {
             the_post();
             ?>
@@ -120,7 +76,6 @@ while ( have_posts() ) {
                         $price = get_post_meta(get_the_ID(), 'gc_price', true);
                         $sku = get_post_meta(get_the_ID(), 'gc_sku', true);
                         $descr = get_post_meta(get_the_ID(), 'gc_descr', true);
->>>>>>> origin/dev
 
                         // show fields values
                         if ((isset($price)) && ($price != '')) {
