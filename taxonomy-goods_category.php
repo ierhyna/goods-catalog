@@ -66,14 +66,21 @@ while ( have_posts() ) {
                         echo '<a href="' . get_permalink() . '"><img class="goods-item-thumb" src="' . plugins_url('img/gi.png', __FILE__) . '" alt=""></a>';
                     }
                     echo '</div>';
-                    // get price and description from metabox
+                    // get fields from metabox
                     $price = get_post_meta(get_the_ID(), 'gc_price', true);
+                    $sku = get_post_meta(get_the_ID(), 'gc_sku', true);
                     $descr = get_post_meta(get_the_ID(), 'gc_descr', true);
-                    // show price and description
+                    
+                    // show fields values
                     if ((isset($price)) && ($price != '')) {
                         echo "<div class=\"goods-price-single\">";
                         echo __('Price:', 'gcat');
                         echo " $price</div>";
+                    }
+                    if ((isset($sku)) && ($sku != '')) {
+                        echo "<div class=\"goods-sku\">";
+                        echo __('SKU:', 'gcat');
+                        echo " $sku</div>";
                     }
                     if ((isset($descr)) && ($descr != '')) {
                         echo "<div class=\"goods-descr\">$descr</div>";
