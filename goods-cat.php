@@ -95,6 +95,13 @@ $meta_box = array(
             'std' => ''
         ),
         array(
+            'name' => __('SKU', 'gcat'),
+            'desc' => __('Enter product ID (SKU)', 'gcat'),
+            'id' => $prefix . 'sku',
+            'type' => 'text',
+            'std' => ''
+        ),
+        array(
             'name' => __('Short Description', 'gcat'),
             'desc' => __('Enter description here', 'gcat'),
             'id' => $prefix . 'descr',
