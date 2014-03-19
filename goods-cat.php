@@ -39,17 +39,18 @@ ini_set('display_errors', 0);
 
 // languages
 add_action('init', 'localizationsample_init');
+
 function localizationsample_init() {
-    $path = dirname(plugin_basename( __FILE__ )) . '/languages';
-    $loaded = load_plugin_textdomain( 'gcat', false, $path);
-    if ($_GET['page'] == basename(__FILE__) && !$loaded) {          
+    $path = dirname(plugin_basename(__FILE__)) . '/languages';
+    $loaded = load_plugin_textdomain('gcat', false, $path);
+    if ($_GET['page'] == basename(__FILE__) && !$loaded) {
         echo '<div class="error">' . __('Could not load the localization file: ' . $path, 'localizationsample') . '</div>';
         return;
-    } 
-} 
+    }
+}
 
 // options page
-include ( plugin_dir_path( __FILE__ ) . 'goods-options.php' );
+include ( plugin_dir_path(__FILE__) . 'goods-options.php' );
 
 // create post type
 function create_goods() {
@@ -182,7 +183,6 @@ function goods_save_data($post_id) {
 add_action('save_post', 'goods_save_data');
 
 // Goods Categories
-
 function create_goods_category() {
     register_taxonomy(
             'goods_category', 'goods', array(
@@ -197,6 +197,78 @@ function create_goods_category() {
         'rewrite' => array('slug' => '')
             )
     );
+}
+
+add_action('init', 'create_goods_category', 0);
+
+// Goods Tags
+function create_goods_tags() {
+
+    $labels = array(
+        'name' => __('Tags', 'gcat'),
+        'menu_name' => __('Tags', 'gcat'),
+        'all_items' => __('All Items', 'gcat'),
+        'parent_item' => __('Parent Item', 'gcat'),
+        'parent_item_colon' => __('Parent Item:', 'gcat'),
+        'new_item_name' => __('New Item Name', 'gcat'),
+        'add_new_item' => __('Add New Item', 'gcat'),
+        'edit_item' => __('Edit Item', 'gcat'),
+        'update_item' => __('Update Item', 'gcat'),
+        'separate_items_with_commas' => __('Separate items with commas', 'gcat'),
+        'search_items' => __('Search Items', 'gcat'),
+        'add_or_remove_items' => __('Add or remove items', 'gcat'),
+        'choose_from_most_used' => __('Choose from the most used items', 'gcat'),
+        'not_found' => __('Not Found', 'gcat'),
+    );
+    $rewrite = array(
+        'slug' => 'goods_tag',
+        'with_front' => true,
+        'hierarchical' => false,
+    );
+    $args = array(
+        'labels' => $labels,
+        'hierarchical' => false,
+        'public' => true,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'show_in_nav_menus' => true,
+        'show_tagcloud' => true,
+        'rewrite' => $rewrite,
+    );
+    register_taxonomy('goods_tag', array('goods'), $args);
+}
+
+// Hook into the 'init' action
+add_action('init', 'create_goods_tags', 0);
+
+// get taxomomies list
+function get_goods_taxomonies($taxonomy, $id) {
+    $terms_list = wp_get_post_terms($id, $taxonomy, array("fields" => "all"));
+
+    $count_terms = count($terms_list);
+    if ($count_terms != 0) {
+
+        if ($taxonomy == 'goods_category') {
+            echo __('Categories:&nbsp;', 'gcat');
+        } else {
+            echo __('Tags:&nbsp;', 'gcat');
+        }
+    }
+    // count elements
+    foreach ($terms_list as $term) {
+        $term_link = get_term_link($term, $taxonomy);
+        if (is_wp_error($term_link))
+            continue;
+        // elements -1
+        --$count_terms;
+        // if > 0
+        if ($count_terms != 0) {
+            echo '<a href="' . $term_link . '">' . $term->name . '</a>, ';
+        } else {
+            // do not show comma at the last element
+            echo '<a href="' . $term_link . '">' . $term->name . '</a>';
+        }
+    }
 }
 
 /*
@@ -232,9 +304,9 @@ function goods_custom_single_template($single) {
 }
 
 // Filter the taxonomy-goods_category
-add_filter('taxonomy_template', 'goods_taxonomy_template');
+add_filter('taxonomy_template', 'goods_category_template');
 
-function goods_taxonomy_template($taxonomy) {
+function goods_category_template($taxonomy) {
     global $wp_query, $post;
 
 // Checks for single template by post type
@@ -245,17 +317,32 @@ function goods_taxonomy_template($taxonomy) {
     return $taxonomy;
 }
 
-add_action('init', 'create_goods');
-add_action('init', 'create_goods_category', 0);
+// Filter the taxonomy-goods_tag
+add_filter('taxonomy_template', 'goods_tag_template');
 
-// load stylesheet for the catalog pages
+function goods_tag_template($taxonomy) {
+    global $wp_query, $post;
+
+// Checks for single template by post type
+    if (is_tax('goods_tag')) {
+        if (file_exists(plugin_dir_path(__FILE__) . '/taxonomy-goods_tag.php'))
+            return plugin_dir_path(__FILE__) . '/taxonomy-goods_tag.php';
+    }
+    return $taxonomy; 
+}
+
+add_action('init', 'create_goods');
+
+// register hook 'wp_print_styles'
+add_action('wp_print_styles', 'goods_add_stylesheet');
+
+// enqueue stylesheet for the catalog pages 
 function goods_add_stylesheet() {
-    if ( is_tax('goods_category') || is_post_type_archive('goods') || is_singular('goods') ) {
-    wp_enqueue_style('catalog-style', plugins_url('catalog-style.css', __FILE__));
+    if (is_tax('goods_category') || is_tax('goods_tag') || is_post_type_archive('goods') || is_singular('goods')) {
+        wp_register_style('catalog-style', plugins_url('catalog-style.css', __FILE__));
+        wp_enqueue_style('catalog-style');
     }
 }
-// use style for catalog
-add_action('wp_enqueue_scripts', 'goods_add_stylesheet');
 
 // breadcrumbs
 // based on http://snipplr.com/view/57988/ and https://gist.github.com/TCotton/4723438
@@ -374,34 +461,36 @@ function goods_pagination($pages = '', $range = 2) {
 }
 
 // exclude children
-function exclude_children ( $query ) {
-    if( $query->is_main_query() && $query->is_tax( 'goods_category' ) ):
+function exclude_children($query) {
+    if ($query->is_main_query() && $query->is_tax('goods_category')):
 
-    $tax_obj = $query->get_queried_object();
+        $tax_obj = $query->get_queried_object();
 
-    $tax_query = array(
-                    'taxonomy' => $tax_obj->taxonomy,
-                    'field' => 'slug',
-                    'terms' => $tax_obj->slug,
-                    'include_children' => FALSE
-            );
-   $query->tax_query->queries[] = $tax_query;
-   $query->query_vars['tax_query'] = $query->tax_query->queries;
+        $tax_query = array(
+            'taxonomy' => $tax_obj->taxonomy,
+            'field' => 'slug',
+            'terms' => $tax_obj->slug,
+            'include_children' => FALSE
+        );
+        $query->tax_query->queries[] = $tax_query;
+        $query->query_vars['tax_query'] = $query->tax_query->queries;
 
-   endif;
+    endif;
 }
-add_action( 'pre_get_posts', 'exclude_children' );
+
+add_action('pre_get_posts', 'exclude_children');
 
 // items per page
-function goods_pagesize( $query ) {
-    if ( is_admin() || ! $query->is_main_query() )
+function goods_pagesize($query) {
+    if (is_admin() || !$query->is_main_query())
         return;
 
-    if ( is_tax( 'goods_category' ) ) {
+    if (is_tax('goods_category') || is_tax('goods_tag')) {
         // display number of posts
         $p = get_option('goods_option_name');
-        $query->set( 'posts_per_page', $p['items_per_page'] );
+        $query->set('posts_per_page', $p['items_per_page']);
         return;
     }
 }
-add_action( 'pre_get_posts', 'goods_pagesize', 1 );
+
+add_action('pre_get_posts', 'goods_pagesize', 1);

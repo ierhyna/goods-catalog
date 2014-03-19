@@ -1,6 +1,7 @@
 <?php
+ 
 /*
- * Template: Category page
+ * Template: Tag page
  */
 
 get_header();
@@ -33,24 +34,6 @@ $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
         echo '<div class="single-category-title">' . single_cat_title('', false) . '</div>';
         echo '<p>' . category_description() . '</p>';
 
-        // show sub-categories only in first page, if paged
-        if (!is_paged()) {
-            // show sub-categories list
-            $current_term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
-            $args = array(
-                'parent' => $current_term->term_id,
-                'taxonomy' => $current_term->taxonomy,
-                'hide_empty' => 0,
-                'hierarchical' => true,
-                'depth' => 1
-            );
-
-            $category_list = get_categories($args);
-            // include
-            include 'content-goods_category.php';
-
-            echo "<hr>";
-        }
 
 // Start the Loop
         while (have_posts()) {
