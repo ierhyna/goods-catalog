@@ -50,7 +50,6 @@
 /* set width */
 .goods-info {
     float: left;
-    max-width: 60%;
 }
 .goods-price {
     font-weight: bold;

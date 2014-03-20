@@ -1,10 +1,9 @@
 <?php
-
 /*
   Plugin Name: Goods Catalog
   Plugin URI: http://oriolo.ru/wordpress/goods-catalog/
   Description: Plugin that creates simple catalog of goods.
-  Version: 0.4.6
+  Version: 0.4.7
   Author: Irina Sokolovskaya
   Author URI: http://oriolo.ru/
   License: GNU General Public License v2 or later
@@ -39,8 +38,9 @@ ini_set('display_errors', 0);
 
 // localization
 add_action('plugins_loaded', 'gcat_init');
+
 function gcat_init() {
-     load_plugin_textdomain( 'gcat', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+    load_plugin_textdomain('gcat', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 }
 
 // options page
@@ -324,7 +324,7 @@ function goods_tag_template($taxonomy) {
         if (file_exists(plugin_dir_path(__FILE__) . '/taxonomy-goods_tag.php'))
             return plugin_dir_path(__FILE__) . '/taxonomy-goods_tag.php';
     }
-    return $taxonomy; 
+    return $taxonomy;
 }
 
 add_action('init', 'create_goods');
@@ -339,6 +339,42 @@ function goods_add_stylesheet() {
         wp_enqueue_style('catalog-style');
     }
 }
+
+// enqueue users stylesheet for the catalog pages 
+function goods_add_user_stylesheet() {
+    if (is_tax('goods_category') || is_tax('goods_tag') || is_post_type_archive('goods') || is_singular('goods')) {
+        $p = get_option('goods_option_name');
+        ?>
+        <style>
+            .goods-catalog {
+                <?php
+                if (isset($p['container_width'])) {
+                    echo "width: " . $p['container_width'] . "%";
+                }
+                ?>;
+                <?php
+                if (isset($p['center_container'])) {
+                    echo 'margin: 0 auto;';
+                }
+                ?>
+            }
+            .goods-info {
+                <?php
+                if (isset($p['info_width'])) {
+                    echo "width: " . $p['info_width'] . "%";
+                }
+                else {
+                    echo "width: 60%;";
+                }
+                ?>
+            }
+        </style>
+        <?php
+    }
+}
+
+// load
+add_action('wp_head', 'goods_add_user_stylesheet', 40);
 
 // breadcrumbs
 // based on http://snipplr.com/view/57988/ and https://gist.github.com/TCotton/4723438

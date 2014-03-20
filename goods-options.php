@@ -24,7 +24,7 @@ class GoodsSettingsPage {
     public function add_plugin_page() {
         // This page will be under "Settings"
         add_submenu_page(
-                'edit.php?post_type=goods', __('Goods Catalog Settings', 'gcat'),  __('Goods Catalog Settings', 'gcat'), 'manage_options', 'goods-setting-admin', array($this, 'create_admin_page')
+                'edit.php?post_type=goods', __('Goods Catalog Settings', 'gcat'), __('Goods Catalog Settings', 'gcat'), 'manage_options', 'goods-setting-admin', array($this, 'create_admin_page')
         );
     }
 
@@ -36,15 +36,15 @@ class GoodsSettingsPage {
         $this->options = get_option('goods_option_name');
         ?>
         <div class="wrap">
-        <?php screen_icon(); ?>
+            <?php screen_icon(); ?>
             <h2><?php echo __('Goods Catalog Plugin Settings', 'gcat'); ?></h2>           
             <form method="post" action="options.php">
-        <?php
-        // This prints out all hidden setting fields
-        settings_fields('goods_option_group');
-        do_settings_sections('goods-setting-admin');
-        submit_button();
-        ?>
+                <?php
+                // This prints out all hidden setting fields
+                settings_fields('goods_option_group');
+                do_settings_sections('goods-setting-admin');
+                submit_button();
+                ?>
             </form>
         </div>
         <?php
@@ -67,6 +67,7 @@ class GoodsSettingsPage {
                 'goods-setting-admin' // Page
         );
 
+        // Options Start
         add_settings_field(
                 'items_per_page', // ID
                 __('Products per page', 'gcat'), // Title 
@@ -74,22 +75,28 @@ class GoodsSettingsPage {
                 'goods-setting-admin', // Page
                 'setting_section_id' // Section           
         );
-        /*
-          add_settings_field(
-          'tags_before',
-          'Tags before catalog',
-          array( $this, 'tags_before_callback' ),
-          'goods-setting-admin',
-          'setting_section_id'
-          );
-          add_settings_field(
-          'tags_after',
-          'Tags after catalog',
-          array( $this, 'tags_after_callback' ),
-          'goods-setting-admin',
-          'setting_section_id'
-          );
-         */
+
+        add_settings_field(
+                'container_width', // ID
+                __('Container Width', 'gcat'), // Title 
+                array($this, 'container_width_callback'), // Callback
+                'goods-setting-admin', // Page
+                'setting_section_id' // Section           
+        );
+        add_settings_field(
+                'center_container', // ID
+                __('Center Container', 'gcat'), // Title 
+                array($this, 'center_container_callback'), // Callback
+                'goods-setting-admin', // Page
+                'setting_section_id' // Section           
+        );
+        add_settings_field(
+                'info_width', // ID
+                __('Info Container Width on Product Page', 'gcat'), // Title 
+                array($this, 'info_width_callback'), // Callback
+                'goods-setting-admin', // Page
+                'setting_section_id' // Section           
+        );
     }
 
     /**
@@ -101,13 +108,16 @@ class GoodsSettingsPage {
         $new_input = array();
         if (isset($input['items_per_page']))
             $new_input['items_per_page'] = absint($input['items_per_page']);
-        /*
-          if( isset( $input['tags_before'] ) )
-          $new_input['tags_before'] = sanitize_text_field( $input['tags_before'] );
 
-          if( isset( $input['tags_after'] ) )
-          $new_input['tags_after'] = sanitize_text_field( $input['tags_after'] );
-         */
+        if (isset($input['container_width']))
+            $new_input['container_width'] = absint($input['container_width']);
+
+        if (isset($input['center_container']))
+            $new_input['center_container'] = absint($input['center_container']);
+        
+        if (isset($input['info_width']))
+            $new_input['info_width'] = absint($input['info_width']);
+
         return $new_input;
     }
 
@@ -123,32 +133,33 @@ class GoodsSettingsPage {
      */
     public function items_per_page_callback() {
         printf(
-                '<input type="number" step="1" id="items_per_page" class="small-text" name="goods_option_name[items_per_page]" value="%s" />', isset($this->options['items_per_page']) ? esc_attr($this->options['items_per_page']) : ''
+                '<input type="number" step="1" id="items_per_page" class="small-text" name="goods_option_name[items_per_page]" value="%s" />', isset($this->options['items_per_page']) ? esc_attr($this->options['items_per_page']) : '12'
         );
     }
 
-    /**
-     * Get the settings option array and print one of its values
+    public function container_width_callback() {
+        printf(
+                '<input type="number" id="container_width" class="small-text" name="goods_option_name[container_width]" value="%s" />', isset($this->options['container_width']) ? esc_attr($this->options['container_width']) : '100'
+        );
+        echo '%, ' . __('by default 100', 'gcat');
+        echo "<p>" . __("If the catalog's container is bigger than your theme's container, change it here", "gcat") . "</p>";
+    }
 
-      public function tags_before_callback()
-      {
-      printf(
-      '<input type="text" id="tags_before" name="goods_option_name[tags_before]" value="%s" />',
-      isset( $this->options['tags_before'] ) ? esc_attr( $this->options['tags_before']) : ''
-      );
-      }
-     */
-    /**
-     * Get the settings option array and print one of its values
+    public function center_container_callback() {
+        ?>
+        <input type="checkbox" name="goods_option_name[center_container]" id="center_container" value="1" <?php checked(isset($this->options['center_container']), 1); ?> />
+        <?php
+        echo "<p>" . __("Add 'margin: 0 auto;' to the container. If you have changed container's width, you should also turn on this option", "gcat") . "</p>";
+    }
+    
+    public function info_width_callback() {
+        printf(
+                '<input type="number" id="info_width" class="small-text" name="goods_option_name[info_width]" value="%s" />', isset($this->options['info_width']) ? esc_attr($this->options['info_width']) : '60'
+        );
+        echo '%, ' . __('by default 60', 'gcat');
+        echo "<p>" . __("Set width of Product Info Container on single product page. In that container are located: name, price, SKU, short description, categories and tags of the product. With the smaller width the container will be on the right of product thumbnail, with the bigger width it will be under product thumbnail", "gcat") . "</p>";
+    }
 
-      public function tags_after_callback()
-      {
-      printf(
-      '<input type="text" id="tags_after" name="goods_option_name[tags_after]" value="%s" />',
-      isset( $this->options['tags_after'] ) ? esc_attr( $this->options['tags_after']) : ''
-      );
-      }
-     */
 }
 
 if (is_admin())

@@ -1,0 +1,260 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Goods Catalog\n"
+"POT-Creation-Date: 2014-03-20 16:00+0600\n"
+"PO-Revision-Date: 2014-03-20 16:00+0600\n"
+"Last-Translator: Irina Sokolovskaya <sokolovskaja.irina@gmail.com>\n"
+"Language-Team: Irina Sokolovskaja <sokolovskaja.irina@gmail.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../goods-cat/content-goods_category.php:7
+#, php-format
+msgid "Go to cetegory %s"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:53
+msgid "Goods"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:54
+msgid "Item"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:55
+msgid "Add"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:56
+msgid "Add new item"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:57
+msgid "Edit"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:58
+msgid "Edit item"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:59
+msgid "New item"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:60
+msgid "View"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:61
+msgid "View of items"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:62
+msgid "Search items"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:63
+msgid "Items not found"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:64
+msgid "Item is not found in trash"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:80
+msgid "Item Options"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:86
+msgid "Price"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:87
+msgid "Enter price here"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:93
+msgid "SKU"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:94
+msgid "Enter product ID (SKU)"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:100
+msgid "Short Description"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:101
+msgid "Enter description here"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:184
+msgid "Categories"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:185
+msgid "Add category"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:186
+msgid "New category"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:204 ../goods-cat/goods-cat.php:205
+msgid "Tags"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:206
+msgid "All Items"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:207
+msgid "Parent Item"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:208
+msgid "Parent Item:"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:209
+msgid "New Item Name"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:210
+msgid "Add New Item"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:211
+msgid "Edit Item"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:212
+msgid "Update Item"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:213
+msgid "Separate items with commas"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:214
+msgid "Search Items"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:215
+msgid "Add or remove items"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:216
+msgid "Choose from the most used items"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:217
+msgid "Not Found"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:248
+msgid "Categories:&nbsp;"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:250
+msgid "Tags:&nbsp;"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:389
+msgid "Caught exception: "
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:420
+msgid "Catalog"
+msgstr ""
+
+#: ../goods-cat/goods-cat.php:477
+msgid "Pages:"
+msgstr ""
+
+#: ../goods-cat/goods-options.php:27
+msgid "Goods Catalog Settings"
+msgstr ""
+
+#: ../goods-cat/goods-options.php:40
+msgid "Goods Catalog Plugin Settings"
+msgstr ""
+
+#: ../goods-cat/goods-options.php:65
+msgid "Catalog View Settings"
+msgstr ""
+
+#: ../goods-cat/goods-options.php:73
+msgid "Products per page"
+msgstr ""
+
+#: ../goods-cat/goods-options.php:81
+msgid "Container Width"
+msgstr ""
+
+#: ../goods-cat/goods-options.php:88
+msgid "Center Container"
+msgstr ""
+
+#: ../goods-cat/goods-options.php:95
+msgid "Info Container Width on Product Page"
+msgstr ""
+
+#: ../goods-cat/goods-options.php:128
+msgid "Enter your settings below:"
+msgstr ""
+
+#: ../goods-cat/goods-options.php:144
+msgid "by default 100"
+msgstr ""
+
+#: ../goods-cat/goods-options.php:145
+msgid ""
+"If the catalog's container is bigger than your theme's container, change it "
+"here"
+msgstr ""
+
+#: ../goods-cat/goods-options.php:152
+msgid ""
+"Add 'margin: 0 auto;' to the container. If you have changed container's "
+"width, you should also turn on this option"
+msgstr ""
+
+#: ../goods-cat/goods-options.php:159
+msgid "by default 60"
+msgstr ""
+
+#: ../goods-cat/goods-options.php:160
+msgid ""
+"Set width of Product Info Container on single product page. In that "
+"container are located: name, price, SKU, short description, categories and "
+"tags of the product. With the smaller width the container will be on the "
+"right of product thumbnail, with the bigger width it will be under product "
+"thumbnail"
+msgstr ""
+
+#: ../goods-cat/single-goods.php:55
+#: ../goods-cat/taxonomy-goods_category.php:83
+#: ../goods-cat/taxonomy-goods_tag.php:66
+msgid "Price:"
+msgstr ""
+
+#: ../goods-cat/single-goods.php:60
+#: ../goods-cat/taxonomy-goods_category.php:88
+#: ../goods-cat/taxonomy-goods_tag.php:71
+msgid "SKU:"
+msgstr ""
+
+#: ../goods-cat/taxonomy-goods_category.php:102
+#: ../goods-cat/taxonomy-goods_tag.php:85
+msgid "There are no products in the category."
+msgstr ""
