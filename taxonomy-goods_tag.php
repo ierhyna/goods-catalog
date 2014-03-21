@@ -5,6 +5,9 @@
  */
 
 get_header();
+echo '<div class="goods-catalog-container">';
+load_template ( dirname( __FILE__ ) . '/sidebar-goods.php' ) ;
+
 $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
 ?>
 <div class="goods-catalog">
@@ -98,4 +101,5 @@ $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
     </div>
 </div>
 <?php
+echo '</div>';
 get_footer();

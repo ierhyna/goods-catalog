@@ -59,7 +59,8 @@ class GoodsSettingsPage {
                 'goods_option_name', // Option name
                 array($this, 'sanitize') // Sanitize
         );
-
+        
+        // Section Start
         add_settings_section(
                 'setting_section_id', // ID
                 __('Catalog View Settings', 'gcat'), // Title
@@ -97,6 +98,30 @@ class GoodsSettingsPage {
                 'goods-setting-admin', // Page
                 'setting_section_id' // Section           
         );
+        
+        // Section Start
+        add_settings_section(
+                'sidebar_section_id', // ID
+                __('Sidebar Settings', 'gcat'), // Title
+                array($this, 'print_section_sidebar'), // Callback
+                'goods-setting-admin' // Page
+        );
+        
+        // Options Start
+        add_settings_field(
+                'use_sidebar', // ID
+                __('Use plugin\'s sidebar', 'gcat'), // Title 
+                array($this, 'use_sidebar_callback'), // Callback
+                'goods-setting-admin', // Page
+                'sidebar_section_id' // Section           
+        );
+        add_settings_field(
+                'sidebar_width', // ID
+                __('Sidebar Width', 'gcat'), // Title 
+                array($this, 'sidebar_width_callback'), // Callback
+                'goods-setting-admin', // Page
+                'sidebar_section_id' // Section           
+        );
     }
 
     /**
@@ -117,6 +142,12 @@ class GoodsSettingsPage {
         
         if (isset($input['info_width']))
             $new_input['info_width'] = absint($input['info_width']);
+        
+        if (isset($input['use_sidebar']))
+            $new_input['use_sidebar'] = absint($input['use_sidebar']);
+        
+        if (isset($input['sidebar_width']))
+            $new_input['sidebar_width'] = absint($input['sidebar_width']);
 
         return $new_input;
     }
@@ -126,6 +157,10 @@ class GoodsSettingsPage {
      */
     public function print_section_info() {
         print __('Enter your settings below:', 'gcat');
+    }
+    
+    public function print_section_sidebar() {
+        print __('If your theme\'s sidebar loads correctly on the catalog pages, you do not need to change anything here', 'gcat');
     }
 
     /**
@@ -159,7 +194,25 @@ class GoodsSettingsPage {
         echo '%, ' . __('by default 60', 'gcat');
         echo "<p>" . __("Set width of Product Info Container on single product page. In that container are located: name, price, SKU, short description, categories and tags of the product. With the smaller width the container will be on the right of product thumbnail, with the bigger width it will be under product thumbnail", "gcat") . "</p>";
     }
+    
+    /*
+     * Sidebar section
+     */
 
+    public function use_sidebar_callback() {
+        ?>
+        <input type="checkbox" name="goods_option_name[use_sidebar]" id="use_sidebar" value="1" <?php checked(isset($this->options['use_sidebar']), 1); ?> />
+        <?php
+        echo "<p>" . __("WARNING: the plugin's sidebar is under testing. If this option brokes your layot, just uncheck it, and please write me a letter with the theme name: sokolovskaja.irina@gmail.com. I'll be extremely thankful if you also would attach some screenshots", "gcat") . "</p>";
+    }
+    
+    public function sidebar_width_callback() {
+        printf(
+                '<input type="number" id="sidebar_width" class="small-text" name="goods_option_name[sidebar_width]" value="%s" />', isset($this->options['sidebar_width']) ? esc_attr($this->options['sidebar_width']) : '20'
+        );
+        echo '%, ' . __('by default 20', 'gcat');
+        echo "<p>" . __("Set width of the Sidebar", "gcat") . "</p>";
+    }
 }
 
 if (is_admin())

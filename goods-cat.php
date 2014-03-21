@@ -1,9 +1,10 @@
 <?php
+
 /*
   Plugin Name: Goods Catalog
   Plugin URI: http://oriolo.ru/wordpress/goods-catalog/
   Description: Plugin that creates simple catalog of goods.
-  Version: 0.4.7
+  Version: 0.4.8-dev
   Author: Irina Sokolovskaya
   Author URI: http://oriolo.ru/
   License: GNU General Public License v2 or later
@@ -36,15 +37,32 @@
 error_reporting(0);
 ini_set('display_errors', 0);
 
-// localization
+/*
+ * Localization
+ */
+
 add_action('plugins_loaded', 'gcat_init');
 
 function gcat_init() {
     load_plugin_textdomain('gcat', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 }
 
-// options page
+/*
+ * Use options
+ */
+
+$catalog_option = get_option('goods_option_name');
+
+/*
+ * Load options
+ */
+
 include ( plugin_dir_path(__FILE__) . 'goods-options.php' );
+include ( plugin_dir_path(__FILE__) . 'goods-options-style.php' );
+
+/*
+ * Create post type and taxonomies
+ */
 
 // create post type
 function create_goods() {
@@ -268,6 +286,33 @@ function get_goods_taxomonies($taxonomy, $id) {
 }
 
 /*
+ * Sidebar
+ */
+
+// Register Sidebar
+function goods_register_sidebar() {
+
+    $args = array(
+        'id' => 'goods-sidebar',
+        'name' => __('Goods Catalog Sidebar', 'gcat'),
+        'description' => __('Goods Catalog Widgets', 'gcat'),
+        'before_title' => '<h3 class="wigdettitle">',
+        'after_title' => '</h3>',
+        'before_widget' => '<div class="widget %2$s">',
+        'after_widget' => '</div>',
+    );
+    register_sidebar($args);
+}
+
+// Hook into the 'widgets_init' action
+add_action('widgets_init', 'goods_register_sidebar');
+
+/*
+ * Generating widget
+ */
+include ( plugin_dir_path(__FILE__) . 'goods-widgets.php' );
+
+/*
  *  Use custom templates for goods and catalog
  */
 
@@ -329,55 +374,11 @@ function goods_tag_template($taxonomy) {
 
 add_action('init', 'create_goods');
 
-// register hook 'wp_print_styles'
-add_action('wp_print_styles', 'goods_add_stylesheet');
+/*
+ * Breadcrumbs
+ * based on http://snipplr.com/view/57988/ and https://gist.github.com/TCotton/4723438
+ */
 
-// enqueue stylesheet for the catalog pages 
-function goods_add_stylesheet() {
-    if (is_tax('goods_category') || is_tax('goods_tag') || is_post_type_archive('goods') || is_singular('goods')) {
-        wp_register_style('catalog-style', plugins_url('catalog-style.css', __FILE__));
-        wp_enqueue_style('catalog-style');
-    }
-}
-
-// enqueue users stylesheet for the catalog pages 
-function goods_add_user_stylesheet() {
-    if (is_tax('goods_category') || is_tax('goods_tag') || is_post_type_archive('goods') || is_singular('goods')) {
-        $p = get_option('goods_option_name');
-        ?>
-        <style>
-            .goods-catalog {
-                <?php
-                if (isset($p['container_width'])) {
-                    echo "width: " . $p['container_width'] . "%";
-                }
-                ?>;
-                <?php
-                if (isset($p['center_container'])) {
-                    echo 'margin: 0 auto;';
-                }
-                ?>
-            }
-            .goods-info {
-                <?php
-                if (isset($p['info_width'])) {
-                    echo "width: " . $p['info_width'] . "%";
-                }
-                else {
-                    echo "width: 60%;";
-                }
-                ?>
-            }
-        </style>
-        <?php
-    }
-}
-
-// load
-add_action('wp_head', 'goods_add_user_stylesheet', 40);
-
-// breadcrumbs
-// based on http://snipplr.com/view/57988/ and https://gist.github.com/TCotton/4723438
 function get_term_parents($id, $taxonomy, $link = false, $separator = '/', $nicename = false, $visited = array()) {
     $chain = '';
     $parent = &get_term($id, $taxonomy);
@@ -414,6 +415,7 @@ function get_tag_id($tag) {
 }
 
 function my_breadcrumb($id = null) {
+    echo '<a href=" ' . home_url() . ' ">' . __('Home') . '</a> &gt; ';
     echo '<a href="';
     echo '/catalog';
     echo '">';
@@ -460,7 +462,10 @@ function my_breadcrumb($id = null) {
     }
 }
 
-// pagination 
+/*
+ * Pagination
+ */
+
 function goods_pagination($pages = '', $range = 2) {
     $showitems = ($range * 2) + 1;
     global $paged;
@@ -492,7 +497,10 @@ function goods_pagination($pages = '', $range = 2) {
     }
 }
 
-// exclude children
+/*
+ * Exclude children taxonomies posts from the query
+ */
+
 function exclude_children($query) {
     if ($query->is_main_query() && $query->is_tax('goods_category')):
 
@@ -512,15 +520,18 @@ function exclude_children($query) {
 
 add_action('pre_get_posts', 'exclude_children');
 
-// items per page
+/*
+ * Set items per page
+ */
+
 function goods_pagesize($query) {
     if (is_admin() || !$query->is_main_query())
         return;
 
     if (is_tax('goods_category') || is_tax('goods_tag')) {
         // display number of posts
-        $p = get_option('goods_option_name');
-        $query->set('posts_per_page', $p['items_per_page']);
+        global $catalog_option;
+        $query->set('posts_per_page', $catalog_option['items_per_page']);
         return;
     }
 }

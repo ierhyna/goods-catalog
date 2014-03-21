@@ -4,6 +4,8 @@
  */
 
 get_header();
+echo '<div class="goods-catalog-container">';
+load_template ( dirname( __FILE__ ) . '/sidebar-goods.php' ) ;
 
 echo '<div class="goods-catalog">';
 if (have_posts()) {
@@ -96,4 +98,5 @@ if (have_posts()) {
 } else {
     get_404_template();
 }
+echo '</div>';
 get_footer();

@@ -1,4 +1,4 @@
-/* Container */
+/* Containers */
 .goods-catalog {}
 
 /* Grid catalog */
@@ -13,7 +13,21 @@
     position: relative;
     overflow: hidden;
 }
-
+/* Sidebar */
+.goods-sidebar {
+    line-height: 2;
+}
+.goods-sidebar ul {
+    list-style: none;
+}
+.goods-sidebar li {
+}
+.goods-sidebar ul.children {
+    margin-left: 10px; 
+}
+.goods-sidebar .widgettitle {
+    margin-bottom: 20px;
+}
 /* Style products and categories */
 .goods-catalog h2 {
     font-size: 26px;
@@ -64,6 +78,7 @@
     font-size: 20px;
     font-weight: bold;
     margin: 20px 0 20px 0;
+    clear: none;
 }
 
 /* Pagination */
@@ -101,6 +116,13 @@
 */
 .goods-catalog .breadcrumbs {
     margin: 10px 0 20px 0;
+}
+
+/*
+* Sidebar
+*/
+.goods-sidebar {
+    float: left;
 }
 
 /* Common */
