@@ -1,7 +1,7 @@
 === Goods Catalog ===
 Contributors: oriolo
 Tags: catalog, catalogue, product, products, goods, product catalog, product catalogue, catalog of goods
-Stable tag: v0.4.7
+Stable tag: v0.5
 Requires at least: 3.3.0
 Tested up to: 3.8.1
 License: GNU General Public License v2 or later
@@ -14,6 +14,8 @@ The plugin creates simple catalog of goods, looking like Explorer in Windows. Th
 
 * Use thumbnails to add images for products;
 * You can use Taxonomy Images plugin (https://wordpress.org/plugins/taxonomy-images/) to add images for categories of products;
+
+You can also use special sidebar for the catalog, to show different widgets on the catalog and the other pages.
 
 Languages:
 
@@ -37,6 +39,12 @@ Languages:
 You need to update your permalinks. Just go to Console -> Settings -> Permalinks and press "Save". You don't need to change it.
 
 == Changelog ==
+
+= v0.5 =
+
+* Added sidebar
+* Created two widgets: categories list, tags cloud
+* Updated .POT file and Russian translation
 
 = v0.4.7 =
 

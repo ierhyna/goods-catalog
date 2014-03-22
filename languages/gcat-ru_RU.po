@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Goods Catalog\n"
-"POT-Creation-Date: 2014-03-20 15:54+0600\n"
-"PO-Revision-Date: 2014-03-20 15:54+0600\n"
+"POT-Creation-Date: 2014-03-22 13:03+0600\n"
+"PO-Revision-Date: 2014-03-22 13:11+0600\n"
 "Last-Translator: Irina Sokolovskaya <sokolovskaja.irina@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -15,168 +15,180 @@ msgstr ""
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../content-goods_category.php:7
+#: ../content-goods_category.php:18
 #, php-format
 msgid "Go to cetegory %s"
 msgstr "Перейти в рубрику  %s"
 
-#: ../goods-cat.php:53
+#: ../goods-cat.php:71
 msgid "Goods"
 msgstr "Товары"
 
-#: ../goods-cat.php:54
+#: ../goods-cat.php:72
 msgid "Item"
 msgstr "Товар"
 
-#: ../goods-cat.php:55
+#: ../goods-cat.php:73
 msgid "Add"
 msgstr "Добавить"
 
-#: ../goods-cat.php:56
+#: ../goods-cat.php:74
 msgid "Add new item"
 msgstr "Добавить новый товар"
 
-#: ../goods-cat.php:57
+#: ../goods-cat.php:75
 msgid "Edit"
 msgstr "Редактировать"
 
-#: ../goods-cat.php:58
+#: ../goods-cat.php:76
 msgid "Edit item"
 msgstr "Редактировать товар"
 
-#: ../goods-cat.php:59
+#: ../goods-cat.php:77
 msgid "New item"
 msgstr "Новый товар"
 
-#: ../goods-cat.php:60
+#: ../goods-cat.php:78
 msgid "View"
 msgstr "Вид"
 
-#: ../goods-cat.php:61
+#: ../goods-cat.php:79
 msgid "View of items"
 msgstr "Вид товаров"
 
-#: ../goods-cat.php:62
+#: ../goods-cat.php:80
 msgid "Search items"
 msgstr "Поиск"
 
-#: ../goods-cat.php:63
+#: ../goods-cat.php:81
 msgid "Items not found"
 msgstr "Не найдено"
 
-#: ../goods-cat.php:64
+#: ../goods-cat.php:82
 msgid "Item is not found in trash"
 msgstr "В корзине товаров не найдено"
 
-#: ../goods-cat.php:80
+#: ../goods-cat.php:98
 msgid "Item Options"
 msgstr "Опции"
 
-#: ../goods-cat.php:86
+#: ../goods-cat.php:104
 msgid "Price"
 msgstr "Цена"
 
-#: ../goods-cat.php:87
+#: ../goods-cat.php:105
 msgid "Enter price here"
 msgstr "Укажите цену"
 
-#: ../goods-cat.php:93
+#: ../goods-cat.php:111
 msgid "SKU"
 msgstr "Артикул"
 
-#: ../goods-cat.php:94
+#: ../goods-cat.php:112
 msgid "Enter product ID (SKU)"
 msgstr "Введите артикул товара"
 
-#: ../goods-cat.php:100
+#: ../goods-cat.php:118
 msgid "Short Description"
 msgstr "Короткое описание"
 
-#: ../goods-cat.php:101
+#: ../goods-cat.php:119
 msgid "Enter description here"
 msgstr "Введите описание"
 
-#: ../goods-cat.php:184
+#: ../goods-cat.php:202
 msgid "Categories"
 msgstr "Рубрики"
 
-#: ../goods-cat.php:185
+#: ../goods-cat.php:203
 msgid "Add category"
 msgstr "Добавить рубрику"
 
-#: ../goods-cat.php:186
+#: ../goods-cat.php:204
 msgid "New category"
 msgstr "Новая рубрика"
 
-#: ../goods-cat.php:204 ../goods-cat.php:205
+#: ../goods-cat.php:222 ../goods-cat.php:223
 msgid "Tags"
 msgstr "Метки"
 
-#: ../goods-cat.php:206
+#: ../goods-cat.php:224
 msgid "All Items"
 msgstr "Все "
 
-#: ../goods-cat.php:207
+#: ../goods-cat.php:225
 msgid "Parent Item"
 msgstr "Родительский элемент"
 
-#: ../goods-cat.php:208
+#: ../goods-cat.php:226
 msgid "Parent Item:"
 msgstr "Родительский элемент"
 
-#: ../goods-cat.php:209
+#: ../goods-cat.php:227
 msgid "New Item Name"
 msgstr "Название"
 
-#: ../goods-cat.php:210
+#: ../goods-cat.php:228
 msgid "Add New Item"
 msgstr "Добавить"
 
-#: ../goods-cat.php:211
+#: ../goods-cat.php:229
 msgid "Edit Item"
 msgstr "Редактировать"
 
-#: ../goods-cat.php:212
+#: ../goods-cat.php:230
 msgid "Update Item"
 msgstr "Обновить"
 
-#: ../goods-cat.php:213
+#: ../goods-cat.php:231
 msgid "Separate items with commas"
 msgstr "Разделяйте метки запятыми"
 
-#: ../goods-cat.php:214
+#: ../goods-cat.php:232
 msgid "Search Items"
 msgstr "Поиск"
 
-#: ../goods-cat.php:215
+#: ../goods-cat.php:233
 msgid "Add or remove items"
 msgstr "Добавить или удалить"
 
-#: ../goods-cat.php:216
+#: ../goods-cat.php:234
 msgid "Choose from the most used items"
 msgstr "Выбрать из часто используемых"
 
-#: ../goods-cat.php:217
+#: ../goods-cat.php:235
 msgid "Not Found"
 msgstr "Не найдено"
 
-#: ../goods-cat.php:248
+#: ../goods-cat.php:266
 msgid "Categories:&nbsp;"
 msgstr "Рубрики:&nbsp;"
 
-#: ../goods-cat.php:250
+#: ../goods-cat.php:268
 msgid "Tags:&nbsp;"
 msgstr "Метки:&nbsp;"
 
-#: ../goods-cat.php:389
+#: ../goods-cat.php:297
+msgid "Goods Catalog Sidebar"
+msgstr "Сайдбар каталога товаров"
+
+#: ../goods-cat.php:298
+msgid "Goods Catalog Widgets"
+msgstr "Виджеты каталога товаров"
+
+#: ../goods-cat.php:400
 msgid "Caught exception: "
 msgstr "Внимание:"
 
-#: ../goods-cat.php:420
+#: ../goods-cat.php:428
+msgid "Home"
+msgstr "Главная"
+
+#: ../goods-cat.php:432
 msgid "Catalog"
 msgstr "Каталог"
 
-#: ../goods-cat.php:477
+#: ../goods-cat.php:492
 msgid "Pages:"
 msgstr "Страницы:"
 
@@ -188,35 +200,55 @@ msgstr "Настройки плагина Goods Catalog"
 msgid "Goods Catalog Plugin Settings"
 msgstr "Настройки плагина Goods Catalog"
 
-#: ../goods-options.php:65
+#: ../goods-options.php:66
 msgid "Catalog View Settings"
 msgstr "Настройки вида"
 
-#: ../goods-options.php:73
+#: ../goods-options.php:74
 msgid "Products per page"
 msgstr "Продуктов на странице"
 
-#: ../goods-options.php:81
+#: ../goods-options.php:82
 msgid "Container Width"
 msgstr "Ширина контейнера"
 
-#: ../goods-options.php:88
+#: ../goods-options.php:89
 msgid "Center Container"
 msgstr "Выровнять контейнер по центру"
 
-#: ../goods-options.php:95
+#: ../goods-options.php:96
 msgid "Info Container Width on Product Page"
 msgstr "Ширина контейнера с информацией о продукте на странице продукта"
 
-#: ../goods-options.php:128
+#: ../goods-options.php:105
+msgid "Sidebar Settings"
+msgstr "Настройки сайдбара"
+
+#: ../goods-options.php:113
+msgid "Use plugin's sidebar"
+msgstr "Использовать сайдбар плагина"
+
+#: ../goods-options.php:120
+msgid "Sidebar Width"
+msgstr "Ширина сайдбара"
+
+#: ../goods-options.php:159
 msgid "Enter your settings below:"
 msgstr "Введите настройки:"
 
-#: ../goods-options.php:144
+#: ../goods-options.php:163
+msgid ""
+"If your theme's sidebar loads correctly on the catalog pages, you do not "
+"need to change anything here"
+msgstr ""
+"Если на страницах каталога загружается сайдбар из используемой темы, вам не "
+"нужно вносить изменения в эти настройки"
+
+#: ../goods-options.php:179
 msgid "by default 100"
 msgstr "по-умолчанию 100"
 
-#: ../goods-options.php:145
+#: ../goods-options.php:180
 msgid ""
 "If the catalog's container is bigger than your theme's container, change it "
 "here"
@@ -224,7 +256,7 @@ msgstr ""
 "Здесь можно поменять ширину контейнера каталога, если он шире, чем контейнер "
 "темы"
 
-#: ../goods-options.php:152
+#: ../goods-options.php:187
 msgid ""
 "Add 'margin: 0 auto;' to the container. If you have changed container's "
 "width, you should also turn on this option"
@@ -232,11 +264,11 @@ msgstr ""
 "Добавить к контейнеру свойство 'margin: 0 auto;'. Если вы поменяли ширину "
 "контейнера, то скоре всего, нужно отметить и эту опцию"
 
-#: ../goods-options.php:159
+#: ../goods-options.php:194
 msgid "by default 60"
 msgstr "по-умолчанию 60"
 
-#: ../goods-options.php:160
+#: ../goods-options.php:195
 msgid ""
 "Set width of Product Info Container on single product page. In that "
 "container are located: name, price, SKU, short description, categories and "
@@ -250,17 +282,53 @@ msgstr ""
 "будет находиться справа от изображения товара, если большую - то под "
 "изображением."
 
-#: ../single-goods.php:55 ../taxonomy-goods_category.php:83
-#: ../taxonomy-goods_tag.php:66
+#: ../goods-options.php:206
+msgid ""
+"WARNING: the plugin's sidebar is under testing. If this option brokes your "
+"layot, just uncheck it, and please write me a letter with the theme name: "
+"sokolovskaja.irina@gmail.com. I'll be extremely thankful if you also would "
+"attach some screenshots"
+msgstr ""
+"ВНИМАНИЕ: сайдбар плагина находится в стадии тестирования. Если включение "
+"этой опции нарушает верстку темы, отключите сайдбар, и, пожалуйста, напишите "
+"мне письмо с названием используемой темы: sokolovskaja.irina@gmail.com. Я "
+"буду очень благодарна, если вы также приложите скриншоты."
+
+#: ../goods-options.php:213
+msgid "by default 20"
+msgstr "по-умолчанию 20"
+
+#: ../goods-options.php:214
+msgid "Set width of the Sidebar"
+msgstr "Установить ширину сайдбара"
+
+#: ../goods-widgets.php:21
+msgid "Goods Catalog categories list"
+msgstr "Список рубрик каталога товаров"
+
+#: ../goods-widgets.php:62
+msgid "Products Categories"
+msgstr "Рубрики продуктов"
+
+#: ../goods-widgets.php:107
+msgid "Goods Catalog tags cloud"
+msgstr "Облако тегов каталога товаров"
+
+#: ../goods-widgets.php:140
+msgid "Products Tags"
+msgstr "Метки продуктов"
+
+#: ../single-goods.php:57 ../taxonomy-goods_category.php:86
+#: ../taxonomy-goods_tag.php:69
 msgid "Price:"
 msgstr "Цена:"
 
-#: ../single-goods.php:60 ../taxonomy-goods_category.php:88
-#: ../taxonomy-goods_tag.php:71
+#: ../single-goods.php:62 ../taxonomy-goods_category.php:91
+#: ../taxonomy-goods_tag.php:74
 msgid "SKU:"
 msgstr "Артикул:"
 
-#: ../taxonomy-goods_category.php:102 ../taxonomy-goods_tag.php:85
+#: ../taxonomy-goods_category.php:105 ../taxonomy-goods_tag.php:88
 msgid "There are no products in the category."
 msgstr "В этой рубрике нет товаров."
 

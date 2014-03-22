@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Goods Catalog\n"
-"POT-Creation-Date: 2014-03-20 16:00+0600\n"
-"PO-Revision-Date: 2014-03-20 16:00+0600\n"
+"POT-Creation-Date: 2014-03-22 13:02+0600\n"
+"PO-Revision-Date: 2014-03-22 13:02+0600\n"
 "Last-Translator: Irina Sokolovskaya <sokolovskaja.irina@gmail.com>\n"
 "Language-Team: Irina Sokolovskaja <sokolovskaja.irina@gmail.com>\n"
 "Language: en_US\n"
@@ -16,224 +16,254 @@ msgstr ""
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../goods-cat/content-goods_category.php:7
+#: ../goods-catalog/content-goods_category.php:18
 #, php-format
 msgid "Go to cetegory %s"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:53
+#: ../goods-catalog/goods-cat.php:71
 msgid "Goods"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:54
+#: ../goods-catalog/goods-cat.php:72
 msgid "Item"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:55
+#: ../goods-catalog/goods-cat.php:73
 msgid "Add"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:56
+#: ../goods-catalog/goods-cat.php:74
 msgid "Add new item"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:57
+#: ../goods-catalog/goods-cat.php:75
 msgid "Edit"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:58
+#: ../goods-catalog/goods-cat.php:76
 msgid "Edit item"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:59
+#: ../goods-catalog/goods-cat.php:77
 msgid "New item"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:60
+#: ../goods-catalog/goods-cat.php:78
 msgid "View"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:61
+#: ../goods-catalog/goods-cat.php:79
 msgid "View of items"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:62
+#: ../goods-catalog/goods-cat.php:80
 msgid "Search items"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:63
+#: ../goods-catalog/goods-cat.php:81
 msgid "Items not found"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:64
+#: ../goods-catalog/goods-cat.php:82
 msgid "Item is not found in trash"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:80
+#: ../goods-catalog/goods-cat.php:98
 msgid "Item Options"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:86
+#: ../goods-catalog/goods-cat.php:104
 msgid "Price"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:87
+#: ../goods-catalog/goods-cat.php:105
 msgid "Enter price here"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:93
+#: ../goods-catalog/goods-cat.php:111
 msgid "SKU"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:94
+#: ../goods-catalog/goods-cat.php:112
 msgid "Enter product ID (SKU)"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:100
+#: ../goods-catalog/goods-cat.php:118
 msgid "Short Description"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:101
+#: ../goods-catalog/goods-cat.php:119
 msgid "Enter description here"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:184
+#: ../goods-catalog/goods-cat.php:202
 msgid "Categories"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:185
+#: ../goods-catalog/goods-cat.php:203
 msgid "Add category"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:186
+#: ../goods-catalog/goods-cat.php:204
 msgid "New category"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:204 ../goods-cat/goods-cat.php:205
+#: ../goods-catalog/goods-cat.php:222 ../goods-catalog/goods-cat.php:223
 msgid "Tags"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:206
+#: ../goods-catalog/goods-cat.php:224
 msgid "All Items"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:207
+#: ../goods-catalog/goods-cat.php:225
 msgid "Parent Item"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:208
+#: ../goods-catalog/goods-cat.php:226
 msgid "Parent Item:"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:209
+#: ../goods-catalog/goods-cat.php:227
 msgid "New Item Name"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:210
+#: ../goods-catalog/goods-cat.php:228
 msgid "Add New Item"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:211
+#: ../goods-catalog/goods-cat.php:229
 msgid "Edit Item"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:212
+#: ../goods-catalog/goods-cat.php:230
 msgid "Update Item"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:213
+#: ../goods-catalog/goods-cat.php:231
 msgid "Separate items with commas"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:214
+#: ../goods-catalog/goods-cat.php:232
 msgid "Search Items"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:215
+#: ../goods-catalog/goods-cat.php:233
 msgid "Add or remove items"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:216
+#: ../goods-catalog/goods-cat.php:234
 msgid "Choose from the most used items"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:217
+#: ../goods-catalog/goods-cat.php:235
 msgid "Not Found"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:248
+#: ../goods-catalog/goods-cat.php:266
 msgid "Categories:&nbsp;"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:250
+#: ../goods-catalog/goods-cat.php:268
 msgid "Tags:&nbsp;"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:389
+#: ../goods-catalog/goods-cat.php:297
+msgid "Goods Catalog Sidebar"
+msgstr ""
+
+#: ../goods-catalog/goods-cat.php:298
+msgid "Goods Catalog Widgets"
+msgstr ""
+
+#: ../goods-catalog/goods-cat.php:400
 msgid "Caught exception: "
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:420
+#: ../goods-catalog/goods-cat.php:428
+msgid "Home"
+msgstr ""
+
+#: ../goods-catalog/goods-cat.php:432
 msgid "Catalog"
 msgstr ""
 
-#: ../goods-cat/goods-cat.php:477
+#: ../goods-catalog/goods-cat.php:492
 msgid "Pages:"
 msgstr ""
 
-#: ../goods-cat/goods-options.php:27
+#: ../goods-catalog/goods-options.php:27
 msgid "Goods Catalog Settings"
 msgstr ""
 
-#: ../goods-cat/goods-options.php:40
+#: ../goods-catalog/goods-options.php:40
 msgid "Goods Catalog Plugin Settings"
 msgstr ""
 
-#: ../goods-cat/goods-options.php:65
+#: ../goods-catalog/goods-options.php:66
 msgid "Catalog View Settings"
 msgstr ""
 
-#: ../goods-cat/goods-options.php:73
+#: ../goods-catalog/goods-options.php:74
 msgid "Products per page"
 msgstr ""
 
-#: ../goods-cat/goods-options.php:81
+#: ../goods-catalog/goods-options.php:82
 msgid "Container Width"
 msgstr ""
 
-#: ../goods-cat/goods-options.php:88
+#: ../goods-catalog/goods-options.php:89
 msgid "Center Container"
 msgstr ""
 
-#: ../goods-cat/goods-options.php:95
+#: ../goods-catalog/goods-options.php:96
 msgid "Info Container Width on Product Page"
 msgstr ""
 
-#: ../goods-cat/goods-options.php:128
+#: ../goods-catalog/goods-options.php:105
+msgid "Sidebar Settings"
+msgstr ""
+
+#: ../goods-catalog/goods-options.php:113
+msgid "Use plugin's sidebar"
+msgstr ""
+
+#: ../goods-catalog/goods-options.php:120
+msgid "Sidebar Width"
+msgstr ""
+
+#: ../goods-catalog/goods-options.php:159
 msgid "Enter your settings below:"
 msgstr ""
 
-#: ../goods-cat/goods-options.php:144
+#: ../goods-catalog/goods-options.php:163
+msgid ""
+"If your theme's sidebar loads correctly on the catalog pages, you do not "
+"need to change anything here"
+msgstr ""
+
+#: ../goods-catalog/goods-options.php:179
 msgid "by default 100"
 msgstr ""
 
-#: ../goods-cat/goods-options.php:145
+#: ../goods-catalog/goods-options.php:180
 msgid ""
 "If the catalog's container is bigger than your theme's container, change it "
 "here"
 msgstr ""
 
-#: ../goods-cat/goods-options.php:152
+#: ../goods-catalog/goods-options.php:187
 msgid ""
 "Add 'margin: 0 auto;' to the container. If you have changed container's "
 "width, you should also turn on this option"
 msgstr ""
 
-#: ../goods-cat/goods-options.php:159
+#: ../goods-catalog/goods-options.php:194
 msgid "by default 60"
 msgstr ""
 
-#: ../goods-cat/goods-options.php:160
+#: ../goods-catalog/goods-options.php:195
 msgid ""
 "Set width of Product Info Container on single product page. In that "
 "container are located: name, price, SKU, short description, categories and "
@@ -242,19 +272,51 @@ msgid ""
 "thumbnail"
 msgstr ""
 
-#: ../goods-cat/single-goods.php:55
-#: ../goods-cat/taxonomy-goods_category.php:83
-#: ../goods-cat/taxonomy-goods_tag.php:66
+#: ../goods-catalog/goods-options.php:206
+msgid ""
+"WARNING: the plugin's sidebar is under testing. If this option brokes your "
+"layot, just uncheck it, and please write me a letter with the theme name: "
+"sokolovskaja.irina@gmail.com. I'll be extremely thankful if you also would "
+"attach some screenshots"
+msgstr ""
+
+#: ../goods-catalog/goods-options.php:213
+msgid "by default 20"
+msgstr ""
+
+#: ../goods-catalog/goods-options.php:214
+msgid "Set width of the Sidebar"
+msgstr ""
+
+#: ../goods-catalog/goods-widgets.php:21
+msgid "Goods Catalog categories list"
+msgstr ""
+
+#: ../goods-catalog/goods-widgets.php:62
+msgid "Products Categories"
+msgstr ""
+
+#: ../goods-catalog/goods-widgets.php:107
+msgid "Goods Catalog tags cloud"
+msgstr ""
+
+#: ../goods-catalog/goods-widgets.php:140
+msgid "Products Tags"
+msgstr ""
+
+#: ../goods-catalog/single-goods.php:57
+#: ../goods-catalog/taxonomy-goods_category.php:86
+#: ../goods-catalog/taxonomy-goods_tag.php:69
 msgid "Price:"
 msgstr ""
 
-#: ../goods-cat/single-goods.php:60
-#: ../goods-cat/taxonomy-goods_category.php:88
-#: ../goods-cat/taxonomy-goods_tag.php:71
+#: ../goods-catalog/single-goods.php:62
+#: ../goods-catalog/taxonomy-goods_category.php:91
+#: ../goods-catalog/taxonomy-goods_tag.php:74
 msgid "SKU:"
 msgstr ""
 
-#: ../goods-cat/taxonomy-goods_category.php:102
-#: ../goods-cat/taxonomy-goods_tag.php:85
+#: ../goods-catalog/taxonomy-goods_category.php:105
+#: ../goods-catalog/taxonomy-goods_tag.php:88
 msgid "There are no products in the category."
 msgstr ""

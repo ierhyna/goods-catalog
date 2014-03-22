@@ -19,3 +19,4 @@ include 'content-goods_category.php';
 echo '</div>';
 echo '</div>';
 get_footer();
+ 

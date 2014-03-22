@@ -4,7 +4,7 @@
   Plugin Name: Goods Catalog
   Plugin URI: http://oriolo.ru/wordpress/goods-catalog/
   Description: Plugin that creates simple catalog of goods.
-  Version: 0.4.8-dev
+  Version: 0.5
   Author: Irina Sokolovskaya
   Author URI: http://oriolo.ru/
   License: GNU General Public License v2 or later
@@ -316,6 +316,8 @@ include ( plugin_dir_path(__FILE__) . 'goods-widgets.php' );
  *  Use custom templates for goods and catalog
  */
 
+// Checks the themes "get_stylesheet_directory()" root directory for both the custom single & archive templates
+// if not found it uses the templates in the plugin "plugin_dir_path( __FILE__ )" template directory.
 // Filter the taxonomy-goods_category
 add_filter('archive_template', 'goods_archive_template');
 
@@ -324,8 +326,16 @@ function goods_archive_template($archive) {
 
 // Checks for single template by post type
     if (is_post_type_archive('goods')) {
-        if (file_exists(plugin_dir_path(__FILE__) . '/archive-goods.php'))
-            return plugin_dir_path(__FILE__) . '/archive-goods.php';
+        // check if there is file in the theme's folder
+        if (file_exists(get_template_directory() . '/archive-goods.php')) {
+            return get_template_directory() . '/archive-goods.php';
+        } 
+        // if the file not found in the theme's folder load template from plugin
+        else {
+            if (file_exists(plugin_dir_path(__FILE__) . '/archive-goods.php')) {
+                return plugin_dir_path(__FILE__) . '/archive-goods.php';
+            }
+        }
     }
     return $archive;
 }
