@@ -5,9 +5,10 @@
 
 get_header();
 echo '<div class="goods-catalog-container">';
-load_template ( dirname( __FILE__ ) . '/sidebar-goods.php' ) ;
+load_template(dirname(__FILE__) . '/sidebar-goods.php');
 
 echo '<div class="goods-catalog">';
+echo '<div class="catalog-inner">';
 if (have_posts()) {
     while (have_posts()) {
         the_post();
@@ -77,15 +78,14 @@ if (have_posts()) {
                     echo '</p>';
                     ?>
                 </div>
+                <div class="clear"></div>
             </header>
-            <div class="clear"></div>
             <div class="entry-content">
                 <?php
                 the_content();
                 ?>
             </div>
-            <footer>
-            </footer>
+            <div class="clear"></div>
         </article>
         <?php
     }
@@ -98,5 +98,6 @@ if (have_posts()) {
 } else {
     get_404_template();
 }
+echo '</div>';
 echo '</div>';
 get_footer();

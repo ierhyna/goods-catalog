@@ -1,7 +1,7 @@
 === Goods Catalog ===
 Contributors: oriolo
 Tags: catalog, catalogue, product, products, goods, product catalog, product catalogue, catalog of goods
-Stable tag: v0.5
+Stable tag: v0.5.1
 Requires at least: 3.3.0
 Tested up to: 3.8.1
 License: GNU General Public License v2 or later
@@ -39,6 +39,10 @@ Languages:
 You need to update your permalinks. Just go to Console -> Settings -> Permalinks and press "Save". You don't need to change it.
 
 == Changelog ==
+
+= v0.5.1 =
+
+* Fixed bug on single product page: http://wordpress.org/support/topic/sidebar-85?replies=6#post-5368763
 
 = v0.5 =
 
@@ -87,7 +91,6 @@ Small bug fix:
 
 = v0.2-beta.1 =
 
-Small update:
 * removed displaying of PHP errors
 
 = v0.2-beta =

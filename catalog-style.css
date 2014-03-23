@@ -1,5 +1,11 @@
 /* Containers */
-.goods-catalog {}
+.goods-catalog {
+/*overflow:hidden;*/
+}
+
+.catalog-inner {
+    float: left;
+}
 
 /* Grid catalog */
 .goods-catalog .grid {

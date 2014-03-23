@@ -15,8 +15,11 @@ $category_id = get_query_var('cat');
 $category_list = get_categories('hide_empty=0&type=goods&taxonomy=goods_category&parent=0&orderby=ID' . $category_id);
 // include
 echo '<div class="goods-catalog">';
+echo '<div class="catalog-inner">';
+
 include 'content-goods_category.php';
-echo '</div>';
-echo '</div>';
+
+echo '</div>'; // catalog-inner
+echo '</div>'; // goods-catalog
+echo '</div>'; // goods-catalog-container
 get_footer();
- 

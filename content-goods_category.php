@@ -43,5 +43,5 @@ else {
     }
 
     echo "</div>";
-    echo "<div class=\"clear\"></div>";
+    //echo "<div class=\"clear\"></div>";
 }
