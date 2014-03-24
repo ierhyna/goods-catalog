@@ -5,6 +5,7 @@
 
 .catalog-inner {
     float: left;
+    width: 100%;
 }
 
 /* Grid catalog */

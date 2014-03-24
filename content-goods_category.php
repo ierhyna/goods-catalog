@@ -6,7 +6,7 @@
 
 // check if current taxonomy doesn't have childs
 if (empty($category_list)) {
-    // echo "There are no subcategories";
+//     echo "There are no subcategories";
 }
 // if has
 else {
@@ -43,5 +43,5 @@ else {
     }
 
     echo "</div>";
-    //echo "<div class=\"clear\"></div>";
+    echo "<div class=\"clear\"></div>";
 }
