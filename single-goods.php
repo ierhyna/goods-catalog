@@ -99,5 +99,6 @@ if (have_posts()) {
     get_404_template();
 }
 echo '</div>';
-echo '</div>';
+echo '<div class="clear"></div>'; // fix for some themes
+echo '</div>'; // goods-catalog-container
 get_footer();

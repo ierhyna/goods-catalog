@@ -21,5 +21,9 @@ include 'content-goods_category.php';
 
 echo '</div>'; // catalog-inner
 echo '</div>'; // goods-catalog
+
+echo '<div class="clear"></div>'; // fix for some themes
 echo '</div>'; // goods-catalog-container
+
+
 get_footer();

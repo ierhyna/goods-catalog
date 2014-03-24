@@ -121,5 +121,6 @@ $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
     </div>
 </div>
 <?php
-echo '</div>';
+echo '<div class="clear"></div>'; // fix for some themes
+echo '</div>'; // goods-catalog-container
 get_footer();
