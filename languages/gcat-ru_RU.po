@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Goods Catalog\n"
-"POT-Creation-Date: 2014-03-22 13:03+0600\n"
-"PO-Revision-Date: 2014-03-22 13:11+0600\n"
+"POT-Creation-Date: 2014-03-26 17:07+0600\n"
+"PO-Revision-Date: 2014-03-26 17:12+0600\n"
 "Last-Translator: Irina Sokolovskaya <sokolovskaja.irina@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -192,6 +192,14 @@ msgstr "Каталог"
 msgid "Pages:"
 msgstr "Страницы:"
 
+#: ../goods-cat.php:561
+msgid "Price:"
+msgstr "Цена:"
+
+#: ../goods-cat.php:569
+msgid "SKU:"
+msgstr "Артикул:"
+
 #: ../goods-options.php:27
 msgid "Goods Catalog Settings"
 msgstr "Настройки плагина Goods Catalog"
@@ -201,42 +209,95 @@ msgid "Goods Catalog Plugin Settings"
 msgstr "Настройки плагина Goods Catalog"
 
 #: ../goods-options.php:66
+msgid "Plugin Info"
+msgstr "Информация о плагине"
+
+#: ../goods-options.php:74
 msgid "Catalog View Settings"
 msgstr "Настройки вида"
 
-#: ../goods-options.php:74
+#: ../goods-options.php:82
 msgid "Products per page"
 msgstr "Продуктов на странице"
 
-#: ../goods-options.php:82
+#: ../goods-options.php:90
 msgid "Container Width"
 msgstr "Ширина контейнера"
 
-#: ../goods-options.php:89
+#: ../goods-options.php:97
 msgid "Center Container"
 msgstr "Выровнять контейнер по центру"
 
-#: ../goods-options.php:96
+#: ../goods-options.php:104
 msgid "Info Container Width on Product Page"
 msgstr "Ширина контейнера с информацией о продукте на странице продукта"
 
-#: ../goods-options.php:105
+#: ../goods-options.php:113
+msgid "Categories View Settings"
+msgstr "Настройки вида рубрик"
+
+#: ../goods-options.php:121
+msgid "Show category's thumbnails"
+msgstr "Показывать миниатюры для рубрик"
+
+#: ../goods-options.php:129
+msgid "Show category's description"
+msgstr "Показывать описание рубрики"
+
+#: ../goods-options.php:138
+msgid "Product View Settings"
+msgstr "Настройки вида продуктов"
+
+#: ../goods-options.php:146
+msgid "Show product's short description"
+msgstr "Показывать короткое описание продукта"
+
+#: ../goods-options.php:154
+msgid "Show product's SKU"
+msgstr "Показывать артикул товара"
+
+#: ../goods-options.php:163
 msgid "Sidebar Settings"
 msgstr "Настройки сайдбара"
 
-#: ../goods-options.php:113
+#: ../goods-options.php:171
 msgid "Use plugin's sidebar"
 msgstr "Использовать сайдбар плагина"
 
-#: ../goods-options.php:120
+#: ../goods-options.php:178
 msgid "Sidebar Width"
 msgstr "Ширина сайдбара"
 
-#: ../goods-options.php:159
+#: ../goods-options.php:238
+msgid "<p>You can see the catalog on your site at: <a href=\""
+msgstr "<p>Каталог товаров на Вашем сайте расположен по адресу: <a href=\""
+
+#: ../goods-options.php:239
+msgid ""
+"<p>Don' know how to set up the catalog? The instructions are available here: "
+"<a href=\"http://oriolo.wordpress.com/2014/03/25/goods-catalog-wordpress-"
+"plugin-that-creates-catalog-of-products/\">in English</a>, <a href=\"http://"
+"oriolo.ru/goods-catalog/\">in Russian</a></p>"
+msgstr ""
+"<p>Не знаете, как настроить каталог? Инструкции находятся здесь: <a href="
+"\"http://oriolo.wordpress.com/2014/03/25/goods-catalog-wordpress-plugin-that-"
+"creates-catalog-of-products/\">по-английски</a>, <a href=\"http://oriolo.ru/"
+"goods-catalog/\">по-русски</a></p>"
+
+#: ../goods-options.php:240
+msgid ""
+"<p>Any problems or questions? Visit the plugin's <a href=\"http://wordpress."
+"org/support/plugin/goods-catalog\">support forum</a> at WordPress.org</p>"
+msgstr ""
+"<p>Возникли проблемы или вопросы? Посетите <a href=\"http://wordpress.org/"
+"support/plugin/goods-catalog\">форум технической поддержки</a> плагина на "
+"WordPress.org</p>"
+
+#: ../goods-options.php:244 ../goods-options.php:248 ../goods-options.php:252
 msgid "Enter your settings below:"
 msgstr "Введите настройки:"
 
-#: ../goods-options.php:163
+#: ../goods-options.php:256
 msgid ""
 "If your theme's sidebar loads correctly on the catalog pages, you do not "
 "need to change anything here"
@@ -244,11 +305,11 @@ msgstr ""
 "Если на страницах каталога загружается сайдбар из используемой темы, вам не "
 "нужно вносить изменения в эти настройки"
 
-#: ../goods-options.php:179
+#: ../goods-options.php:272
 msgid "by default 100"
 msgstr "по-умолчанию 100"
 
-#: ../goods-options.php:180
+#: ../goods-options.php:273
 msgid ""
 "If the catalog's container is bigger than your theme's container, change it "
 "here"
@@ -256,7 +317,7 @@ msgstr ""
 "Здесь можно поменять ширину контейнера каталога, если он шире, чем контейнер "
 "темы"
 
-#: ../goods-options.php:187
+#: ../goods-options.php:280
 msgid ""
 "Add 'margin: 0 auto;' to the container. If you have changed container's "
 "width, you should also turn on this option"
@@ -264,11 +325,11 @@ msgstr ""
 "Добавить к контейнеру свойство 'margin: 0 auto;'. Если вы поменяли ширину "
 "контейнера, то скоре всего, нужно отметить и эту опцию"
 
-#: ../goods-options.php:194
+#: ../goods-options.php:287
 msgid "by default 60"
 msgstr "по-умолчанию 60"
 
-#: ../goods-options.php:195
+#: ../goods-options.php:288
 msgid ""
 "Set width of Product Info Container on single product page. In that "
 "container are located: name, price, SKU, short description, categories and "
@@ -282,7 +343,20 @@ msgstr ""
 "будет находиться справа от изображения товара, если большую - то под "
 "изображением."
 
-#: ../goods-options.php:206
+#: ../goods-options.php:299 ../goods-options.php:307 ../goods-options.php:323
+#: ../goods-options.php:334
+msgid "in grid"
+msgstr "в сетке"
+
+#: ../goods-options.php:311
+msgid "in category page"
+msgstr "на странице рубрики"
+
+#: ../goods-options.php:327 ../goods-options.php:338
+msgid "in single product page"
+msgstr "на странице товара"
+
+#: ../goods-options.php:349
 msgid ""
 "WARNING: the plugin's sidebar is under testing. If this option brokes your "
 "layot, just uncheck it, and please write me a letter with the theme name: "
@@ -294,11 +368,11 @@ msgstr ""
 "мне письмо с названием используемой темы: sokolovskaja.irina@gmail.com. Я "
 "буду очень благодарна, если вы также приложите скриншоты."
 
-#: ../goods-options.php:213
+#: ../goods-options.php:356
 msgid "by default 20"
 msgstr "по-умолчанию 20"
 
-#: ../goods-options.php:214
+#: ../goods-options.php:357
 msgid "Set width of the Sidebar"
 msgstr "Установить ширину сайдбара"
 
@@ -318,19 +392,8 @@ msgstr "Облако тегов каталога товаров"
 msgid "Products Tags"
 msgstr "Метки продуктов"
 
-#: ../single-goods.php:57 ../taxonomy-goods_category.php:86
-#: ../taxonomy-goods_tag.php:69
-msgid "Price:"
-msgstr "Цена:"
-
-#: ../single-goods.php:62 ../taxonomy-goods_category.php:91
-#: ../taxonomy-goods_tag.php:74
-msgid "SKU:"
-msgstr "Артикул:"
-
-#: ../taxonomy-goods_category.php:105 ../taxonomy-goods_tag.php:88
-msgid "There are no products in the category."
-msgstr "В этой рубрике нет товаров."
+#~ msgid "There are no products in the category."
+#~ msgstr "В этой рубрике нет товаров."
 
 #~ msgid "Could not load the localization file: "
 #~ msgstr "Не найден файл локализации: "

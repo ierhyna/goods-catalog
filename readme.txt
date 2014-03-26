@@ -1,7 +1,7 @@
 === Goods Catalog ===
 Contributors: oriolo
 Tags: catalog, catalogue, product, products, goods, product catalog, product catalogue, catalog of goods
-Stable tag: v0.5.2
+Stable tag: v0.5.4
 Requires at least: 3.3.0
 Tested up to: 3.8.1
 License: GNU General Public License v2 or later
@@ -39,6 +39,14 @@ Languages:
 You need to update your permalinks. Just go to Console -> Settings -> Permalinks and press "Save". You don't need to change it.
 
 == Changelog ==
+
+= v0.5.4 =
+
+* Updated layot, fixed bug with missing background in some themes
+* Created loop-grid.php
+* Updated options page: added checkboxes to set where to display SKU and description
+* Updated options page: added checkbox to disable thumbnail for the categories if you do not need them
+* Updated translation and POT-file
 
 = v0.5.2 =
 

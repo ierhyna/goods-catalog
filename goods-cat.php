@@ -4,7 +4,7 @@
   Plugin Name: Goods Catalog
   Plugin URI: http://oriolo.ru/wordpress/goods-catalog/
   Description: Plugin that creates simple catalog of goods.
-  Version: 0.5.2-dev
+  Version: 0.5.4
   Author: Irina Sokolovskaya
   Author URI: http://oriolo.ru/
   License: GNU General Public License v2 or later
@@ -329,7 +329,7 @@ function goods_archive_template($archive) {
         // check if there is file in the theme's folder
         if (file_exists(get_template_directory() . '/archive-goods.php')) {
             return get_template_directory() . '/archive-goods.php';
-        } 
+        }
         // if the file not found in the theme's folder load template from plugin
         else {
             if (file_exists(plugin_dir_path(__FILE__) . '/archive-goods.php')) {
@@ -547,3 +547,45 @@ function goods_pagesize($query) {
 }
 
 add_action('pre_get_posts', 'goods_pagesize', 1);
+
+/*
+ * Get products on category/tag page
+ */
+
+function show_the_product_price() {
+    // get fields from metabox
+    $price = get_post_meta(get_the_ID(), 'gc_price', true);
+    // show fields values
+    if ((isset($price)) && ($price != '')) {
+        echo "<p class=\"goods-price-single\">";
+        echo __('Price:', 'gcat');
+        echo " $price</p>";
+    }
+}
+function show_the_product_sku() {
+    $sku = get_post_meta(get_the_ID(), 'gc_sku', true);
+    if ((isset($sku)) && ($sku != '')) {
+        echo "<p class=\"goods-sku\">";
+        echo __('SKU:', 'gcat');
+        echo " $sku</p>";
+    }
+}
+function show_the_product_desrc() {
+    $descr = get_post_meta(get_the_ID(), 'gc_descr', true);
+    if ((isset($descr)) && ($descr != '')) {
+        echo "<p class=\"goods-descr\">$descr</p>";
+    }
+}
+
+function show_the_thumbnail() {
+    echo '<div class="goods-item-thumb-container">';
+    if (has_post_thumbnail()) {
+        echo '<a href="' . get_permalink() . '">';
+        the_post_thumbnail(array(150, 150), array('class' => 'goods-item-thumb'));
+        echo '</a>';
+    } else {
+        // show default image if the thumbnail is not found
+        echo '<a href="' . get_permalink() . '"><img class="goods-item-thumb" src="' . plugins_url('img/gi.png', __FILE__) . '" alt=""></a>';
+    }
+    echo '</div>';
+}

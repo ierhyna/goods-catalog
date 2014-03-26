@@ -29,12 +29,6 @@ if (have_posts()) {
             ?>
         </div>
 
-        <?php
-        // start functions
-        $price = get_post_meta(get_the_ID(), 'gc_price', true);
-        $sku = get_post_meta(get_the_ID(), 'gc_sku', true);
-        $descr = get_post_meta(get_the_ID(), 'gc_descr', true);
-        ?>
         <article <?php post_class(); ?>>
             <header>
                 <?php
@@ -53,18 +47,14 @@ if (have_posts()) {
                 <div class="goods-info">
                     <h2 class="entry-title"><?php the_title(); ?></h2>
                     <?php
-                    if ((isset($price)) && ($price != '')) {
-                        echo "<p class=\"goods-price-single\">";
-                        echo __('Price:', 'gcat');
-                        echo " $price</p>";
+                    // show product
+                    show_the_product_price();
+                    
+                    if (isset($catalog_option['show_product_sku_page'])) {
+                        show_the_product_sku();
                     }
-                    if ((isset($sku)) && ($sku != '')) {
-                        echo "<p class=\"goods-sku\">";
-                        echo __('SKU:', 'gcat');
-                        echo " $sku</p>";
-                    }
-                    if ((isset($descr)) && ($descr != '')) {
-                        echo "<p class=\"goods-descr-single\">$descr</p>";
+                    if (isset($catalog_option['show_product_descr_page'])) {
+                        show_the_product_desrc();
                     }
 
                     // show category

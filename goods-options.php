@@ -59,8 +59,16 @@ class GoodsSettingsPage {
                 'goods_option_name', // Option name
                 array($this, 'sanitize') // Sanitize
         );
-        
-        // Section Start
+
+// Section Start
+        add_settings_section(
+                'info_section_id', // ID
+                __('Plugin Info', 'gcat'), // Title
+                array($this, 'print_catalog_info'), // Callback
+                'goods-setting-admin' // Page
+        );
+
+// Section Start
         add_settings_section(
                 'setting_section_id', // ID
                 __('Catalog View Settings', 'gcat'), // Title
@@ -99,14 +107,64 @@ class GoodsSettingsPage {
                 'setting_section_id' // Section           
         );
         
-        // Section Start
+// Categories Section Start
+        add_settings_section(
+                'categories_section_id', // ID
+                __('Categories View Settings', 'gcat'), // Title
+                array($this, 'print_categories_info'), // Callback
+                'goods-setting-admin' // Page
+        );        
+        
+        // Options Start
+        add_settings_field(
+                'show_category_thumb', // ID
+                __('Show category\'s thumbnails', 'gcat'), // Title 
+                array($this, 'show_category_thumb_callback'), // Callback
+                'goods-setting-admin', // Page
+                'categories_section_id' // Section           
+        );
+        
+        add_settings_field(
+                'show_category_descr', // ID
+                __('Show category\'s description', 'gcat'), // Title 
+                array($this, 'show_category_descr_callback'), // Callback
+                'goods-setting-admin', // Page
+                'categories_section_id' // Section           
+        );
+
+// Product Section Start
+        add_settings_section(
+                'product_section_id', // ID
+                __('Product View Settings', 'gcat'), // Title
+                array($this, 'print_product_info'), // Callback
+                'goods-setting-admin' // Page
+        );
+        
+        // Options Start    
+        add_settings_field(
+                'show_product_descr', // ID
+                __('Show product\'s short description', 'gcat'), // Title 
+                array($this, 'show_product_descr_callback'), // Callback
+                'goods-setting-admin', // Page
+                'product_section_id' // Section           
+        );
+        
+        add_settings_field(
+                'show_product_sku', // ID
+                __('Show product\'s SKU', 'gcat'), // Title 
+                array($this, 'show_product_sku_callback'), // Callback
+                'goods-setting-admin', // Page
+                'product_section_id' // Section           
+        );
+
+// Section Start
         add_settings_section(
                 'sidebar_section_id', // ID
                 __('Sidebar Settings', 'gcat'), // Title
                 array($this, 'print_section_sidebar'), // Callback
                 'goods-setting-admin' // Page
         );
-        
+
         // Options Start
         add_settings_field(
                 'use_sidebar', // ID
@@ -139,13 +197,34 @@ class GoodsSettingsPage {
 
         if (isset($input['center_container']))
             $new_input['center_container'] = absint($input['center_container']);
-        
+
         if (isset($input['info_width']))
             $new_input['info_width'] = absint($input['info_width']);
         
+        if (isset($input['show_category_thumb']))
+            $new_input['show_category_thumb'] = absint($input['show_category_thumb']);
+        
+        if (isset($input['show_category_descr_grid']))
+            $new_input['show_category_descr_grid'] = absint($input['show_category_descr_grid']);
+        
+        if (isset($input['show_category_descr_page']))
+            $new_input['show_category_descr_page'] = absint($input['show_category_descr_page']);
+        
+        if (isset($input['show_product_descr_grid']))
+            $new_input['show_product_descr_grid'] = absint($input['show_product_descr_grid']);
+        
+        if (isset($input['show_product_descr_page']))
+            $new_input['show_product_descr_page'] = absint($input['show_product_descr_page']);
+        
+        if (isset($input['show_product_sku_grid']))
+            $new_input['show_product_sku_grid'] = absint($input['show_product_sku_grid']);
+        
+        if (isset($input['show_product_sku_page']))
+            $new_input['show_product_sku_page'] = absint($input['show_product_sku_page']);
+
         if (isset($input['use_sidebar']))
             $new_input['use_sidebar'] = absint($input['use_sidebar']);
-        
+
         if (isset($input['sidebar_width']))
             $new_input['sidebar_width'] = absint($input['sidebar_width']);
 
@@ -155,10 +234,24 @@ class GoodsSettingsPage {
     /**
      * Print the Section text
      */
+    public function print_catalog_info() {
+        print __('<p>You can see the catalog on your site at: <a href="' . get_home_url() . '/catalog">' . get_home_url() . '/catalog</a></p>', 'gcat');
+        print __('<p>Don\' know how to set up the catalog? The instructions are available here: <a href="http://oriolo.wordpress.com/2014/03/25/goods-catalog-wordpress-plugin-that-creates-catalog-of-products/">in English</a>, <a href="http://oriolo.ru/goods-catalog/">in Russian</a></p>', 'gcat');
+        print __('<p>Any problems or questions? Visit the plugin\'s <a href="http://wordpress.org/support/plugin/goods-catalog">support forum</a> at WordPress.org</p>', 'gcat');
+    }
+
     public function print_section_info() {
         print __('Enter your settings below:', 'gcat');
     }
     
+    public function print_categories_info() {
+        print __('Enter your settings below:', 'gcat');
+    }
+
+    public function print_product_info() {
+        print __('Enter your settings below:', 'gcat');
+    }
+
     public function print_section_sidebar() {
         print __('If your theme\'s sidebar loads correctly on the catalog pages, you do not need to change anything here', 'gcat');
     }
@@ -186,7 +279,7 @@ class GoodsSettingsPage {
         <?php
         echo "<p>" . __("Add 'margin: 0 auto;' to the container. If you have changed container's width, you should also turn on this option", "gcat") . "</p>";
     }
-    
+
     public function info_width_callback() {
         printf(
                 '<input type="number" id="info_width" class="small-text" name="goods_option_name[info_width]" value="%s" />', isset($this->options['info_width']) ? esc_attr($this->options['info_width']) : '60'
@@ -195,6 +288,56 @@ class GoodsSettingsPage {
         echo "<p>" . __("Set width of Product Info Container on single product page. In that container are located: name, price, SKU, short description, categories and tags of the product. With the smaller width the container will be on the right of product thumbnail, with the bigger width it will be under product thumbnail", "gcat") . "</p>";
     }
     
+    /*
+     * Category section
+     */
+    
+    public function show_category_thumb_callback() {    
+        ?>
+        <p><input type="checkbox" name="goods_option_name[show_category_thumb]" id="show_category_thumb" value="1" <?php checked(isset($this->options['show_category_thumb']), 1); ?> />
+        <?php
+        echo __('in grid', 'gcat') . '</p>';
+        echo '<p>If you don\'t need thumbnails for the categories, please uncheck this option</p>';
+    }
+    
+    public function show_category_descr_callback() {
+        ?>
+        <p><input type="checkbox" name="goods_option_name[show_category_descr_grid]" id="show_category_descr_grid" value="1" <?php checked(isset($this->options['show_category_descr_grid']), 1); ?> />
+        <?php
+        echo __('in grid', 'gcat') . '</p>';
+        ?>
+        <p><input type="checkbox" name="goods_option_name[show_category_descr_page]" id="show_category_descr_page" value="1" <?php checked(isset($this->options['show_category_descr_page']), 1); ?> />
+        <?php
+        echo __('in category page', 'gcat') . '</p>';
+        echo '<p>If you don\'t need descriptions for the categories, please uncheck this option</p>';
+    }
+    
+    /*
+     * Product section
+     */
+    
+    public function show_product_descr_callback() {
+        ?>
+        <p><input type="checkbox" name="goods_option_name[show_product_descr_grid]" id="show_product_descr_grid" value="1" <?php checked(isset($this->options['show_product_descr_grid']), 1); ?> />
+        <?php
+        echo __('in grid', 'gcat') . '</p>';
+        ?>
+        <p><input type="checkbox" name="goods_option_name[show_product_descr_page]" id="show_product_descr_page" value="1" <?php checked(isset($this->options['show_product_descr_page']), 1); ?> />
+        <?php
+        echo __('in single product page', 'gcat') . '</p>';
+    }
+    
+    public function show_product_sku_callback() {
+        ?>
+        <p><input type="checkbox" name="goods_option_name[show_product_sku_grid]" id="show_product_sku_grid" value="1" <?php checked(isset($this->options['show_product_sku_grid']), 1); ?> />
+        <?php
+        echo __('in grid', 'gcat') . '</p>';
+        ?>
+        <p><input type="checkbox" name="goods_option_name[show_product_sku_page]" id="show_product_sku_page" value="1" <?php checked(isset($this->options['show_product_sku_page']), 1); ?> />
+        <?php
+        echo __('in single product page', 'gcat') . '</p>';
+    }
+
     /*
      * Sidebar section
      */
@@ -205,7 +348,7 @@ class GoodsSettingsPage {
         <?php
         echo "<p>" . __("WARNING: the plugin's sidebar is under testing. If this option brokes your layot, just uncheck it, and please write me a letter with the theme name: sokolovskaja.irina@gmail.com. I'll be extremely thankful if you also would attach some screenshots", "gcat") . "</p>";
     }
-    
+
     public function sidebar_width_callback() {
         printf(
                 '<input type="number" id="sidebar_width" class="small-text" name="goods_option_name[sidebar_width]" value="%s" />', isset($this->options['sidebar_width']) ? esc_attr($this->options['sidebar_width']) : '20'
@@ -213,6 +356,7 @@ class GoodsSettingsPage {
         echo '%, ' . __('by default 20', 'gcat');
         echo "<p>" . __("Set width of the Sidebar", "gcat") . "</p>";
     }
+
 }
 
 if (is_admin())
