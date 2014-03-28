@@ -40,7 +40,7 @@ if (have_posts()) {
                     echo '</a>';
                 } else {
                     // show default image if the thumbnail is not found
-                    echo '<img class="goods-item-thumb" src="' . plugins_url('img/gi.png', __FILE__) . '" alt="">';
+                    echo '<img class="goods-item-thumb" src="' . plugins_url( '/img/gi.png' , dirname(__FILE__) ) . '" alt="">';
                 }
                 echo '</div>';
                 ?>

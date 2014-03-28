@@ -235,7 +235,7 @@ class GoodsSettingsPage {
      * Print the Section text
      */
     public function print_catalog_info() {
-        print __('<p>You can see the catalog on your site at: <a href="' . get_home_url() . '/catalog">' . get_home_url() . '/catalog</a></p>', 'gcat');
+        print '<p>' . __( 'You can see the catalog on your site at:', 'gcat' ) . ' <a href="' . get_home_url() . '/catalog">' . get_home_url() . '/catalog</a></p>';
         print __('<p>Don\' know how to set up the catalog? The instructions are available here: <a href="http://oriolo.wordpress.com/2014/03/25/goods-catalog-wordpress-plugin-that-creates-catalog-of-products/">in English</a>, <a href="http://oriolo.ru/goods-catalog/">in Russian</a></p>', 'gcat');
         print __('<p>Any problems or questions? Visit the plugin\'s <a href="http://wordpress.org/support/plugin/goods-catalog">support forum</a> at WordPress.org</p>', 'gcat');
     }
@@ -297,7 +297,7 @@ class GoodsSettingsPage {
         <p><input type="checkbox" name="goods_option_name[show_category_thumb]" id="show_category_thumb" value="1" <?php checked(isset($this->options['show_category_thumb']), 1); ?> />
         <?php
         echo __('in grid', 'gcat') . '</p>';
-        echo '<p>If you don\'t need thumbnails for the categories, please uncheck this option</p>';
+        echo '<p>' . __( 'If you don\'t need thumbnails for the categories, please uncheck this option', 'gcat' ) . '</p>';
     }
     
     public function show_category_descr_callback() {
@@ -309,7 +309,7 @@ class GoodsSettingsPage {
         <p><input type="checkbox" name="goods_option_name[show_category_descr_page]" id="show_category_descr_page" value="1" <?php checked(isset($this->options['show_category_descr_page']), 1); ?> />
         <?php
         echo __('in category page', 'gcat') . '</p>';
-        echo '<p>If you don\'t need descriptions for the categories, please uncheck this option</p>';
+        echo '<p>' . __( 'If you don\'t need description for the categories, please uncheck this option', 'gcat' ) . '</p>';
     }
     
     /*

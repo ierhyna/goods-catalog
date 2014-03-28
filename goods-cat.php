@@ -4,7 +4,7 @@
   Plugin Name: Goods Catalog
   Plugin URI: http://oriolo.ru/wordpress/goods-catalog/
   Description: Plugin that creates simple catalog of goods.
-  Version: 0.5.4
+  Version: 0.5.4-dev2
   Author: Irina Sokolovskaya
   Author URI: http://oriolo.ru/
   License: GNU General Public License v2 or later
@@ -34,18 +34,18 @@
  */
 
 // debug only
-error_reporting(0);
-ini_set('display_errors', 0);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 /*
  * Localization
  */
 
-add_action('plugins_loaded', 'gcat_init');
-
-function gcat_init() {
-    load_plugin_textdomain('gcat', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+function goods_catalog_lang_init() {
+    $domain = 'gcat';
+    load_plugin_textdomain($domain, FALSE, basename(dirname(__FILE__)) . '/languages/');
 }
+add_action('plugins_loaded', 'goods_catalog_lang_init');
 
 /*
  * Use options
@@ -127,11 +127,11 @@ $meta_box = array(
 // Callback function to show fields in meta box
 function goods_show_box() {
     global $meta_box, $post;
-    // Use nonce for verification
+// Use nonce for verification
     wp_nonce_field(plugin_basename(__FILE__), 'goods_meta_box_nonce');
     echo '<table class="form-table">';
     foreach ($meta_box['fields'] as $field) {
-        // get current post meta data
+// get current post meta data
         $meta = get_post_meta($post->ID, $field['id'], true);
         echo '<tr>',
         '<th style="width:20%"><label for="', $field['id'], '">', $field['name'], '</label></th>',
@@ -162,15 +162,15 @@ add_action('admin_menu', 'goods_add_box');
 // Save data from meta box
 function goods_save_data($post_id) {
     global $meta_box;
-    // verify nonce
+// verify nonce
     if (isset($_POST['goods_meta_box_nonce']) && !wp_verify_nonce($_POST['goods_meta_box_nonce'], plugin_basename(__FILE__))) {
         return $post_id;
     }
-    // check autosave
+// check autosave
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
         return $post_id;
     }
-    // check permissions
+// check permissions
     if ('page' == isset($_POST['post_type'])) {
         if (!current_user_can('edit_page', $post_id)) {
             return $post_id;
@@ -180,11 +180,11 @@ function goods_save_data($post_id) {
     }
     foreach ($meta_box['fields'] as $field) {
         if (isset($_POST[$field['id']])) {
-            // POST field sent - update
+// POST field sent - update
             $new = $_POST[$field['id']];
             update_post_meta($post_id, $field['id'], $new);
         } else {
-            // POST field not sent - delete
+// POST field not sent - delete
             $old = get_post_meta($post_id, $field['id'], true);
             delete_post_meta($post_id, $field['id'], $old);
         }
@@ -268,18 +268,18 @@ function get_goods_taxomonies($taxonomy, $id) {
             echo __('Tags:&nbsp;', 'gcat');
         }
     }
-    // count elements
+// count elements
     foreach ($terms_list as $term) {
         $term_link = get_term_link($term, $taxonomy);
         if (is_wp_error($term_link))
             continue;
-        // elements -1
+// elements -1
         --$count_terms;
-        // if > 0
+// if > 0
         if ($count_terms != 0) {
             echo '<a href="' . $term_link . '">' . $term->name . '</a>, ';
         } else {
-            // do not show comma at the last element
+// do not show comma at the last element
             echo '<a href="' . $term_link . '">' . $term->name . '</a>';
         }
     }
@@ -326,14 +326,14 @@ function goods_archive_template($archive) {
 
 // Checks for single template by post type
     if (is_post_type_archive('goods')) {
-        // check if there is file in the theme's folder
+// check if there is file in the theme's folder
         if (file_exists(get_template_directory() . '/archive-goods.php')) {
             return get_template_directory() . '/archive-goods.php';
         }
-        // if the file not found in the theme's folder load template from plugin
+// if the file not found in the theme's folder load template from plugin
         else {
-            if (file_exists(plugin_dir_path(__FILE__) . '/archive-goods.php')) {
-                return plugin_dir_path(__FILE__) . '/archive-goods.php';
+            if (file_exists(plugin_dir_path(__FILE__) . '/templates/archive-goods.php')) {
+                return plugin_dir_path(__FILE__) . '/templates/archive-goods.php';
             }
         }
     }
@@ -348,8 +348,8 @@ function goods_custom_single_template($single) {
 
 // Checks for single template by post type
     if ($post->post_type == "goods") {
-        if (file_exists(plugin_dir_path(__FILE__) . '/single-goods.php'))
-            return plugin_dir_path(__FILE__) . '/single-goods.php';
+        if (file_exists(plugin_dir_path(__FILE__) . '/templates/single-goods.php'))
+            return plugin_dir_path(__FILE__) . '/templates/single-goods.php';
     }
     return $single;
 }
@@ -362,8 +362,8 @@ function goods_category_template($taxonomy) {
 
 // Checks for single template by post type
     if (is_tax('goods_category')) {
-        if (file_exists(plugin_dir_path(__FILE__) . '/taxonomy-goods_category.php'))
-            return plugin_dir_path(__FILE__) . '/taxonomy-goods_category.php';
+        if (file_exists(plugin_dir_path(__FILE__) . '/templates/taxonomy-goods_category.php'))
+            return plugin_dir_path(__FILE__) . '/templates/taxonomy-goods_category.php';
     }
     return $taxonomy;
 }
@@ -376,13 +376,14 @@ function goods_tag_template($taxonomy) {
 
 // Checks for single template by post type
     if (is_tax('goods_tag')) {
-        if (file_exists(plugin_dir_path(__FILE__) . '/taxonomy-goods_tag.php'))
-            return plugin_dir_path(__FILE__) . '/taxonomy-goods_tag.php';
+        if (file_exists(plugin_dir_path(__FILE__) . '/templates/taxonomy-goods_tag.php'))
+            return plugin_dir_path(__FILE__) . '/templates/taxonomy-goods_tag.php';
     }
     return $taxonomy;
 }
 
 add_action('init', 'create_goods');
+
 
 /*
  * Breadcrumbs
@@ -398,8 +399,8 @@ function get_term_parents($id, $taxonomy, $link = false, $separator = '/', $nice
         }
     } catch (exception $e) {
         echo __('Caught exception: ', 'gcat'), $e->getMessage(), "\n";
-        // use something less drastic than die() in production code
-        //die();
+// use something less drastic than die() in production code
+//die();
     }
     if ($nicename) {
         $name = $parent->slug;
@@ -427,14 +428,15 @@ function get_tag_id($tag) {
 function my_breadcrumb($id = null) {
     echo '<a href=" ' . home_url() . ' ">' . __('Home') . '</a> &gt; ';
     echo '<a href="';
-    echo '/catalog';
+//echo '/catalog';
+    echo get_post_type_archive_link('goods');
     echo '">';
     echo __('Catalog', 'gcat');
     echo "</a> &gt; ";
     if (is_category() || is_single() || is_tax()) {
         if (is_single()) {
             $cat = get_the_term_list(isset($post->ID), 'goods_category', '', ', ', '');
-            // make sure uncategorised is not used
+// make sure uncategorised is not used
             if (!stristr($cat, 'Uncategorized')) {
                 echo $cat;
                 echo '  &gt; ';
@@ -445,14 +447,14 @@ function my_breadcrumb($id = null) {
         }
         if (is_category()) {
             $cat = get_category_parents(get_query_var('cat'), true, ' &gt; ');
-            // remove last &gt;
+// remove last &gt;
             echo preg_replace('/&gt;\s$|&gt;$/', '', $cat);
         }
         if (is_tax()) {
             $tag = single_tag_title('', false);
             $tag = get_tag_id($tag);
             $term = get_term_parents($tag, get_query_var('taxonomy'), true, ' &gt; ');
-            // remove last &gt;
+// remove last &gt;
             echo preg_replace('/&gt;\s$|&gt;$/', '', $term);
         }
     } elseif (is_page()) {
@@ -539,7 +541,7 @@ function goods_pagesize($query) {
         return;
 
     if (is_tax('goods_category') || is_tax('goods_tag')) {
-        // display number of posts
+// display number of posts
         global $catalog_option;
         $query->set('posts_per_page', $catalog_option['items_per_page']);
         return;
@@ -553,27 +555,29 @@ add_action('pre_get_posts', 'goods_pagesize', 1);
  */
 
 function show_the_product_price() {
-    // get fields from metabox
-    $price = get_post_meta(get_the_ID(), 'gc_price', true);
-    // show fields values
-    if ((isset($price)) && ($price != '')) {
+// get fields from metabox
+    $gc_price = get_post_meta(get_the_ID(), 'gc_price', true);
+// show fields values
+    if ((isset($gc_price)) && ($gc_price != '')) {
         echo "<p class=\"goods-price-single\">";
         echo __('Price:', 'gcat');
-        echo " $price</p>";
+        echo " $gc_price</p>";
     }
 }
+
 function show_the_product_sku() {
-    $sku = get_post_meta(get_the_ID(), 'gc_sku', true);
-    if ((isset($sku)) && ($sku != '')) {
+    $gc_sku = get_post_meta(get_the_ID(), 'gc_sku', true);
+    if ((isset($gc_sku)) && ($gc_sku != '')) {
         echo "<p class=\"goods-sku\">";
         echo __('SKU:', 'gcat');
-        echo " $sku</p>";
+        echo " $gc_sku</p>";
     }
 }
+
 function show_the_product_desrc() {
-    $descr = get_post_meta(get_the_ID(), 'gc_descr', true);
-    if ((isset($descr)) && ($descr != '')) {
-        echo "<p class=\"goods-descr\">$descr</p>";
+    $gc_descr = get_post_meta(get_the_ID(), 'gc_descr', true);
+    if ((isset($gc_descr)) && ($gc_descr != '')) {
+        echo "<p class=\"goods-descr\">$gc_descr</p>";
     }
 }
 
@@ -584,7 +588,7 @@ function show_the_thumbnail() {
         the_post_thumbnail(array(150, 150), array('class' => 'goods-item-thumb'));
         echo '</a>';
     } else {
-        // show default image if the thumbnail is not found
+// show default image if the thumbnail is not found
         echo '<a href="' . get_permalink() . '"><img class="goods-item-thumb" src="' . plugins_url('img/gi.png', __FILE__) . '" alt=""></a>';
     }
     echo '</div>';

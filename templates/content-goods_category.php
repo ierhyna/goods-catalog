@@ -31,12 +31,12 @@ else {
                     }
                 }
                 if ($flag == FALSE) {
-                    echo '<a href="' . esc_url(get_term_link($categories_item, $categories_item->taxonomy)) . '"><img class="goods-item-thumb" src="' . plugins_url('img/gc.png', __FILE__) . '" alt=""></a>';
+                    echo '<a href="' . esc_url(get_term_link($categories_item, $categories_item->taxonomy)) . '"><img class="goods-item-thumb" src="' . plugins_url( '/img/gc.png' , dirname(__FILE__) ) . '" alt=""></a>';
                 }
             }
             // show images if plugin Taxonomy Images not installed
             else {
-                echo '<a href="' . esc_url(get_term_link($categories_item, $categories_item->taxonomy)) . '"><img class="goods-item-thumb" src="' . plugins_url('img/gc.png', __FILE__) . '" alt=""></a>';
+                echo '<a href="' . esc_url(get_term_link($categories_item, $categories_item->taxonomy)) . '"><img class="goods-item-thumb" src="' . plugins_url( '/img/gc.png' , dirname(__FILE__) ) . '" alt=""></a>';
             }
             echo '</div>';
         }

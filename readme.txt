@@ -40,6 +40,12 @@ You need to update your permalinks. Just go to Console -> Settings -> Permalinks
 
 == Changelog ==
 
+= v0.5.5 =
+
+* Fixed breadcrumbs 404 bug for default permalinks structure (?p=123), thanks Lili's bugreport
+* Fixed conflict bug with other catalog plugins, thanks Roman's bugreport
+* Fixed translation to Russian, updated POT-file
+
 = v0.5.4 =
 
 * Updated layot, fixed bug with missing background in some themes

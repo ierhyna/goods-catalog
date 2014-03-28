@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Goods Catalog\n"
-"POT-Creation-Date: 2014-03-26 17:07+0600\n"
-"PO-Revision-Date: 2014-03-26 17:12+0600\n"
+"POT-Creation-Date: 2014-03-28 16:58+0600\n"
+"PO-Revision-Date: 2014-03-28 16:58+0600\n"
 "Last-Translator: Irina Sokolovskaya <sokolovskaja.irina@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -12,191 +12,186 @@ msgstr ""
 "X-Generator: Poedit 1.6.4\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-KeywordsList: __\n"
+"X-Poedit-KeywordsList: __;_n;_x;_e;_ex\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../content-goods_category.php:18
-#, php-format
-msgid "Go to cetegory %s"
-msgstr "Перейти в рубрику  %s"
-
-#: ../goods-cat.php:71
+#: ../goods-cat.php:77
 msgid "Goods"
 msgstr "Товары"
 
-#: ../goods-cat.php:72
+#: ../goods-cat.php:78
 msgid "Item"
 msgstr "Товар"
 
-#: ../goods-cat.php:73
+#: ../goods-cat.php:79
 msgid "Add"
 msgstr "Добавить"
 
-#: ../goods-cat.php:74
+#: ../goods-cat.php:80
 msgid "Add new item"
 msgstr "Добавить новый товар"
 
-#: ../goods-cat.php:75
+#: ../goods-cat.php:81
 msgid "Edit"
 msgstr "Редактировать"
 
-#: ../goods-cat.php:76
+#: ../goods-cat.php:82
 msgid "Edit item"
 msgstr "Редактировать товар"
 
-#: ../goods-cat.php:77
+#: ../goods-cat.php:83
 msgid "New item"
 msgstr "Новый товар"
 
-#: ../goods-cat.php:78
+#: ../goods-cat.php:84
 msgid "View"
 msgstr "Вид"
 
-#: ../goods-cat.php:79
+#: ../goods-cat.php:85
 msgid "View of items"
 msgstr "Вид товаров"
 
-#: ../goods-cat.php:80
+#: ../goods-cat.php:86
 msgid "Search items"
 msgstr "Поиск"
 
-#: ../goods-cat.php:81
+#: ../goods-cat.php:87
 msgid "Items not found"
 msgstr "Не найдено"
 
-#: ../goods-cat.php:82
+#: ../goods-cat.php:88
 msgid "Item is not found in trash"
 msgstr "В корзине товаров не найдено"
 
-#: ../goods-cat.php:98
+#: ../goods-cat.php:104
 msgid "Item Options"
 msgstr "Опции"
 
-#: ../goods-cat.php:104
+#: ../goods-cat.php:110
 msgid "Price"
 msgstr "Цена"
 
-#: ../goods-cat.php:105
+#: ../goods-cat.php:111
 msgid "Enter price here"
 msgstr "Укажите цену"
 
-#: ../goods-cat.php:111
+#: ../goods-cat.php:117
 msgid "SKU"
 msgstr "Артикул"
 
-#: ../goods-cat.php:112
+#: ../goods-cat.php:118
 msgid "Enter product ID (SKU)"
 msgstr "Введите артикул товара"
 
-#: ../goods-cat.php:118
+#: ../goods-cat.php:124
 msgid "Short Description"
 msgstr "Короткое описание"
 
-#: ../goods-cat.php:119
+#: ../goods-cat.php:125
 msgid "Enter description here"
 msgstr "Введите описание"
 
-#: ../goods-cat.php:202
+#: ../goods-cat.php:208
 msgid "Categories"
 msgstr "Рубрики"
 
-#: ../goods-cat.php:203
+#: ../goods-cat.php:209
 msgid "Add category"
 msgstr "Добавить рубрику"
 
-#: ../goods-cat.php:204
+#: ../goods-cat.php:210
 msgid "New category"
 msgstr "Новая рубрика"
 
-#: ../goods-cat.php:222 ../goods-cat.php:223
+#: ../goods-cat.php:228 ../goods-cat.php:229
 msgid "Tags"
 msgstr "Метки"
 
-#: ../goods-cat.php:224
+#: ../goods-cat.php:230
 msgid "All Items"
 msgstr "Все "
 
-#: ../goods-cat.php:225
+#: ../goods-cat.php:231
 msgid "Parent Item"
 msgstr "Родительский элемент"
 
-#: ../goods-cat.php:226
+#: ../goods-cat.php:232
 msgid "Parent Item:"
 msgstr "Родительский элемент"
 
-#: ../goods-cat.php:227
+#: ../goods-cat.php:233
 msgid "New Item Name"
 msgstr "Название"
 
-#: ../goods-cat.php:228
+#: ../goods-cat.php:234
 msgid "Add New Item"
 msgstr "Добавить"
 
-#: ../goods-cat.php:229
+#: ../goods-cat.php:235
 msgid "Edit Item"
 msgstr "Редактировать"
 
-#: ../goods-cat.php:230
+#: ../goods-cat.php:236
 msgid "Update Item"
 msgstr "Обновить"
 
-#: ../goods-cat.php:231
+#: ../goods-cat.php:237
 msgid "Separate items with commas"
 msgstr "Разделяйте метки запятыми"
 
-#: ../goods-cat.php:232
+#: ../goods-cat.php:238
 msgid "Search Items"
 msgstr "Поиск"
 
-#: ../goods-cat.php:233
+#: ../goods-cat.php:239
 msgid "Add or remove items"
 msgstr "Добавить или удалить"
 
-#: ../goods-cat.php:234
+#: ../goods-cat.php:240
 msgid "Choose from the most used items"
 msgstr "Выбрать из часто используемых"
 
-#: ../goods-cat.php:235
+#: ../goods-cat.php:241
 msgid "Not Found"
 msgstr "Не найдено"
 
-#: ../goods-cat.php:266
+#: ../goods-cat.php:272
 msgid "Categories:&nbsp;"
 msgstr "Рубрики:&nbsp;"
 
-#: ../goods-cat.php:268
+#: ../goods-cat.php:274
 msgid "Tags:&nbsp;"
 msgstr "Метки:&nbsp;"
 
-#: ../goods-cat.php:297
+#: ../goods-cat.php:303
 msgid "Goods Catalog Sidebar"
 msgstr "Сайдбар каталога товаров"
 
-#: ../goods-cat.php:298
+#: ../goods-cat.php:304
 msgid "Goods Catalog Widgets"
 msgstr "Виджеты каталога товаров"
 
-#: ../goods-cat.php:400
+#: ../goods-cat.php:407
 msgid "Caught exception: "
 msgstr "Внимание:"
 
-#: ../goods-cat.php:428
+#: ../goods-cat.php:435
 msgid "Home"
 msgstr "Главная"
 
-#: ../goods-cat.php:432
+#: ../goods-cat.php:440
 msgid "Catalog"
 msgstr "Каталог"
 
-#: ../goods-cat.php:492
+#: ../goods-cat.php:500
 msgid "Pages:"
 msgstr "Страницы:"
 
-#: ../goods-cat.php:561
+#: ../goods-cat.php:569
 msgid "Price:"
 msgstr "Цена:"
 
-#: ../goods-cat.php:569
+#: ../goods-cat.php:578
 msgid "SKU:"
 msgstr "Артикул:"
 
@@ -269,8 +264,8 @@ msgid "Sidebar Width"
 msgstr "Ширина сайдбара"
 
 #: ../goods-options.php:238
-msgid "<p>You can see the catalog on your site at: <a href=\""
-msgstr "<p>Каталог товаров на Вашем сайте расположен по адресу: <a href=\""
+msgid "You can see the catalog on your site at:"
+msgstr "Каталог товаров на Вашем сайте расположен по адресу:"
 
 #: ../goods-options.php:239
 msgid ""
@@ -348,9 +343,19 @@ msgstr ""
 msgid "in grid"
 msgstr "в сетке"
 
+#: ../goods-options.php:300
+msgid ""
+"If you don't need thumbnails for the categories, please uncheck this option"
+msgstr "Если миниатюры для рубрик не нужны, отключите эту опцию"
+
 #: ../goods-options.php:311
 msgid "in category page"
 msgstr "на странице рубрики"
+
+#: ../goods-options.php:312
+msgid ""
+"If you don't need description for the categories, please uncheck this option"
+msgstr "Если описания для рубрик не нужны, отключите эту опцию"
 
 #: ../goods-options.php:327 ../goods-options.php:338
 msgid "in single product page"
@@ -384,6 +389,10 @@ msgstr "Список рубрик каталога товаров"
 msgid "Products Categories"
 msgstr "Рубрики продуктов"
 
+#: ../goods-widgets.php:70 ../goods-widgets.php:148
+msgid "Title:"
+msgstr "Заголовок:"
+
 #: ../goods-widgets.php:107
 msgid "Goods Catalog tags cloud"
 msgstr "Облако тегов каталога товаров"
@@ -391,6 +400,11 @@ msgstr "Облако тегов каталога товаров"
 #: ../goods-widgets.php:140
 msgid "Products Tags"
 msgstr "Метки продуктов"
+
+#: ../templates/content-goods_category.php:18
+#, php-format
+msgid "Go to cetegory %s"
+msgstr "Перейти в рубрику  %s"
 
 #~ msgid "There are no products in the category."
 #~ msgstr "В этой рубрике нет товаров."
