@@ -359,5 +359,6 @@ class GoodsSettingsPage {
 
 }
 
-if (is_admin())
+if (is_admin()) {
     $goods_settings_page = new GoodsSettingsPage();
+}

@@ -38,7 +38,7 @@ $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
 
         // show sub-categories only in first page, if paged
         if (!is_paged()) {
-            
+
             // show sub-categories list
             $current_term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
             $args = array(
