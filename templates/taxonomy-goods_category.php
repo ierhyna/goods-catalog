@@ -27,8 +27,9 @@ $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
         </div>
         <?php
         global $posts;
-        $post = $posts[0];
-
+        if (have_posts()) { // fix 'undefined offset 0'
+            $post = $posts[0];
+        }
         ob_start();
 
         echo '<h2 class="single-category-title">' . single_cat_title('', false) . '</h2>';

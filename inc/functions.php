@@ -122,7 +122,7 @@ function show_the_thumbnail() {
         the_post_thumbnail(array(150, 150), array('class' => 'goods-item-thumb'));
         echo '</a>';
     } else { // show default image if the thumbnail is not found
-        echo '<a href="' . get_permalink() . '"><img class="goods-item-thumb" src="' . plugins_url('img/gi.png', __FILE__) . '" alt=""></a>';
+        echo '<a href="' . get_permalink() . '"><img class="goods-item-thumb" src="' . GOODS_CATALOG_PLUGIN_URL . '/img/gi.png" alt=""></a>';
     }
     echo '</div>';
 }
