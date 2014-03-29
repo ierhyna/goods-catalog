@@ -6,6 +6,11 @@
 
 // Goods Categories
 function create_goods_category() {
+    
+    global $catalog_option;
+    $slug = $catalog_option[ 'gc_category_slug' ];
+    if( ! $slug ) $slug = 'goods_category';
+    
     register_taxonomy(
             'goods_category', 'goods', array(
         'labels' => array(
@@ -18,7 +23,7 @@ function create_goods_category() {
         'show_in_nav_menus' => true,
         'show_tagcloud' => false,
         'hierarchical' => true,
-        'rewrite' => array('slug' => 'goods_category')
+        'rewrite' => array('slug' => $slug)
             )
     );
 }

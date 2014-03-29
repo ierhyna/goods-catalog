@@ -1,10 +1,15 @@
 <?php
 
-/* 
+/*
  * Create post type: goods
  */
 
 function create_goods() {
+    
+    global $catalog_option;
+    $slug = $catalog_option[ 'gc_catalog_slug' ];
+    if( ! $slug ) $slug = 'catalog';
+    
     register_post_type('goods', array(
         'labels' => array(
             'name' => __('Goods', 'gcat'),
@@ -25,7 +30,7 @@ function create_goods() {
         'supports' => array('title', 'editor', 'comments', 'thumbnail'),
         'taxonomies' => array('goods_category'),
         'has_archive' => true,
-        'rewrite' => array('slug' => 'catalog', 'with_front' => false)
+        'rewrite' => array('slug' => $slug, 'with_front' => false)
             )
     );
 }

@@ -6,6 +6,10 @@
 
 // Goods Tags
 function create_goods_tags() {
+    
+    global $catalog_option;
+    $slug = $catalog_option[ 'gc_tag_slug' ];
+    if( ! $slug ) $slug = 'goods_tag';
 
     $labels = array(
         'name' => __('Tags', 'gcat'),
@@ -24,7 +28,7 @@ function create_goods_tags() {
         'not_found' => __('Not Found', 'gcat'),
     );
     $rewrite = array(
-        'slug' => 'goods_tag',
+        'slug' => $slug,
         'with_front' => true,
         'hierarchical' => false,
     );

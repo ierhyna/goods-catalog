@@ -42,13 +42,21 @@ function get_tag_id($tag) {
 
 function my_breadcrumb($id = null) {
     echo '<a href=" ' . home_url() . ' ">' . __('Home') . '</a> &gt; ';
-    echo '<a href="';
-//echo '/catalog';
-    echo get_post_type_archive_link('goods');
-    echo '">';
-    echo __('Catalog', 'gcat');
-    echo "</a> &gt; ";
-    if (is_category() || is_single() || is_tax()) {
+    if (is_post_type_archive('goods')) {
+        echo '<a href="';
+        echo get_post_type_archive_link('goods');
+        echo '">';
+        echo __('Catalog', 'gcat');
+        echo "</a>";
+    } else {
+        echo '<a href="';
+        echo get_post_type_archive_link('goods');
+        echo '">';
+        echo __('Catalog', 'gcat');
+        echo "</a>";
+        echo ' &gt; ';
+    }
+    if (is_single() || is_tax()) {
         if (is_single()) {
             $cat = get_the_term_list(isset($post->ID), 'goods_category', '', ', ', '');
 // make sure uncategorised is not used
@@ -56,15 +64,11 @@ function my_breadcrumb($id = null) {
                 echo $cat;
                 echo '  &gt; ';
             }
-            echo '<a href="' . get_permalink(get_the_ID()) . '">';
+            echo ' <a href="' . get_permalink(get_the_ID()) . '">';
             the_title();
             echo '</a>';
         }
-        if (is_category()) {
-            $cat = get_category_parents(get_query_var('cat'), true, ' &gt; ');
-// remove last &gt;
-            echo preg_replace('/&gt;\s$|&gt;$/', '', $cat);
-        }
+
         if (is_tax()) {
             $tag = single_tag_title('', false);
             $tag = get_tag_id($tag);
@@ -72,21 +76,5 @@ function my_breadcrumb($id = null) {
 // remove last &gt;
             echo preg_replace('/&gt;\s$|&gt;$/', '', $term);
         }
-    } elseif (is_page()) {
-        if ($id != null) {
-            $an = get_post_ancestors($id);
-            if (isset($an['0'])) {
-                $parent = '<a href="' . get_permalink($an['0']) . '">' . ucwords(get_the_title($an['0'])) . '</a>';
-                echo!is_null($parent) ? $parent . " &gt; " : null;
-            }
-            $parent = get_the_title($id);
-            $parent = '<a href="' . get_permalink($id) . '">' . ucwords($parent) . '</a>';
-            echo!is_null($parent) ? $parent . " &gt; " : null;
-        }
-        echo '<a href="' . get_permalink(get_the_ID()) . '">';
-        ucwords(the_title());
-        echo '</a>';
-    }
+    } 
 }
-
-

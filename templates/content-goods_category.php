@@ -25,18 +25,19 @@ else {
             if (!empty($terms)) {
                 foreach ((array) $terms as $term) {
                     if ($term->term_id == $categories_item->term_id) {
-                        $img = wp_get_attachment_image($term->image_id, 'thumbnail', '', array('class' => 'goods-category-thumb'));
+
+                        $img = wp_get_attachment_image($term->image_id, 'gc-image-thumb', '', array('class' => 'goods-category-thumb'));
                         echo '<a href="' . esc_url(get_term_link($term, $term->taxonomy)) . '">' . $img . '</a>';
                         $flag = TRUE;
                     }
                 }
                 if ($flag == FALSE) {
-                    echo '<a href="' . esc_url(get_term_link($categories_item, $categories_item->taxonomy)) . '"><img class="goods-item-thumb" src="' . plugins_url( '/img/gc.png' , dirname(__FILE__) ) . '" alt=""></a>';
+                    echo '<a href="' . esc_url(get_term_link($categories_item, $categories_item->taxonomy)) . '"><img class="goods-item-thumb" src="' . plugins_url('/img/gc.png', dirname(__FILE__)) . '" alt=""></a>';
                 }
             }
             // show images if plugin Taxonomy Images not installed
             else {
-                echo '<a href="' . esc_url(get_term_link($categories_item, $categories_item->taxonomy)) . '"><img class="goods-item-thumb" src="' . plugins_url( '/img/gc.png' , dirname(__FILE__) ) . '" alt=""></a>';
+                echo '<a href="' . esc_url(get_term_link($categories_item, $categories_item->taxonomy)) . '"><img class="goods-item-thumb" src="' . plugins_url('/img/gc.png', dirname(__FILE__)) . '" alt=""></a>';
             }
             echo '</div>';
         }
