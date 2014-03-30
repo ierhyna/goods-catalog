@@ -10,7 +10,7 @@
 
 /* Grid catalog */
 .goods-catalog .grid {
-    width: 200px;
+    min-width: 200px;
     min-height: 200px;
     background-color: #f5f5f5;
     padding: 10px;

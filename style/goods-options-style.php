@@ -39,6 +39,16 @@ function goods_add_user_stylesheet() { // enqueue users stylesheet for the catal
                 }
                 ?>
             }
+            .goods-catalog .grid {
+                <?php
+                if (isset($catalog_option['category_thumb_size_w'])) {
+                    $size_w = $catalog_option['category_thumb_size_w'] + 40;
+                    echo 'width:' . $size_w . 'px';
+                } else {
+                    echo "width: 200px;";
+                }?>
+
+            }
             .goods-sidebar {
                 <?php
                 if (isset($catalog_option['use_sidebar'])) { // if we use sidebar, set its width

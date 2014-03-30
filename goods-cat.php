@@ -4,7 +4,7 @@
   Plugin Name: Goods Catalog
   Plugin URI: http://oriolo.ru/wordpress/goods-catalog/
   Description: Plugin that creates simple catalog of goods.
-  Version: 0.5.4-dev2
+  Version: 0.6-dev
   Author: Irina Sokolovskaya
   Author URI: http://oriolo.ru/
   License: GNU General Public License v2 or later
@@ -37,8 +37,8 @@
  * Enable Debug Mode
  * Uncomment the following lines to see PHP errors
  */
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
 
 /*
  * Define plugin's pathes
@@ -55,9 +55,14 @@ define('GOODS_CATALOG_PLUGIN_TEMPLATES', GOODS_CATALOG_PLUGIN_PATH . '/templates
  */
 function goods_catalog_lang_init() {
     $domain = 'gcat';
-    load_plugin_textdomain($domain, FALSE, basename(dirname(__FILE__)) . '/languages/');
+    // The "plugin_locale" filter is also used in load_plugin_textdomain()
+    $locale = apply_filters('plugin_locale', get_locale(), $domain);
+    load_textdomain($domain, WP_LANG_DIR.'/plugins/'.$domain.'-'.$locale.'.mo');
+    load_plugin_textdomain($domain, FALSE, dirname(plugin_basename(__FILE__)).'/languages/');
 }
 add_action('plugins_loaded', 'goods_catalog_lang_init');
+
+
 
 /*
  * Use options set by user

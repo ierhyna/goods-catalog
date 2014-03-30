@@ -314,7 +314,8 @@ class GoodsSettingsPage {
         _e( ' by default: catalog', 'gcat');
         echo "<p>";
         $url = admin_url( 'options-permalink.php' );
-        _e( 'You can change the default path to the catalog. Please notice, that every time you change it you should also press "Save" on the <a href="'.$url.'">Permalinks Settings page</a>', 'gcat');
+        $text = __( 'You can change the default path to the catalog. Please notice, that every time you change it you should also press "Save" on the <a href="%s">Permalinks Settings page</a>, and maybe update the menu item', 'gcat');
+        printf($text, $url);
         echo "</p>";
     }
 
@@ -325,7 +326,8 @@ class GoodsSettingsPage {
         _e( ' by default: goods_caregory', 'gcat' );
         echo "<p>";
         $url = admin_url( 'options-permalink.php' );
-        _e( 'You can change the default prefix for the catagories of products. Please notice, that every time you change it you should also press "Save" on the <a href="'.$url.'">Permalinks Settings page</a>', 'gcat');
+        $text = __( 'You can change the default prefix for the catagories of products. Please notice, that every time you change it you should also press "Save" on the <a href="%s">Permalinks Settings page</a>', 'gcat');
+        printf($text, $url);
         echo "</p>";
     }
 
@@ -336,7 +338,8 @@ class GoodsSettingsPage {
         _e( ' by default: goods_tag', 'gcat');
         echo "<p>";
         $url = admin_url( 'options-permalink.php' );
-        _e( 'You can change the default prefix for the tags of products. Please notice, that every time you change it you should also press "Save" on the <a href="'.$url.'">Permalinks Settings page</a>', 'gcat');
+        $text = __( 'You can change the default prefix for the tags of products. Please notice, that every time you change it you should also press "Save" on the <a href="%s">Permalinks Settings page</a>', 'gcat');
+        printf($text, $url);
         echo "</p>";
     }
 
@@ -394,7 +397,7 @@ class GoodsSettingsPage {
         );
         _e('px', 'gcat');
         
-        echo "<p>" . __("If you are unhappy with default thumbnails' size for categories and products, change it here, please. If you have problems with thumbnails after update, please use <a href='http://wordpress.org/plugins/regenerate-thumbnails/'>Regenerate Thumbnails</a> plugin to rebuild images' sizes. Please notice, that default images for category and product will not be resized", "gcat") . "</p>";
+        echo "<p>" . __("If you are unhappy with default thumbnails' size for categories and products, change it here, please. After that please use <a href='http://wordpress.org/plugins/regenerate-thumbnails/'>Regenerate Thumbnails</a> plugin to rebuild images' sizes. Please notice, that default images for category and product will not be resized", "gcat") . "</p>";
     }
 
         public function show_category_descr_callback() {
@@ -459,7 +462,3 @@ class GoodsSettingsPage {
     if (is_admin()) {
         $goods_settings_page = new GoodsSettingsPage();
     }
-
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
-    

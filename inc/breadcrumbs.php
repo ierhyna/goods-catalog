@@ -5,6 +5,7 @@
  * based on http://snipplr.com/view/57988/ and https://gist.github.com/TCotton/4723438
  */
 
+        
 function get_term_parents($id, $taxonomy, $link = false, $separator = '/', $nicename = false, $visited = array()) {
     $chain = '';
     $parent = &get_term($id, $taxonomy);

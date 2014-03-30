@@ -1,7 +1,7 @@
 === Goods Catalog ===
 Contributors: oriolo
 Tags: catalog, catalogue, product, products, goods, product catalog, product catalogue, catalog of goods
-Stable tag: v0.5.4
+Stable tag: v0.6
 Requires at least: 3.3.0
 Tested up to: 3.8.1
 License: GNU General Public License v2 or later
@@ -35,16 +35,32 @@ Languages:
 4. Admin page
 
 == Frequently Asked Questions ==
+
 = There is 404 on /catalog or products page =
 You need to update your permalinks. Just go to Console -> Settings -> Permalinks and press "Save". You don't need to change it.
 
+= There are no thumbnails for the categories =
+Please use Taxonomy Images plugin (https://wordpress.org/plugins/taxonomy-images/) to attach image to category, and than turn on "Show Thumbnails for categories" option in Gooods Catalog plugin settings.
+
+= Can I use sidebar in the catalog pages? =
+Sure! There is special sidebar for the catalog. All widgets you put in there will be available only for catalog pages. Please, set up the sidebar in the plugin settings.
+
+= How can I translate Goods Catalog to my language? =
+Please use one of translation tools, listed here: http://codex.wordpress.org/Translating_WordPress#Translation_Tools to open .POT file and create your own translation. You can put your .PO and .MO files into /wp-content/languages/plugins/ and you will not loose the translations after plugin update.
+Also, you can send me your language files and I'll add them to the release.
+
 == Changelog ==
 
-= v0.5.5 =
+= v0.6 =
 
 * Fixed breadcrumbs 404 bug for default permalinks structure (?p=123), thanks Lili's bugreport
+* Updated breadcrumbs
 * Fixed conflict bug with other catalog plugins, thanks Roman's bugreport
 * Fixed translation to Russian, updated POT-file
+* Now you can put your language files into /wp-content/languages/plugins
+* Updated settings page: added changeable prefixes for catalog, category and tag pages (thanks Leon for the idea)
+* Updated settings page: added changeable thumbnail size (thanks kreker92 for the idea)
+* Changed internal structure of the plugin
 
 = v0.5.4 =
 
