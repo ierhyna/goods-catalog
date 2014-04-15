@@ -137,8 +137,8 @@ if (function_exists('add_image_size')) {
 }
 
 /*
- * get product thumbnail
- */ 
+ * show product thumbnail
+ */
 
 function show_the_thumbnail() {
     echo '<div class="goods-item-thumb-container">';
@@ -151,4 +151,35 @@ function show_the_thumbnail() {
         echo '<a href="' . get_permalink() . '"><img class="goods-item-thumb" src="' . GOODS_CATALOG_PLUGIN_URL . '/img/gi.png" alt=""></a>';
     }
     echo '</div>';
+}
+
+/*
+ * get product info for the shortcodes
+ */
+
+function goods_shortcode_output() {
+    $output .= '<div class="grid"><div>'
+            . '<div class="goods-item-title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></div>'
+            . '<div class="goods-item-content">'
+            . '<div class="goods-item-thumb-container">';
+
+    if (has_post_thumbnail()) {
+        $output .= '<a href="' . get_permalink() . '">'
+                . get_the_post_thumbnail($post_id, 'gc-image-thumb', array('class' => 'goods-item-thumb'))
+                . '</a>';
+    } else { // show default image if the thumbnail is not found
+        $output .= '<a href="' . get_permalink() . '"><img class="goods-item-thumb" src="' . GOODS_CATALOG_PLUGIN_URL . '/img/gi.png" alt=""></a>';
+    }
+
+    $gc_price = get_post_meta(get_the_ID(), 'gc_price', true); // get fields from metabox
+    if ((isset($gc_price)) && ($gc_price != '')) { // show fields values
+        $output .= '<p class="goods-price-single">'
+                . __('Price:', 'gcat') . ' ' . $gc_price . '</p>';
+    }
+    $gc_descr = get_post_meta(get_the_ID(), 'gc_descr', true);
+    if ((isset($gc_descr)) && ($gc_descr != '')) {
+        $output .= '<p class="goods-descr">' . $gc_descr . '</p>';
+    }
+    $output .= '</div></div></div></div>';
+    return $output;
 }

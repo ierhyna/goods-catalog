@@ -283,7 +283,7 @@ class GoodsSettingsPage {
      * Print the Section text
      */
     public function print_catalog_info() {
-        print '<p>' . __('You can see the catalog on your site at:', 'gcat') . ' <a href="' . get_home_url() . '/catalog">' . get_home_url() . '/catalog</a></p>';
+        print '<p>' . __('You can see the catalog on your site at:', 'gcat') . ' <a href="' . get_post_type_archive_link('goods') . '">' .  get_post_type_archive_link('goods') .  '</a></p>';
         print __('<p>Don\' know how to set up the catalog? The instructions are available here: <a href="http://oriolo.wordpress.com/2014/03/25/goods-catalog-wordpress-plugin-that-creates-catalog-of-products/">in English</a>, <a href="http://oriolo.ru/goods-catalog/">in Russian</a></p>', 'gcat');
         print __('<p>Any problems or questions? Visit the plugin\'s <a href="http://wordpress.org/support/plugin/goods-catalog">support forum</a> at WordPress.org</p>', 'gcat');
     }

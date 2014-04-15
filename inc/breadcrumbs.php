@@ -5,7 +5,6 @@
  * based on http://snipplr.com/view/57988/ and https://gist.github.com/TCotton/4723438
  */
 
-        
 function get_term_parents($id, $taxonomy, $link = false, $separator = '/', $nicename = false, $visited = array()) {
     $chain = '';
     $parent = &get_term($id, $taxonomy);
@@ -15,8 +14,10 @@ function get_term_parents($id, $taxonomy, $link = false, $separator = '/', $nice
         }
     } catch (exception $e) {
         echo __('Caught exception: ', 'gcat'), $e->getMessage(), "\n";
-// use something less drastic than die() in production code
-//die();
+/*
+ * use something less drastic than die() in production code
+ * die();
+ */
     }
     if ($nicename) {
         $name = $parent->slug;
@@ -42,7 +43,7 @@ function get_tag_id($tag) {
 }
 
 function my_breadcrumb($id = null) {
-    echo '<a href=" ' . home_url() . ' ">' . __('Home') . '</a> &gt; ';
+    echo '<a href=" ' . home_url() . ' ">' . __('Home', 'gcat') . '</a> &gt; ';
     if (is_post_type_archive('goods')) {
         echo '<a href="';
         echo get_post_type_archive_link('goods');
@@ -59,23 +60,20 @@ function my_breadcrumb($id = null) {
     }
     if (is_single() || is_tax()) {
         if (is_single()) {
-            $cat = get_the_term_list(isset($post->ID), 'goods_category', '', ', ', '');
-// make sure uncategorised is not used
-            if (!stristr($cat, 'Uncategorized')) {
-                echo $cat;
-                echo '  &gt; ';
+            $cur_terms = get_the_terms($post->ID, 'goods_category');
+            foreach ($cur_terms as $cur_term) {
+                $tag = $cur_term->term_id;
+                $term = get_term_parents($tag, 'goods_category', true, ' &gt; ');
+                echo preg_replace('/>\s$|>$/', '', $term);
             }
-            echo ' <a href="' . get_permalink(get_the_ID()) . '">';
             the_title();
-            echo '</a>';
         }
 
         if (is_tax()) {
             $tag = single_tag_title('', false);
             $tag = get_tag_id($tag);
             $term = get_term_parents($tag, get_query_var('taxonomy'), true, ' &gt; ');
-// remove last &gt;
-            echo preg_replace('/&gt;\s$|&gt;$/', '', $term);
+            echo preg_replace('/&gt;\s$|&gt;$/', '', $term); // remove last &gt;
         }
-    } 
+    }
 }

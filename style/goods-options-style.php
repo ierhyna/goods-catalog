@@ -6,10 +6,11 @@
 add_action('wp_print_styles', 'goods_add_stylesheet'); // register hook 'wp_print_styles'
 
 function goods_add_stylesheet() { // enqueue stylesheet for the catalog pages 
-    if (is_tax('goods_category') || is_tax('goods_tag') || is_post_type_archive('goods') || is_singular('goods')) {
+   // commented to make styles work with the shortcodes
+   // if (is_tax('goods_category') || is_tax('goods_tag') || is_post_type_archive('goods') || is_singular('goods')) {
         wp_register_style('catalog-style', GOODS_CATALOG_PLUGIN_URL . '/style/catalog-style.css');
         wp_enqueue_style('catalog-style');
-    }
+   // }
 }
 
 function goods_add_user_stylesheet() { // enqueue users stylesheet for the catalog pages 

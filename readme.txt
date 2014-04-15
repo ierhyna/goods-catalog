@@ -1,9 +1,9 @@
 === Goods Catalog ===
 Contributors: oriolo
 Tags: catalog, catalogue, product, products, goods, product catalog, product catalogue, catalog of goods
-Stable tag: v0.6
+Stable tag: 0.6.1
 Requires at least: 3.3.0
-Tested up to: 3.8.1
+Tested up to: 3.9-RC1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,6 +50,11 @@ Please use one of translation tools, listed here: http://codex.wordpress.org/Tra
 Also, you can send me your language files and I'll add them to the release.
 
 == Changelog ==
+
+= v0.6.1 =
+
+* Fixed breadcrumbs on single page
+* Fixed path to the catelog in plugin settings page
 
 = v0.6 =
 
