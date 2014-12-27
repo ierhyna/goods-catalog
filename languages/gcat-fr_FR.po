@@ -1,0 +1,489 @@
+# Copyright (C) 2014 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/goods-catalog\n"
+"POT-Creation-Date: 2014-03-30 04:45:12+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-12-01 18:49+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.6.11\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr_FR\n"
+
+#: inc/breadcrumbs.php:17
+msgid "Caught exception: "
+msgstr "Erreur d'initialisation :"
+
+#: inc/breadcrumbs.php:45
+msgid "Home"
+msgstr "Accueil"
+
+#: inc/breadcrumbs.php:50 inc/breadcrumbs.php:56
+msgid "Catalog"
+msgstr "Catalogue"
+
+#: inc/functions.php:62
+msgid "Categories:&nbsp;"
+msgstr "Catégories"
+
+#: inc/functions.php:64
+msgid "Tags:&nbsp;"
+msgstr "Tags :"
+
+#: inc/functions.php:90
+msgid "Price:"
+msgstr "Prix :"
+
+#: inc/functions.php:103
+msgid "SKU:"
+msgstr "SKU :"
+
+#: inc/goods-options.php:27
+msgid "Goods Catalog Settings"
+msgstr "Préférences"
+
+#: inc/goods-options.php:40
+msgid "Goods Catalog Plugin Settings"
+msgstr "Préférences du Plug-In \"Goods Catalog\""
+
+#: inc/goods-options.php:66
+msgid "Plugin Info"
+msgstr "Infos Plug-In"
+
+#: inc/goods-options.php:74
+msgid "Catalog View Settings"
+msgstr "Préférences "
+
+#: inc/goods-options.php:82
+msgid "Catalog Slug"
+msgstr "Raccourci Catalog"
+
+#: inc/goods-options.php:90
+msgid "Category Slug"
+msgstr "Raccourci Catégories"
+
+#: inc/goods-options.php:98
+msgid "Tag Slug"
+msgstr "Raccourci Tag"
+
+#: inc/goods-options.php:106
+msgid "Products per page"
+msgstr "Produits par page"
+
+#: inc/goods-options.php:114
+msgid "Container Width"
+msgstr "Largeur de conteneur"
+
+#: inc/goods-options.php:121
+msgid "Center Container"
+msgstr "Conteneur centré"
+
+#: inc/goods-options.php:128
+msgid "Info Container Width on Product Page"
+msgstr "Largeur du \"Conteneur Info\" sur la page produit"
+
+#: inc/goods-options.php:136
+msgid "Thumbnail size"
+msgstr "Taille de miniature"
+
+#: inc/goods-options.php:145
+msgid "Categories View Settings"
+msgstr "Réglages des vues Catégories"
+
+#: inc/goods-options.php:153
+msgid "Show category's thumbnails"
+msgstr "Voir les miniatures de Catégories"
+
+#: inc/goods-options.php:161
+msgid "Show category's description"
+msgstr "Voir les description de Catégories"
+
+#: inc/goods-options.php:170
+msgid "Product View Settings"
+msgstr "Réglages de"
+
+#: inc/goods-options.php:178
+msgid "Show product's short description"
+msgstr "Voir les descriptions courtes de produits"
+
+#: inc/goods-options.php:186
+msgid "Show product's SKU"
+msgstr "Voir les SKU des produits"
+
+#: inc/goods-options.php:195
+msgid "Sidebar Settings"
+msgstr "Réglages de la Sidebar"
+
+#: inc/goods-options.php:203
+msgid "Use plugin's sidebar"
+msgstr "Utiliser le Plug-In de Sidebar"
+
+#: inc/goods-options.php:210
+msgid "Sidebar Width"
+msgstr "Largeur de la Sidebar"
+
+#: inc/goods-options.php:286
+msgid "You can see the catalog on your site at:"
+msgstr "Vous pouvez voir le Catalogue à l'adresse suivante :"
+
+#: inc/goods-options.php:287
+msgid ""
+"<p>Don' know how to set up the catalog? The instructions are available here: "
+"<a href=\"http://oriolo.wordpress.com/2014/03/25/goods-catalog-wordpress-"
+"plugin-that-creates-catalog-of-products/\">in English</a>, <a href=\"http://"
+"oriolo.ru/goods-catalog/\">in Russian</a></p>"
+msgstr ""
+"<p>Vous ne savez pas comment configurer votre Catalogue ? Toutes les "
+"instructions sont disponibles à cette adresse : <a href=\"http://oriolo."
+"wordpress.com/2014/03/25/goods-catalog-wordpress-plugin-that-creates-catalog-"
+"of-products/\">en Anglais</a>, <a href=\"http://oriolo.ru/goods-catalog/"
+"\">en  Russe</a></p>"
+
+#: inc/goods-options.php:288
+msgid ""
+"<p>Any problems or questions? Visit the plugin's <a href=\"http://wordpress."
+"org/support/plugin/goods-catalog\">support forum</a> at WordPress.org</p>"
+msgstr ""
+"<p>Un problème ou une question ? Visitez <a href=\"http://wordpress.org/"
+"support/plugin/goods-catalog\">le forum de support du Plug-In</a> sur "
+"WordPress.org</p>"
+
+#: inc/goods-options.php:292 inc/goods-options.php:296
+#: inc/goods-options.php:300
+msgid "Enter your settings below:"
+msgstr "Entrez vos réglages en dessous"
+
+#: inc/goods-options.php:304
+msgid ""
+"If your theme's sidebar loads correctly on the catalog pages, you do not "
+"need to change anything here"
+msgstr ""
+"Si votre Sidebar de votre Thème se charge correctement sur les pages de "
+"Catalogue, vous n'avez rien à changer ici."
+
+#: inc/goods-options.php:314
+msgid " by default: catalog"
+msgstr "catalog par défaut"
+
+#: inc/goods-options.php:317
+msgid ""
+"You can change the default path to the catalog. Please notice, that every "
+"time you change it you should also press \"Save\" on the <a href=\"%s"
+"\">Permalinks Settings page</a>, and maybe update the menu item"
+msgstr ""
+"Vous pouvez changer le chemin par défaut du Catalogue. Notez cependant qu'à "
+"chaque changement vous devrez cliquer sur \"Enregistrer\" dans les <a href="
+"\"%s\">Permaliens</a> de la page des Réglages et peut-être mettre à jour "
+"l'élément de menu."
+
+#: inc/goods-options.php:326
+msgid " by default: goods_caregory"
+msgstr "par défaut : goods_category"
+
+#: inc/goods-options.php:329
+msgid ""
+"You can change the default prefix for the catagories of products. Please "
+"notice, that every time you change it you should also press \"Save\" on the "
+"<a href=\"%s\">Permalinks Settings page</a>"
+msgstr ""
+"You can change the default prefix for the catagories of products. Please "
+"notice, that every time you change it you should also press \"Save\" on the "
+"<a href=\"%s\">Permalinks Settings page</a>"
+
+#: inc/goods-options.php:338
+msgid " by default: goods_tag"
+msgstr "par défaut : goods_tag"
+
+#: inc/goods-options.php:341
+msgid ""
+"You can change the default prefix for the tags of products. Please notice, "
+"that every time you change it you should also press \"Save\" on the <a href="
+"\"%s\">Permalinks Settings page</a>"
+msgstr ""
+"Vous pouvez changer le préfixe par défaut des mots clés de produits. Notez "
+"cependant qu'à chaque changement vous devrez cliquer sur \"Enregister\" sur "
+"la page de réglages des <a href=\"%s\">Permaliens.</a>"
+
+#: inc/goods-options.php:356
+msgid "by default 100"
+msgstr "100 par défaut"
+
+#: inc/goods-options.php:357
+msgid ""
+"If the catalog's container is bigger than your theme's container, change it "
+"here"
+msgstr ""
+"Si votre conteneur de Catalogue est plus grand que votre Conteneur de Theme, "
+"changez le ici."
+
+#: inc/goods-options.php:364
+msgid ""
+"Add 'margin: 0 auto;' to the container. If you have changed container's "
+"width, you should also turn on this option"
+msgstr ""
+"Ajouter 'margin: 0 auto;'  au Conteneur. Si vous avez changé la largeur du "
+"Conteneur, vous devrez aussi activer cette option."
+
+#: inc/goods-options.php:371
+msgid "by default 60"
+msgstr "par défaut 60"
+
+#: inc/goods-options.php:372
+msgid ""
+"Set width of Product Info Container on single product page. In that "
+"container are located: name, price, SKU, short description, categories and "
+"tags of the product. With the smaller width the container will be on the "
+"right of product thumbnail, with the bigger width it will be under product "
+"thumbnail"
+msgstr ""
+"Régler la largeur du Conteneur \"d'info Produit\" sur la page de produit. "
+"Dans ce conteneur sont disposés : Nom, Prix, SKU, courte description, "
+"Catégories et mots Clés du produit. Avec la petite largeur le conteneur sera "
+"disposé sur la droite de la miniature produit, avec la grande largeur il "
+"sera disposé sous la miniature produit."
+
+#: inc/goods-options.php:383 inc/goods-options.php:407
+#: inc/goods-options.php:423 inc/goods-options.php:434
+msgid "in grid"
+msgstr "En grille"
+
+#: inc/goods-options.php:384
+msgid ""
+"If you don't need thumbnails for the categories, please uncheck this option"
+msgstr ""
+"Si vous n'avez pas besoin de miniatures pour cette catégorie, décochez cette "
+"option"
+
+#: inc/goods-options.php:388
+msgid "Width: "
+msgstr "Largeur :"
+
+#: inc/goods-options.php:392 inc/goods-options.php:398
+msgid "px"
+msgstr "pixels"
+
+#: inc/goods-options.php:394
+msgid "Height: "
+msgstr "Hauteur :"
+
+#: inc/goods-options.php:400
+msgid ""
+"If you are unhappy with default thumbnails' size for categories and "
+"products, change it here, please. After that please use <a href='http://"
+"wordpress.org/plugins/regenerate-thumbnails/'>Regenerate Thumbnails</a> "
+"plugin to rebuild images' sizes. Please notice, that default images for "
+"category and product will not be resized"
+msgstr ""
+"Si vous n'êtes pas satisfait des tailles par défaut des vignettes de "
+"Catégories et Produits, changez les ici, merci. Après cela utiliser <a "
+"href='http://wordpress.org/plugins/regenerate-thumbnails/'>Regénérateur de "
+"Miniatures</a> pour recréer les vignettes à la bonne taille. Merci de noter "
+"que les images par défaut de Catégories et Produits ne seront pas régénérés."
+
+#: inc/goods-options.php:411
+msgid "in category page"
+msgstr "Dans la catégorie de page"
+
+#: inc/goods-options.php:412
+msgid ""
+"If you don't need description for the categories, please uncheck this option"
+msgstr ""
+"Si vous n'avez pas besoin de description pour les Catégories, merci de "
+"décocher cette option."
+
+#: inc/goods-options.php:427 inc/goods-options.php:438
+msgid "in single product page"
+msgstr "Dans la page de produit"
+
+#: inc/goods-options.php:449
+msgid "Please turn the option on, if you would like to use the sidebar"
+msgstr "Si vous voulez utiliser la Sidebar, merci de mettre l'option sur ON"
+
+#: inc/goods-options.php:456
+msgid "by default 20"
+msgstr "20 par défaut"
+
+#: inc/goods-options.php:457
+msgid "Set width of the Sidebar"
+msgstr "Régler la largeur de la Sidebar"
+
+#: inc/metabox.php:11
+msgid "Item Options"
+msgstr "Options d'article"
+
+#: inc/metabox.php:17
+msgid "Price"
+msgstr "Prix"
+
+#: inc/metabox.php:18
+msgid "Enter price here"
+msgstr "Entrer le prix ici"
+
+#: inc/metabox.php:24
+msgid "SKU"
+msgstr "SKU"
+
+#: inc/metabox.php:25
+msgid "Enter product ID (SKU)"
+msgstr "Entrer un ID de produit (SKU)"
+
+#: inc/metabox.php:31
+msgid "Short Description"
+msgstr "Courte Description"
+
+#: inc/metabox.php:32
+msgid "Enter description here"
+msgstr "Entrer une description ici"
+
+#: inc/pagination.php:20
+msgid "Pages:"
+msgstr "Pages : "
+
+#: inc/post-type.php:15
+msgid "Goods"
+msgstr "Catalogue"
+
+#: inc/post-type.php:16
+msgid "Item"
+msgstr "Article"
+
+#: inc/post-type.php:17
+msgid "Add"
+msgstr "Ajouter"
+
+#: inc/post-type.php:18
+msgid "Add new item"
+msgstr "Ajouter un nouvel Article"
+
+#: inc/post-type.php:19
+msgid "Edit"
+msgstr "Editer"
+
+#: inc/post-type.php:20
+msgid "Edit item"
+msgstr "Editer l'article"
+
+#: inc/post-type.php:21
+msgid "New item"
+msgstr "Nouvel Article"
+
+#: inc/post-type.php:22
+msgid "View"
+msgstr "Vue"
+
+#: inc/post-type.php:23
+msgid "View of items"
+msgstr "Vue des Articles"
+
+#: inc/post-type.php:24
+msgid "Search items"
+msgstr "Articles recherché"
+
+#: inc/post-type.php:25
+msgid "Items not found"
+msgstr "Article non trouvé"
+
+#: inc/post-type.php:26
+msgid "Item is not found in trash"
+msgstr "Article non trouvé dans la corbeille"
+
+#: inc/sidebar.php:12
+msgid "Goods Catalog Sidebar"
+msgstr "Sidebar du Catalogue"
+
+#: inc/sidebar.php:13
+msgid "Goods Catalog Widgets"
+msgstr "Widgets du Catalogue"
+
+#: inc/taxonomy-category.php:17
+msgid "Categories"
+msgstr "Catégories"
+
+#: inc/taxonomy-category.php:18
+msgid "Add category"
+msgstr "Ajouter une Catégorie"
+
+#: inc/taxonomy-category.php:19
+msgid "New category"
+msgstr "Nouvelle Catégorie"
+
+#: inc/taxonomy-tag.php:15 inc/taxonomy-tag.php:16
+msgid "Tags"
+msgstr "Tags"
+
+#: inc/taxonomy-tag.php:17
+msgid "All Items"
+msgstr "Tous les articles"
+
+#: inc/taxonomy-tag.php:18
+msgid "Parent Item"
+msgstr "Article Parent"
+
+#: inc/taxonomy-tag.php:19
+msgid "Parent Item:"
+msgstr "Article parent :"
+
+#: inc/taxonomy-tag.php:20
+msgid "New Item Name"
+msgstr "Nouveau titre d'article"
+
+#: inc/taxonomy-tag.php:21
+msgid "Add New Item"
+msgstr "Ajouter un nouvel article"
+
+#: inc/taxonomy-tag.php:22
+msgid "Edit Item"
+msgstr "Editer l'article"
+
+#: inc/taxonomy-tag.php:23
+msgid "Update Item"
+msgstr "Mettre à jour l'article"
+
+#: inc/taxonomy-tag.php:24
+msgid "Separate items with commas"
+msgstr "Séparer les articles avec une virgule"
+
+#: inc/taxonomy-tag.php:25
+msgid "Search Items"
+msgstr "Chercher des articles"
+
+#: inc/taxonomy-tag.php:26
+msgid "Add or remove items"
+msgstr "Ajouter ou Supprimer des articles"
+
+#: inc/taxonomy-tag.php:27
+msgid "Choose from the most used items"
+msgstr "Choisir parmi les articles les plus utilisés"
+
+#: inc/taxonomy-tag.php:28
+msgid "Not Found"
+msgstr "Non Trouvé"
+
+#: inc/widgets.php:21
+msgid "Goods Catalog categories list"
+msgstr "Liste des Catégories du Catalogue"
+
+#: inc/widgets.php:62
+msgid "Products Categories"
+msgstr "Catégories de Produits"
+
+#: inc/widgets.php:70 inc/widgets.php:148
+msgid "Title:"
+msgstr "Titre :"
+
+#: inc/widgets.php:107
+msgid "Goods Catalog tags cloud"
+msgstr "Nuage de Tags de Goods Catalogue"
+
+#: inc/widgets.php:140
+msgid "Products Tags"
+msgstr "Tags des produits"
+
+#: templates/content-goods_category.php:18
+msgid "Go to cetegory %s"
+msgstr "Aller à la Catégorie %s"

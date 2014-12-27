@@ -19,21 +19,23 @@ function get_term_parents($id, $taxonomy, $link = false, $separator = '/', $nice
  * die();
  */
     }
-    if ($nicename) {
-        $name = $parent->slug;
-    } else {
-        $name = htmlspecialchars($parent->name, ENT_QUOTES, 'UTF-8');
+    if( !empty( $parent ) ) {
+        if ($nicename) {
+            $name = $parent->slug;
+        } else {
+            $name = htmlspecialchars($parent->name, ENT_QUOTES, 'UTF-8');
+        }
+        if ($parent->parent && ($parent->parent != $parent->term_id) && !in_array($parent->parent, $visited)) {
+            $visited[] = $parent->parent;
+            $chain .= get_term_parents($parent->parent, $taxonomy, $link, $separator, $nicename, $visited);
+        }
+        if ($link) {
+            $chain .= '<a href="' . get_term_link($parent->slug, $taxonomy) . '">' . $name . '</a>' . $separator;
+        } else {
+            $chain .= $parent->name . $separator;
+        }
+        return $chain;
     }
-    if ($parent->parent && ($parent->parent != $parent->term_id) && !in_array($parent->parent, $visited)) {
-        $visited[] = $parent->parent;
-        $chain .= get_term_parents($parent->parent, $taxonomy, $link, $separator, $nicename, $visited);
-    }
-    if ($link) {
-        $chain .= '<a href="' . get_term_link($parent->slug, $taxonomy) . '">' . $name . '</a>' . $separator;
-    } else {
-        $chain .= $parent->name . $separator;
-    }
-    return $chain;
 }
 
 function get_tag_id($tag) {
