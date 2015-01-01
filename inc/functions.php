@@ -159,7 +159,7 @@ function show_the_thumbnail() {
 
 function goods_shortcode_output() {
     $output .= '<div class="grid"><div>'
-            . '<div class="goods-item-title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></div>'
+            . '<div class="goods-item-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></div>'
             . '<div class="goods-item-content">'
             . '<div class="goods-item-thumb-container">';
 
