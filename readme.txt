@@ -33,6 +33,10 @@ You can use special sidebar for the catalog, to show different widgets on the ca
 * French (thanks to Bertrand)
 * You can send me translation for your language, and I'll add it to the release.
 
+= Contributing and reporting bugs =
+
+You can contribute code and localizations to this plugin via GitHub: https://github.com/ierhyna/goods-catalog
+
 == Installation ==
 
 * Download plugin in .zip archive and install in Console.
@@ -61,6 +65,10 @@ Please use one of translation tools, listed here: http://codex.wordpress.org/Tra
 Also, you can send me your language files and I'll add them to the release.
 
 == Changelog ==
+
+= v0.6.6 =
+
+* Shortcodes bug fix
 
 = v0.6.5 =
 
