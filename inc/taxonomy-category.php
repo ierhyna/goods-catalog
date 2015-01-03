@@ -14,7 +14,7 @@ function create_goods_category() {
     register_taxonomy(
             'goods_category', 'goods', array(
         'labels' => array(
-            'name' => __('Categories', 'gcat'),
+            'name' => __('Goods Categories', 'gcat'),
             'add_new_item' => __('Add category', 'gcat'),
             'new_item_name' => __('New category', 'gcat')
         ),

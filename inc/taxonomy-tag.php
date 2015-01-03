@@ -12,7 +12,7 @@ function create_goods_tags() {
     if( ! $slug ) $slug = 'goods_tag';
 
     $labels = array(
-        'name' => __('Tags', 'gcat'),
+        'name' => __('Goods Tags', 'gcat'),
         'menu_name' => __('Tags', 'gcat'),
         'all_items' => __('All Items', 'gcat'),
         'parent_item' => __('Parent Item', 'gcat'),
