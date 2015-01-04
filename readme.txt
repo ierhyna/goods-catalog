@@ -24,6 +24,8 @@ You can use special sidebar for the catalog, to show different widgets on the ca
 
 * Use shortcode [goods_newest] to display the newest products anywhere in the site: on post or page. For example, to show 6 products, type: [goods_newest number=6]
 * [goods_categories] to display the list of goods categories (many thanks to Alexander Chizhov & Pineapple Design Studio)
+* [goods_tags] to display list of all products' tags
+* [goods_sitemap] to display sitemap of the catalog (testing mode)
 
 = Languages =
 
@@ -66,33 +68,39 @@ Also, you can send me your language files and I'll add them to the release.
 
 == Changelog ==
 
-= v0.6.6 =
+= 0.6.7 =
+
+* New shortcode: [goods_tags] to display list of all products' tags
+* New shortcode: [goods_sitemap] to display sitemap of the catalog (testing mode)
+* Improved shortcode: [goods_categories] 
+
+= 0.6.6 =
 
 * Shortcodes bug fix
 
-= v0.6.5 =
+= 0.6.5 =
 
 * Added French language support
 
-= v0.6.4 =
+= 0.6.4 =
 
 * Minor bug fix (breadcrumbs)
 
-= v0.6.3 =
+= 0.6.3 =
 
 * Added Spanish language (thanks to netsis)
 * Added shortcode [goods_categories] to display the list of goods categories (many thanks to Alexander Chizhov & Pineapple Design Studio)
 
-= v0.6.2 =
+= 0.6.2 =
 
 * Added shortcode [goods_newest]
 
-= v0.6.1 =
+= 0.6.1 =
 
 * Fixed breadcrumbs on single page
 * Fixed path to the catelog in plugin settings page
 
-= v0.6 =
+= 0.6 =
 
 * Fixed breadcrumbs 404 bug for default permalinks structure (?p=123), thanks Lili's bugreport
 * Updated breadcrumbs
@@ -103,7 +111,7 @@ Also, you can send me your language files and I'll add them to the release.
 * Updated settings page: added changeable thumbnail size (thanks kreker92 for the idea)
 * Changed internal structure of the plugin
 
-= v0.5.4 =
+= 0.5.4 =
 
 * Updated layot, fixed bug with missing background in some themes
 * Created loop-grid.php
@@ -111,31 +119,31 @@ Also, you can send me your language files and I'll add them to the release.
 * Updated options page: added checkbox to disable thumbnail for the categories if you do not need them
 * Updated translation and POT-file
 
-= v0.5.2 =
+= 0.5.2 =
 
 * Fixed loop in the empty categories
 * Updated css
 
-= v0.5.1 =
+= 0.5.1 =
 
 * Fixed bug on single product page: http://wordpress.org/support/topic/sidebar-85?replies=6#post-5368763
 
-= v0.5 =
+= 0.5 =
 
 * Added sidebar
 * Created two widgets: categories list, tags cloud
 * Updated .POT file and Russian translation
 
-= v0.4.7 =
+= 0.4.7 =
 
 * Added options that allow to set width of catalog
 * Added POT file
 
-= v0.4.6 =
+= 0.4.6 =
 
 * Localization bug fixed
 
-= v0.4.5 =
+= 0.4.5 =
 
 * Added tags
 * Added columns with tags and categories to admin menu
@@ -144,31 +152,37 @@ Also, you can send me your language files and I'll add them to the release.
 * Updated single product page template
 * Style for plugin loads only on plugin pages
 
-= v0.4 =
+= 0.4 =
 
 * Bugs fixed
 * Updated readme.txt
 
-= v0.3-beta.2 =
+= 0.3-beta.2 =
 
 Small bug fix:
 
 * Fixed missed menu in category page
 
-= v0.3-beta.1 =
+= 0.3-beta.1 =
 
 * Fixed pagination
 
-= v0.3-beta =
+= 0.3-beta =
 
 * Added Plugin Settings page
 * Change products per page
 * Show categories images if plugin Taxonomy Images not installed
 
-= v0.2-beta.1 =
+= 0.2-beta.1 =
 
 * removed displaying of PHP errors
 
-= v0.2-beta =
+= 0.2-beta =
 
 First public release
+
+== Upgrade Notice ==
+
+= 0.6.7 =
+
+New shortcodes: [goods_tags], [goods_sitemap]. Bugs fixed.
