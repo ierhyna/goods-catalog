@@ -33,6 +33,7 @@ You can use special sidebar for the catalog, to show different widgets on the ca
 * Russian
 * Spanish (thanks to netsis)
 * French (thanks to Bertrand)
+* Italian (thanks to Massimo Gallarotti)
 * You can send me translation for your language, and I'll add it to the release.
 
 = Contributing and reporting bugs =
