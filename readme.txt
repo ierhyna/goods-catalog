@@ -68,6 +68,11 @@ Also, you can send me your language files and I'll add them to the release.
 
 == Changelog ==
 
+= 0.6.8 =
+
+* Added Italian language support (thanks to Massimo Gallarotti)
+* Fixeg Metabox translation bug (again, thanks to Massimo Gallarotti :)
+
 = 0.6.7 =
 
 * New shortcode: [goods_tags] to display list of all products' tags
