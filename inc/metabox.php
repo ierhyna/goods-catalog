@@ -47,14 +47,14 @@ function goods_show_box() {
 // get current post meta data
         $meta = get_post_meta($post->ID, $field['id'], true);
         echo '<tr>',
-        '<th style="width:20%"><label for="', $field['id'], '">', $field['name'], '</label></th>',
+        '<th style="width:20%"><label for="'. __($field['name'],'gcat'). '">', $field['name'], '</label></th>',
         '<td>';
         switch ($field['type']) {
             case 'text':
-                echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" />', '<br />', $field['desc'];
+                echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" />', '<br />'. __($field['desc'],'gcat').'';
                 break;
             case 'textarea':
-                echo '<textarea name="', $field['id'], '" id="', $field['id'], '" cols="60" rows="4" style="width:97%">', $meta ? $meta : $field['std'], '</textarea>', '<br />', $field['desc'];
+                echo '<textarea name="', $field['id'], '" id="', $field['id'], '" cols="60" rows="4" style="width:97%">', $meta ? $meta : $field['std'], '</textarea>', '<br />'. __($field['desc'],'gcat').'';
                 break;
         }
         echo '</td><td>',
@@ -66,7 +66,7 @@ function goods_show_box() {
 // Add meta box
 function goods_add_box() {
     global $meta_box;
-    add_meta_box($meta_box['id'], $meta_box['title'], 'goods_show_box', $meta_box['post_type'], $meta_box['context'], $meta_box['priority']);
+    add_meta_box($meta_box['id'], __($meta_box['title'],'gcat'), 'goods_show_box', $meta_box['post_type'], $meta_box['context'], $meta_box['priority']);
 }
 
 // Add metabox to edit page
