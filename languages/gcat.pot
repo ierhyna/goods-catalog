@@ -360,7 +360,7 @@ msgid "Goods Catalog Widgets"
 msgstr ""
 
 #: inc/taxonomy-category.php:17
-msgid "Categories"
+msgid "Goods Categories"
 msgstr ""
 
 #: inc/taxonomy-category.php:18
@@ -371,7 +371,11 @@ msgstr ""
 msgid "New category"
 msgstr ""
 
-#: inc/taxonomy-tag.php:15 inc/taxonomy-tag.php:16
+#: inc/taxonomy-tag.php:15
+msgid "Goods Tags"
+msgstr ""
+
+#: inc/taxonomy-tag.php:16
 msgid "Tags"
 msgstr ""
 
