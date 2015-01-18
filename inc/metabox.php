@@ -47,7 +47,7 @@ function goods_show_box() {
 // get current post meta data
         $meta = get_post_meta($post->ID, $field['id'], true);
         echo '<tr>',
-        '<th style="width:20%"><label for="'. __($field['name'],'gcat'). '">', $field['name'], '</label></th>',
+        '<th style="width:20%"><label for="'. __($field['name'],'gcat'). '">', __($field['name'],'gcat'), '</label></th>',
         '<td>';
         switch ($field['type']) {
             case 'text':
