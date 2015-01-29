@@ -6,7 +6,7 @@
 
 // Register metabox
 $prefix = 'gc_';
-$meta_box = array(
+$gc_meta_box = array(
     'id' => 'goods_meta_box',
     'title' => __('Item Options', 'gcat'),
     'post_type' => 'goods',
@@ -39,11 +39,11 @@ $meta_box = array(
 
 // Callback function to show fields in meta box
 function goods_show_box() {
-    global $meta_box, $post;
+    global $gc_meta_box, $post;
 // Use nonce for verification
     wp_nonce_field(plugin_basename(__FILE__), 'goods_meta_box_nonce');
     echo '<table class="form-table">';
-    foreach ($meta_box['fields'] as $field) {
+    foreach ($gc_meta_box['fields'] as $field) {
 // get current post meta data
         $meta = get_post_meta($post->ID, $field['id'], true);
         echo '<tr>',
@@ -65,16 +65,14 @@ function goods_show_box() {
 
 // Add meta box
 function goods_add_box() {
-    global $meta_box;
-    add_meta_box($meta_box['id'], __($meta_box['title'],'gcat'), 'goods_show_box', $meta_box['post_type'], $meta_box['context'], $meta_box['priority']);
+    global $gc_meta_box;
+    add_meta_box($gc_meta_box['id'], __($gc_meta_box['title'],'gcat'), 'goods_show_box', $gc_meta_box['post_type'], $gc_meta_box['context'], $gc_meta_box['priority']);
 }
-
-// Add metabox to edit page
-add_action('admin_menu', 'goods_add_box');
+add_action('add_meta_boxes_goods', 'goods_add_box');
 
 // Save data from meta box
 function goods_save_data($post_id) {
-    global $meta_box;
+    global $gc_meta_box;
 // verify nonce
     if (isset($_POST['goods_meta_box_nonce']) && !wp_verify_nonce($_POST['goods_meta_box_nonce'], plugin_basename(__FILE__))) {
         return $post_id;
@@ -91,7 +89,7 @@ function goods_save_data($post_id) {
     } elseif (!current_user_can('edit_post', $post_id)) {
         return $post_id;
     }
-    foreach ($meta_box['fields'] as $field) {
+    foreach ($gc_meta_box['fields'] as $field) {
         if (isset($_POST[$field['id']])) {
 // POST field sent - update
             $new = $_POST[$field['id']];
