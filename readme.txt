@@ -69,6 +69,10 @@ Also, you can send me your language files and I'll add them to the release.
 
 == Changelog ==
 
+= 0.6.9 =
+
+* Fixed metabox bug
+
 = 0.6.8 =
 
 * Added Italian language support (thanks to Massimo Gallarotti)
@@ -189,6 +193,6 @@ First public release
 
 == Upgrade Notice ==
 
-= 0.6.7 =
+= 0.6.9 =
 
-New shortcodes: [goods_tags], [goods_sitemap]. Bugs fixed.
+Fixed metabox bug

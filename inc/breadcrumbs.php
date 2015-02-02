@@ -7,8 +7,8 @@
 
 function get_term_parents($id, $taxonomy, $link = false, $separator = '/', $nicename = false, $visited = array()) {
     $chain = '';
-    $parent = &get_term($id, $taxonomy);
     try {
+    $parent = get_term($id, $taxonomy); // removed &
         if (is_wp_error($parent)) {
             throw new Exception('is_wp_error($parent) has throw error ' . $parent->get_error_message());
         }
@@ -60,22 +60,24 @@ function my_breadcrumb($id = null) {
         echo "</a>";
         echo ' &gt; ';
     }
-    if (is_single() || is_tax()) {
-        if (is_single()) {
-            $cur_terms = get_the_terms($post->ID, 'goods_category');
+
+    if (is_single()) {
+        global $post;
+        $cur_terms = get_the_terms($post->ID, 'goods_category');
+        if ($cur_terms) { // fix invalid argument supplied for foreach() if there is no category for the product
             foreach ($cur_terms as $cur_term) {
                 $tag = $cur_term->term_id;
                 $term = get_term_parents($tag, 'goods_category', true, ' &gt; ');
                 echo preg_replace('/>\s$|>$/', '', $term);
             }
-            the_title();
         }
+        the_title();
+    }
 
-        if (is_tax()) {
-            $tag = single_tag_title('', false);
-            $tag = get_tag_id($tag);
-            $term = get_term_parents($tag, get_query_var('taxonomy'), true, ' &gt; ');
-            echo preg_replace('/&gt;\s$|&gt;$/', '', $term); // remove last &gt;
-        }
+    if (is_tax()) {
+        $tag = single_tag_title('', false);
+        $tag = get_tag_id($tag);
+        $term = get_term_parents($tag, get_query_var('taxonomy'), true, ' &gt; ');
+        echo preg_replace('/&gt;\s$|&gt;$/', '', $term); // remove last &gt;
     }
 }
