@@ -38,7 +38,7 @@ function get_term_parents($id, $taxonomy, $link = false, $separator = '/', $nice
     }
 }
 
-function my_breadcrumb($id = null) {
+function gc_breadcrumbs($id = null) {
     echo '<a href=" ' . home_url() . ' ">' . __('Home', 'gcat') . '</a> &gt; ';
     if (is_post_type_archive('goods')) {
         echo '<a href="';

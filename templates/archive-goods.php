@@ -18,9 +18,9 @@ echo '<div class="catalog-inner">';
             if (!is_search() || !is_404()) {
                 global $post;
                 if ($post != null) {
-                    my_breadcrumb($post->post_parent);
+                    gc_breadcrumbs($post->post_parent);
                 } else {
-                    my_breadcrumb();
+                    gc_breadcrumbs();
                 }
             } else {
                 print ' ';

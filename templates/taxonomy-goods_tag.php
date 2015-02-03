@@ -16,9 +16,9 @@ $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
             if (!is_search() || !is_404()) {
                 global $post;
                 if ($post != null) {
-                    my_breadcrumb($post->post_parent);
+                    gc_breadcrumbs($post->post_parent);
                 } else {
-                    my_breadcrumb();
+                    gc_breadcrumbs();
                 }
             } else {
                 print ' ';
