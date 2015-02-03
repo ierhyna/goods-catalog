@@ -38,12 +38,6 @@ function get_term_parents($id, $taxonomy, $link = false, $separator = '/', $nice
     }
 }
 
-function get_tag_id($tag) {
-    global $wpdb;
-    $link_id = $wpdb->get_var($wpdb->prepare("SELECT term_id FROM $wpdb->terms WHERE name =  %s", $tag));
-    return $link_id;
-}
-
 function my_breadcrumb($id = null) {
     echo '<a href=" ' . home_url() . ' ">' . __('Home', 'gcat') . '</a> &gt; ';
     if (is_post_type_archive('goods')) {
@@ -76,7 +70,7 @@ function my_breadcrumb($id = null) {
 
     if (is_tax()) {
         $tag = single_tag_title('', false);
-        $tag = get_tag_id($tag);
+        $tag = get_queried_object()->term_id;
         $term = get_term_parents($tag, get_query_var('taxonomy'), true, ' &gt; ');
         echo preg_replace('/&gt;\s$|&gt;$/', '', $term); // remove last &gt;
     }
