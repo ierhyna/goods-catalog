@@ -5,26 +5,23 @@
  * based on http://snipplr.com/view/57988/ and https://gist.github.com/TCotton/4723438
  */
 
-function get_term_parents($id, $taxonomy, $link = false, $separator = '/', $nicename = false, $visited = array()) {
-	$chain = '';
+function get_term_parents($id, $taxonomy, $link = false, $separator = ' &gt; ', $visited = array()) {
+
+	$parent = get_term($id, $taxonomy);
 	try {
-	$parent = get_term($id, $taxonomy); // removed &
 		if (is_wp_error($parent)) {
 			throw new Exception('is_wp_error($parent) has throw error ' . $parent->get_error_message());
 		}
 	} catch (exception $e) {
-		echo __('Caught exception: ', 'gcat'), $e->getMessage(), "\n";
+		echo 'Caught exception: ', $e->getMessage(), "\n";
 	}
 
 	if( !empty( $parent ) ) {
-		if ($nicename) {
-			$name = $parent->slug;
-		} else {
-			$name = htmlspecialchars($parent->name, ENT_QUOTES, 'UTF-8');
-		}
+		$chain = '';
+		$name = htmlspecialchars($parent->name, ENT_QUOTES, 'UTF-8');
 		if ($parent->parent && ($parent->parent != $parent->term_id) && !in_array($parent->parent, $visited)) {
 			$visited[] = $parent->parent;
-			$chain .= get_term_parents($parent->parent, $taxonomy, $link, $separator, $nicename, $visited);
+			$chain .= get_term_parents($parent->parent, $taxonomy, $link, $separator, $visited);
 		}
 		if ($link) {
 			$chain .= '<a href="' . get_term_link($parent->slug, $taxonomy) . '">' . $name . '</a>' . $separator;
@@ -36,13 +33,14 @@ function get_term_parents($id, $taxonomy, $link = false, $separator = '/', $nice
 }
 
 function gc_breadcrumbs($id = null) {
-	// First and second link: Home page and Catalog main page
+	// First link: Home page
 	echo '<a href=" ' . home_url() . ' ">' . __('Home', 'gcat') . '</a> &gt; ';
-	echo '<a href="' . get_post_type_archive_link('goods') . '">' . __('Catalog', 'gcat') . '</a>';
 
-	// if current page is not the Catalog main page, show separator
-	if (!is_post_type_archive('goods')) { 
-		echo ' &gt; ';
+	// if current page is not the Catalog main page, show link and separator
+	if (is_post_type_archive('goods')) {
+		echo __('Catalog', 'gcat');
+	} else { 
+		echo '<a href="' . get_post_type_archive_link('goods') . '">' . __('Catalog', 'gcat') . '</a> &gt; ';
 	}
 
 	// Links on Product page
@@ -51,19 +49,23 @@ function gc_breadcrumbs($id = null) {
 		$cur_terms = get_the_terms($post->ID, 'goods_category');
 		if ($cur_terms) { // fix invalid argument supplied for foreach() if there is no category for the product
 			foreach ($cur_terms as $cur_term) {
-				$tag = $cur_term->term_id;
-				$term = get_term_parents($tag, 'goods_category', true, ' &gt; ');
-				echo preg_replace('/>\s$|>$/', '', $term);
+				$category_id = $cur_term->term_id;
+				$categories_chain = get_term_parents($category_id, 'goods_category', true);
+				echo preg_replace('/>\s$|>$/', '', $categories_chain);
 			}
 		}
 		the_title();
 	}
 
 	// Links on Category page
-	if (is_tax()) {
-		$tag = single_tag_title('', false);
-		$tag = get_queried_object()->term_id;
-		$term = get_term_parents($tag, get_query_var('taxonomy'), true, ' &gt; ');
-		echo preg_replace('/&gt;\s$|&gt;$/', '', $term); // remove last &gt;
+	if (is_tax('goods_category')) {
+		$category_id = get_queried_object()->term_id;
+		$categories_chain = get_term_parents($category_id, 'goods_category', true); 
+		echo preg_replace('/&gt;\s$|&gt;$/', '', $categories_chain); // remove last &gt;
+	}
+
+	// Links on Tag page
+	if (is_tax('goods_tag')) {
+		single_tag_title(); // echo the tag title without the link
 	}
 }
