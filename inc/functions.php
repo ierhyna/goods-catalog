@@ -158,6 +158,7 @@ function show_the_thumbnail() {
  */
 
 function goods_shortcode_output() {
+    $output = '';
     $output .= '<div class="grid"><div>'
             . '<div class="goods-item-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></div>'
             . '<div class="goods-item-content">'
@@ -183,3 +184,4 @@ function goods_shortcode_output() {
     $output .= '</div></div></div></div>';
     return $output;
 }
+
