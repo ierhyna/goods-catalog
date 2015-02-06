@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Goods Catalog\n"
-"POT-Creation-Date: 2015-01-03 23:49+0300\n"
-"PO-Revision-Date: 2015-01-03 23:50+0300\n"
+"POT-Creation-Date: 2015-02-06 10:56+0300\n"
+"PO-Revision-Date: 2015-02-06 10:57+0300\n"
 "Last-Translator: Irina Sokolovskaja <sokolovskaja.irina@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -35,15 +35,11 @@ msgstr "Облако тегов каталога товаров"
 msgid "Products Tags"
 msgstr "Метки продуктов"
 
-#: ../inc/breadcrumbs.php:16
-msgid "Caught exception: "
-msgstr "Внимание:"
-
-#: ../inc/breadcrumbs.php:48
+#: ../inc/breadcrumbs.php:31
 msgid "Home"
 msgstr "Главная"
 
-#: ../inc/breadcrumbs.php:53 ../inc/breadcrumbs.php:59
+#: ../inc/breadcrumbs.php:34 ../inc/breadcrumbs.php:36
 msgid "Catalog"
 msgstr "Каталог"
 
@@ -95,25 +91,13 @@ msgstr "Не найдено"
 msgid "Item is not found in trash"
 msgstr "В корзине товаров не найдено"
 
-#: ../inc/functions.php:62
-msgid "Categories:&nbsp;"
-msgstr "Рубрики:&nbsp;"
-
-#: ../inc/functions.php:64
-msgid "Tags:&nbsp;"
-msgstr "Метки:&nbsp;"
-
-#: ../inc/functions.php:90 ../inc/functions.php:177
+#: ../inc/functions.php:82 ../inc/functions.php:170
 msgid "Price:"
 msgstr "Цена:"
 
-#: ../inc/functions.php:103
+#: ../inc/functions.php:95
 msgid "SKU:"
 msgstr "Артикул:"
-
-#: ../inc/shortcodes.php:122
-msgid "Read more"
-msgstr "Далее"
 
 #: ../inc/sidebar.php:12
 msgid "Goods Catalog Sidebar"
@@ -143,7 +127,7 @@ msgstr "Новая рубрика"
 msgid "Goods Tags"
 msgstr "Метки продуктов"
 
-#: ../inc/taxonomy-tag.php:16
+#: ../inc/taxonomy-tag.php:16 ../templates/single-goods.php:64
 msgid "Tags"
 msgstr "Метки"
 
@@ -491,13 +475,26 @@ msgstr "Короткое описание"
 msgid "Enter description here"
 msgstr "Введите описание"
 
+#: ../templates/single-goods.php:61
+msgid "Categories"
+msgstr "Рубрики"
+
 #: ../templates/content-goods_category.php:18
 #, php-format
 msgid "Go to cetegory %s"
 msgstr "Перейти в рубрику  %s"
 
-#~ msgid "Categories"
-#~ msgstr "Рубрики"
+#~ msgid "Caught exception: "
+#~ msgstr "Внимание:"
+
+#~ msgid "Categories:&nbsp;"
+#~ msgstr "Рубрики:&nbsp;"
+
+#~ msgid "Tags:&nbsp;"
+#~ msgstr "Метки:&nbsp;"
+
+#~ msgid "Read more"
+#~ msgstr "Далее"
 
 #~ msgid ""
 #~ "You can change the default prefix for the catagories of products. Please "

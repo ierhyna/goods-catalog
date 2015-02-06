@@ -1,42 +1,30 @@
-# Copyright (C) 2014 
-# This file is distributed under the same license as the  package.
+# Copyright (C) 2015 Goods Catalog
+# This file is distributed under the same license as the Goods Catalog package.
 msgid ""
 msgstr ""
-"Project-Id-Version:  \n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/goods-catalog\n"
-"POT-Creation-Date: 2014-03-30 04:45:12+00:00\n"
+"Project-Id-Version: Goods Catalog 0.7\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/goods-catalog\n"
+"POT-Creation-Date: 2015-02-06 08:11:44+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: inc/breadcrumbs.php:17
-msgid "Caught exception: "
-msgstr ""
-
-#: inc/breadcrumbs.php:45
+#: inc/breadcrumbs.php:31
 msgid "Home"
 msgstr ""
 
-#: inc/breadcrumbs.php:50 inc/breadcrumbs.php:56
+#: inc/breadcrumbs.php:34 inc/breadcrumbs.php:36
 msgid "Catalog"
 msgstr ""
 
-#: inc/functions.php:62
-msgid "Categories:&nbsp;"
-msgstr ""
-
-#: inc/functions.php:64
-msgid "Tags:&nbsp;"
-msgstr ""
-
-#: inc/functions.php:90
+#: inc/functions.php:82 inc/functions.php:170
 msgid "Price:"
 msgstr ""
 
-#: inc/functions.php:103
+#: inc/functions.php:95
 msgid "SKU:"
 msgstr ""
 
@@ -375,7 +363,7 @@ msgstr ""
 msgid "Goods Tags"
 msgstr ""
 
-#: inc/taxonomy-tag.php:16
+#: inc/taxonomy-tag.php:16 templates/single-goods.php:64
 msgid "Tags"
 msgstr ""
 
@@ -449,4 +437,30 @@ msgstr ""
 
 #: templates/content-goods_category.php:18
 msgid "Go to cetegory %s"
+msgstr ""
+
+#: templates/single-goods.php:61
+msgid "Categories"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Goods Catalog"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid ""
+"http://oriolo.wordpress.com/2014/03/25/goods-catalog-wordpress-plugin-that-"
+"creates-catalog-of-products/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Plugin that creates simple catalog of goods."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Irina Sokolovskaya"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://oriolo.ru/"
 msgstr ""
