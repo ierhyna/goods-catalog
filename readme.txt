@@ -69,6 +69,12 @@ Also, you can send me your language files and I'll add them to the release.
 
 == Changelog ==
 
+= 0.7 =
+
+* Updated breadcrumbs function. The last breadcrumb is not a link now. Bug fixes: issue #27 (https://github.com/ierhyna/goods-catalog/issues/27) 
+* Removed function get_goods_taxomonies(). Using WordPress core function get_the_term_list() instead
+* Minor bug fixes: templates and shortcodes 
+
 = 0.6.9 =
 
 * Fixed metabox bug
@@ -193,6 +199,6 @@ First public release
 
 == Upgrade Notice ==
 
-= 0.6.9 =
+= 0.7 =
 
-Fixed metabox bug
+Updated breadcrumbs function. The last breadcrumb is not a link now.

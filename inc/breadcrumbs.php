@@ -4,7 +4,7 @@
  * Breadcrumbs
  */
 
-function bread_new (){
+function categories_chain(){
 	$category = 'goods_category';
 	if (is_single()) { // if is Product Page, use get_the_terms() to get ID
 		global $post;
@@ -38,13 +38,13 @@ function gc_breadcrumbs($id = null) {
 	// Links on Product page
 	if (is_single()) {
 		global $post;
-		bread_new();
+		categories_chain();
 		echo get_the_term_list ($post->ID, 'goods_category', '', ', ', ' &gt; ');
 		the_title();
 	}
 	// Links on Category page
 	if (is_tax('goods_category')) {
-		bread_new();
+		categories_chain();
 		single_tag_title(); 
 	}
 	// Links on Tag page

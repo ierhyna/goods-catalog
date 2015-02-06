@@ -49,34 +49,26 @@ add_action('pre_get_posts', 'goods_pagesize', 1); // Set items per page
  */
 
 /*
- * get taxomomies list
+ * REMOVED: get taxomomies list
+
+In Goods Catalog 0.7 the function get_goods_taxomonies() has been removed.
+If you have modified the plugin templates, please use WordPress core function get_the_term_list().
+
+For example:
+
+1) Get goods categories list:
+echo get_the_term_list ($post->ID, 'goods_category', '<p>' . __("Categories", "gcat") . ':&nbsp;', ', ', '</p>');
+
+1) Get goods tags list:
+echo get_the_term_list ($post->ID, 'goods_tag', '<p>' . __("Tags", "gcat") . ':&nbsp;', ', ', '</p>');
+
+Please read the Codex for more details: http://codex.wordpress.org/Function_Reference/get_the_term_list
+
  */
 
 function get_goods_taxomonies($taxonomy, $id) {
-    $terms_list = wp_get_post_terms($id, $taxonomy, array("fields" => "all"));
 
-    $count_terms = count($terms_list);
-    if ($count_terms != 0) {
-
-        if ($taxonomy == 'goods_category') {
-            echo __('Categories:&nbsp;', 'gcat');
-        } else {
-            echo __('Tags:&nbsp;', 'gcat');
-        }
-    }
-
-    foreach ($terms_list as $term) { // count elements
-        $term_link = get_term_link($term, $taxonomy);
-        if (is_wp_error($term_link))
-            continue;
-        --$count_terms; // elements -1
-        if ($count_terms != 0) { // if > 0
-            echo '<a href="' . $term_link . '">' . $term->name . '</a>, ';
-        } else {
-
-            echo '<a href="' . $term_link . '">' . $term->name . '</a>'; // do not show comma at the last element
-        }
-    }
+    echo "The function get_goods_taxomonies() has been removed. Please use get_the_term_list() instead. For futher instructions please see /inc/functions.php line 51";
 }
 
 /*
@@ -184,4 +176,3 @@ function goods_shortcode_output() {
     $output .= '</div></div></div></div>';
     return $output;
 }
-
