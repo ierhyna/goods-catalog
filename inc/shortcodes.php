@@ -68,14 +68,7 @@ function goods_shortcode_output() {
             . '<div class="goods-item-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></div>'
             . '<div class="goods-item-content">'
             . '<div class="goods-item-thumb-container">';
-
-    if (has_post_thumbnail()) {
-        $output .= '<a href="' . get_permalink() . '">'
-                . get_the_post_thumbnail($post_id, 'gc-image-thumb', array('class' => 'goods-item-thumb'))
-                . '</a>';
-    } else { // show default image if the thumbnail is not found
-        $output .= '<a href="' . get_permalink() . '"><img class="goods-item-thumb" src="' . GOODS_CATALOG_PLUGIN_URL . '/img/gi.png" alt=""></a>';
-    }
+    $output .= show_the_thumbnail();            
     $output .= show_the_product_price();
     $gc_descr = get_post_meta(get_the_ID(), 'gc_descr', true);
     if ((isset($gc_descr)) && ($gc_descr != '')) {

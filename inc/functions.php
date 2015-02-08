@@ -145,15 +145,17 @@ if (function_exists('add_image_size')) {
  */
 
 function show_the_thumbnail() {
-    echo '<div class="goods-item-thumb-container">';
+    $output = '';
+    $output .= '<div class="goods-item-thumb-container">';
     if (has_post_thumbnail()) {
-        echo '<a href="' . get_permalink() . '">';
-
-        the_post_thumbnail('gc-image-thumb', array('class' => 'goods-item-thumb'));
-        echo '</a>';
+        global $post_id;
+        $output .= '<a href="' . get_permalink() . '">';
+        $output .= get_the_post_thumbnail($post_id, 'gc-image-thumb', array('class' => 'goods-item-thumb'));
+        $output .= '</a>';
     } else { // show default image if the thumbnail is not found
-        echo '<a href="' . get_permalink() . '"><img class="goods-item-thumb" src="' . GOODS_CATALOG_PLUGIN_URL . '/img/gi.png" alt=""></a>';
+        $output .= '<a href="' . get_permalink() . '"><img class="goods-item-thumb" src="' . GOODS_CATALOG_PLUGIN_URL . '/img/gi.png" alt=""></a>';
     }
-    echo '</div>';
+    $output .= '</div>';
+    return $output;
 }
 
