@@ -69,6 +69,13 @@ Also, you can send me your language files and I'll add them to the release.
 
 == Changelog ==
 
+= 0.8 =
+
+* New feature: added prefix and postfix for the product price. Now you can add the currency easily
+* Updated shortcode [goods_newest]
+* Updated POT file
+* Updated translation to the Russian language
+
 = 0.7 =
 
 * Updated breadcrumbs function. The last breadcrumb is not a link now. Bug fixes: issue #27 (https://github.com/ierhyna/goods-catalog/issues/27) 
