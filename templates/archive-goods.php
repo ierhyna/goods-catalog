@@ -13,8 +13,9 @@ $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
 // include
 echo '<div class="goods-catalog">';
 echo '<div class="catalog-inner">';
-
-
+?>
+	<div class="breadcrumbs">
+	<?php
             if (!is_search() || !is_404()) {
                 global $post;
                 if ($post != null) {
@@ -25,8 +26,9 @@ echo '<div class="catalog-inner">';
             } else {
                 print ' ';
             }
-
-
+	?>
+	</div>
+<?php
 // categiries list with images
 $category_id = get_query_var('cat');
 $args = array(
