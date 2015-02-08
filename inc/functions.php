@@ -76,21 +76,23 @@ function get_goods_taxomonies($taxonomy, $id) {
  */
 
 function show_the_product_price() {
+    $output = '';
     global $catalog_option;
     $gc_price = get_post_meta(get_the_ID(), 'gc_price', true); // get fields from metabox
     $gc_product_price_prefix = $catalog_option['gc_product_price_prefix'];
     $gc_product_price_postfix = $catalog_option['gc_product_price_postfix'];
     if ((isset($gc_price)) && ($gc_price != '')) { // show fields values
-        echo "<p class=\"goods-price-single\">";
-        echo __('Price:', 'gcat');
+        $output .= "<p class=\"goods-price-single\">";
+        $output .= __('Price:', 'gcat');
         if ((isset($gc_product_price_prefix)) && ($gc_product_price_prefix != '')) {
-            echo " " . $gc_product_price_prefix;
+            $output .= " " . $gc_product_price_prefix;
         }
-        echo " " . $gc_price;
+        $output .= " " . $gc_price;
         if ((isset($gc_product_price_postfix)) && ($gc_product_price_postfix != '')) {
-            echo " " .  $gc_product_price_postfix;
+            $output .= " " .  $gc_product_price_postfix;
         }
-        echo "</p>";
+        $output .= "</p>";
+        return $output;
     }
 }
 
@@ -155,34 +157,3 @@ function show_the_thumbnail() {
     echo '</div>';
 }
 
-/*
- * get product info for the shortcodes
- */
-
-function goods_shortcode_output() {
-    $output = '';
-    $output .= '<div class="grid"><div>'
-            . '<div class="goods-item-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></div>'
-            . '<div class="goods-item-content">'
-            . '<div class="goods-item-thumb-container">';
-
-    if (has_post_thumbnail()) {
-        $output .= '<a href="' . get_permalink() . '">'
-                . get_the_post_thumbnail($post_id, 'gc-image-thumb', array('class' => 'goods-item-thumb'))
-                . '</a>';
-    } else { // show default image if the thumbnail is not found
-        $output .= '<a href="' . get_permalink() . '"><img class="goods-item-thumb" src="' . GOODS_CATALOG_PLUGIN_URL . '/img/gi.png" alt=""></a>';
-    }
-
-    $gc_price = get_post_meta(get_the_ID(), 'gc_price', true); // get fields from metabox
-    if ((isset($gc_price)) && ($gc_price != '')) { // show fields values
-        $output .= '<p class="goods-price-single">'
-                . __('Price:', 'gcat') . ' ' . $gc_price . '</p>';
-    }
-    $gc_descr = get_post_meta(get_the_ID(), 'gc_descr', true);
-    if ((isset($gc_descr)) && ($gc_descr != '')) {
-        $output .= '<p class="goods-descr">' . $gc_descr . '</p>';
-    }
-    $output .= '</div></div></div></div>';
-    return $output;
-}

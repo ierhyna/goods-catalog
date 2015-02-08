@@ -1,6 +1,6 @@
 <?php
 /*
- * Loop Grid
+ * Loop Grid : Products on categories pages
  */
 
 if (have_posts()) {
@@ -16,7 +16,7 @@ if (have_posts()) {
                     show_the_thumbnail();
 
                     // show products
-                    show_the_product_price();
+                    echo show_the_product_price();
                     global $catalog_option;
                     if (isset($catalog_option['show_product_sku_grid'])) {
                         show_the_product_sku();
