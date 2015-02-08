@@ -188,6 +188,21 @@ class GoodsSettingsPage {
                 'goods-setting-admin', // Page
                 'product_section_id' // Section           
         );
+        add_settings_field(
+                'gc_product_price_prefix', // ID
+                __('Product Price Prefix', 'gcat'), // Title 
+                array($this, 'gc_product_price_prefix_callback'), // Callback
+                'goods-setting-admin', // Page
+                'product_section_id' // Section           
+        );
+        add_settings_field(
+                'gc_product_price_postfix', // ID
+                __('Product Price Postfix', 'gcat'), // Title 
+                array($this, 'gc_product_price_postfix_callback'), // Callback
+                'goods-setting-admin', // Page
+                'product_section_id' // Section           
+        );
+
 
 // Section Start
         add_settings_section(
@@ -270,6 +285,12 @@ class GoodsSettingsPage {
         if (isset($input['show_product_sku_page']))
             $new_input['show_product_sku_page'] = absint($input['show_product_sku_page']);
 
+        if (isset($input['gc_product_price_prefix']))
+            $new_input['gc_product_price_prefix'] = esc_html($input['gc_product_price_prefix']);
+
+        if (isset($input['gc_product_price_postfix']))
+            $new_input['gc_product_price_postfix'] = esc_html($input['gc_product_price_postfix']);
+       
         if (isset($input['use_sidebar']))
             $new_input['use_sidebar'] = absint($input['use_sidebar']);
 
@@ -437,6 +458,30 @@ class GoodsSettingsPage {
             <?php
             echo __('in single product page', 'gcat') . '</p>';
         }
+
+	    public function gc_product_price_prefix_callback() {
+	        printf(
+	                '<input type="text" id="gc_product_price_prefix" name="goods_option_name[gc_product_price_prefix]" value="%s" />', isset($this->options['gc_product_price_prefix']) ? esc_attr($this->options['gc_product_price_prefix']) : ''
+	        );
+	        _e( ' by default: empty', 'gcat' );
+	        echo "<p>";
+	        $url = admin_url( 'options-permalink.php' );
+	        $text = __( "Currency prefix, for ex.: &#36; or &#128;. Just leave it emply if you don't need prefix", 'gcat');
+	        printf($text, $url);
+	        echo "</p>";
+	    }
+
+	    public function gc_product_price_postfix_callback() {
+	        printf(
+	                '<input type="text" id="gc_product_price_postfix" name="goods_option_name[gc_product_price_postfix]" value="%s" />', isset($this->options['gc_product_price_postfix']) ? esc_attr($this->options['gc_product_price_postfix']) : ''
+	        );
+	        _e( ' by default: empty', 'gcat' );
+	        echo "<p>";
+	        $url = admin_url( 'options-permalink.php' );
+	        $text = __( "Currency postfix, for ex.: RUB. Just leave it emply if you don't need postfix", 'gcat');
+	        printf($text, $url);
+	        echo "</p>";
+	    }
 
         /*
          * Sidebar section

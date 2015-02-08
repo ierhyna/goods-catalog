@@ -76,11 +76,21 @@ function get_goods_taxomonies($taxonomy, $id) {
  */
 
 function show_the_product_price() {
+    global $catalog_option;
     $gc_price = get_post_meta(get_the_ID(), 'gc_price', true); // get fields from metabox
+    $gc_product_price_prefix = $catalog_option['gc_product_price_prefix'];
+    $gc_product_price_postfix = $catalog_option['gc_product_price_postfix'];
     if ((isset($gc_price)) && ($gc_price != '')) { // show fields values
         echo "<p class=\"goods-price-single\">";
         echo __('Price:', 'gcat');
-        echo " $gc_price</p>";
+        if ((isset($gc_product_price_prefix)) && ($gc_product_price_prefix != '')) {
+            echo " " . $gc_product_price_prefix;
+        }
+        echo " " . $gc_price;
+        if ((isset($gc_product_price_postfix)) && ($gc_product_price_postfix != '')) {
+            echo " " .  $gc_product_price_postfix;
+        }
+        echo "</p>";
     }
 }
 
