@@ -62,22 +62,14 @@ class goods_categories_widget extends WP_Widget {
             $title = __('Products Categories', 'gcat');
         }
         // Widget admin form
-        ?>
-        <p>
-            <label for="<?php
-            echo $this->get_field_id('title');
-            ?>"><?php
-                       _e('Title:');
-                       ?></label> 
-            <input class="widefat" id="<?php
-            echo $this->get_field_id('title');
-            ?>" name="<?php
-                   echo $this->get_field_name('title');
-                   ?>" type="text" value="<?php
-                   echo esc_attr($title);
-                   ?>" />
-        </p>
-        <?php
+
+        echo '<p>';
+        echo '<label for="' . $this->get_field_id('title') . '">';
+        _e('Title:');
+        echo '</label>'; 
+        echo '<input class="widefat" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' .   esc_attr($title) . '" />';
+        echo '</p>';
+
     }
 
     // Updating widget replacing old instances with new
@@ -140,22 +132,14 @@ class goods_tags_widget extends WP_Widget {
             $title = __('Products Tags', 'gcat');
         }
         // Widget admin form
-        ?>
-        <p>
-            <label for="<?php
-                   echo $this->get_field_id('title');
-                   ?>"><?php
-                _e('Title:');
-                ?></label> 
-            <input class="widefat" id="<?php
-                   echo $this->get_field_id('title');
-                   ?>" name="<?php
-                   echo $this->get_field_name('title');
-                   ?>" type="text" value="<?php
-                   echo esc_attr($title);
-                   ?>" />
-        </p>
-        <?php
+
+        echo '<p>';
+        echo '<label for="' . $this->get_field_id('title') . '">';
+        _e('Title:');
+        echo '</label>'; 
+        echo '<input class="widefat" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' .   esc_attr($title) . '" />';
+        echo '</p>';
+
     }
 
     // Updating widget replacing old instances with new
