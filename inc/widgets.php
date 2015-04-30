@@ -8,18 +8,23 @@
  */
 
 // Creating the categories widget 
-class goods_categories_widget extends WP_Widget {
+class Widget_Goods_Categories extends WP_Widget {
 
     function __construct() {
         parent::__construct(
                 // Base ID of your widget
-                'goods_categories_widget',
+                'Widget_Goods_Categories',
                 // Widget name will appear in UI
                 'Goods Catalog Categories',
                 // Widget description
                 array(
             'description' => __('Goods Catalog categories list', 'gcat')
         ));
+        add_action('widgets_init', array($this, 'goods_categories_load_widget'));
+    }
+
+    public function goods_categories_load_widget() {
+        register_widget('Widget_Goods_Categories');
     }
 
     // Creating widget front-end
@@ -81,23 +86,30 @@ class goods_categories_widget extends WP_Widget {
 
 } // Class goods_categories_widget ends here
 
+new Widget_Goods_Categories();
+
 /*
  * Tags
  */
 
 // Creating the tags widget 
-class goods_tags_widget extends WP_Widget {
+class Widget_Goods_Tags extends WP_Widget {
 
     function __construct() {
         parent::__construct(
                 // Base ID of your widget
-                'goods_tags_widget',
+                'Widget_Goods_Tags',
                 // Widget name will appear in UI
                 'Goods Catalog Tags',
                 // Widget description
                 array(
             'description' => __('Goods Catalog tags cloud', 'gcat')
         ));
+        add_action('widgets_init', array ($this, 'goods_tags_load_widget')) ;
+    }
+
+    public function goods_tags_load_widget() {
+        register_widget('Widget_Goods_Tags');
     }
 
     // Creating widget front-end
@@ -151,18 +163,4 @@ class goods_tags_widget extends WP_Widget {
 
 } // Class goods_tags_widget ends here
 
-/*
- * Register and load the widget
- */
-
-function goods_categories_load_widget() {
-    register_widget('goods_categories_widget');
-}
-
-add_action('widgets_init', 'goods_categories_load_widget');
-
-function goods_tags_load_widget() {
-    register_widget('goods_tags_widget');
-}
-
-add_action('widgets_init', 'goods_tags_load_widget');
+new Widget_Goods_Tags();
