@@ -7,10 +7,8 @@
 /**
 * 
 */
-class Goods_Tags {
+class Goods_Tags_Taxonomy {
 
-    protected $actions;
-    
     function __construct() {
         add_action('init', array ( $this, 'create_goods_tags') );
     }
@@ -58,4 +56,4 @@ class Goods_Tags {
 
 }
 
-new Goods_Tags();
+new Goods_Tags_Taxonomy();

@@ -4,7 +4,7 @@
  * Custom taxonomy: Goods Category
  */
 
-class Goods_Categories {
+class Goods_Categories_Taxonomy {
     
     function __construct() {
         add_action('init', array ($this, 'create_goods_category'));
@@ -34,4 +34,4 @@ class Goods_Categories {
     }
 }
 
-new Goods_Categories();
+new Goods_Categories_Taxonomy();
