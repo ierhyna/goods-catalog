@@ -1,6 +1,6 @@
 <?php
-/*
- * Widgets Here
+/**
+ * Include widgets classes and create new widgets objects
  */
 
 require_once( GOODS_CATALOG_PLUGIN_INC . '/class.widget-goods-categories.php' ); 
