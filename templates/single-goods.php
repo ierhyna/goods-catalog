@@ -13,21 +13,8 @@ if (have_posts()) {
     while (have_posts()) {
         the_post();
         // Display navigation next/previous
+        show_gc_breadcrumbs();
         ?>
-        <div class="breadcrumbs">
-            <?php
-            if (!is_search() || !is_404()) {
-                global $post;
-                if ($post != null) {
-                    gc_breadcrumbs($post->post_parent);
-                } else {
-                    gc_breadcrumbs();
-                }
-            } else {
-                print ' ';
-            }
-            ?>
-        </div>
 
         <article <?php post_class(); ?>>
             <header>

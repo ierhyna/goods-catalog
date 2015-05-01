@@ -11,21 +11,9 @@ $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
 ?>
 <div class="goods-catalog">
     <div class="catalog-inner">
-        <div class="breadcrumbs">
-            <?php
-            if (!is_search() || !is_404()) {
-                global $post;
-                if ($post != null) {
-                    gc_breadcrumbs($post->post_parent);
-                } else {
-                    gc_breadcrumbs();
-                }
-            } else {
-                print ' ';
-            }
-            ?>
-        </div>
         <?php
+        show_gc_breadcrumbs();
+        
         global $posts;
         $post = $posts[0];
 
