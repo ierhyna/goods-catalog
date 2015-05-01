@@ -69,7 +69,7 @@ function goods_shortcode_output() {
             . '<div class="goods-item-content">'
             . '<div class="goods-item-thumb-container">';
     $output .= show_the_thumbnail();            
-    $output .= show_the_product_price();
+    $output .= get_the_product_price();
     $gc_descr = get_post_meta(get_the_ID(), 'gc_descr', true);
     if ((isset($gc_descr)) && ($gc_descr != '')) {
         $output .= '<p class="goods-descr">' . $gc_descr . '</p>';

@@ -34,7 +34,7 @@
  */
 
 
-/*
+/**
  * Define plugin's pathes
  * All without the last trailing slash
  */
@@ -63,13 +63,13 @@ add_action('plugins_loaded', 'goods_catalog_lang_init');
  */
 $catalog_option = get_option('goods_option_name');
 
-/*
+/**
  * Load options
  */
 require_once( GOODS_CATALOG_PLUGIN_INC . '/class.settings-page.php' ); // Options Class
 require_once( GOODS_CATALOG_PLUGIN_PATH  . '/style/goods-options-style.php' ); // Stylesheet
 
-/*
+/**
  * Create post type and taxonomies
  */
 require_once( GOODS_CATALOG_PLUGIN_INC . '/class.goods-post-type.php' ); // create post type
@@ -77,18 +77,18 @@ require_once( GOODS_CATALOG_PLUGIN_INC . '/class.metabox.php' ); // create metab
 require_once( GOODS_CATALOG_PLUGIN_INC . '/class.goods-categories-taxonomy.php' ); // Goods Categories
 require_once( GOODS_CATALOG_PLUGIN_INC . '/class.goods-tags-taxonomy.php' ); // Goods Tags
 
-/*
+/**
  * Create Sidebar and Widgets
  */
-require_once( GOODS_CATALOG_PLUGIN_INC . '/class.sidebar.php' ); // Sidebar
-require_once( GOODS_CATALOG_PLUGIN_INC . '/widgets.php' );  // Widget
+require_once( GOODS_CATALOG_PLUGIN_INC . '/class.sidebar.php' ); // Sidebar Class
+require_once( GOODS_CATALOG_PLUGIN_INC . '/widgets.php' );  // Widgets Classes
 
-/*
+/**
  *  Use custom templates for goods and catalog
  */
 require_once( GOODS_CATALOG_PLUGIN_INC . '/templates.php' );  // Templates
 
-/*
+/**
  * Load additional functions
  */
 require_once( GOODS_CATALOG_PLUGIN_INC . '/functions.php' );  // Functions

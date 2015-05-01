@@ -16,7 +16,7 @@ if (have_posts()) {
                     echo show_the_thumbnail();
 
                     // show products
-                    echo show_the_product_price();
+                    echo get_the_product_price();
                     global $catalog_option;
                     if (isset($catalog_option['show_product_sku_grid'])) {
                         show_the_product_sku();

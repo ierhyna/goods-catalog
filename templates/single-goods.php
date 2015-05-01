@@ -48,7 +48,7 @@ if (have_posts()) {
                     <h2 class="entry-title"><?php the_title(); ?></h2>
                     <?php
                     // show product
-                    echo show_the_product_price();
+                    echo get_the_product_price();
                     
                     if (isset($catalog_option['show_product_sku_page'])) {
                         show_the_product_sku();
