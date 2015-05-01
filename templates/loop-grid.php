@@ -13,7 +13,7 @@ if (have_posts()) {
                 <div class="goods-item-content">
                     <?php
                     // show thumbnails
-                    echo show_the_thumbnail();
+                    echo get_the_product_thumbnail();
 
                     // show products
                     echo get_the_product_price();

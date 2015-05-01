@@ -79,9 +79,13 @@ function get_goods_taxomonies($taxonomy, $id) {}
 /**
  * Gets product price
  * 
+ * Renamed from show_the_product_price();
+ * 
  * @param string $title The title
  * @param string $before HTML to show before
  * @param string $after HTML to show after
+ * 
+ * @since 0.9.0
  */
 
 function get_the_product_price( $title = '', $before = '<p class="goods-price-single">', $after = '</p>' ) {
@@ -182,21 +186,31 @@ if (function_exists('add_image_size')) {
 }
 
 /**
- * show product thumbnail
+ * Get product's thumbnail
+ * 
+ * Renamed from show_the_thumbnail();
+ * 
+ * @since 0.9.0
+ * 
+ * @param int $product_id ID of the product used to show the thumbnail
+ * @param string $before HTML to show before
+ * @param string $after HTML to show after
+ * 
  */
 
-function show_the_thumbnail() {
+function get_the_product_thumbnail( $product_id = '', $before = '<div class="goods-item-thumb-container">', $after = '</div>' ) {
+
     $output = '';
-    $output .= '<div class="goods-item-thumb-container">';
+    $product_id = get_the_ID();
+
     if (has_post_thumbnail()) {
-        global $post_id;
         $output .= '<a href="' . get_permalink() . '">';
-        $output .= get_the_post_thumbnail($post_id, 'gc-image-thumb', array('class' => 'goods-item-thumb'));
+        $output .= get_the_post_thumbnail($product_id, 'gc-image-thumb', array('class' => 'goods-item-thumb'));
         $output .= '</a>';
     } else { // show default image if the thumbnail is not found
         $output .= '<a href="' . get_permalink() . '"><img class="goods-item-thumb" src="' . GOODS_CATALOG_PLUGIN_URL . '/img/gi.png" alt=""></a>';
     }
-    $output .= '</div>';
-    return $output;
+
+    return $before . $output . $after;
 }
 
