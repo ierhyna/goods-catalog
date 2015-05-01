@@ -48,22 +48,31 @@ add_action('pre_get_posts', 'goods_pagesize', 1); // Set items per page
  * Get page elements
  */
 
-/*
- * REMOVED: get taxomomies list
-
-In Goods Catalog 0.7 the function get_goods_taxomonies() has been removed.
-If you have modified the plugin templates, please use WordPress core function get_the_term_list().
-
-For example:
-
-1) Get goods categories list:
-echo get_the_term_list ($post->ID, 'goods_category', '<p>' . __("Categories", "gcat") . ':&nbsp;', ', ', '</p>');
-
-1) Get goods tags list:
-echo get_the_term_list ($post->ID, 'goods_tag', '<p>' . __("Tags", "gcat") . ':&nbsp;', ', ', '</p>');
-
-Please read the Codex for more details: http://codex.wordpress.org/Function_Reference/get_the_term_list
-
+/**
+ * Get taxomomies list.
+ *
+ *
+ * @since 0.4.5
+ * @deprecated 0.7.0 Use {@see get_the_term_list()()} instead.
+ * @see get_the_term_list()
+ * @link http://codex.wordpress.org/Function_Reference/get_the_term_list
+ * 
+ * @param type $var Optional. Description.
+ * @param type $var Description.
+ * @return type Description.
+ *
+ * In Goods Catalog 0.7 the function get_goods_taxomonies() has been removed.
+ * If you have modified the plugin templates, please use WordPress core function get_the_term_list().
+ * 
+ * For example:
+ * 
+ * 1) Get goods categories list:
+ * echo get_the_term_list ($post->ID, 'goods_category', '<p>' . __("Categories", "gcat") . ':&nbsp;', ', ', '</p>');
+ * 
+ * 1) Get goods tags list:
+ * echo get_the_term_list ($post->ID, 'goods_tag', '<p>' . __("Tags", "gcat") . ':&nbsp;', ', ', '</p>');
+ * 
+ * 
  */
 
 function get_goods_taxomonies($taxonomy, $id) {

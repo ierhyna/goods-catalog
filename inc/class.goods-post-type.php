@@ -1,7 +1,9 @@
 <?php
 
-/*
+/**
  * Create post type: goods
+ * 
+ * @since 0.9.0
  */
 
 class Goods_Post_Type {

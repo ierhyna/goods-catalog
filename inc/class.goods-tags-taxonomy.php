@@ -1,7 +1,9 @@
 <?php
 
-/* 
+/**
  * Custom Taxonomy: Goods Tag
+ * 
+ * @since 0.9.0
  */
 
 /**

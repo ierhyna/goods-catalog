@@ -1,7 +1,10 @@
 <?php
 
-/* 
+/**
  * Create metabox for goods post type
+ * 
+ * @since 0.9.0
+ * 
  */
 
 function Call_Goods_Catalog_Metabox() {
@@ -13,7 +16,7 @@ if ( is_admin() ) {
     add_action( 'load-post-new.php', 'Call_Goods_Catalog_Metabox' );
 }
 
-/** 
+/*
  * The Class.
  */
 class Goods_Catalog_Metabox {
@@ -21,7 +24,7 @@ class Goods_Catalog_Metabox {
     protected $prefix;
     protected $fields;
 
-    /**
+    /*
      * Hook into the appropriate actions when the class is constructed.
      */
     public function __construct() {
@@ -54,7 +57,7 @@ class Goods_Catalog_Metabox {
         );
     }
 
-    /**
+    /*
      * Adds the meta box container.
      */
     public function add_meta_box( $post_type ) {

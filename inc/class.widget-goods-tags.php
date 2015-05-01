@@ -1,6 +1,8 @@
 <?php
-/*
+/**
  * Tags
+ * 
+ * @since 0.9.0
  */
 
 // Creating the tags widget 

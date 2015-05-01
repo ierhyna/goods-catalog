@@ -1,6 +1,9 @@
 <?php
-/*
+
+/**
  * Options Page for Goods Catalog
+ * 
+ * @since 0.9.0
  */
 
 class Goods_Catalog_Settings_Page {

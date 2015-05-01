@@ -1,6 +1,8 @@
 <?php
-/*
+/**
  * Categories
+ * 
+ * @since 0.9.0
  */
 
 // Creating the categories widget 

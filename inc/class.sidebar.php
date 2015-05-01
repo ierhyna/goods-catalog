@@ -1,7 +1,9 @@
 <?php
 
-/* 
- * Custom sidebar
+/**
+ * Catalog sidebar
+ * 
+ * @since 0.9.0
  */
 
 class Goods_Sidebar { 

@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * Shortcodes to use with the catalog
  */
 

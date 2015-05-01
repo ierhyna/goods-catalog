@@ -1,7 +1,9 @@
 <?php
 
-/* 
+/**
  * Custom taxonomy: Goods Category
+ * 
+ * @since 0.9.0
  */
 
 class Goods_Categories_Taxonomy {
