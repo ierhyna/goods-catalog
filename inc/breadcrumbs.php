@@ -38,7 +38,9 @@ function categories_chain() {
 }
 
 /**
- * Generate full breadcrumbs path
+ * Generate and return full breadcrumbs path
+ * 
+ * @since 0.9.0 
  * 
  * @param int $id
  * 
@@ -92,8 +94,8 @@ function gc_breadcrumbs($id = null) {
  * 
  * @since 0.9.0
  * 
- * @param string $before HTML to show before chain
- * @param string $after HTML to show after chain
+ * @param string $before Text to output before chain
+ * @param string $after Text to output after chain
  * 
  */ 
 function show_gc_breadcrumbs ( $before = '<div class="breadcrumbs">', $after = '</div>' ) {
