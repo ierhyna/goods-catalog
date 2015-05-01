@@ -91,10 +91,6 @@ function get_goods_taxomonies($taxonomy, $id) {}
 function get_the_product_price( $title = '', $before = '<p class="goods-price-single">', $after = '</p>' ) {
     
     global $catalog_option;
-
-    /**
-     * @var $output Outputs prefix, price and postfix
-     */ 
     $output = '';
 
     /*
