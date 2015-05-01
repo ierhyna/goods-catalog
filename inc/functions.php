@@ -163,23 +163,40 @@ function show_the_product_desrc( $before = '<p class="goods-descr">', $after = '
 
 /**
  * Add Thumbnail size
+ * 
+ * @since 0.9.0
+ * 
  */
 
-global $catalog_option;
-if (isset($catalog_option['category_thumb_size_w'])) {
-    $size_w = $catalog_option['category_thumb_size_w'];
-} else {
-    $size_w = 150;
-}
-if (isset($catalog_option['category_thumb_size_h'])) {
-    $size_h = $catalog_option['category_thumb_size_h'];
-} else {
-    $size_h = 150;
-}
+function set_gc_image_size() { 
+    global $catalog_option;
+    /**
+     * Get image size from user's settings
+     */
+    if (isset($catalog_option['category_thumb_size_w'])) {
+        $size_w = $catalog_option['category_thumb_size_w'];
+    } else {
+        $size_w = 150;
+    }
+    if (isset($catalog_option['category_thumb_size_h'])) {
+        $size_h = $catalog_option['category_thumb_size_h'];
+    } else {
+        $size_h = 150;
+    }
 
-if (function_exists('add_image_size')) {
-    add_image_size('gc-image-thumb', $size_w, $size_h, true); //(cropped)
+    /**
+     * Add new image size
+     * 
+     * @param string $name Name of the new size
+     * @param int $width Width
+     * @param int $height Height
+     * @param boolean/array $crop Crop mode
+     * 
+     * @link http://codex.wordpress.org/Function_Reference/add_image_size
+     */ 
+    add_image_size('gc-image-thumb', $size_w, $size_h, true);
 }
+add_action( 'plugins_loaded', 'set_gc_image_size' );
 
 /**
  * Get product's thumbnail
