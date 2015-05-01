@@ -66,14 +66,14 @@ $catalog_option = get_option('goods_option_name');
 /*
  * Load options
  */
-require_once( GOODS_CATALOG_PLUGIN_INC . '/class.goods-catalog-settings-page.php' ); // Options Class
+require_once( GOODS_CATALOG_PLUGIN_INC . '/class.settings-page.php' ); // Options Class
 require_once( GOODS_CATALOG_PLUGIN_PATH  . '/style/goods-options-style.php' ); // Stylesheet
 
 /*
  * Create post type and taxonomies
  */
 require_once( GOODS_CATALOG_PLUGIN_INC . '/class.goods-post-type.php' ); // create post type
-require_once( GOODS_CATALOG_PLUGIN_INC . '/class.goods-catalog-metabox.php' ); // create metabox
+require_once( GOODS_CATALOG_PLUGIN_INC . '/class.metabox.php' ); // create metabox
 require_once( GOODS_CATALOG_PLUGIN_INC . '/class.goods-categories-taxonomy.php' ); // Goods Categories
 require_once( GOODS_CATALOG_PLUGIN_INC . '/class.goods-tags-taxonomy.php' ); // Goods Tags
 
