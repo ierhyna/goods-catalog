@@ -13,7 +13,7 @@ class Widget_Goods_Tags extends WP_Widget {
                 // Base ID of your widget
                 'Widget_Goods_Tags',
                 // Widget name will appear in UI
-                'Goods Catalog Tags',
+                'GC Tags',
                 // Widget description
                 array(
             'description' => __('Goods Catalog tags cloud', 'gcat')

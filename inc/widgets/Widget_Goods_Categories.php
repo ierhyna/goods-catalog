@@ -13,7 +13,7 @@ class Widget_Goods_Categories extends WP_Widget {
                 // Base ID of your widget
                 'Widget_Goods_Categories',
                 // Widget name will appear in UI
-                'Goods Catalog Categories',
+                'GC Categories',
                 // Widget description
                 array(
             'description' => __('Goods Catalog categories list', 'gcat')
