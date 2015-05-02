@@ -26,7 +26,7 @@ if (have_posts()) {
                 <div class="goods-info">
                     <h2 class="entry-title"><?php the_title(); ?></h2>
                     <?php
-                    // show product
+                    // show product's details
                     echo get_the_product_price();
                     
                     if (isset($catalog_option['show_product_sku_page'])) {
