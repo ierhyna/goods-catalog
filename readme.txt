@@ -71,6 +71,7 @@ Also, you can send me your language files and I'll add them to the release.
 
 = 0.9.0 =
 
+* Wigdet GC Categories: now you can hide or show count of products in one click
 * Fixed thumbnails bug in shortcode [goods_newest]
 * Improved shortcodes
 * Improved the matabox
