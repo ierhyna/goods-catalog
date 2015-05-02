@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template wrapper
+ * Class for template wrapper
  * 
  * @since 0.9.0
  * @link http://scribu.net/wordpress/theme-wrappers.html
