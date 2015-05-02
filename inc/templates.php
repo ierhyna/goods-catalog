@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Load custom templates for post type and taxonomies from plugin directory
  */
