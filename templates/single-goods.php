@@ -3,17 +3,9 @@
  * Template: Single product page
  */
 
-get_header();
-echo '<div class="goods-catalog-container">';
-load_template(dirname(__FILE__) . '/sidebar-goods.php');
-
-echo '<div class="goods-catalog">';
-echo '<div class="catalog-inner">';
 if (have_posts()) {
     while (have_posts()) {
         the_post();
-        // Display navigation next/previous
-        show_gc_breadcrumbs();
         ?>
 
         <article <?php post_class(); ?>>
@@ -62,16 +54,9 @@ if (have_posts()) {
         </article>
         <?php
     }
-
-    // Display navigation to next/previous
     ?>
     <div class="navigation"><?php posts_nav_link(); ?></div>
     <?php
-    echo '</div>';
 } else {
     get_404_template();
 }
-echo '</div>';
-echo '<div class="clear"></div>'; // fix for some themes
-echo '</div>'; // goods-catalog-container
-get_footer();

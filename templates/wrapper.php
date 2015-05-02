@@ -8,21 +8,30 @@
  * @since 0.9.0
  */
 
-get_header( goods_catalog_template_base() ); ?>
+get_header(); 
 
-<div class="goods-catalog-container">
-
-	<?php
+echo '<div class="goods-catalog-container">';
+	
+	/**
+	 * Load the sidebar
+	 */ 
 	load_template ( dirname( __FILE__ ) . '/sidebar-goods.php' ) ;
-	?>
-	<section id="primary">
-		<div id="content" role="main">
-			<?php include goods_catalog_template_path(); ?>
-		</div>
-	</section>
 
-	<?php get_sidebar( goods_catalog_template_base() ); ?>
+	echo '<div class="goods-catalog">';
+		echo '<div class="catalog-inner">';
 
-</div><?php // goods-catalog-container
+			show_gc_breadcrumbs();
+			
+			/**
+			 * Load the main part of the page.
+			 */ 
+			require_once( GOODS_CATALOG_PLUGIN_INC . '/templates.php' );
 
-get_footer( goods_catalog_template_base() ); ?>
+		echo '</div>'; // catalog-inner
+	echo '</div>'; // goods-catalog
+
+	echo '<div class="clear"></div>'; // fix for some themes
+
+echo '</div>'; // goods-catalog-container
+
+get_footer();
