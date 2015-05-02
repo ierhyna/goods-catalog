@@ -1,9 +1,13 @@
 <?php
-/*
- * Enqueue Styles and Add User Settings
+/**
+ * Enqueues Styles and Add User Settings
  */
 
-add_action('wp_print_styles', 'goods_add_stylesheet'); // register hook 'wp_print_styles'
+
+/**
+ * Adds default stylesheet
+ */
+add_action('wp_print_styles', 'goods_add_stylesheet'); 
 
 function goods_add_stylesheet() { // enqueue stylesheet for the catalog pages 
    // commented to make styles work with the shortcodes
@@ -13,7 +17,16 @@ function goods_add_stylesheet() { // enqueue stylesheet for the catalog pages
    // }
 }
 
-function goods_add_user_stylesheet() { // enqueue users stylesheet for the catalog pages 
+/**
+ * Load styles
+ */
+add_action('wp_head', 'goods_add_user_stylesheet', 40);
+
+/**
+ * Enqueues users' settings to the stylesheet for the catalog pages 
+ */ 
+
+function goods_add_user_stylesheet() { 
     if (is_tax('goods_category') || is_tax('goods_tag') || is_post_type_archive('goods') || is_singular('goods')) {
         global $catalog_option;
         ?>
@@ -75,4 +88,3 @@ function goods_add_user_stylesheet() { // enqueue users stylesheet for the catal
     }
 }
 
-add_action('wp_head', 'goods_add_user_stylesheet', 40); // load styles

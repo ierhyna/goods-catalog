@@ -1,33 +1,12 @@
 <?php
-/*
+/**
  * Template: Single product page
  */
 
-get_header();
-echo '<div class="goods-catalog-container">';
-load_template(dirname(__FILE__) . '/sidebar-goods.php');
-
-echo '<div class="goods-catalog">';
-echo '<div class="catalog-inner">';
 if (have_posts()) {
     while (have_posts()) {
         the_post();
-        // Display navigation next/previous
         ?>
-        <div class="breadcrumbs">
-            <?php
-            if (!is_search() || !is_404()) {
-                global $post;
-                if ($post != null) {
-                    gc_breadcrumbs($post->post_parent);
-                } else {
-                    gc_breadcrumbs();
-                }
-            } else {
-                print ' ';
-            }
-            ?>
-        </div>
 
         <article <?php post_class(); ?>>
             <header>
@@ -47,8 +26,8 @@ if (have_posts()) {
                 <div class="goods-info">
                     <h2 class="entry-title"><?php the_title(); ?></h2>
                     <?php
-                    // show product
-                    echo show_the_product_price();
+                    // show product's details
+                    echo get_the_product_price();
                     
                     if (isset($catalog_option['show_product_sku_page'])) {
                         show_the_product_sku();
@@ -75,16 +54,9 @@ if (have_posts()) {
         </article>
         <?php
     }
-
-    // Display navigation to next/previous
     ?>
     <div class="navigation"><?php posts_nav_link(); ?></div>
     <?php
-    echo '</div>';
 } else {
     get_404_template();
 }
-echo '</div>';
-echo '<div class="clear"></div>'; // fix for some themes
-echo '</div>'; // goods-catalog-container
-get_footer();

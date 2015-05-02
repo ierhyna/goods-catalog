@@ -34,7 +34,7 @@
  */
 
 
-/*
+/**
  * Define plugin's pathes
  * All without the last trailing slash
  */
@@ -63,32 +63,33 @@ add_action('plugins_loaded', 'goods_catalog_lang_init');
  */
 $catalog_option = get_option('goods_option_name');
 
-/*
+/**
  * Load options
  */
-require_once( GOODS_CATALOG_PLUGIN_INC . '/goods-options.php' ); // Options Class
+require_once( GOODS_CATALOG_PLUGIN_INC . '/class.settings-page.php' ); // Options Class
 require_once( GOODS_CATALOG_PLUGIN_PATH  . '/style/goods-options-style.php' ); // Stylesheet
 
-/*
+/**
  * Create post type and taxonomies
  */
-require_once( GOODS_CATALOG_PLUGIN_INC . '/post-type.php' ); // create post type
-require_once( GOODS_CATALOG_PLUGIN_INC . '/metabox.php' ); // create metabox
-require_once( GOODS_CATALOG_PLUGIN_INC . '/taxonomy-category.php' ); // Goods Categories
-require_once( GOODS_CATALOG_PLUGIN_INC . '/taxonomy-tag.php' ); // Goods Tags
+require_once( GOODS_CATALOG_PLUGIN_INC . '/class.goods-post-type.php' ); // create post type
+require_once( GOODS_CATALOG_PLUGIN_INC . '/class.metabox.php' ); // create metabox
+require_once( GOODS_CATALOG_PLUGIN_INC . '/class.goods-categories-taxonomy.php' ); // Goods Categories
+require_once( GOODS_CATALOG_PLUGIN_INC . '/class.goods-tags-taxonomy.php' ); // Goods Tags
 
-/*
+/**
  * Create Sidebar and Widgets
  */
-require_once( GOODS_CATALOG_PLUGIN_INC . '/sidebar.php' ); // Sidebar
-require_once( GOODS_CATALOG_PLUGIN_INC . '/widgets.php' );  // Widgets Class
+require_once( GOODS_CATALOG_PLUGIN_INC . '/class.sidebar.php' ); // Sidebar Class
+require_once( GOODS_CATALOG_PLUGIN_INC . '/widgets.php' );  // Widgets Classes
 
-/*
+/**
  *  Use custom templates for goods and catalog
  */
-require_once( GOODS_CATALOG_PLUGIN_INC . '/templates.php' );  // Templates
 
-/*
+require_once( GOODS_CATALOG_PLUGIN_INC . '/class.wrapper.php' ); // Wrapper class
+
+/**
  * Load additional functions
  */
 require_once( GOODS_CATALOG_PLUGIN_INC . '/functions.php' );  // Functions

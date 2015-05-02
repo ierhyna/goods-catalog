@@ -3,7 +3,7 @@ Contributors: oriolo
 Tags: catalog, catalogue, product, products, goods, product catalog, product catalogue, catalog of goods
 Stable tag: trunk
 Requires at least: 3.3.0
-Tested up to: 4.1
+Tested up to: 4.2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,18 @@ Please use one of translation tools, listed here: http://codex.wordpress.org/Tra
 Also, you can send me your language files and I'll add them to the release.
 
 == Changelog ==
+
+= 0.9.0 =
+
+* Wigdet GC Categories: now you can hide or show count of products in one click
+* Fixed thumbnails bug in shortcode [goods_newest]
+* Improved shortcodes
+* Improved the matabox
+* Improved files structure
+* Improved functions to show product price, SKU, and short description
+* Improved function of thumbnail size
+* Added template's wrapper
+* Updated Italian translation
 
 = 0.8 =
 

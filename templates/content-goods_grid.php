@@ -1,6 +1,12 @@
 <?php
-/*
- * Loop Grid : Products on categories pages
+/**
+ * Products in grid
+ * 
+ * Displays products in grid. 
+ * Loaded in:
+ * taxonomy-goods_category.php
+ * taxonomy-goods_tags.php
+ * 
  */
 
 if (have_posts()) {
@@ -13,10 +19,10 @@ if (have_posts()) {
                 <div class="goods-item-content">
                     <?php
                     // show thumbnails
-                    echo show_the_thumbnail();
+                    echo get_the_product_thumbnail();
 
                     // show products
-                    echo show_the_product_price();
+                    echo get_the_product_price();
                     global $catalog_option;
                     if (isset($catalog_option['show_product_sku_grid'])) {
                         show_the_product_sku();

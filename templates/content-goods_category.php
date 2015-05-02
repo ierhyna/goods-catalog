@@ -1,7 +1,12 @@
 <?php
 
-/*
- * The list of subcategories
+/**
+ * The list of subcategories in grid
+ * 
+ * Loaded in:
+ * home-goods_catalog.php
+ * taxonomy-goods_category.php
+ * 
  */
 
 // check if current taxonomy doesn't have childs
@@ -48,6 +53,6 @@ else {
         echo '</div>';
     }
 
-    echo "</div>";
-    echo "<div class=\"clear\"></div>";
+    echo '</div>';
+    echo '<div class="clear"></div>';
 }

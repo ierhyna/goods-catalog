@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * Shortcodes to use with the catalog
  */
 
@@ -68,8 +68,8 @@ function goods_shortcode_output() {
             . '<div class="goods-item-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></div>'
             . '<div class="goods-item-content">'
             . '<div class="goods-item-thumb-container">';
-    $output .= show_the_thumbnail();            
-    $output .= show_the_product_price();
+    $output .= get_the_product_thumbnail();
+    $output .= get_the_product_price();
     $gc_descr = get_post_meta(get_the_ID(), 'gc_descr', true);
     if ((isset($gc_descr)) && ($gc_descr != '')) {
         $output .= '<p class="goods-descr">' . $gc_descr . '</p>';
@@ -83,9 +83,10 @@ function GoodsNewest($atts) {
 
     // Attributes
     extract(shortcode_atts(
-                    array(
-        'number' => '3',
-                    ), $atts)
+        array(
+            'number' => '3',
+        ), 
+        $atts)
     );
 
     // Code
