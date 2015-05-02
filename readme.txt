@@ -218,6 +218,6 @@ First public release
 
 == Upgrade Notice ==
 
-= 0.7 =
+= 0.9.0 =
 
-Updated breadcrumbs function. The last breadcrumb is not a link now.
+Updated widgets, metabox, and templates.
