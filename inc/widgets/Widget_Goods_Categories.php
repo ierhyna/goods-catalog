@@ -29,6 +29,9 @@ class Widget_Goods_Categories extends WP_Widget {
     // This is where the action happens
     public function widget($args, $instance) {
         $title = apply_filters('widget_title', $instance['title']);
+
+        $c = ! empty( $instance['count'] ) ? '1' : '0';
+
         // before and after widget arguments are defined by themes
         echo $args['before_widget'];
         if (!empty($title)) {
@@ -38,7 +41,7 @@ class Widget_Goods_Categories extends WP_Widget {
         // This is where the code displays the output
         $taxonomy = 'goods_category';
         $orderby = 'name';
-        $show_count = 1;      // 1 for yes, 0 for no
+        $show_count = $c;      // 1 for yes, 0 for no
         $pad_counts = 0;      // do not count products in subcategories
         $hierarchical = 1;      // 1 for yes, 0 for no
 
@@ -64,21 +67,23 @@ class Widget_Goods_Categories extends WP_Widget {
         } else {
             $title = __('Products Categories', 'gcat');
         }
+        $count = isset($instance['count']) ? (bool) $instance['count'] :false;
         // Widget admin form
+        ?>
 
-        echo '<p>';
-        echo '<label for="' . $this->get_field_id('title') . '">';
-        _e('Title:');
-        echo '</label>'; 
-        echo '<input class="widefat" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' .   esc_attr($title) . '" />';
-        echo '</p>';
+        <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:' ); ?></label>
+        <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
 
+        <p><input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('count'); ?>" name="<?php echo $this->get_field_name('count'); ?>"<?php checked( $count ); ?> />
+        <label for="<?php echo $this->get_field_id('count'); ?>"><?php _e( 'Show post counts' ); ?></label></p><br />
+    <?php
     }
 
     // Updating widget replacing old instances with new
     public function update($new_instance, $old_instance) {
         $instance = array();
         $instance['title'] = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
+        $instance['count'] = !empty($new_instance['count']) ? 1 : 0;
         return $instance;
     }
 
