@@ -4,9 +4,9 @@
  * Template: Main catalog page
  */
 
-get_header();
-echo '<div class="goods-catalog-container">';
-load_template ( dirname( __FILE__ ) . '/sidebar-goods.php' ) ;
+//get_header();
+//echo '<div class="goods-catalog-container">';
+//load_template ( dirname( __FILE__ ) . '/sidebar-goods.php' ) ;
 
 $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
 
@@ -33,5 +33,5 @@ echo '</div>'; // catalog-inner
 echo '</div>'; // goods-catalog
 
 echo '<div class="clear"></div>'; // fix for some themes
-echo '</div>'; // goods-catalog-container
-get_footer();
+//echo '</div>'; // goods-catalog-container
+//get_footer();
