@@ -35,7 +35,7 @@ if (!is_paged()) {
 
     echo "<hr>";
 }
-load_template(dirname(__FILE__) . '/loop-grid.php');
+load_template(dirname(__FILE__) . '/content-goods_grid.php');
 ?>
 <div class="navigation">
     <?php

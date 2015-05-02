@@ -7,8 +7,8 @@
 global $wp_query, $post;
 
 if (is_post_type_archive('goods')) { // Main Catalog Page
-    if (file_exists(GOODS_CATALOG_PLUGIN_TEMPLATES . '/archive-goods.php')) {
-        require_once (GOODS_CATALOG_PLUGIN_TEMPLATES . '/archive-goods.php');
+    if (file_exists(GOODS_CATALOG_PLUGIN_TEMPLATES . '/home-goods_catalog.php')) {
+        require_once (GOODS_CATALOG_PLUGIN_TEMPLATES . '/home-goods_catalog.php');
     }
 }
 elseif (is_tax('goods_category')) { // Categories

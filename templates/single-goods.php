@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Template: Single product page
  */
 

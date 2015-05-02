@@ -12,7 +12,7 @@ ob_start();
 
 echo '<h2 class="single-category-title">' . single_cat_title('', false) . '</h2>';
 
-load_template(dirname(__FILE__) . '/loop-grid.php');
+load_template(dirname(__FILE__) . '/content-goods_grid.php');
 ?>
 <div class="navigation">
     <?php

@@ -1,6 +1,12 @@
 <?php
-/*
- * Loop Grid : Products on categories pages
+/**
+ * Products in grid
+ * 
+ * Displays products in grid. 
+ * Loaded in:
+ * taxonomy-goods_category.php
+ * taxonomy-goods_tags.php
+ * 
  */
 
 if (have_posts()) {
