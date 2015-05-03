@@ -199,6 +199,19 @@ function set_gc_image_size() {
 add_action( 'plugins_loaded', 'set_gc_image_size' );
 
 /**
+ * Add Thumbnails support
+ * 
+ * Adds thumbnails support if such a function is missing in the theme
+ * 
+ * @since 0.9.1
+ * 
+ */
+function gs_thumbnails_support() {
+    add_theme_support( 'post-thumbnails', array ('goods') );               
+}
+add_action( 'after_setup_theme', 'gs_thumbnails_support', 11 );
+
+/**
  * Get product's thumbnail
  * 
  * Renamed from show_the_thumbnail();
