@@ -69,6 +69,10 @@ Also, you can send me your language files and I'll add them to the release.
 
 == Changelog ==
 
+= 0.9.1 =
+
+* Fixed bug with no featured image box in some themes (https://github.com/ierhyna/goods-catalog/issues/33)
+
 = 0.9.0 =
 
 * Wigdet GC Categories: now you can hide or show count of products in one click
@@ -218,6 +222,6 @@ First public release
 
 == Upgrade Notice ==
 
-= 0.9.0 =
+= 0.9.1 =
 
-Updated widgets, metabox, and templates.
+Updated widgets, metabox, and templates. Bug fixes
