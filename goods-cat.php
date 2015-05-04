@@ -44,7 +44,7 @@ define('GOODS_CATALOG_PLUGIN_FILE', plugin_basename(__FILE__));
 define('GOODS_CATALOG_PLUGIN_INC', GOODS_CATALOG_PLUGIN_PATH . '/inc');
 define('GOODS_CATALOG_PLUGIN_TEMPLATES', GOODS_CATALOG_PLUGIN_PATH . '/templates');
 
-/*
+/**
  * Load Localization
  */
 function goods_catalog_lang_init() {
@@ -55,8 +55,6 @@ function goods_catalog_lang_init() {
     load_plugin_textdomain($domain, FALSE, dirname(plugin_basename(__FILE__)).'/languages/');
 }
 add_action('plugins_loaded', 'goods_catalog_lang_init');
-
-
 
 /*
  * Use options set by user
@@ -86,7 +84,6 @@ require_once( GOODS_CATALOG_PLUGIN_INC . '/widgets.php' );  // Widgets Classes
 /**
  *  Use custom templates for goods and catalog
  */
-
 require_once( GOODS_CATALOG_PLUGIN_INC . '/class.wrapper.php' ); // Wrapper class
 
 /**
