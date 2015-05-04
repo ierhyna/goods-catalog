@@ -16,7 +16,7 @@ $catalog_pages = array(
 /**
  * Load the page template
  * 
- * Check the template in theme's folder, if not found load the template from plugin folder
+ * Check the template from theme's folder, if not found load the template from plugin folder
  * 
  * @since 0.9.2
  */ 
