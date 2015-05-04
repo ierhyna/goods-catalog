@@ -1,6 +1,9 @@
 <?php
+
 /**
  * Template: Single product page
+ * 
+ * You can edit this template by coping into your theme's folder
  */
 
 if (have_posts()) {
