@@ -94,6 +94,13 @@ Sure! There is special sidebar for the catalog. All widgets you put in there wil
 Please use one of translation tools, [listed in the Codex](http://codex.wordpress.org/Translating_WordPress#Translation_Tools) to open .POT file and create your own translation. You can put your .PO and .MO files into `/wp-content/languages/plugins/` and you will not loose the translations after plugin update.
 Also, you can send me your language files and I'll add them to the release.
 
+= How to customize title meta tag on catalog or category page? =
+The simpliest way is to use some SEO plugins that allow to customize titles: ex., [WordPress SEO by Yoast](https://wordpress.org/plugins/wordpress-seo/) or [All in One SEO Pack](https://wordpress.org/plugins/all-in-one-seo-pack/).
+
+Or you can manually change your theme's header.php (see [here](http://wordpress.stackexchange.com/questions/130747/custom-post-type-archive-page-title)). 
+
+Another option is to change the plugin files see the discussion [here](https://wordpress.org/support/topic/how-to-modify-the-catalog-title-page). It is not recommended: you will lose the changes after the plugin update.
+
 == Changelog ==
 
 = 0.9.1 =
