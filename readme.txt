@@ -1,6 +1,6 @@
 === Goods Catalog ===
 Contributors: oriolo
-Tags: catalog, catalogue, product, products, goods, product catalog, product catalogue, catalog of goods
+Tags: goods catalog, products catalog, catalog, products, goods
 Stable tag: trunk
 Requires at least: 3.3.0
 Tested up to: 4.2.1
@@ -102,6 +102,12 @@ Or you can manually change your theme's header.php (see [here](http://wordpress.
 Another option is to change the plugin files see the discussion [here](https://wordpress.org/support/topic/how-to-modify-the-catalog-title-page). It is not recommended: you will lose the changes after the plugin update.
 
 == Changelog ==
+
+= 0.9.2 =
+
+* New feature: Customizable templates. Just copy and paste the template for main catalog page, category, tags, or single product to your theme's directory to change it (and not to lose changes with plugin update)
+* Breadcrumbs bug fix (no previous category in chain)
+* CSS improvements
 
 = 0.9.1 =
 
@@ -256,6 +262,6 @@ First public release
 
 == Upgrade Notice ==
 
-= 0.9.1 =
+= 0.9.2 =
 
-Updated widgets, metabox, and templates. Bug fixes
+Breadcrumbs bug fix. New feature: customizable templates

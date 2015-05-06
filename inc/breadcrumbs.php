@@ -8,6 +8,7 @@
  * Generate chains of categories
  */ 
 function categories_chain() {
+	$output = '';
 	$category = 'goods_category';
 
 	/**
@@ -29,12 +30,14 @@ function categories_chain() {
 	}
 	$ancestors_reverse = get_ancestors( $category_id, $category );
 	$ancestors = array_reverse( $ancestors_reverse );
+	//var_dump($ancestors);
 	foreach ( $ancestors as $a ) {
 		$ancestor = get_term( $a, $category );
 		$ancestor_name = $ancestor->name;
 		$ancestor_link = '<a href="' . get_term_link( $ancestor->slug, $category ) . '">' . $ancestor_name . '</a> &gt; ';
-		return $ancestor_link;
+		$output .= $ancestor_link;
 	}
+	return $output;
 }
 
 /**
@@ -99,14 +102,16 @@ function gc_breadcrumbs($id = null) {
  * 
  */ 
 function show_gc_breadcrumbs ( $before = '<div class="breadcrumbs">', $after = '</div>' ) {
+	$output = '';
     if (!is_search() || !is_404()) {
         global $post;
         if ($post != null) {
-        	echo $before . gc_breadcrumbs($post->post_parent) . $after;
+        	$output .= $before . gc_breadcrumbs($post->post_parent) . $after;
         } else {
-        	echo $before . gc_breadcrumbs() . $after;
+        	$output .=  $before . gc_breadcrumbs() . $after;
         }
     } else {
-        echo '&nbsp';
+        $output .=  '&nbsp';
     }
+    print $output;
 }
