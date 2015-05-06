@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Products in grid
  * 

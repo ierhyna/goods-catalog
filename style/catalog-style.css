@@ -29,19 +29,26 @@
     margin: 10px 0 10px 0;
 }
 /* Sidebar */
+
 .goods-sidebar {
+    float: left;
     line-height: 2;
 }
 .goods-sidebar ul {
     list-style: none;
 }
 .goods-sidebar li {
+    width: 100%;
 }
 .goods-sidebar ul.children {
     margin-left: 10px; 
 }
 .goods-sidebar .widgettitle {
     margin-bottom: 20px;
+}
+.goods-sidebar input[type="submit"],
+.goods-sidebar select {
+    width: 100%;
 }
 /* Style products and categories */
 .goods-catalog h2 {
@@ -133,14 +140,8 @@
     margin: 10px 0 20px 0;
 }
 
-/*
-* Sidebar
-*/
-.goods-sidebar {
-    float: left;
-}
-
 /* Common */
 .clear {
     clear: both;
 }
+
