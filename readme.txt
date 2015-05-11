@@ -103,6 +103,10 @@ Another option is to change the plugin files see the discussion [here](https://w
 
 == Changelog ==
 
+= 0.9.3 =
+
+* Thumbnails bug fix
+
 = 0.9.2 =
 
 * New feature: Customizable templates. Just copy and paste the template for main catalog page, category, tags, or single product to your theme's directory to change it (and not to lose changes with plugin update)
@@ -261,6 +265,10 @@ Small bug fix:
 First public release
 
 == Upgrade Notice ==
+
+= 0.9.3 =
+
+Thumbnails bug fix
 
 = 0.9.2 =
 

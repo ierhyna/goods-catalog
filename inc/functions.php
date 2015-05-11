@@ -207,7 +207,18 @@ add_action( 'plugins_loaded', 'set_gc_image_size' );
  * 
  */
 function gs_thumbnails_support() {
-    add_theme_support( 'post-thumbnails', array ('goods') );               
+    global $_wp_theme_features;
+
+    if( empty($_wp_theme_features['post-thumbnails']) )
+        $_wp_theme_features['post-thumbnails'] = array( array('goods') );
+
+    elseif( true === $_wp_theme_features['post-thumbnails'])
+        return;
+
+    elseif( is_array($_wp_theme_features['post-thumbnails'][0]) )
+        $_wp_theme_features['post-thumbnails'][0][] = 'goods';
+
+    // add_theme_support( 'post-thumbnails' );               
 }
 add_action( 'after_setup_theme', 'gs_thumbnails_support', 11 );
 
