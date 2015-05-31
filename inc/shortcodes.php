@@ -113,21 +113,23 @@ add_shortcode('goods_newest', 'GoodsNewest');
  */
 
 function GoodsCategories() {
- $terms_args = array(
-  'taxonomy' => 'goods_category', // get goods categories
-  'orderby' => 'term_group',
-  'hierarchical' => 1, // do not hide empty parent categories
- );
- $terms = get_terms('goods_category', $terms_args);
+    $output = '';
+    $terms_args = array(
+        'taxonomy' => 'goods_category', // get goods categories
+        'orderby' => 'term_group',
+        'hierarchical' => 1, // do not hide empty parent categories
+    );
+    $terms = get_terms('goods_category', $terms_args);
 
- if ($terms) :
- echo '<ul>';
-  foreach ($terms as $term) :
-    echo '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
-    $parent = $term->parent;
-    endforeach;
- echo '</ul>';
- endif;
+    if ($terms) {
+        $output .= '<ul>';
+        foreach ($terms as $term) {
+            $output .= '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+            $parent = $term->parent;
+        }
+        $output .=  '</ul>';
+        return $output;
+    }
 }
 add_shortcode('goods_categories', 'GoodsCategories');
 
@@ -137,20 +139,22 @@ add_shortcode('goods_categories', 'GoodsCategories');
  */
 
 function GoodsTags() {
- $terms_args = array(
-  'taxonomy' => 'goods_tag', // get goods categories
-  'orderby' => 'name',
-  'hierarchical' => 1, // do not hide empty parent categories
- );
- $terms = get_terms('goods_tag', $terms_args);
+    $output = '';
+    $terms_args = array(
+        'taxonomy' => 'goods_tag', // get goods categories
+        'orderby' => 'name',
+        'hierarchical' => 1, // do not hide empty parent categories
+    );
+    $terms = get_terms('goods_tag', $terms_args);
 
- if ($terms) :
- echo '<ul>';
-  foreach ($terms as $term) :
-    echo '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
-    $parent = $term->parent;
-    endforeach;
- echo '</ul>';
- endif;
+    if ($terms) {
+        $output .= '<ul>';
+        foreach ($terms as $term) {
+            $output .= '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+            $parent = $term->parent;
+        }
+        $output .= '</ul>';
+        return $output;
+    }
 }
 add_shortcode('goods_tags', 'GoodsTags');
