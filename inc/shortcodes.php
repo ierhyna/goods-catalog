@@ -4,7 +4,7 @@
  * Shortcodes to use with the catalog
  */
 
-/*
+/**
  * Sitemap
  * Currently under development
  * Usage: [goods_sitemap]
@@ -55,7 +55,7 @@ function GoodsSitemap() {
 add_shortcode('goods_sitemap', 'GoodsSitemap');
 
 
-/*
+/**
  * Get newest products
  * Usage: [goods_newest number=3]
  */
@@ -106,7 +106,7 @@ add_shortcode('goods_newest', 'GoodsNewest');
 
 
 
-/*
+/**
  * Categories Shortcode
  * Usage: [goods_categories]
  * many thanks to Alexander Chizhov & Pineapple Design Studio
@@ -133,7 +133,7 @@ function GoodsCategories() {
 }
 add_shortcode('goods_categories', 'GoodsCategories');
 
-/*
+/**
  * Tags Shortcode
  * Usage: [goods_tags]
  */
@@ -158,3 +158,44 @@ function GoodsTags() {
     }
 }
 add_shortcode('goods_tags', 'GoodsTags');
+
+/**
+ * Category of Tag by ID
+ * Usage: [goods_term goods_category id="3"]
+ * 
+ * @since 0.9.4
+ */ 
+
+function GoodsTerm( $atts ) {
+
+    // Attributes
+    extract(shortcode_atts(
+        array(
+            'id' => '',
+            'taxonomy' => 'goods_category',
+        ), 
+        $atts)
+    );
+
+    $term = get_term( $id, $taxonomy );
+
+    $output = '';
+
+    if ($term) {
+
+        global $catalog_option;
+
+        // show categories titles
+        $output .=  '<div class="goods-tile"><div class="goods-category-list-title"><a href="' . esc_url(get_term_link($term)) . '" title="' . sprintf(__("Go to cetegory %s", 'gcat'), $term->name) . '" ' . '>' . $term->name . '</a></div> ';
+
+        // show categories description
+        if (isset($catalog_option['show_category_descr_grid'])) {
+            $output .=  '<p>' . $term->description . '</p>';
+        }
+        $output .=  '</div>';
+
+        return $output;
+    }
+
+}
+add_shortcode('goods_term', 'GoodsTerm');

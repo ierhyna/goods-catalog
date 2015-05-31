@@ -145,3 +145,7 @@
     clear: both;
 }
 
+/* Shortcodes */
+.goods-tile {
+    width: 300px;
+}
