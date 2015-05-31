@@ -149,7 +149,7 @@ class Goods_Catalog_Settings_Page {
         // Options Start
         add_settings_field(
                 'show_category_thumb', // ID
-                __('Show category\'s thumbnails', 'gcat'), // Title 
+                __("Show category's thumbnails", 'gcat'), // Title 
                 array($this, 'show_category_thumb_callback'), // Callback
                 'goods-setting-admin', // Page
                 'categories_section_id' // Section           
@@ -157,7 +157,7 @@ class Goods_Catalog_Settings_Page {
         
         add_settings_field(
                 'show_category_descr', // ID
-                __('Show category\'s description', 'gcat'), // Title 
+                __("Show category's description", 'gcat'), // Title 
                 array($this, 'show_category_descr_callback'), // Callback
                 'goods-setting-admin', // Page
                 'categories_section_id' // Section           
@@ -183,7 +183,7 @@ class Goods_Catalog_Settings_Page {
 
         add_settings_field(
                 'show_product_descr', // ID
-                __('Show product\'s short description', 'gcat'), // Title 
+                __("Show product's short description", 'gcat'), // Title 
                 array($this, 'show_product_descr_callback'), // Callback
                 'goods-setting-admin', // Page
                 'product_section_id' // Section           
@@ -191,7 +191,7 @@ class Goods_Catalog_Settings_Page {
 
         add_settings_field(
                 'show_product_sku', // ID
-                __('Show product\'s SKU', 'gcat'), // Title 
+                __("Show product's SKU", 'gcat'), // Title 
                 array($this, 'show_product_sku_callback'), // Callback
                 'goods-setting-admin', // Page
                 'product_section_id' // Section           
@@ -320,8 +320,12 @@ class Goods_Catalog_Settings_Page {
      */
     public function print_catalog_info() {
         print '<p>' . __('You can see the catalog on your site at:', 'gcat') . ' <a href="' . get_post_type_archive_link('goods') . '">' .  get_post_type_archive_link('goods') .  '</a></p>';
-        print __('<p>Don\' know how to set up the catalog? The instructions are available here: <a href="http://oriolo.wordpress.com/2014/03/25/goods-catalog-wordpress-plugin-that-creates-catalog-of-products/">in English</a>, <a href="http://oriolo.ru/dev/goods-catalog/quick-start">in Russian</a></p>', 'gcat');
-        print __('<p>Any problems or questions? Visit the plugin\'s <a href="http://wordpress.org/support/plugin/goods-catalog">support forum</a> at WordPress.org</p>', 'gcat');
+        print '<p>';
+        print __("Don't know how to set up the catalog? The instructions are available here: <a href='http://oriolo.wordpress.com/2014/03/25/goods-catalog-wordpress-plugin-that-creates-catalog-of-products'>in English</a>, <a href='http://oriolo.ru/dev/goods-catalog/quick-start'>in Russian</a>", 'gcat');
+        print '</p>';
+        print '<p>';
+        print __("Any problems or questions? Visit the plugin's <a href='http://wordpress.org/support/plugin/goods-catalo'>support forum</a> at WordPress.org", 'gcat');
+        print '</p>';
     }
 
     public function print_permalinks_section() {
@@ -366,7 +370,7 @@ class Goods_Catalog_Settings_Page {
         _e( ' by default: goods_caregory', 'gcat' );
         echo '<p class="description">';
         $url = admin_url( 'options-permalink.php' );
-        $text = __( '', 'gcat');
+        $text = '';
         printf($text, $url);
         echo '</p>';
     }
@@ -378,7 +382,7 @@ class Goods_Catalog_Settings_Page {
         _e( ' by default: goods_tag', 'gcat');
         echo '<p class="description">';
         $url = admin_url( 'options-permalink.php' );
-        $text = __( '', 'gcat');
+        $text = '';
         printf($text, $url);
         echo '</p>';
     }
@@ -421,7 +425,7 @@ class Goods_Catalog_Settings_Page {
         <p><input type="checkbox" name="goods_option_name[show_category_thumb]" id="show_category_thumb" value="1" <?php checked(isset($this->options['show_category_thumb']), 1); ?> />
             <?php
             echo __('in grid', 'gcat') . '</p>';
-            echo '<p class="description">' . __('If you don\'t need thumbnails for the categories, please uncheck this option', 'gcat') . '</p>';
+            echo '<p class="description">' . __("If you don't need thumbnails for the categories, please uncheck this option", 'gcat') . '</p>';
     }
         
     public function category_thumb_size_callback() {
@@ -437,7 +441,7 @@ class Goods_Catalog_Settings_Page {
         );
         _e('px', 'gcat');
         
-        echo '<p class="description">' . __("If you are unhappy with default thumbnails' size for categories and products, change it here, please. After that please use <a href='http://wordpress.org/plugins/regenerate-thumbnails/'>Regenerate Thumbnails</a> plugin to rebuild images' sizes. Please notice, that default images for category and product will not be resized", "gcat") . '</p>';
+        echo '<p class="description">' . __("Set size of thumbnails for categories and products. After that please use <a href='http://wordpress.org/plugins/regenerate-thumbnails/'>Regenerate Thumbnails</a> plugin to rebuild images' sizes. Please notice, that default images for category and product will not be resized", "gcat") . '</p>';
     }
 
     public function show_category_descr_callback() {
@@ -520,6 +524,7 @@ class Goods_Catalog_Settings_Page {
         echo '%, ' . __('by default 20', 'gcat');
         echo '<p class="description">' . __("Set width of the Sidebar", "gcat") . '</p>';
     }
+
 
 }
 

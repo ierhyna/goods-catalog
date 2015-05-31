@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Goods Catalog\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/goods-catalog\n"
-"POT-Creation-Date: 2015-02-08 20:28+0300\n"
-"PO-Revision-Date: 2015-02-08 20:30+0300\n"
+"POT-Creation-Date: 2015-05-31 18:15+0300\n"
+"PO-Revision-Date: 2015-05-31 18:20+0300\n"
 "Last-Translator: Irina Sokolovskaja <sokolovskaja.irina@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -16,351 +16,180 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_n;_x;_e;_ex\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../inc/widgets.php:21
-msgid "Goods Catalog categories list"
-msgstr "Список рубрик каталога товаров"
-
-#: ../inc/widgets.php:62
-msgid "Products Categories"
-msgstr "Рубрики продуктов"
-
-#: ../inc/widgets.php:70 ../inc/widgets.php:148
-msgid "Title:"
-msgstr "Заголовок:"
-
-#: ../inc/widgets.php:107
-msgid "Goods Catalog tags cloud"
-msgstr "Облако тегов каталога товаров"
-
-#: ../inc/widgets.php:140
-msgid "Products Tags"
-msgstr "Метки продуктов"
-
-#: ../inc/breadcrumbs.php:31
-msgid "Home"
-msgstr "Главная"
-
-#: ../inc/breadcrumbs.php:34 ../inc/breadcrumbs.php:36
-msgid "Catalog"
-msgstr "Каталог"
-
-#: ../inc/post-type.php:15
-msgid "Goods"
-msgstr "Товары"
-
-#: ../inc/post-type.php:16
-msgid "Item"
-msgstr "Товар"
-
-#: ../inc/post-type.php:17
-msgid "Add"
-msgstr "Добавить"
-
-#: ../inc/post-type.php:18
-msgid "Add new item"
-msgstr "Добавить новый товар"
-
-#: ../inc/post-type.php:19
-msgid "Edit"
-msgstr "Редактировать"
-
-#: ../inc/post-type.php:20
-msgid "Edit item"
-msgstr "Редактировать товар"
-
-#: ../inc/post-type.php:21
-msgid "New item"
-msgstr "Новый товар"
-
-#: ../inc/post-type.php:22
-msgid "View"
-msgstr "Вид"
-
-#: ../inc/post-type.php:23
-msgid "View of items"
-msgstr "Вид товаров"
-
-#: ../inc/post-type.php:24
-msgid "Search items"
-msgstr "Поиск"
-
-#: ../inc/post-type.php:25
-msgid "Items not found"
-msgstr "Не найдено"
-
-#: ../inc/post-type.php:26
-msgid "Item is not found in trash"
-msgstr "В корзине товаров не найдено"
-
-#: ../inc/functions.php:86
-msgid "Price:"
-msgstr "Цена:"
-
-#: ../inc/functions.php:107
-msgid "SKU:"
-msgstr "Артикул:"
-
-#: ../inc/sidebar.php:12
-msgid "Goods Catalog Sidebar"
-msgstr "Сайдбар каталога товаров"
-
-#: ../inc/sidebar.php:13
-msgid "Goods Catalog Widgets"
-msgstr "Виджеты каталога товаров"
-
-#: ../inc/pagination.php:20
-msgid "Pages:"
-msgstr "Страницы:"
-
-#: ../inc/taxonomy-category.php:17
-msgid "Goods Categories"
-msgstr "Рубрики продуктов"
-
-#: ../inc/taxonomy-category.php:18
-msgid "Add category"
-msgstr "Добавить рубрику"
-
-#: ../inc/taxonomy-category.php:19
-msgid "New category"
-msgstr "Новая рубрика"
-
-#: ../inc/taxonomy-tag.php:15
-msgid "Goods Tags"
-msgstr "Метки продуктов"
-
-#: ../inc/taxonomy-tag.php:16 ../templates/single-goods.php:64
-msgid "Tags"
-msgstr "Метки"
-
-#: ../inc/taxonomy-tag.php:17
-msgid "All Items"
-msgstr "Все "
-
-#: ../inc/taxonomy-tag.php:18
-msgid "Parent Item"
-msgstr "Родительский элемент"
-
-#: ../inc/taxonomy-tag.php:19
-msgid "Parent Item:"
-msgstr "Родительский элемент"
-
-#: ../inc/taxonomy-tag.php:20
-msgid "New Item Name"
-msgstr "Название"
-
-#: ../inc/taxonomy-tag.php:21
-msgid "Add New Item"
-msgstr "Добавить"
-
-#: ../inc/taxonomy-tag.php:22
-msgid "Edit Item"
-msgstr "Редактировать"
-
-#: ../inc/taxonomy-tag.php:23
-msgid "Update Item"
-msgstr "Обновить"
-
-#: ../inc/taxonomy-tag.php:24
-msgid "Separate items with commas"
-msgstr "Разделяйте метки запятыми"
-
-#: ../inc/taxonomy-tag.php:25
-msgid "Search Items"
-msgstr "Поиск"
-
-#: ../inc/taxonomy-tag.php:26
-msgid "Add or remove items"
-msgstr "Добавить или удалить"
-
-#: ../inc/taxonomy-tag.php:27
-msgid "Choose from the most used items"
-msgstr "Выбрать из часто используемых"
-
-#: ../inc/taxonomy-tag.php:28
-msgid "Not Found"
-msgstr "Не найдено"
-
-#: ../inc/goods-options.php:27
+#: ../inc/class.settings-page.php:30
 msgid "Goods Catalog Settings"
 msgstr "Настройки плагина Goods Catalog"
 
-#: ../inc/goods-options.php:40
+#: ../inc/class.settings-page.php:43
 msgid "Goods Catalog Plugin Settings"
 msgstr "Настройки плагина Goods Catalog"
 
-#: ../inc/goods-options.php:66
+#: ../inc/class.settings-page.php:69
 msgid "Plugin Info"
 msgstr "Информация о плагине"
 
-#: ../inc/goods-options.php:74
-msgid "Catalog View Settings"
-msgstr "Настройки вида"
+#: ../inc/class.settings-page.php:77
+msgid "Catalog Permalinks Settings"
+msgstr "Настройки постоянных ссылок каталога"
 
-#: ../inc/goods-options.php:82
-msgid "Catalog Slug"
-msgstr "Префикс каталога"
+#: ../inc/class.settings-page.php:85
+msgid "Catalog Home Page Slug"
+msgstr "Префикс главной страницы каталога"
 
-#: ../inc/goods-options.php:90
+#: ../inc/class.settings-page.php:93
 msgid "Category Slug"
 msgstr "Префикс рубрики"
 
-#: ../inc/goods-options.php:98
+#: ../inc/class.settings-page.php:101
 msgid "Tag Slug"
 msgstr "Префикс тега"
 
-#: ../inc/goods-options.php:106
-msgid "Products per page"
-msgstr "Продуктов на странице"
+#: ../inc/class.settings-page.php:111
+msgid "Common Settings"
+msgstr "Общие настройки каталога"
 
-#: ../inc/goods-options.php:114
+#: ../inc/class.settings-page.php:119
 msgid "Container Width"
 msgstr "Ширина контейнера"
 
-#: ../inc/goods-options.php:121
+#: ../inc/class.settings-page.php:126
 msgid "Center Container"
 msgstr "Выровнять контейнер по центру"
 
-#: ../inc/goods-options.php:128
-msgid "Info Container Width on Product Page"
-msgstr "Ширина контейнера с информацией о продукте на странице продукта"
-
-#: ../inc/goods-options.php:136
+#: ../inc/class.settings-page.php:135
 msgid "Thumbnail size"
 msgstr "Размер миниатюры"
 
-#: ../inc/goods-options.php:145
-msgid "Categories View Settings"
-msgstr "Настройки вида рубрик"
+#: ../inc/class.settings-page.php:144
+msgid "Categories Settings"
+msgstr "Настройки рубрик"
 
-#: ../inc/goods-options.php:153
+#: ../inc/class.settings-page.php:152
 msgid "Show category's thumbnails"
 msgstr "Показывать миниатюры для рубрик"
 
-#: ../inc/goods-options.php:161
+#: ../inc/class.settings-page.php:160
 msgid "Show category's description"
 msgstr "Показывать описание рубрики"
 
-#: ../inc/goods-options.php:170
-msgid "Product View Settings"
-msgstr "Настройки вида продуктов"
+#: ../inc/class.settings-page.php:169
+msgid "Product Settings"
+msgstr "Настройки продуктов"
 
-#: ../inc/goods-options.php:178
+#: ../inc/class.settings-page.php:178
+msgid "Products per page"
+msgstr "Продуктов на странице"
+
+#: ../inc/class.settings-page.php:186
 msgid "Show product's short description"
 msgstr "Показывать короткое описание продукта"
 
-#: ../inc/goods-options.php:186
+#: ../inc/class.settings-page.php:194
 msgid "Show product's SKU"
 msgstr "Показывать артикул товара"
 
-#: ../inc/goods-options.php:193
+#: ../inc/class.settings-page.php:201
 msgid "Product Price Prefix"
 msgstr "Префикс цены"
 
-#: ../inc/goods-options.php:200
+#: ../inc/class.settings-page.php:208
 msgid "Product Price Postfix"
 msgstr "Постфикс цены"
 
-#: ../inc/goods-options.php:210
+#: ../inc/class.settings-page.php:216
+msgid "Info Container Width on Product Page"
+msgstr "Ширина контейнера с информацией о продукте на странице продукта"
+
+#: ../inc/class.settings-page.php:225
 msgid "Sidebar Settings"
 msgstr "Настройки сайдбара"
 
-#: ../inc/goods-options.php:218
-msgid "Use plugin's sidebar"
-msgstr "Использовать сайдбар плагина"
+#: ../inc/class.settings-page.php:233
+msgid "Use special sidebar"
+msgstr "Использовать специальный сайдбар"
 
-#: ../inc/goods-options.php:225
+#: ../inc/class.settings-page.php:240
 msgid "Sidebar Width"
 msgstr "Ширина сайдбара"
 
-#: ../inc/goods-options.php:307
+#: ../inc/class.settings-page.php:322
 msgid "You can see the catalog on your site at:"
 msgstr "Каталог товаров на Вашем сайте расположен по адресу:"
 
-#: ../inc/goods-options.php:308
+#: ../inc/class.settings-page.php:324
 msgid ""
-"<p>Don' know how to set up the catalog? The instructions are available here: "
-"<a href=\"http://oriolo.wordpress.com/2014/03/25/goods-catalog-wordpress-"
-"plugin-that-creates-catalog-of-products/\">in English</a>, <a href=\"http://"
-"oriolo.ru/goods-catalog/\">in Russian</a></p>"
+"Don't know how to set up the catalog? The instructions are available here: "
+"<a href='http://oriolo.wordpress.com/2014/03/25/goods-catalog-wordpress-"
+"plugin-that-creates-catalog-of-products'>in English</a>, <a href='http://"
+"oriolo.ru/dev/goods-catalog/quick-start'>in Russian</a>"
 msgstr ""
-"<p>Не знаете, как настроить каталог? Инструкции находятся здесь: <a href="
-"\"http://oriolo.wordpress.com/2014/03/25/goods-catalog-wordpress-plugin-that-"
-"creates-catalog-of-products/\">по-английски</a>, <a href=\"http://oriolo.ru/"
-"goods-catalog/\">по-русски</a></p>"
+"Не знаете, как настроить каталог? Инструкции находятся здесь: <a "
+"href='http://oriolo.wordpress.com/2014/03/25/goods-catalog-wordpress-plugin-"
+"that-creates-catalog-of-products'>по-английски</a>, <a href='http://oriolo."
+"ru/dev/goods-catalog/quick-start'>по-русски</a>"
 
-#: ../inc/goods-options.php:309
+#: ../inc/class.settings-page.php:327
 msgid ""
-"<p>Any problems or questions? Visit the plugin's <a href=\"http://wordpress."
-"org/support/plugin/goods-catalog\">support forum</a> at WordPress.org</p>"
+"Any problems or questions? Visit the plugin's <a href='http://wordpress.org/"
+"support/plugin/goods-catalo'>support forum</a> at WordPress.org"
 msgstr ""
-"<p>Возникли проблемы или вопросы? Посетите <a href=\"http://wordpress.org/"
+"Возникли проблемы или вопросы? Посетите <a href=\"http://wordpress.org/"
 "support/plugin/goods-catalog\">форум технической поддержки</a> плагина на "
-"WordPress.org</p>"
+"WordPress.org"
 
-#: ../inc/goods-options.php:313 ../inc/goods-options.php:317
-#: ../inc/goods-options.php:321
-msgid "Enter your settings below:"
-msgstr "Введите настройки:"
-
-#: ../inc/goods-options.php:325
+#: ../inc/class.settings-page.php:332
+#, php-format
 msgid ""
-"If your theme's sidebar loads correctly on the catalog pages, you do not "
-"need to change anything here"
+"Please notice, that every time you change permalinks you should also press "
+"\"Save\" on the <a href=\"%s\">Permalinks Settings page</a>, and maybe "
+"update the menu items"
 msgstr ""
-"Если на страницах каталога загружается сайдбар из используемой темы, вам не "
-"нужно вносить изменения в эти настройки"
+"Обратите внимание, что каждый раз после изменения настроек постоянных ссылок "
+"необходимо нажимать на кнопку \"Сохранить\" на странице \"<a href=\"%s"
+"\">Постоянные сслыки</a>\", и, возможно, обновить соответствующие пункты меню"
 
-#: ../inc/goods-options.php:335
+#: ../inc/class.settings-page.php:336
+msgid "The following settings will be applied to all catalog pages"
+msgstr "Настройки ниже будут применены ко всему каталогу"
+
+#: ../inc/class.settings-page.php:340
+msgid "Set up the goods categories here"
+msgstr "Настройте рубрики каталога"
+
+#: ../inc/class.settings-page.php:344
+msgid "Set up the products here"
+msgstr "Настройте продукты каталога"
+
+#: ../inc/class.settings-page.php:348
+msgid ""
+"You can use special sidebar only in catalog pages. Please remember that "
+"sidebar from your theme can be not supported by Goods Catalog plugin"
+msgstr ""
+"Вы можете использовать специальный сайдбар, который появится только на "
+"страницах каталога. Встроенный сайдбар из большинства тем на плагином не "
+"поддерживается, и на страницах каталога выведен не будет."
+
+#: ../inc/class.settings-page.php:358
 msgid " by default: catalog"
 msgstr "по-умолчанию: catalog"
 
-#: ../inc/goods-options.php:338
-#, php-format
-msgid ""
-"You can change the default path to the catalog. Please notice, that every "
-"time you change it you should also press \"Save\" on the <a href=\"%s"
-"\">Permalinks Settings page</a>, and maybe update the menu item"
-msgstr ""
-"Вы можете изменить путь к каталогу. Обратите внимание, что каждый раз после "
-"изменения этого значения, необходимо нажимать на кнопку \"Сохранить\" на "
-"странице \"<a href=\"%s\">Постоянные сслыки</a>\", и, возможно, обновить "
-"пункт меню"
+#: ../inc/class.settings-page.php:361
+msgid "Enter the slug of catalog home page"
+msgstr "Введите префикс для главной страницы каталога"
 
-#: ../inc/goods-options.php:347
+#: ../inc/class.settings-page.php:370
 msgid " by default: goods_caregory"
 msgstr "по-умолчанию: goods_category"
 
-#: ../inc/goods-options.php:350
-#, php-format
-msgid ""
-"You can change the default prefix for the catagories of products. Please "
-"notice, that every time you change it you should also press \"Save\" on the "
-"<a href=\"%s\">Permalinks Settings page</a>"
-msgstr ""
-"Вы можете изменить префикс рубрик товаров. Обратите внимание, что каждый раз "
-"после изменения этого значения, необходимо нажимать на кнопку \"Сохранить\" "
-"на странице \"<a href=\"%s\">Постоянные сслыки</a>\""
-
-#: ../inc/goods-options.php:359
+#: ../inc/class.settings-page.php:382
 msgid " by default: goods_tag"
 msgstr "по-умолчанию: goods_tag"
 
-#: ../inc/goods-options.php:362
-#, php-format
-msgid ""
-"You can change the default prefix for the tags of products. Please notice, "
-"that every time you change it you should also press \"Save\" on the <a href="
-"\"%s\">Permalinks Settings page</a>"
-msgstr ""
-"Вы можете изменить префикс меток товаров. Обратите внимание, что каждый раз "
-"после изменения этого значения, необходимо нажимать на кнопку \"Сохранить\" "
-"на странице \"<a href=\"%s\">Постоянные сслыки</a>\""
-
-#: ../inc/goods-options.php:377
+#: ../inc/class.settings-page.php:400
 msgid "by default 100"
 msgstr "по-умолчанию 100"
 
-#: ../inc/goods-options.php:378
+#: ../inc/class.settings-page.php:401
 msgid ""
 "If the catalog's container is bigger than your theme's container, change it "
 "here"
@@ -368,7 +197,7 @@ msgstr ""
 "Здесь можно поменять ширину контейнера каталога, если он шире, чем контейнер "
 "темы"
 
-#: ../inc/goods-options.php:385
+#: ../inc/class.settings-page.php:408
 msgid ""
 "Add 'margin: 0 auto;' to the container. If you have changed container's "
 "width, you should also turn on this option"
@@ -376,11 +205,11 @@ msgstr ""
 "Добавить к контейнеру свойство 'margin: 0 auto;'. Если вы поменяли ширину "
 "контейнера, то скоре всего, нужно отметить и эту опцию"
 
-#: ../inc/goods-options.php:392
+#: ../inc/class.settings-page.php:415
 msgid "by default 60"
 msgstr "по-умолчанию 60"
 
-#: ../inc/goods-options.php:393
+#: ../inc/class.settings-page.php:416
 msgid ""
 "Set width of Product Info Container on single product page. In that "
 "container are located: name, price, SKU, short description, categories and "
@@ -394,61 +223,59 @@ msgstr ""
 "будет находиться справа от изображения товара, если большую - то под "
 "изображением."
 
-#: ../inc/goods-options.php:404 ../inc/goods-options.php:428
-#: ../inc/goods-options.php:444 ../inc/goods-options.php:455
+#: ../inc/class.settings-page.php:427 ../inc/class.settings-page.php:451
+#: ../inc/class.settings-page.php:467 ../inc/class.settings-page.php:478
 msgid "in grid"
 msgstr "в сетке"
 
-#: ../inc/goods-options.php:405
+#: ../inc/class.settings-page.php:428
 msgid ""
 "If you don't need thumbnails for the categories, please uncheck this option"
 msgstr "Если миниатюры для рубрик не нужны, отключите эту опцию"
 
-#: ../inc/goods-options.php:409
+#: ../inc/class.settings-page.php:432
 msgid "Width: "
 msgstr "Ширина: "
 
-#: ../inc/goods-options.php:413 ../inc/goods-options.php:419
+#: ../inc/class.settings-page.php:436 ../inc/class.settings-page.php:442
 msgid "px"
 msgstr "пикс. "
 
-#: ../inc/goods-options.php:415
+#: ../inc/class.settings-page.php:438
 msgid "Height: "
 msgstr "Высота: "
 
-#: ../inc/goods-options.php:421
+#: ../inc/class.settings-page.php:444
 msgid ""
-"If you are unhappy with default thumbnails' size for categories and "
-"products, change it here, please. After that please use <a href='http://"
-"wordpress.org/plugins/regenerate-thumbnails/'>Regenerate Thumbnails</a> "
-"plugin to rebuild images' sizes. Please notice, that default images for "
-"category and product will not be resized"
+"Set size of thumbnails for categories and products. After that please use <a "
+"href='http://wordpress.org/plugins/regenerate-thumbnails/'>Regenerate "
+"Thumbnails</a> plugin to rebuild images' sizes. Please notice, that default "
+"images for category and product will not be resized"
 msgstr ""
-"Если вас не устраивает стандартный размер миниатюр для рубрик и товаров, вы "
-"можете поменять его здесь. После этого, пожалуйста, воспользуйтесь плагином "
-"<a href='http://wordpress.org/plugins/regenerate-thumbnails/'>Regenerate "
-"Thumbnails</a> чтобы пересоздать миниатюры для изображений с новыми "
-"размерами. Обратите внимание, что размер изображений-заглушек изменен не "
-"будет."
+"Настроить размер миниатюр для рубрик и товаров. После этого, пожалуйста, "
+"воспользуйтесь плагином <a href='http://wordpress.org/plugins/regenerate-"
+"thumbnails/'>Regenerate Thumbnails</a> чтобы пересоздать миниатюры для "
+"изображений с новыми размерами. Обратите внимание, что размер изображений-"
+"заглушек изменен не будет."
 
-#: ../inc/goods-options.php:432
+#: ../inc/class.settings-page.php:455
 msgid "in category page"
 msgstr "на странице рубрики"
 
-#: ../inc/goods-options.php:433
+#: ../inc/class.settings-page.php:456
 msgid ""
 "If you don't need description for the categories, please uncheck this option"
 msgstr "Если описания для рубрик не нужны, отключите эту опцию"
 
-#: ../inc/goods-options.php:448 ../inc/goods-options.php:459
+#: ../inc/class.settings-page.php:471 ../inc/class.settings-page.php:482
 msgid "in single product page"
 msgstr "на странице товара"
 
-#: ../inc/goods-options.php:466 ../inc/goods-options.php:478
+#: ../inc/class.settings-page.php:489 ../inc/class.settings-page.php:501
 msgid " by default: empty"
 msgstr "по-умолчанию: пусто"
 
-#: ../inc/goods-options.php:469
+#: ../inc/class.settings-page.php:492
 msgid ""
 "Currency prefix, for ex.: &#36; or &#128;. Just leave it emply if you don't "
 "need prefix"
@@ -456,60 +283,274 @@ msgstr ""
 "Префикс валюты, например: &#36; или &#128;. Оставьте пустым, если префикс не "
 "нужен"
 
-#: ../inc/goods-options.php:481
+#: ../inc/class.settings-page.php:504
 msgid ""
 "Currency postfix, for ex.: RUB. Just leave it emply if you don't need postfix"
 msgstr ""
 "Постфикс валюты, например: руб. Оставьте пустым, если постфикс не нужен"
 
-#: ../inc/goods-options.php:494
-msgid "Please turn the option on, if you would like to use the sidebar"
-msgstr "Включите эту опцию, если хотите использовать сайдбар"
+#: ../inc/class.settings-page.php:517
+msgid ""
+"Please turn the option on, if you would like to use the special sidebar for "
+"catalog"
+msgstr ""
+"Включите эту опцию, если хотите использовать специальный сайдбар на "
+"страницах каталога"
 
-#: ../inc/goods-options.php:501
+#: ../inc/class.settings-page.php:524
 msgid "by default 20"
 msgstr "по-умолчанию 20"
 
-#: ../inc/goods-options.php:502
+#: ../inc/class.settings-page.php:525
 msgid "Set width of the Sidebar"
 msgstr "Установить ширину сайдбара"
 
-#: ../inc/metabox.php:11
-msgid "Item Options"
-msgstr "Опции"
+#: ../inc/breadcrumbs.php:53
+msgid "Home"
+msgstr "Главная"
 
-#: ../inc/metabox.php:17
+#: ../inc/breadcrumbs.php:58 ../inc/breadcrumbs.php:60
+msgid "Catalog"
+msgstr "Каталог"
+
+#: ../inc/class.metabox.php:37
 msgid "Price"
 msgstr "Цена"
 
-#: ../inc/metabox.php:18
+#: ../inc/class.metabox.php:38
 msgid "Enter price here"
 msgstr "Укажите цену"
 
-#: ../inc/metabox.php:24
+#: ../inc/class.metabox.php:44
 msgid "SKU"
 msgstr "Артикул"
 
-#: ../inc/metabox.php:25
+#: ../inc/class.metabox.php:45
 msgid "Enter product ID (SKU)"
 msgstr "Введите артикул товара"
 
-#: ../inc/metabox.php:31
+#: ../inc/class.metabox.php:51
 msgid "Short Description"
 msgstr "Короткое описание"
 
-#: ../inc/metabox.php:32
+#: ../inc/class.metabox.php:52
 msgid "Enter description here"
 msgstr "Введите описание"
 
-#: ../templates/single-goods.php:61
-msgid "Categories"
-msgstr "Рубрики"
+#: ../inc/class.metabox.php:68
+msgid "Item Options"
+msgstr "Опции"
 
-#: ../templates/content-goods_category.php:18
+#: ../inc/class.goods-tags-taxonomy.php:26
+msgid "Goods Tags"
+msgstr "Метки продуктов"
+
+#: ../inc/class.goods-tags-taxonomy.php:27 ../templates/single-goods.php:46
+msgid "Tags"
+msgstr "Метки"
+
+#: ../inc/class.goods-tags-taxonomy.php:28
+msgid "All Items"
+msgstr "Все "
+
+#: ../inc/class.goods-tags-taxonomy.php:29
+msgid "Parent Item"
+msgstr "Родительский элемент"
+
+#: ../inc/class.goods-tags-taxonomy.php:30
+msgid "Parent Item:"
+msgstr "Родительский элемент"
+
+#: ../inc/class.goods-tags-taxonomy.php:31
+msgid "New Item Name"
+msgstr "Название"
+
+#: ../inc/class.goods-tags-taxonomy.php:32
+msgid "Add New Item"
+msgstr "Добавить"
+
+#: ../inc/class.goods-tags-taxonomy.php:33
+msgid "Edit Item"
+msgstr "Редактировать"
+
+#: ../inc/class.goods-tags-taxonomy.php:34
+msgid "Update Item"
+msgstr "Обновить"
+
+#: ../inc/class.goods-tags-taxonomy.php:35
+msgid "Separate items with commas"
+msgstr "Разделяйте метки запятыми"
+
+#: ../inc/class.goods-tags-taxonomy.php:36
+msgid "Search Items"
+msgstr "Поиск"
+
+#: ../inc/class.goods-tags-taxonomy.php:37
+msgid "Add or remove items"
+msgstr "Добавить или удалить"
+
+#: ../inc/class.goods-tags-taxonomy.php:38
+msgid "Choose from the most used items"
+msgstr "Выбрать из часто используемых"
+
+#: ../inc/class.goods-tags-taxonomy.php:39
+msgid "Not Found"
+msgstr "Не найдено"
+
+#: ../inc/functions.php:109
+msgid "Price:"
+msgstr "Цена:"
+
+#: ../inc/functions.php:145
+msgid "SKU:"
+msgstr "Артикул:"
+
+#: ../inc/class.sidebar.php:21
+msgid "Goods Catalog Sidebar"
+msgstr "Сайдбар каталога товаров"
+
+#: ../inc/class.sidebar.php:22
+msgid "Goods Catalog Widgets"
+msgstr "Виджеты каталога товаров"
+
+#: ../inc/class.goods-categories-taxonomy.php:24
+msgid "Goods Categories"
+msgstr "Рубрики продуктов"
+
+#: ../inc/class.goods-categories-taxonomy.php:25
+msgid "Add category"
+msgstr "Добавить рубрику"
+
+#: ../inc/class.goods-categories-taxonomy.php:26
+msgid "New category"
+msgstr "Новая рубрика"
+
+#: ../inc/shortcodes.php:189 ../templates/content-goods_category.php:23
 #, php-format
 msgid "Go to cetegory %s"
 msgstr "Перейти в рубрику  %s"
+
+#: ../inc/pagination.php:20
+msgid "Pages:"
+msgstr "Страницы:"
+
+#: ../inc/class.goods-post-type.php:23
+msgid "Goods"
+msgstr "Товары"
+
+#: ../inc/class.goods-post-type.php:24
+msgid "Item"
+msgstr "Товар"
+
+#: ../inc/class.goods-post-type.php:25
+msgid "Add"
+msgstr "Добавить"
+
+#: ../inc/class.goods-post-type.php:26
+msgid "Add new item"
+msgstr "Добавить новый товар"
+
+#: ../inc/class.goods-post-type.php:27
+msgid "Edit"
+msgstr "Редактировать"
+
+#: ../inc/class.goods-post-type.php:28
+msgid "Edit item"
+msgstr "Редактировать товар"
+
+#: ../inc/class.goods-post-type.php:29
+msgid "New item"
+msgstr "Новый товар"
+
+#: ../inc/class.goods-post-type.php:30
+msgid "View"
+msgstr "Вид"
+
+#: ../inc/class.goods-post-type.php:31
+msgid "View of items"
+msgstr "Вид товаров"
+
+#: ../inc/class.goods-post-type.php:32
+msgid "Search items"
+msgstr "Поиск"
+
+#: ../inc/class.goods-post-type.php:33
+msgid "Items not found"
+msgstr "Не найдено"
+
+#: ../inc/class.goods-post-type.php:34
+msgid "Item is not found in trash"
+msgstr "В корзине товаров не найдено"
+
+#: ../inc/widgets/Widget_Goods_Categories.php:19
+msgid "Goods Catalog categories list"
+msgstr "Список рубрик каталога товаров"
+
+#: ../inc/widgets/Widget_Goods_Categories.php:68
+msgid "Products Categories"
+msgstr "Рубрики продуктов"
+
+#: ../inc/widgets/Widget_Goods_Categories.php:74
+#: ../inc/widgets/Widget_Goods_Tags.php:63
+msgid "Title:"
+msgstr "Заголовок:"
+
+#: ../inc/widgets/Widget_Goods_Categories.php:78
+msgid "Show post counts"
+msgstr "Показывать количество товаров"
+
+#: ../inc/widgets/Widget_Goods_Tags.php:19
+msgid "Goods Catalog tags cloud"
+msgstr "Облако тегов каталога товаров"
+
+#: ../inc/widgets/Widget_Goods_Tags.php:57
+msgid "Products Tags"
+msgstr "Метки продуктов"
+
+#: ../templates/sidebar-goods.php:13
+msgid "Goods Catalog Sidebar is Activated!"
+msgstr "Сайдбар каталога товаров активирован!"
+
+#: ../templates/sidebar-goods.php:14
+msgid ""
+"Hi! It is Goods Catalog Sidebar. Please <a href=\"/wp-admin/widgets.php"
+"\">add some widgets</a> in there, and this message will be hidden "
+"automatically."
+msgstr ""
+"Привет! Это сайдбар плагина Goods Catalog. <a href=\"/wp-admin/widgets.php"
+"\">Добавьте сюда виджеты</a> и это сообщение автоматически исчезнет."
+
+#: ../templates/single-goods.php:43
+msgid "Categories"
+msgstr "Рубрики"
+
+#~ msgid "Enter your settings below:"
+#~ msgstr "Введите настройки:"
+
+#~ msgid ""
+#~ "If your theme's sidebar loads correctly on the catalog pages, you do not "
+#~ "need to change anything here"
+#~ msgstr ""
+#~ "Если на страницах каталога загружается сайдбар из используемой темы, вам "
+#~ "не нужно вносить изменения в эти настройки"
+
+#~ msgid ""
+#~ "You can change the default prefix for the catagories of products. Please "
+#~ "notice, that every time you change it you should also press \"Save\" on "
+#~ "the <a href=\"%s\">Permalinks Settings page</a>"
+#~ msgstr ""
+#~ "Вы можете изменить префикс рубрик товаров. Обратите внимание, что каждый "
+#~ "раз после изменения этого значения, необходимо нажимать на кнопку "
+#~ "\"Сохранить\" на странице \"<a href=\"%s\">Постоянные сслыки</a>\""
+
+#~ msgid ""
+#~ "You can change the default prefix for the tags of products. Please "
+#~ "notice, that every time you change it you should also press \"Save\" on "
+#~ "the <a href=\"%s\">Permalinks Settings page</a>"
+#~ msgstr ""
+#~ "Вы можете изменить префикс меток товаров. Обратите внимание, что каждый "
+#~ "раз после изменения этого значения, необходимо нажимать на кнопку "
+#~ "\"Сохранить\" на странице \"<a href=\"%s\">Постоянные сслыки</a>\""
 
 #~ msgid "Goods Catalog"
 #~ msgstr "Goods Catalog"
