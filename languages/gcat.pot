@@ -1,0 +1,507 @@
+# Copyright (C) 2015 Goods Catalog
+# This file is distributed under the same license as the Goods Catalog package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Goods Catalog 0.9.4\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/goods-catalog\n"
+"POT-Creation-Date: 2015-05-31 15:39:26+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: inc/breadcrumbs.php:53
+msgid "Home"
+msgstr ""
+
+#: inc/breadcrumbs.php:58 inc/breadcrumbs.php:60
+msgid "Catalog"
+msgstr ""
+
+#: inc/class.goods-categories-taxonomy.php:24
+msgid "Goods Categories"
+msgstr ""
+
+#: inc/class.goods-categories-taxonomy.php:25
+msgid "Add category"
+msgstr ""
+
+#: inc/class.goods-categories-taxonomy.php:26
+msgid "New category"
+msgstr ""
+
+#: inc/class.goods-post-type.php:23
+msgid "Goods"
+msgstr ""
+
+#: inc/class.goods-post-type.php:24
+msgid "Item"
+msgstr ""
+
+#: inc/class.goods-post-type.php:25
+msgid "Add"
+msgstr ""
+
+#: inc/class.goods-post-type.php:26
+msgid "Add new item"
+msgstr ""
+
+#: inc/class.goods-post-type.php:27
+msgid "Edit"
+msgstr ""
+
+#: inc/class.goods-post-type.php:28
+msgid "Edit item"
+msgstr ""
+
+#: inc/class.goods-post-type.php:29
+msgid "New item"
+msgstr ""
+
+#: inc/class.goods-post-type.php:30
+msgid "View"
+msgstr ""
+
+#: inc/class.goods-post-type.php:31
+msgid "View of items"
+msgstr ""
+
+#: inc/class.goods-post-type.php:32
+msgid "Search items"
+msgstr ""
+
+#: inc/class.goods-post-type.php:33
+msgid "Items not found"
+msgstr ""
+
+#: inc/class.goods-post-type.php:34
+msgid "Item is not found in trash"
+msgstr ""
+
+#: inc/class.goods-tags-taxonomy.php:26
+msgid "Goods Tags"
+msgstr ""
+
+#: inc/class.goods-tags-taxonomy.php:27 templates/single-goods.php:46
+msgid "Tags"
+msgstr ""
+
+#: inc/class.goods-tags-taxonomy.php:28
+msgid "All Items"
+msgstr ""
+
+#: inc/class.goods-tags-taxonomy.php:29
+msgid "Parent Item"
+msgstr ""
+
+#: inc/class.goods-tags-taxonomy.php:30
+msgid "Parent Item:"
+msgstr ""
+
+#: inc/class.goods-tags-taxonomy.php:31
+msgid "New Item Name"
+msgstr ""
+
+#: inc/class.goods-tags-taxonomy.php:32
+msgid "Add New Item"
+msgstr ""
+
+#: inc/class.goods-tags-taxonomy.php:33
+msgid "Edit Item"
+msgstr ""
+
+#: inc/class.goods-tags-taxonomy.php:34
+msgid "Update Item"
+msgstr ""
+
+#: inc/class.goods-tags-taxonomy.php:35
+msgid "Separate items with commas"
+msgstr ""
+
+#: inc/class.goods-tags-taxonomy.php:36
+msgid "Search Items"
+msgstr ""
+
+#: inc/class.goods-tags-taxonomy.php:37
+msgid "Add or remove items"
+msgstr ""
+
+#: inc/class.goods-tags-taxonomy.php:38
+msgid "Choose from the most used items"
+msgstr ""
+
+#: inc/class.goods-tags-taxonomy.php:39
+msgid "Not Found"
+msgstr ""
+
+#: inc/class.metabox.php:37
+msgid "Price"
+msgstr ""
+
+#: inc/class.metabox.php:38
+msgid "Enter price here"
+msgstr ""
+
+#: inc/class.metabox.php:44
+msgid "SKU"
+msgstr ""
+
+#: inc/class.metabox.php:45
+msgid "Enter product ID (SKU)"
+msgstr ""
+
+#: inc/class.metabox.php:51
+msgid "Short Description"
+msgstr ""
+
+#: inc/class.metabox.php:52
+msgid "Enter description here"
+msgstr ""
+
+#: inc/class.metabox.php:68
+msgid "Item Options"
+msgstr ""
+
+#: inc/class.settings-page.php:30
+msgid "Goods Catalog Settings"
+msgstr ""
+
+#: inc/class.settings-page.php:43
+msgid "Goods Catalog Plugin Settings"
+msgstr ""
+
+#: inc/class.settings-page.php:69
+msgid "Plugin Info"
+msgstr ""
+
+#: inc/class.settings-page.php:77
+msgid "Catalog Permalinks Settings"
+msgstr ""
+
+#: inc/class.settings-page.php:85
+msgid "Catalog Home Page Slug"
+msgstr ""
+
+#: inc/class.settings-page.php:93
+msgid "Category Slug"
+msgstr ""
+
+#: inc/class.settings-page.php:101
+msgid "Tag Slug"
+msgstr ""
+
+#: inc/class.settings-page.php:111
+msgid "Common Settings"
+msgstr ""
+
+#: inc/class.settings-page.php:119
+msgid "Container Width"
+msgstr ""
+
+#: inc/class.settings-page.php:126
+msgid "Center Container"
+msgstr ""
+
+#: inc/class.settings-page.php:135
+msgid "Thumbnail size"
+msgstr ""
+
+#: inc/class.settings-page.php:144
+msgid "Categories Settings"
+msgstr ""
+
+#: inc/class.settings-page.php:152
+msgid "Show category's thumbnails"
+msgstr ""
+
+#: inc/class.settings-page.php:160
+msgid "Show category's description"
+msgstr ""
+
+#: inc/class.settings-page.php:169
+msgid "Product Settings"
+msgstr ""
+
+#: inc/class.settings-page.php:178
+msgid "Products per page"
+msgstr ""
+
+#: inc/class.settings-page.php:186
+msgid "Show product's short description"
+msgstr ""
+
+#: inc/class.settings-page.php:194
+msgid "Show product's SKU"
+msgstr ""
+
+#: inc/class.settings-page.php:201
+msgid "Product Price Prefix"
+msgstr ""
+
+#: inc/class.settings-page.php:208
+msgid "Product Price Postfix"
+msgstr ""
+
+#: inc/class.settings-page.php:216
+msgid "Info Container Width on Product Page"
+msgstr ""
+
+#: inc/class.settings-page.php:225
+msgid "Sidebar Settings"
+msgstr ""
+
+#: inc/class.settings-page.php:233
+msgid "Use special sidebar"
+msgstr ""
+
+#: inc/class.settings-page.php:240
+msgid "Sidebar Width"
+msgstr ""
+
+#: inc/class.settings-page.php:322
+msgid "You can see the catalog on your site at:"
+msgstr ""
+
+#: inc/class.settings-page.php:324
+msgid ""
+"Don't know how to set up the catalog? The instructions are available here: "
+"<a href='http://oriolo.wordpress.com/2014/03/25/goods-catalog-wordpress-"
+"plugin-that-creates-catalog-of-products'>in English</a>, <a href='http://"
+"oriolo.ru/dev/goods-catalog/quick-start'>in Russian</a>"
+msgstr ""
+
+#: inc/class.settings-page.php:327
+msgid ""
+"Any problems or questions? Visit the plugin's <a href='http://wordpress.org/"
+"support/plugin/goods-catalo'>support forum</a> at WordPress.org"
+msgstr ""
+
+#: inc/class.settings-page.php:332
+msgid ""
+"Please notice, that every time you change permalinks you should also press "
+"\"Save\" on the <a href=\"%s\">Permalinks Settings page</a>, and maybe "
+"update the menu items"
+msgstr ""
+
+#: inc/class.settings-page.php:336
+msgid "The following settings will be applied to all catalog pages"
+msgstr ""
+
+#: inc/class.settings-page.php:340
+msgid "Set up the goods categories here"
+msgstr ""
+
+#: inc/class.settings-page.php:344
+msgid "Set up the products here"
+msgstr ""
+
+#: inc/class.settings-page.php:348
+msgid ""
+"You can use special sidebar only in catalog pages. Please remember that "
+"sidebar from your theme can be not supported by Goods Catalog plugin"
+msgstr ""
+
+#: inc/class.settings-page.php:358
+msgid " by default: catalog"
+msgstr ""
+
+#: inc/class.settings-page.php:361
+msgid "Enter the slug of catalog home page"
+msgstr ""
+
+#: inc/class.settings-page.php:370
+msgid " by default: goods_caregory"
+msgstr ""
+
+#: inc/class.settings-page.php:382
+msgid " by default: goods_tag"
+msgstr ""
+
+#: inc/class.settings-page.php:400
+msgid "by default 100"
+msgstr ""
+
+#: inc/class.settings-page.php:401
+msgid ""
+"If the catalog's container is bigger than your theme's container, change it "
+"here"
+msgstr ""
+
+#: inc/class.settings-page.php:408
+msgid ""
+"Add 'margin: 0 auto;' to the container. If you have changed container's "
+"width, you should also turn on this option"
+msgstr ""
+
+#: inc/class.settings-page.php:415
+msgid "by default 60"
+msgstr ""
+
+#: inc/class.settings-page.php:416
+msgid ""
+"Set width of Product Info Container on single product page. In that "
+"container are located: name, price, SKU, short description, categories and "
+"tags of the product. With the smaller width the container will be on the "
+"right of product thumbnail, with the bigger width it will be under product "
+"thumbnail"
+msgstr ""
+
+#: inc/class.settings-page.php:427 inc/class.settings-page.php:451
+#: inc/class.settings-page.php:467 inc/class.settings-page.php:478
+msgid "in grid"
+msgstr ""
+
+#: inc/class.settings-page.php:428
+msgid ""
+"If you don't need thumbnails for the categories, please uncheck this option"
+msgstr ""
+
+#: inc/class.settings-page.php:432
+msgid "Width: "
+msgstr ""
+
+#: inc/class.settings-page.php:436 inc/class.settings-page.php:442
+msgid "px"
+msgstr ""
+
+#: inc/class.settings-page.php:438
+msgid "Height: "
+msgstr ""
+
+#: inc/class.settings-page.php:444
+msgid ""
+"Set size of thumbnails for categories and products. After that please use <a "
+"href='http://wordpress.org/plugins/regenerate-thumbnails/'>Regenerate "
+"Thumbnails</a> plugin to rebuild images' sizes. Please notice, that default "
+"images for category and product will not be resized"
+msgstr ""
+
+#: inc/class.settings-page.php:455
+msgid "in category page"
+msgstr ""
+
+#: inc/class.settings-page.php:456
+msgid ""
+"If you don't need description for the categories, please uncheck this option"
+msgstr ""
+
+#: inc/class.settings-page.php:471 inc/class.settings-page.php:482
+msgid "in single product page"
+msgstr ""
+
+#: inc/class.settings-page.php:489 inc/class.settings-page.php:501
+msgid " by default: empty"
+msgstr ""
+
+#: inc/class.settings-page.php:492
+msgid ""
+"Currency prefix, for ex.: &#36; or &#128;. Just leave it emply if you don't "
+"need prefix"
+msgstr ""
+
+#: inc/class.settings-page.php:504
+msgid ""
+"Currency postfix, for ex.: RUB. Just leave it emply if you don't need postfix"
+msgstr ""
+
+#: inc/class.settings-page.php:517
+msgid ""
+"Please turn the option on, if you would like to use the special sidebar for "
+"catalog"
+msgstr ""
+
+#: inc/class.settings-page.php:524
+msgid "by default 20"
+msgstr ""
+
+#: inc/class.settings-page.php:525
+msgid "Set width of the Sidebar"
+msgstr ""
+
+#: inc/class.sidebar.php:21
+msgid "Goods Catalog Sidebar"
+msgstr ""
+
+#: inc/class.sidebar.php:22
+msgid "Goods Catalog Widgets"
+msgstr ""
+
+#: inc/functions.php:109
+msgid "Price:"
+msgstr ""
+
+#: inc/functions.php:145
+msgid "SKU:"
+msgstr ""
+
+#: inc/pagination.php:20
+msgid "Pages:"
+msgstr ""
+
+#: inc/shortcodes.php:189 templates/content-goods_category.php:23
+msgid "Go to cetegory %s"
+msgstr ""
+
+#: inc/widgets/Widget_Goods_Categories.php:19
+msgid "Goods Catalog categories list"
+msgstr ""
+
+#: inc/widgets/Widget_Goods_Categories.php:68
+msgid "Products Categories"
+msgstr ""
+
+#: inc/widgets/Widget_Goods_Categories.php:74
+#: inc/widgets/Widget_Goods_Tags.php:63
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets/Widget_Goods_Categories.php:78
+msgid "Show post counts"
+msgstr ""
+
+#: inc/widgets/Widget_Goods_Tags.php:19
+msgid "Goods Catalog tags cloud"
+msgstr ""
+
+#: inc/widgets/Widget_Goods_Tags.php:57
+msgid "Products Tags"
+msgstr ""
+
+#: templates/sidebar-goods.php:13
+msgid "Goods Catalog Sidebar is Activated!"
+msgstr ""
+
+#: templates/sidebar-goods.php:14
+msgid ""
+"Hi! It is Goods Catalog Sidebar. Please <a href=\"/wp-admin/widgets.php"
+"\">add some widgets</a> in there, and this message will be hidden "
+"automatically."
+msgstr ""
+
+#: templates/single-goods.php:43
+msgid "Categories"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Goods Catalog"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid ""
+"http://oriolo.wordpress.com/2014/03/25/goods-catalog-wordpress-plugin-that-"
+"creates-catalog-of-products/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Plugin that creates simple catalog of goods."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Irina Sokolovskaya"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://oriolo.ru/"
+msgstr ""
