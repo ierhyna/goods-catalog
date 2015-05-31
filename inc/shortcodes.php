@@ -4,7 +4,7 @@
  * Shortcodes to use with the catalog
  */
 
-/*
+/**
  * Sitemap
  * Currently under development
  * Usage: [goods_sitemap]
@@ -55,7 +55,7 @@ function GoodsSitemap() {
 add_shortcode('goods_sitemap', 'GoodsSitemap');
 
 
-/*
+/**
  * Get newest products
  * Usage: [goods_newest number=3]
  */
@@ -106,51 +106,96 @@ add_shortcode('goods_newest', 'GoodsNewest');
 
 
 
-/*
+/**
  * Categories Shortcode
  * Usage: [goods_categories]
  * many thanks to Alexander Chizhov & Pineapple Design Studio
  */
 
 function GoodsCategories() {
- $terms_args = array(
-  'taxonomy' => 'goods_category', // get goods categories
-  'orderby' => 'term_group',
-  'hierarchical' => 1, // do not hide empty parent categories
- );
- $terms = get_terms('goods_category', $terms_args);
+    $output = '';
+    $terms_args = array(
+        'taxonomy' => 'goods_category', // get goods categories
+        'orderby' => 'term_group',
+        'hierarchical' => 1, // do not hide empty parent categories
+    );
+    $terms = get_terms('goods_category', $terms_args);
 
- if ($terms) :
- echo '<ul>';
-  foreach ($terms as $term) :
-    echo '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
-    $parent = $term->parent;
-    endforeach;
- echo '</ul>';
- endif;
+    if ($terms) {
+        $output .= '<ul>';
+        foreach ($terms as $term) {
+            $output .= '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+            $parent = $term->parent;
+        }
+        $output .=  '</ul>';
+        return $output;
+    }
 }
 add_shortcode('goods_categories', 'GoodsCategories');
 
-/*
+/**
  * Tags Shortcode
  * Usage: [goods_tags]
  */
 
 function GoodsTags() {
- $terms_args = array(
-  'taxonomy' => 'goods_tag', // get goods categories
-  'orderby' => 'name',
-  'hierarchical' => 1, // do not hide empty parent categories
- );
- $terms = get_terms('goods_tag', $terms_args);
+    $output = '';
+    $terms_args = array(
+        'taxonomy' => 'goods_tag', // get goods categories
+        'orderby' => 'name',
+        'hierarchical' => 1, // do not hide empty parent categories
+    );
+    $terms = get_terms('goods_tag', $terms_args);
 
- if ($terms) :
- echo '<ul>';
-  foreach ($terms as $term) :
-    echo '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
-    $parent = $term->parent;
-    endforeach;
- echo '</ul>';
- endif;
+    if ($terms) {
+        $output .= '<ul>';
+        foreach ($terms as $term) {
+            $output .= '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+            $parent = $term->parent;
+        }
+        $output .= '</ul>';
+        return $output;
+    }
 }
 add_shortcode('goods_tags', 'GoodsTags');
+
+/**
+ * Category of Tag by ID
+ * Usage: [goods_term goods_category id="3"]
+ * 
+ * @since 0.9.4
+ */ 
+
+function GoodsTerm( $atts ) {
+
+    // Attributes
+    extract(shortcode_atts(
+        array(
+            'id' => '',
+            'taxonomy' => 'goods_category',
+        ), 
+        $atts)
+    );
+
+    $term = get_term( $id, $taxonomy );
+
+    $output = '';
+
+    if ($term) {
+
+        global $catalog_option;
+
+        // show categories titles
+        $output .=  '<div class="goods-tile"><div class="goods-category-list-title"><a href="' . esc_url(get_term_link($term)) . '" title="' . sprintf(__("Go to cetegory %s", 'gcat'), $term->name) . '" ' . '>' . $term->name . '</a></div> ';
+
+        // show categories description
+        if (isset($catalog_option['show_category_descr_grid'])) {
+            $output .=  '<p>' . $term->description . '</p>';
+        }
+        $output .=  '</div>';
+
+        return $output;
+    }
+
+}
+add_shortcode('goods_term', 'GoodsTerm');
