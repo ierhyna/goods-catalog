@@ -104,6 +104,10 @@ Another option is to change the plugin files see the discussion [here](https://w
 
 == Changelog ==
 
+= 0.10.0 =
+
+* New feature: sorting the products
+
 = 0.9.4 =
 
 * Shortcodes bug fix
@@ -272,6 +276,10 @@ Small bug fix:
 First public release
 
 == Upgrade Notice ==
+
+= 0.10.0 =
+
+New feature: sorting the products
 
 = 0.9.3 =
 

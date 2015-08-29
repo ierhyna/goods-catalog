@@ -182,6 +182,22 @@ class Goods_Catalog_Settings_Page {
         );
 
         add_settings_field(
+                'goods_orderby', // ID
+                __('Goods order by', 'gcat'), // Title 
+                array($this, 'goods_orderby_callback'), // Callback
+                'goods-setting-admin', // Page
+                'product_section_id' // Section           
+        );
+
+        add_settings_field(
+                'goods_order', // ID
+                __('Goods order', 'gcat'), // Title 
+                array($this, 'goods_order_callback'), // Callback
+                'goods-setting-admin', // Page
+                'product_section_id' // Section           
+        );
+
+        add_settings_field(
                 'show_product_descr', // ID
                 __("Show product's short description", 'gcat'), // Title 
                 array($this, 'show_product_descr_callback'), // Callback
@@ -263,6 +279,12 @@ class Goods_Catalog_Settings_Page {
 
         if (isset($input['items_per_page']))
             $new_input['items_per_page'] = absint($input['items_per_page']);
+
+        if (isset($input['goods_orderby']))
+            $new_input['goods_orderby'] = sanitize_text_field($input['goods_orderby']);
+
+        if (isset($input['goods_order']))
+            $new_input['goods_order'] = sanitize_text_field($input['goods_order']);
 
         if (isset($input['container_width']))
             $new_input['container_width'] = absint($input['container_width']);
@@ -391,6 +413,37 @@ class Goods_Catalog_Settings_Page {
         printf(
                 '<input type="number" step="1" id="items_per_page" class="small-text" name="goods_option_name[items_per_page]" value="%s" />', isset($this->options['items_per_page']) ? esc_attr($this->options['items_per_page']) : '12'
         );
+    }
+
+    public function goods_orderby_callback() {
+        $orderby_options = array(
+            'none' => __('none', 'gcat'),
+            'ID' => __('ID', 'gcat'),
+            'author' => __('author', 'gcat'),
+            'title' => __('title', 'gcat'),
+            'name' => __('slug', 'gcat'),
+            'date' => __('date', 'gcat'),
+            'modified' => __('last modified', 'gcat'),
+            'rand' => __('random', 'gcat'),
+            'comment_count' => __('number of comments', 'gcat'),
+            'menu_order' => __('menu order', 'gcat'),
+            'meta_value_num' => __('price', 'gcat')
+        );
+        
+        echo '<select id="goods_orderby" name="goods_option_name[goods_orderby]" class="small-text">'; 
+        foreach ($orderby_options as $key => $value) {
+            echo '<option value="' . $key . '"' . selected( $this->options['goods_orderby'], $key ) . '>' . $value . '</option>';
+        }
+        echo '</select>';       
+    }
+
+    public function goods_order_callback() {
+        echo '<p>
+        <input type="radio" id="goods_order_asc" name="goods_option_name[goods_order]" value="ASC" checked ' . checked ( $this->options['goods_order'], 'ASC', false) . '/>' . __('ASC', 'gcat') . '
+        </p>
+        <p>
+        <input type="radio" id="goods_order_decs" name="goods_option_name[goods_order]" value="DESC" ' . checked ( $this->options['goods_order'], 'DESC', false) . '/>' . __('DESC', 'gcat') . 
+        '</p>';
     }
 
     public function container_width_callback() {
