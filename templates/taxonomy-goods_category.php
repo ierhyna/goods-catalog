@@ -46,11 +46,12 @@ if (!is_paged()) {
 }
 
 /**
- * Include the list of subcategories in grid.
+ * Include the list of products in grid.
  * 
  * If you edit this template by coping into your theme's folder, please change this functions with the following:
  * load_template(WP_PLUGIN_DIR  . '/goods-catalog/templates/content-goods_grid.php');
  */
+
 load_template(dirname(__FILE__) . '/content-goods_grid.php');
 ?>
 <div class="navigation">

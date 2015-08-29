@@ -30,23 +30,30 @@ function exclude_children($query) {
 add_action('pre_get_posts', 'exclude_children'); // Exclude children taxonomies posts from the query
 
 /**
- * Set items per page
+ * Goods query settings
  * 
- * @param $query 
+ * @link https://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters
+ * @param $query array
  */
 
-function goods_pagesize($query) {
+function goods_query($query) {
     if (is_admin() || !$query->is_main_query())
         return;
 
-    if (is_tax('goods_category') || is_tax('goods_tag')) { // display number of posts
+    if (is_tax('goods_category') || is_tax('goods_tag')) {
+
         global $catalog_option;
-        $query->set('posts_per_page', $catalog_option['items_per_page']);
+        $query->set('posts_per_page', $catalog_option['items_per_page']); // items per page
+        $query->set('orderby', $catalog_option['goods_orderby']); // ID, date, title...
+        if ($catalog_option['goods_orderby'] == 'meta_value_num') {
+            $query->set('meta_key', 'gc_price'); //add meta key if sorting by meta value
+        }
+        $query->set('order', $catalog_option['goods_order']);// ASC, DESC
         return;
     }
 }
 
-add_action('pre_get_posts', 'goods_pagesize', 1); // Set items per page
+add_action('pre_get_posts', 'goods_query', 1); // Set items per page
 
 /**
  * Get page elements

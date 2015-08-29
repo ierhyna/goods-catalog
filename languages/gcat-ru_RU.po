@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Goods Catalog\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/goods-catalog\n"
-"POT-Creation-Date: 2015-05-31 18:15+0300\n"
-"PO-Revision-Date: 2015-05-31 18:20+0300\n"
+"POT-Creation-Date: 2015-08-29 23:48+0300\n"
+"PO-Revision-Date: 2015-08-29 23:50+0300\n"
 "Last-Translator: Irina Sokolovskaja <sokolovskaja.irina@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -81,42 +81,50 @@ msgid "Products per page"
 msgstr "Продуктов на странице"
 
 #: ../inc/class.settings-page.php:186
+msgid "Goods order by"
+msgstr "Сортировка продуктов"
+
+#: ../inc/class.settings-page.php:194
+msgid "Goods order"
+msgstr "Порядок продуктов"
+
+#: ../inc/class.settings-page.php:202
 msgid "Show product's short description"
 msgstr "Показывать короткое описание продукта"
 
-#: ../inc/class.settings-page.php:194
+#: ../inc/class.settings-page.php:210
 msgid "Show product's SKU"
 msgstr "Показывать артикул товара"
 
-#: ../inc/class.settings-page.php:201
+#: ../inc/class.settings-page.php:217
 msgid "Product Price Prefix"
 msgstr "Префикс цены"
 
-#: ../inc/class.settings-page.php:208
+#: ../inc/class.settings-page.php:224
 msgid "Product Price Postfix"
 msgstr "Постфикс цены"
 
-#: ../inc/class.settings-page.php:216
+#: ../inc/class.settings-page.php:232
 msgid "Info Container Width on Product Page"
 msgstr "Ширина контейнера с информацией о продукте на странице продукта"
 
-#: ../inc/class.settings-page.php:225
+#: ../inc/class.settings-page.php:241
 msgid "Sidebar Settings"
 msgstr "Настройки сайдбара"
 
-#: ../inc/class.settings-page.php:233
+#: ../inc/class.settings-page.php:249
 msgid "Use special sidebar"
 msgstr "Использовать специальный сайдбар"
 
-#: ../inc/class.settings-page.php:240
+#: ../inc/class.settings-page.php:256
 msgid "Sidebar Width"
 msgstr "Ширина сайдбара"
 
-#: ../inc/class.settings-page.php:322
+#: ../inc/class.settings-page.php:344
 msgid "You can see the catalog on your site at:"
 msgstr "Каталог товаров на Вашем сайте расположен по адресу:"
 
-#: ../inc/class.settings-page.php:324
+#: ../inc/class.settings-page.php:346
 msgid ""
 "Don't know how to set up the catalog? The instructions are available here: "
 "<a href='http://oriolo.wordpress.com/2014/03/25/goods-catalog-wordpress-"
@@ -128,7 +136,7 @@ msgstr ""
 "that-creates-catalog-of-products'>по-английски</a>, <a href='http://oriolo."
 "ru/dev/goods-catalog/quick-start'>по-русски</a>"
 
-#: ../inc/class.settings-page.php:327
+#: ../inc/class.settings-page.php:349
 msgid ""
 "Any problems or questions? Visit the plugin's <a href='http://wordpress.org/"
 "support/plugin/goods-catalo'>support forum</a> at WordPress.org"
@@ -137,7 +145,7 @@ msgstr ""
 "support/plugin/goods-catalog\">форум технической поддержки</a> плагина на "
 "WordPress.org"
 
-#: ../inc/class.settings-page.php:332
+#: ../inc/class.settings-page.php:354
 #, php-format
 msgid ""
 "Please notice, that every time you change permalinks you should also press "
@@ -148,19 +156,19 @@ msgstr ""
 "необходимо нажимать на кнопку \"Сохранить\" на странице \"<a href=\"%s"
 "\">Постоянные сслыки</a>\", и, возможно, обновить соответствующие пункты меню"
 
-#: ../inc/class.settings-page.php:336
+#: ../inc/class.settings-page.php:358
 msgid "The following settings will be applied to all catalog pages"
 msgstr "Настройки ниже будут применены ко всему каталогу"
 
-#: ../inc/class.settings-page.php:340
+#: ../inc/class.settings-page.php:362
 msgid "Set up the goods categories here"
 msgstr "Настройте рубрики каталога"
 
-#: ../inc/class.settings-page.php:344
+#: ../inc/class.settings-page.php:366
 msgid "Set up the products here"
 msgstr "Настройте продукты каталога"
 
-#: ../inc/class.settings-page.php:348
+#: ../inc/class.settings-page.php:370
 msgid ""
 "You can use special sidebar only in catalog pages. Please remember that "
 "sidebar from your theme can be not supported by Goods Catalog plugin"
@@ -169,27 +177,79 @@ msgstr ""
 "страницах каталога. Встроенный сайдбар из большинства тем на плагином не "
 "поддерживается, и на страницах каталога выведен не будет."
 
-#: ../inc/class.settings-page.php:358
+#: ../inc/class.settings-page.php:380
 msgid " by default: catalog"
 msgstr "по-умолчанию: catalog"
 
-#: ../inc/class.settings-page.php:361
+#: ../inc/class.settings-page.php:383
 msgid "Enter the slug of catalog home page"
 msgstr "Введите префикс для главной страницы каталога"
 
-#: ../inc/class.settings-page.php:370
+#: ../inc/class.settings-page.php:392
 msgid " by default: goods_caregory"
 msgstr "по-умолчанию: goods_category"
 
-#: ../inc/class.settings-page.php:382
+#: ../inc/class.settings-page.php:404
 msgid " by default: goods_tag"
 msgstr "по-умолчанию: goods_tag"
 
-#: ../inc/class.settings-page.php:400
+#: ../inc/class.settings-page.php:420
+msgid "none"
+msgstr "нет"
+
+#: ../inc/class.settings-page.php:421
+msgid "ID"
+msgstr "ID"
+
+#: ../inc/class.settings-page.php:422
+msgid "author"
+msgstr "автор"
+
+#: ../inc/class.settings-page.php:423
+msgid "title"
+msgstr "название"
+
+#: ../inc/class.settings-page.php:424
+msgid "slug"
+msgstr "постоянная сслыка"
+
+#: ../inc/class.settings-page.php:425
+msgid "date"
+msgstr "дата"
+
+#: ../inc/class.settings-page.php:426
+msgid "last modified"
+msgstr "последнее изменение"
+
+#: ../inc/class.settings-page.php:427
+msgid "random"
+msgstr "случайно"
+
+#: ../inc/class.settings-page.php:428
+msgid "number of comments"
+msgstr "количество комментариев"
+
+#: ../inc/class.settings-page.php:429
+msgid "menu order"
+msgstr "порядок меню"
+
+#: ../inc/class.settings-page.php:430
+msgid "price"
+msgstr "цена"
+
+#: ../inc/class.settings-page.php:442
+msgid "ASC"
+msgstr "А-Я"
+
+#: ../inc/class.settings-page.php:445
+msgid "DESC"
+msgstr "Я-А"
+
+#: ../inc/class.settings-page.php:453
 msgid "by default 100"
 msgstr "по-умолчанию 100"
 
-#: ../inc/class.settings-page.php:401
+#: ../inc/class.settings-page.php:454
 msgid ""
 "If the catalog's container is bigger than your theme's container, change it "
 "here"
@@ -197,7 +257,7 @@ msgstr ""
 "Здесь можно поменять ширину контейнера каталога, если он шире, чем контейнер "
 "темы"
 
-#: ../inc/class.settings-page.php:408
+#: ../inc/class.settings-page.php:461
 msgid ""
 "Add 'margin: 0 auto;' to the container. If you have changed container's "
 "width, you should also turn on this option"
@@ -205,11 +265,11 @@ msgstr ""
 "Добавить к контейнеру свойство 'margin: 0 auto;'. Если вы поменяли ширину "
 "контейнера, то скоре всего, нужно отметить и эту опцию"
 
-#: ../inc/class.settings-page.php:415
+#: ../inc/class.settings-page.php:468
 msgid "by default 60"
 msgstr "по-умолчанию 60"
 
-#: ../inc/class.settings-page.php:416
+#: ../inc/class.settings-page.php:469
 msgid ""
 "Set width of Product Info Container on single product page. In that "
 "container are located: name, price, SKU, short description, categories and "
@@ -223,29 +283,29 @@ msgstr ""
 "будет находиться справа от изображения товара, если большую - то под "
 "изображением."
 
-#: ../inc/class.settings-page.php:427 ../inc/class.settings-page.php:451
-#: ../inc/class.settings-page.php:467 ../inc/class.settings-page.php:478
+#: ../inc/class.settings-page.php:480 ../inc/class.settings-page.php:504
+#: ../inc/class.settings-page.php:520 ../inc/class.settings-page.php:531
 msgid "in grid"
 msgstr "в сетке"
 
-#: ../inc/class.settings-page.php:428
+#: ../inc/class.settings-page.php:481
 msgid ""
 "If you don't need thumbnails for the categories, please uncheck this option"
 msgstr "Если миниатюры для рубрик не нужны, отключите эту опцию"
 
-#: ../inc/class.settings-page.php:432
+#: ../inc/class.settings-page.php:485
 msgid "Width: "
 msgstr "Ширина: "
 
-#: ../inc/class.settings-page.php:436 ../inc/class.settings-page.php:442
+#: ../inc/class.settings-page.php:489 ../inc/class.settings-page.php:495
 msgid "px"
 msgstr "пикс. "
 
-#: ../inc/class.settings-page.php:438
+#: ../inc/class.settings-page.php:491
 msgid "Height: "
 msgstr "Высота: "
 
-#: ../inc/class.settings-page.php:444
+#: ../inc/class.settings-page.php:497
 msgid ""
 "Set size of thumbnails for categories and products. After that please use <a "
 "href='http://wordpress.org/plugins/regenerate-thumbnails/'>Regenerate "
@@ -258,24 +318,24 @@ msgstr ""
 "изображений с новыми размерами. Обратите внимание, что размер изображений-"
 "заглушек изменен не будет."
 
-#: ../inc/class.settings-page.php:455
+#: ../inc/class.settings-page.php:508
 msgid "in category page"
 msgstr "на странице рубрики"
 
-#: ../inc/class.settings-page.php:456
+#: ../inc/class.settings-page.php:509
 msgid ""
 "If you don't need description for the categories, please uncheck this option"
 msgstr "Если описания для рубрик не нужны, отключите эту опцию"
 
-#: ../inc/class.settings-page.php:471 ../inc/class.settings-page.php:482
+#: ../inc/class.settings-page.php:524 ../inc/class.settings-page.php:535
 msgid "in single product page"
 msgstr "на странице товара"
 
-#: ../inc/class.settings-page.php:489 ../inc/class.settings-page.php:501
+#: ../inc/class.settings-page.php:542 ../inc/class.settings-page.php:554
 msgid " by default: empty"
 msgstr "по-умолчанию: пусто"
 
-#: ../inc/class.settings-page.php:492
+#: ../inc/class.settings-page.php:545
 msgid ""
 "Currency prefix, for ex.: &#36; or &#128;. Just leave it emply if you don't "
 "need prefix"
@@ -283,13 +343,13 @@ msgstr ""
 "Префикс валюты, например: &#36; или &#128;. Оставьте пустым, если префикс не "
 "нужен"
 
-#: ../inc/class.settings-page.php:504
+#: ../inc/class.settings-page.php:557
 msgid ""
 "Currency postfix, for ex.: RUB. Just leave it emply if you don't need postfix"
 msgstr ""
 "Постфикс валюты, например: руб. Оставьте пустым, если постфикс не нужен"
 
-#: ../inc/class.settings-page.php:517
+#: ../inc/class.settings-page.php:570
 msgid ""
 "Please turn the option on, if you would like to use the special sidebar for "
 "catalog"
@@ -297,11 +357,11 @@ msgstr ""
 "Включите эту опцию, если хотите использовать специальный сайдбар на "
 "страницах каталога"
 
-#: ../inc/class.settings-page.php:524
+#: ../inc/class.settings-page.php:577
 msgid "by default 20"
 msgstr "по-умолчанию 20"
 
-#: ../inc/class.settings-page.php:525
+#: ../inc/class.settings-page.php:578
 msgid "Set width of the Sidebar"
 msgstr "Установить ширину сайдбара"
 
@@ -397,11 +457,11 @@ msgstr "Выбрать из часто используемых"
 msgid "Not Found"
 msgstr "Не найдено"
 
-#: ../inc/functions.php:109
+#: ../inc/functions.php:116
 msgid "Price:"
 msgstr "Цена:"
 
-#: ../inc/functions.php:145
+#: ../inc/functions.php:152
 msgid "SKU:"
 msgstr "Артикул:"
 

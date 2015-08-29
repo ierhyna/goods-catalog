@@ -16,7 +16,7 @@ ob_start();
 echo '<h2 class="single-category-title">' . single_cat_title('', false) . '</h2>';
 
 /**
- * Include the list of subcategories in grid.
+ * Include the list of products in grid.
  * 
  * If you edit this template by coping into your theme's folder, please change this functions with the following:
  * load_template(WP_PLUGIN_DIR  . '/goods-catalog/templates/content-goods_grid.php');
