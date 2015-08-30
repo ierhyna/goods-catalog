@@ -63,9 +63,7 @@ if (have_posts()) {
     <?php next_post_link( '%link', __('Next product', 'gcat'), TRUE, ' ', 'goods_category' ); ?>
     </div>
     <div class="comments">
-        <?php 
-
-        ?>
+        <?php comments_template( '', true ); ?>
     </div>
     <?php
 } else {

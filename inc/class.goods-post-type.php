@@ -35,7 +35,7 @@ class Goods_Post_Type {
             ),
             'public' => true,
             'menu_position' => 30,
-            'supports' => array('title', 'editor', 'thumbnail'),
+            'supports' => array('title', 'editor', 'thumbnail', 'comments'),
             'taxonomies' => array('goods_category'),
             'has_archive' => true,
             'rewrite' => array('slug' => $slug, 'with_front' => false)

@@ -259,4 +259,3 @@ function get_the_product_thumbnail( $product_id = '', $before = '<div class="goo
 
     return $before . $output . $after;
 }
-
