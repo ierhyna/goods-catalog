@@ -31,9 +31,11 @@ add_action('pre_get_posts', 'exclude_children'); // Exclude children taxonomies 
 
 /**
  * Goods query settings
+ * renamed from goods_pagesize();
  * 
  * @link https://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters
  * @param $query array
+ * @since 0.10.0
  */
 
 function goods_query($query) {
@@ -53,7 +55,7 @@ function goods_query($query) {
     }
 }
 
-add_action('pre_get_posts', 'goods_query', 1); // Set items per page
+add_action('pre_get_posts', 'goods_query', 1);
 
 /**
  * Get page elements

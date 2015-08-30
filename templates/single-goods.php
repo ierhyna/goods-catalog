@@ -58,7 +58,15 @@ if (have_posts()) {
         <?php
     }
     ?>
-    <div class="navigation"><?php posts_nav_link(); ?></div>
+    <div class="navigation">
+    <?php previous_post_link( '%link', __('Previous product', 'gcat'), TRUE, ' ', 'goods_category' ); ?>
+    <?php next_post_link( '%link', __('Next product', 'gcat'), TRUE, ' ', 'goods_category' ); ?>
+    </div>
+    <div class="comments">
+        <?php 
+
+        ?>
+    </div>
     <?php
 } else {
     get_404_template();
