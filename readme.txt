@@ -102,7 +102,17 @@ Or you can manually change your theme's header.php (see [here](http://wordpress.
 
 Another option is to change the plugin files see the discussion [here](https://wordpress.org/support/topic/how-to-modify-the-catalog-title-page). It is not recommended: you will lose the changes after the plugin update.
 
+= How can I enable or disable the comments for catalog entries? =
+Since the version 1.0.0 comments comments are enabled by default. You can disable them globally in WordPress Admin settings (at Discussion tab), or you can use third-part plugins to make comments available only for some post types, for example [Disable Comments Plugin](https://wordpress.org/plugins/disable-comments/).
+
+= How can I separate comments to products and posts in the Admin Panel? =
+You can use my plugin [Comments by Post Type](https://wordpress.org/plugins/comments-by-post-type/) for that.
+
 == Changelog ==
+
+= 1.0.0 =
+
+* New feature: Comments
 
 = 0.10.0 =
 
@@ -276,6 +286,10 @@ Small bug fix:
 First public release
 
 == Upgrade Notice ==
+
+= 1.0.0 =
+
+New feature: Comments
 
 = 0.10.0 =
 

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Goods Catalog\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/goods-catalog\n"
 "POT-Creation-Date: 2015-08-29 23:48+0300\n"
-"PO-Revision-Date: 2015-08-29 23:50+0300\n"
+"PO-Revision-Date: 2015-08-30 18:11+0300\n"
 "Last-Translator: Irina Sokolovskaja <sokolovskaja.irina@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -524,11 +524,11 @@ msgstr "Новый товар"
 
 #: ../inc/class.goods-post-type.php:30
 msgid "View"
-msgstr "Вид"
+msgstr "Просмотреть"
 
 #: ../inc/class.goods-post-type.php:31
 msgid "View of items"
-msgstr "Вид товаров"
+msgstr "Просмотреть товар"
 
 #: ../inc/class.goods-post-type.php:32
 msgid "Search items"
