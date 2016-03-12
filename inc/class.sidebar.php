@@ -18,8 +18,8 @@ class Goods_Sidebar {
 
         $args = array(
             'id' => 'goods-sidebar',
-            'name' => __('Goods Catalog Sidebar', 'gcat'),
-            'description' => __('Goods Catalog Widgets', 'gcat'),
+            'name' => __('Goods Catalog Sidebar', 'goods-catalog'),
+            'description' => __('Goods Catalog Widgets', 'goods-catalog'),
             'before_title' => '<h3 class="wigdettitle">',
             'after_title' => '</h3>',
             'before_widget' => '<div class="widget %2$s">',

@@ -186,7 +186,7 @@ function GoodsTerm( $atts ) {
         global $catalog_option;
 
         // show categories titles
-        $output .=  '<div class="goods-tile"><div class="goods-category-list-title"><a href="' . esc_url(get_term_link($term)) . '" title="' . sprintf(__("Go to cetegory %s", 'gcat'), $term->name) . '" ' . '>' . $term->name . '</a></div> ';
+        $output .=  '<div class="goods-tile"><div class="goods-category-list-title"><a href="' . esc_url(get_term_link($term)) . '" title="' . sprintf(__("Go to cetegory %s", 'goods-catalog'), $term->name) . '" ' . '>' . $term->name . '</a></div> ';
 
         // show categories description
         if (isset($catalog_option['show_category_descr_grid'])) {

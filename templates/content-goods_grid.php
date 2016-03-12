@@ -39,6 +39,6 @@ if (have_posts()) {
         <?php
     }
 } else {
-    // echo __('There are no products in the category.', 'gcat');
+    // echo __('There are no products in the category.', 'goods-catalog');
 }
 echo '<div class="clear"></div>';

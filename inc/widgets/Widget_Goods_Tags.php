@@ -16,7 +16,7 @@ class Widget_Goods_Tags extends WP_Widget {
                 'GC Tags',
                 // Widget description
                 array(
-            'description' => __('Goods Catalog tags cloud', 'gcat')
+            'description' => __('Goods Catalog tags cloud', 'goods-catalog')
         ));
         add_action('widgets_init', array ($this, 'goods_tags_load_widget')) ;
     }
@@ -54,7 +54,7 @@ class Widget_Goods_Tags extends WP_Widget {
         if (isset($instance['title'])) {
             $title = $instance['title'];
         } else {
-            $title = __('Products Tags', 'gcat');
+            $title = __('Products Tags', 'goods-catalog');
         }
         // Widget admin form
 

@@ -59,8 +59,8 @@ if (have_posts()) {
     }
     ?>
     <div class="navigation">
-    <?php previous_post_link( '%link', __('Previous product', 'gcat'), TRUE, ' ', 'goods_category' ); ?>
-    <?php next_post_link( '%link', __('Next product', 'gcat'), TRUE, ' ', 'goods_category' ); ?>
+    <?php previous_post_link( '%link', __('Previous product', 'goods-catalog'), TRUE, ' ', 'goods_category' ); ?>
+    <?php next_post_link( '%link', __('Next product', 'goods-catalog'), TRUE, ' ', 'goods_category' ); ?>
     </div>
     <div class="comments">
         <?php comments_template( '', true ); ?>

@@ -50,14 +50,14 @@ function categories_chain() {
  */ 
 function gc_breadcrumbs($id = null) {
 	$output = '';
-	$output .= '<a href=" ' . home_url() . ' ">' . __('Home', 'gcat') . '</a> &gt; ';
+	$output .= '<a href=" ' . home_url() . ' ">' . __('Home', 'goods-catalog') . '</a> &gt; ';
 	/**
 	 * if current page is not the Catalog main page, show link and separator
 	 */ 
 	if (is_post_type_archive('goods')) {
-		$output .=  __('Catalog', 'gcat');
+		$output .=  __('Catalog', 'goods-catalog');
 	} else { 
-		$output .=  '<a href="' . get_post_type_archive_link('goods') . '">' . __('Catalog', 'gcat') . '</a> &gt; ';
+		$output .=  '<a href="' . get_post_type_archive_link('goods') . '">' . __('Catalog', 'goods-catalog') . '</a> &gt; ';
 	}
 	/** 
 	 * Links on Product page

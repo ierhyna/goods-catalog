@@ -16,7 +16,7 @@ class Widget_Goods_Categories extends WP_Widget {
                 'GC Categories',
                 // Widget description
                 array(
-            'description' => __('Goods Catalog categories list', 'gcat')
+            'description' => __('Goods Catalog categories list', 'goods-catalog')
         ));
         add_action('widgets_init', array($this, 'goods_categories_load_widget'));
     }
@@ -65,7 +65,7 @@ class Widget_Goods_Categories extends WP_Widget {
         if (isset($instance['title'])) {
             $title = $instance['title'];
         } else {
-            $title = __('Products Categories', 'gcat');
+            $title = __('Products Categories', 'goods-catalog');
         }
         $count = isset($instance['count']) ? (bool) $instance['count'] :false;
         // Widget admin form

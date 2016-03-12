@@ -115,7 +115,7 @@ function get_the_product_price( $title = '', $before = '<p class="goods-price-si
 
     if ((isset($gc_price)) && ($gc_price != '')) { // show fields values
 
-        $title = __('Price:', 'gcat');
+        $title = __('Price:', 'goods-catalog');
 
         /*
          * Show the prefix if chosen the option
@@ -151,7 +151,7 @@ function get_the_product_price( $title = '', $before = '<p class="goods-price-si
 function show_the_product_sku( $title = '', $before = '<p class="goods-sku">', $after = '</p>' ) {
     $gc_sku = get_post_meta(get_the_ID(), 'gc_sku', true);
     if ((isset($gc_sku)) && ($gc_sku != '')) {
-        $title = __('SKU:', 'gcat');
+        $title = __('SKU:', 'goods-catalog');
         echo $before . $title . "&nbsp" . $gc_sku . $after;
     }
 }

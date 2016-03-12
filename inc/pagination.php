@@ -17,7 +17,7 @@ function goods_pagination($pages = '', $range = 2) {
         }
     }
     if (1 != $pages) {
-        echo "<div class='goods-pagination'><span> " . __('Pages:', 'gcat') . " </span>";
+        echo "<div class='goods-pagination'><span> " . __('Pages:', 'goods-catalog') . " </span>";
         if ($paged > 2 && $paged > $range + 1 && $showitems < $pages)
             echo "<a href='" . get_pagenum_link(1) . "'>«</a>";
         if ($paged > 1 && $showitems < $pages)

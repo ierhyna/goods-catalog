@@ -34,22 +34,22 @@ class Goods_Catalog_Metabox {
         $prefix = 'gc_';
         $this->fields = array(
             array(
-                'name' => __('Price', 'gcat'),
-                'desc' => __('Enter price here', 'gcat'),
+                'name' => __('Price', 'goods-catalog'),
+                'desc' => __('Enter price here', 'goods-catalog'),
                 'id' => $prefix . 'price',
                 'type' => 'text',
                 'std' => ''
             ),
             array(
-                'name' => __('SKU', 'gcat'),
-                'desc' => __('Enter product ID (SKU)', 'gcat'),
+                'name' => __('SKU', 'goods-catalog'),
+                'desc' => __('Enter product ID (SKU)', 'goods-catalog'),
                 'id' => $prefix . 'sku',
                 'type' => 'text',
                 'std' => ''
             ),
             array(
-                'name' => __('Short Description', 'gcat'),
-                'desc' => __('Enter description here', 'gcat'),
+                'name' => __('Short Description', 'goods-catalog'),
+                'desc' => __('Enter description here', 'goods-catalog'),
                 'id' => $prefix . 'descr',
                 'type' => 'textarea',
                 'std' => ''
@@ -65,7 +65,7 @@ class Goods_Catalog_Metabox {
         if ( in_array( $post_type, $post_types )) {
             add_meta_box(
                 'goods_meta_box'
-                ,__( 'Item Options', 'gcat' )
+                ,__( 'Item Options', 'goods-catalog' )
                 ,array( $this, 'render_meta_box_content' )
                 ,$post_type
                 ,'normal'
@@ -150,14 +150,14 @@ class Goods_Catalog_Metabox {
         // get current post meta data
             $meta = get_post_meta($post->ID, $field['id'], true);
             echo '<tr>',
-            '<th style="width:20%"><label for="'. __($field['name'],'gcat'). '">', __($field['name'],'gcat'), '</label></th>',
+            '<th style="width:20%"><label for="'. __($field['name'],'goods-catalog'). '">', __($field['name'],'goods-catalog'), '</label></th>',
             '<td>';
             switch ($field['type']) {
                 case 'text':
-                    echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" />', '<br />'. __($field['desc'],'gcat').'';
+                    echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" />', '<br />'. __($field['desc'],'goods-catalog').'';
                     break;
                 case 'textarea':
-                    echo '<textarea name="', $field['id'], '" id="', $field['id'], '" cols="60" rows="4" style="width:97%">', $meta ? $meta : $field['std'], '</textarea>', '<br />'. __($field['desc'],'gcat').'';
+                    echo '<textarea name="', $field['id'], '" id="', $field['id'], '" cols="60" rows="4" style="width:97%">', $meta ? $meta : $field['std'], '</textarea>', '<br />'. __($field['desc'],'goods-catalog').'';
                     break;
             }
             echo '</td><td>',

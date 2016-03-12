@@ -21,9 +21,9 @@ class Goods_Categories_Taxonomy {
         register_taxonomy(
                 'goods_category', 'goods', array(
             'labels' => array(
-                'name' => __('Goods Categories', 'gcat'),
-                'add_new_item' => __('Add category', 'gcat'),
-                'new_item_name' => __('New category', 'gcat')
+                'name' => __('Goods Categories', 'goods-catalog'),
+                'add_new_item' => __('Add category', 'goods-catalog'),
+                'new_item_name' => __('New category', 'goods-catalog')
             ),
             'show_ui' => true,
             'show_admin_column' => true,

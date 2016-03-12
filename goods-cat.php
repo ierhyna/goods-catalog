@@ -9,6 +9,7 @@
   Author URI: http://oriolo.ru/
   License: GNU General Public License v2 or later
   License URI: http://www.gnu.org/licenses/gpl-2.0.html
+  Text Domain: goods-catalog
   Domain Path: /languages
  */
 
@@ -49,7 +50,7 @@ define('GOODS_CATALOG_PLUGIN_TEMPLATES', GOODS_CATALOG_PLUGIN_PATH . '/templates
  * Load Localization
  */
 function goods_catalog_lang_init() {
-    $domain = 'gcat';
+    $domain = 'goods-catalog';
     // The "plugin_locale" filter is also used in load_plugin_textdomain()
     $locale = apply_filters('plugin_locale', get_locale(), $domain);
     load_textdomain($domain, WP_LANG_DIR.'/plugins/'.$domain.'-'.$locale.'.mo');
