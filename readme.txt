@@ -4,8 +4,8 @@ Tags: goods catalog, products catalog, catalog, products, goods
 Stable tag: trunk
 Requires at least: 3.3.0
 Tested up to: 4.4.2
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GNU General Public License v3
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: http://oriolo.ru/dev/goods-catalog/donate
 
 Goods Catalog provides a catalog of products organized into categories. It is easy to use and fully customizable.
