@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Template wrapper
  * 
@@ -7,31 +6,29 @@
  * 
  * @since 0.9.0
  */
+get_header();
+?>
 
-get_header(); 
+<div class="goods-catalog-container">
 
-echo '<div class="goods-catalog-container">';
-	
-	/**
-	 * Load the sidebar
-	 */ 
-	load_template ( dirname( __FILE__ ) . '/sidebar-goods.php' ) ;
+    <?php
+    // Load the sidebar
+    load_template(dirname(__FILE__) . '/sidebar-goods.php');
+    ?>
 
-	echo '<div class="goods-catalog">';
-		echo '<div class="catalog-inner">';
+    <div class="goods-catalog">
+        <div class="catalog-inner">
 
-			show_gc_breadcrumbs();
-			
-			/**
-			 * Load the main part of the page.
-			 */ 
-			require_once( GOODS_CATALOG_PLUGIN_INC . '/templates.php' );
+            <?php show_gc_breadcrumbs(); ?>
 
-		echo '</div>'; // catalog-inner
-	echo '</div>'; // goods-catalog
+            <?php goods_template(); ?>
 
-	echo '<div class="clear"></div>'; // fix for some themes
+        </div>
+    </div>
 
-echo '</div>'; // goods-catalog-container
+    <div class="clear"></div>
 
+</div>
+
+<?php
 get_footer();

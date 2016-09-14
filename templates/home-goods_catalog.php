@@ -19,10 +19,5 @@ $args = array(
 );
 $category_list = get_categories($args, $category_id);
 
-/**
- * Include the list of subcategories in grid.
- * 
- * If you edit this template by coping into your theme's folder, please change this functions with the following:
- * include WP_PLUGIN_DIR  . '/goods-catalog/templates/content-goods_category.php';
- */
-include 'content-goods_category.php';
+// Include the list of subcategories in grid.
+goods_category($category_list);

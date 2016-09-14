@@ -1,11 +1,9 @@
 <?php
-
 /**
  * Template: Single product page
  * 
  * You can edit this template by coping into your theme's folder
  */
-
 if (have_posts()) {
     while (have_posts()) {
         the_post();
@@ -22,7 +20,7 @@ if (have_posts()) {
                     echo '</a>';
                 } else {
                     // show default image if the thumbnail is not found
-                    echo '<img class="goods-item-thumb" src="' . plugins_url( '/img/gi.png' , dirname(__FILE__) ) . '" alt="">';
+                    echo '<img class="goods-item-thumb" src="' . plugins_url('/img/gi.png', dirname(__FILE__)) . '" alt="">';
                 }
                 echo '</div>';
                 ?>
@@ -31,7 +29,7 @@ if (have_posts()) {
                     <?php
                     // show product's details
                     echo get_the_product_price();
-                    
+
                     if (isset($catalog_option['show_product_sku_page'])) {
                         show_the_product_sku();
                     }
@@ -40,10 +38,10 @@ if (have_posts()) {
                     }
 
                     // show category
-                    echo get_the_term_list ($post->ID, 'goods_category', '<p>' . __("Categories", "gcat") . ':&nbsp;', ', ', '</p>');
+                    echo get_the_term_list($post->ID, 'goods_category', '<p>' . __("Categories", "gcat") . ':&nbsp;', ', ', '</p>');
 
                     // show tags
-                    echo get_the_term_list ($post->ID, 'goods_tag', '<p>' . __("Tags", "gcat") . ':&nbsp;', ', ', '</p>');
+                    echo get_the_term_list($post->ID, 'goods_tag', '<p>' . __("Tags", "gcat") . ':&nbsp;', ', ', '</p>');
                     ?>
                 </div>
                 <div class="clear"></div>
@@ -59,12 +57,13 @@ if (have_posts()) {
     }
     ?>
     <div class="navigation">
-    <?php previous_post_link( '%link', __('Previous product', 'goods-catalog'), TRUE, ' ', 'goods_category' ); ?>
-    <?php next_post_link( '%link', __('Next product', 'goods-catalog'), TRUE, ' ', 'goods_category' ); ?>
+        <?php previous_post_link('%link', __('Previous product', 'goods-catalog'), TRUE, ' ', 'goods_category'); ?>
+        <?php next_post_link('%link', __('Next product', 'goods-catalog'), TRUE, ' ', 'goods_category'); ?>
     </div>
     <div class="comments">
-        <?php comments_template( '', true ); ?>
+        <?php comments_template('', true); ?>
     </div>
+
     <?php
 } else {
     get_404_template();
