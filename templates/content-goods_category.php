@@ -1,11 +1,11 @@
 <?php
 /**
  * The list of subcategories in grid
- * 
+ *
  * Loaded in:
  * home-goods_catalog.php
  * taxonomy-goods_category.php
- * 
+ *
  */
 // check if current taxonomy doesn't have childs
 if (empty($category_list)) {
@@ -25,7 +25,7 @@ else {
 
             <div class="grid">
                 <div class="goods-category-list-title">
-                    <a href="<?= esc_url(get_term_link($categories_item, $categories_item->taxonomy)) ?>" 
+                    <a href="<?= esc_url(get_term_link($categories_item, $categories_item->taxonomy)) ?>"
                        title="<?= sprintf(__("Go to cetegory %s", 'goods-catalog'), $categories_item->name) ?>">
                            <?= $categories_item->name ?>
                     </a>
@@ -60,8 +60,8 @@ else {
                                 ?>
 
                                 <a href="<?= esc_url(get_term_link($categories_item, $categories_item->taxonomy)) ?>">
-                                    <img class="goods-item-thumb" 
-                                         src="<?= esc_url(GOODS_CATALOG_PLUGIN_URL . '/img/gc.png') ?>" 
+                                    <img class="goods-item-thumb"
+                                         src="<?= esc_url(GOODS_CATALOG_PLUGIN_URL . '/img/gc.png') ?>"
                                          alt="">
                                 </a>';
 
@@ -73,8 +73,8 @@ else {
                             ?>
 
                             <a href="<?= esc_url(get_term_link($categories_item, $categories_item->taxonomy)) ?>">
-                                <img class="goods-item-thumb" 
-                                     src="<?= esc_url(GOODS_CATALOG_PLUGIN_URL . '/img/gc.png') ?>" 
+                                <img class="goods-item-thumb"
+                                     src="<?= esc_url(GOODS_CATALOG_PLUGIN_URL . '/img/gc.png') ?>"
                                      alt="">
                             </a>
 
@@ -102,4 +102,4 @@ else {
     <div class="clear"></div>
 
     <?php
-}    
+}
