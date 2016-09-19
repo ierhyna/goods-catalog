@@ -2,6 +2,10 @@
 
 ## Changelog
 
+### 1.1.0
+
+* Updated templates engine
+
 ### 1.0.0
 
 * New feature: Comments
