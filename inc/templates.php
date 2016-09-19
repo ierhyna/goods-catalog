@@ -22,9 +22,9 @@ $catalog_pages = array(
  */ 
 foreach ($catalog_pages as $page => $template) {
     if ($page) {
-        if (file_exists (get_template_directory() . '/' . $template)) {
+        if (file_exists (get_stylesheet_directory() . '/' . $template)) {
             // echo 'Current template: ' . get_template_directory() . '/' . $template;
-            require_once (get_template_directory() . '/' . $template);
+            require_once (get_stylesheet_directory() . '/' . $template);
         }
         else {
             require_once (GOODS_CATALOG_PLUGIN_TEMPLATES . '/' . $template);
