@@ -3,7 +3,7 @@ Contributors: oriolo
 Tags: goods catalog, products catalog, catalog, products, goods
 Stable tag: trunk
 Requires at least: 3.3.0
-Tested up to: 4.4.2
+Tested up to: 4.6.5
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: http://oriolo.ru/dev/goods-catalog/donate
@@ -109,6 +109,10 @@ Since the version 1.0.0 comments comments are enabled by default. You can disabl
 You can use my plugin [Comments by Post Type](https://wordpress.org/plugins/comments-by-post-type/) for that.
 
 == Changelog ==
+
+= 1.1.1 =
+
+* Fix taxonomy images
 
 = 1.0.0 =
 
