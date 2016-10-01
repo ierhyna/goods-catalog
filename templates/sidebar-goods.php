@@ -2,7 +2,9 @@
 /**
  * Template: Sidebar
  */
-global $catalog_option;
+if (!isset($catalog_option)) {
+    global $catalog_option;
+}
 
 if (isset($catalog_option['use_sidebar'])) {
     ?>

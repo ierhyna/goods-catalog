@@ -4,6 +4,10 @@
  * 
  * You can edit this template by coping into your theme's folder
  */
+if (!isset($catalog_option)) {
+    global $catalog_option;
+}
+
 $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
 
 global $posts;

@@ -7,6 +7,9 @@
  * taxonomy-goods_category.php
  * 
  */
+
+global $catalog_option;
+
 // check if current taxonomy doesn't have childs
 if (empty($category_list)) {
 //     echo "There are no subcategories";

@@ -4,6 +4,10 @@
  * 
  * You can edit this template by coping into your theme's folder
  */
+if (!isset($catalog_option)) {
+    global $catalog_option;
+}
+
 if (have_posts()) {
     while (have_posts()) {
         the_post();
