@@ -3,7 +3,7 @@ Contributors: oriolo
 Tags: goods catalog, products catalog, catalog, products, goods
 Stable tag: trunk
 Requires at least: 3.3.0
-Tested up to: 4.6.0
+Tested up to: 4.6.5
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: http://oriolo.ru/dev/goods-catalog/donate
@@ -110,9 +110,9 @@ You can use my plugin [Comments by Post Type](https://wordpress.org/plugins/comm
 
 == Changelog ==
 
-= 1.1.0 =
+= 1.1.1 =
 
-* Updated templates engine
+* Fix taxonomy images
 
 = 1.0.0 =
 
