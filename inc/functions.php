@@ -97,7 +97,7 @@ function get_goods_taxomonies($taxonomy, $id) {}
  * @since 0.9.0
  */
 
-function get_the_product_price( $title = '', $before = '<p class="goods-price-single">', $after = '</p>' ) {
+function get_the_product_price( $title = 'the_empty_argument_placeholder', $before = '<p class="goods-price-single">', $after = '</p>' ) {
     
     global $catalog_option;
     $output = '';
@@ -115,7 +115,9 @@ function get_the_product_price( $title = '', $before = '<p class="goods-price-si
 
     if ((isset($gc_price)) && ($gc_price != '')) { // show fields values
 
-        $title = __('Price:', 'goods-catalog');
+        if ($title == 'the_empty_argument_placeholder') {
+          $title = __('Price:', 'goods-catalog');
+        }
 
         /*
          * Show the prefix if chosen the option
