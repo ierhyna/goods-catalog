@@ -150,10 +150,12 @@ function get_the_product_price( $title = 'the_empty_argument_placeholder', $befo
  * @param string $after HTML to show after
  */
 
-function show_the_product_sku( $title = '', $before = '<p class="goods-sku">', $after = '</p>' ) {
+function show_the_product_sku( $title = 'the_empty_argument_placeholder', $before = '<p class="goods-sku">', $after = '</p>' ) {
     $gc_sku = get_post_meta(get_the_ID(), 'gc_sku', true);
     if ((isset($gc_sku)) && ($gc_sku != '')) {
-        $title = __('SKU:', 'goods-catalog');
+        if ($title == 'the_empty_argument_placeholder') {
+          $title = __('SKU:', 'goods-catalog');
+        }
         echo $before . $title . "&nbsp" . $gc_sku . $after;
     }
 }
