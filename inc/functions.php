@@ -156,7 +156,7 @@ function show_the_product_sku( $title = 'the_empty_argument_placeholder', $befor
         if ($title == 'the_empty_argument_placeholder') {
           $title = __('SKU:', 'goods-catalog');
         }
-        echo $before . $title . "&nbsp" . $gc_sku . $after;
+        echo $before . $title . " " . $gc_sku . $after;
     }
 }
 
