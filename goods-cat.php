@@ -86,7 +86,8 @@ require_once( GOODS_CATALOG_PLUGIN_INC . '/widgets.php' );  // Widgets Classes
 /**
  *  Use custom templates for goods and catalog
  */
-require_once( GOODS_CATALOG_PLUGIN_INC . '/class.wrapper.php' ); // Wrapper class
+//require_once( GOODS_CATALOG_PLUGIN_INC . '/class.wrapper.php' ); // Wrapper class
+require_once( GOODS_CATALOG_PLUGIN_INC . '/templates-include.php' );
 
 /**
  * Load additional functions
