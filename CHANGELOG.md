@@ -2,6 +2,10 @@
 
 ## Changelog
 
+### 2.1.0
+
+* Fix get_the_product_price() $title argument (https://github.com/ierhyna/goods-catalog/issues/56)
+
 ### 2.0.0
 
 * New template system
