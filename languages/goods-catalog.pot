@@ -312,7 +312,7 @@ msgid "Enter the slug of catalog home page"
 msgstr ""
 
 #: inc/class.settings-page.php:370
-msgid " by default: goods_caregory"
+msgid " by default: goods_category"
 msgstr ""
 
 #: inc/class.settings-page.php:382

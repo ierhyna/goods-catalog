@@ -2,9 +2,12 @@
 
 /**
  * Template: Category page
- * 
+ *
  * You can edit this template by coping into your theme's folder
  */
+if (!isset($catalog_option)) {
+    global $catalog_option;
+}
 
 $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
 
@@ -33,10 +36,10 @@ if (!is_paged()) {
     );
 
     $category_list = get_categories($args);
-    
+
     /**
      * Include the list of subcategories in grid.
-     * 
+     *
      * If you edit this template by coping into your theme's folder, please change this functions with the following:
      * include WP_PLUGIN_DIR  . '/goods-catalog/templates/content-goods_category.php';
      */
@@ -47,7 +50,7 @@ if (!is_paged()) {
 
 /**
  * Include the list of products in grid.
- * 
+ *
  * If you edit this template by coping into your theme's folder, please change this functions with the following:
  * load_template(WP_PLUGIN_DIR  . '/goods-catalog/templates/content-goods_grid.php');
  */

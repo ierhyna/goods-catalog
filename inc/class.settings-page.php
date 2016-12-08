@@ -2,7 +2,7 @@
 
 /**
  * Options Page for Goods Catalog
- * 
+ *
  * @since 0.9.0
  */
 
@@ -40,7 +40,7 @@ class Goods_Catalog_Settings_Page {
         ?>
         <div class="wrap">
         <?php screen_icon(); ?>
-            <h2><?php echo __('Goods Catalog Plugin Settings', 'goods-catalog'); ?></h2>           
+            <h2><?php echo __('Goods Catalog Plugin Settings', 'goods-catalog'); ?></h2>
             <form method="post" action="options.php">
                 <?php
                 // This prints out all hidden setting fields
@@ -82,26 +82,26 @@ class Goods_Catalog_Settings_Page {
         // Options Start
         add_settings_field(
                 'gc_catalog_slug', // ID
-                __('Catalog Home Page Slug', 'goods-catalog'), // Title 
+                __('Catalog Home Page Slug', 'goods-catalog'), // Title
                 array($this, 'gc_catalog_slug_callback'), // Callback
                 'goods-setting-admin', // Page
-                'permalinks_section_id' // Section           
+                'permalinks_section_id' // Section
         );
 
         add_settings_field(
                 'gc_category_slug', // ID
-                __('Category Slug', 'goods-catalog'), // Title 
+                __('Category Slug', 'goods-catalog'), // Title
                 array($this, 'gc_category_slug_callback'), // Callback
                 'goods-setting-admin', // Page
-                'permalinks_section_id' // Section           
+                'permalinks_section_id' // Section
         );
 
         add_settings_field(
                 'gc_tag_slug', // ID
-                __('Tag Slug', 'goods-catalog'), // Title 
+                __('Tag Slug', 'goods-catalog'), // Title
                 array($this, 'gc_tag_slug_callback'), // Callback
                 'goods-setting-admin', // Page
-                'permalinks_section_id' // Section           
+                'permalinks_section_id' // Section
         );
 
 
@@ -116,26 +116,26 @@ class Goods_Catalog_Settings_Page {
 
         add_settings_field(
                 'container_width', // ID
-                __('Container Width', 'goods-catalog'), // Title 
+                __('Container Width', 'goods-catalog'), // Title
                 array($this, 'container_width_callback'), // Callback
                 'goods-setting-admin', // Page
-                'setting_section_id' // Section           
+                'setting_section_id' // Section
         );
         add_settings_field(
                 'center_container', // ID
-                __('Center Container', 'goods-catalog'), // Title 
+                __('Center Container', 'goods-catalog'), // Title
                 array($this, 'center_container_callback'), // Callback
                 'goods-setting-admin', // Page
-                'setting_section_id' // Section           
+                'setting_section_id' // Section
         );
 
-        
+
         add_settings_field(
                 'category_thumb_size', // ID
-                __('Thumbnail size', 'goods-catalog'), // Title 
+                __('Thumbnail size', 'goods-catalog'), // Title
                 array($this, 'category_thumb_size_callback'), // Callback
                 'goods-setting-admin', // Page
-                'setting_section_id' // Section           
+                'setting_section_id' // Section
         );
 
         // Categories Section Start
@@ -149,18 +149,18 @@ class Goods_Catalog_Settings_Page {
         // Options Start
         add_settings_field(
                 'show_category_thumb', // ID
-                __("Show category's thumbnails", 'goods-catalog'), // Title 
+                __("Show category's thumbnails", 'goods-catalog'), // Title
                 array($this, 'show_category_thumb_callback'), // Callback
                 'goods-setting-admin', // Page
-                'categories_section_id' // Section           
+                'categories_section_id' // Section
         );
-        
+
         add_settings_field(
                 'show_category_descr', // ID
-                __("Show category's description", 'goods-catalog'), // Title 
+                __("Show category's description", 'goods-catalog'), // Title
                 array($this, 'show_category_descr_callback'), // Callback
                 'goods-setting-admin', // Page
-                'categories_section_id' // Section           
+                'categories_section_id' // Section
         );
 
         // Product Section Start
@@ -175,64 +175,64 @@ class Goods_Catalog_Settings_Page {
 
         add_settings_field(
                 'items_per_page', // ID
-                __('Products per page', 'goods-catalog'), // Title 
+                __('Products per page', 'goods-catalog'), // Title
                 array($this, 'items_per_page_callback'), // Callback
                 'goods-setting-admin', // Page
-                'product_section_id' // Section           
+                'product_section_id' // Section
         );
 
         add_settings_field(
                 'goods_orderby', // ID
-                __('Goods order by', 'goods-catalog'), // Title 
+                __('Goods order by', 'goods-catalog'), // Title
                 array($this, 'goods_orderby_callback'), // Callback
                 'goods-setting-admin', // Page
-                'product_section_id' // Section           
+                'product_section_id' // Section
         );
 
         add_settings_field(
                 'goods_order', // ID
-                __('Goods order', 'goods-catalog'), // Title 
+                __('Goods order', 'goods-catalog'), // Title
                 array($this, 'goods_order_callback'), // Callback
                 'goods-setting-admin', // Page
-                'product_section_id' // Section           
+                'product_section_id' // Section
         );
 
         add_settings_field(
                 'show_product_descr', // ID
-                __("Show product's short description", 'goods-catalog'), // Title 
+                __("Show product's short description", 'goods-catalog'), // Title
                 array($this, 'show_product_descr_callback'), // Callback
                 'goods-setting-admin', // Page
-                'product_section_id' // Section           
+                'product_section_id' // Section
         );
 
         add_settings_field(
                 'show_product_sku', // ID
-                __("Show product's SKU", 'goods-catalog'), // Title 
+                __("Show product's SKU", 'goods-catalog'), // Title
                 array($this, 'show_product_sku_callback'), // Callback
                 'goods-setting-admin', // Page
-                'product_section_id' // Section           
+                'product_section_id' // Section
         );
         add_settings_field(
                 'gc_product_price_prefix', // ID
-                __('Product Price Prefix', 'goods-catalog'), // Title 
+                __('Product Price Prefix', 'goods-catalog'), // Title
                 array($this, 'gc_product_price_prefix_callback'), // Callback
                 'goods-setting-admin', // Page
-                'product_section_id' // Section           
+                'product_section_id' // Section
         );
         add_settings_field(
                 'gc_product_price_postfix', // ID
-                __('Product Price Postfix', 'goods-catalog'), // Title 
+                __('Product Price Postfix', 'goods-catalog'), // Title
                 array($this, 'gc_product_price_postfix_callback'), // Callback
                 'goods-setting-admin', // Page
-                'product_section_id' // Section           
+                'product_section_id' // Section
         );
 
         add_settings_field(
                 'info_width', // ID
-                __('Info Container Width on Product Page', 'goods-catalog'), // Title 
+                __('Info Container Width on Product Page', 'goods-catalog'), // Title
                 array($this, 'info_width_callback'), // Callback
                 'goods-setting-admin', // Page
-                'product_section_id' // Section           
+                'product_section_id' // Section
         );
 
         // Section Start
@@ -246,17 +246,17 @@ class Goods_Catalog_Settings_Page {
         // Options Start
         add_settings_field(
                 'use_sidebar', // ID
-                __("Use special sidebar", 'goods-catalog'), // Title 
+                __("Use special sidebar", 'goods-catalog'), // Title
                 array($this, 'use_sidebar_callback'), // Callback
                 'goods-setting-admin', // Page
-                'sidebar_section_id' // Section           
+                'sidebar_section_id' // Section
         );
         add_settings_field(
                 'sidebar_width', // ID
-                __('Sidebar Width', 'goods-catalog'), // Title 
+                __('Sidebar Width', 'goods-catalog'), // Title
                 array($this, 'sidebar_width_callback'), // Callback
                 'goods-setting-admin', // Page
-                'sidebar_section_id' // Section           
+                'sidebar_section_id' // Section
         );
     }
 
@@ -297,10 +297,10 @@ class Goods_Catalog_Settings_Page {
 
         if (isset($input['show_category_thumb']))
             $new_input['show_category_thumb'] = absint($input['show_category_thumb']);
-        
+
         if (isset($input['category_thumb_size_w']))
             $new_input['category_thumb_size_w'] = absint($input['category_thumb_size_w']);
-        
+
         if (isset($input['category_thumb_size_h']))
             $new_input['category_thumb_size_h'] = absint($input['category_thumb_size_h']);
 
@@ -327,7 +327,7 @@ class Goods_Catalog_Settings_Page {
 
         if (isset($input['gc_product_price_postfix']))
             $new_input['gc_product_price_postfix'] = esc_html($input['gc_product_price_postfix']);
-       
+
         if (isset($input['use_sidebar']))
             $new_input['use_sidebar'] = absint($input['use_sidebar']);
 
@@ -387,9 +387,9 @@ class Goods_Catalog_Settings_Page {
 
     public function gc_category_slug_callback() {
         printf(
-                '<input type="text" id="gc_category_slug" name="goods_option_name[gc_category_slug]" value="%s" />', isset($this->options['gc_category_slug']) ? esc_attr($this->options['gc_category_slug']) : 'goods_caregory'
+                '<input type="text" id="gc_category_slug" name="goods_option_name[gc_category_slug]" value="%s" />', isset($this->options['gc_category_slug']) ? esc_attr($this->options['gc_category_slug']) : 'goods_category'
         );
-        _e( ' by default: goods_caregory', 'goods-catalog' );
+        _e( ' by default: goods_category', 'goods-catalog' );
         echo '<p class="description">';
         $url = admin_url( 'options-permalink.php' );
         $text = '';
@@ -429,12 +429,12 @@ class Goods_Catalog_Settings_Page {
             'menu_order' => __('menu order', 'goods-catalog'),
             'meta_value_num' => __('price', 'goods-catalog')
         );
-        
-        echo '<select id="goods_orderby" name="goods_option_name[goods_orderby]" class="small-text">'; 
+
+        echo '<select id="goods_orderby" name="goods_option_name[goods_orderby]" class="small-text">';
         foreach ($orderby_options as $key => $value) {
             echo '<option value="' . $key . '"' . selected( $this->options['goods_orderby'], $key ) . '>' . $value . '</option>';
         }
-        echo '</select>';       
+        echo '</select>';
     }
 
     public function goods_order_callback() {
@@ -442,7 +442,7 @@ class Goods_Catalog_Settings_Page {
         <input type="radio" id="goods_order_asc" name="goods_option_name[goods_order]" value="ASC" checked ' . checked ( $this->options['goods_order'], 'ASC', false) . '/>' . __('ASC', 'goods-catalog') . '
         </p>
         <p>
-        <input type="radio" id="goods_order_decs" name="goods_option_name[goods_order]" value="DESC" ' . checked ( $this->options['goods_order'], 'DESC', false) . '/>' . __('DESC', 'goods-catalog') . 
+        <input type="radio" id="goods_order_decs" name="goods_option_name[goods_order]" value="DESC" ' . checked ( $this->options['goods_order'], 'DESC', false) . '/>' . __('DESC', 'goods-catalog') .
         '</p>';
     }
 
@@ -480,7 +480,7 @@ class Goods_Catalog_Settings_Page {
             echo __('in grid', 'goods-catalog') . '</p>';
             echo '<p class="description">' . __("If you don't need thumbnails for the categories, please uncheck this option", 'goods-catalog') . '</p>';
     }
-        
+
     public function category_thumb_size_callback() {
         _e('Width: ', 'goods-catalog');
         printf(
@@ -493,7 +493,7 @@ class Goods_Catalog_Settings_Page {
                 '<input type="number" id="category_thumb_size_h" class="small-text" name="goods_option_name[category_thumb_size_h]" value="%s" />', isset($this->options['category_thumb_size_h']) ? esc_attr($this->options['category_thumb_size_h']) : '150'
         );
         _e('px', 'goods-catalog');
-        
+
         echo '<p class="description">' . __("Set size of thumbnails for categories and products. After that please use <a href='http://wordpress.org/plugins/regenerate-thumbnails/'>Regenerate Thumbnails</a> plugin to rebuild images' sizes. Please notice, that default images for category and product will not be resized", "gcat") . '</p>';
     }
 

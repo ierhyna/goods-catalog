@@ -2,6 +2,10 @@
 
 ## Changelog
 
+### 2.0.0
+
+* New template system
+
 ### 1.0.0
 
 * New feature: Comments
@@ -51,9 +55,9 @@
 
 ### 0.7
 
-* Updated breadcrumbs function. The last breadcrumb is not a link now. Bug fixes: [issue #27](https://github.com/ierhyna/goods-catalog/issues/27) 
+* Updated breadcrumbs function. The last breadcrumb is not a link now. Bug fixes: [issue #27](https://github.com/ierhyna/goods-catalog/issues/27)
 * Removed function get_goods_taxomonies(). Using WordPress core function get_the_term_list() instead
-* Minor bug fixes: templates and shortcodes 
+* Minor bug fixes: templates and shortcodes
 
 ### 0.6.9
 
@@ -68,7 +72,7 @@
 
 * New shortcode: [goods_tags] to display list of all products' tags
 * New shortcode: [goods_sitemap] to display sitemap of the catalog (testing mode)
-* Improved shortcode: [goods_categories] 
+* Improved shortcode: [goods_categories]
 
 ### 0.6.6
 
@@ -78,16 +82,16 @@
 
 * Added French language support
 
-### 0.6.4 
+### 0.6.4
 
 * Minor bug fix (breadcrumbs)
 
-### 0.6.3 
+### 0.6.3
 
 * Added Spanish language (thanks to netsis)
 * Added shortcode [goods_categories] to display the list of goods categories (many thanks to Alexander Chizhov & Pineapple Design Studio)
 
-### 0.6.2 
+### 0.6.2
 
 * Added shortcode [goods_newest]
 
@@ -124,7 +128,7 @@
 
 * Fixed bug on single product page: http://wordpress.org/support/topic/sidebar-85?replies=6#post-5368763
 
-### 0.5 
+### 0.5
 
 * Added sidebar
 * Created two widgets: categories list, tags cloud
@@ -148,7 +152,7 @@
 * Updated single product page template
 * Style for plugin loads only on plugin pages
 
-### 0.4 
+### 0.4
 
 * Bugs fixed
 * Updated readme.txt
@@ -159,7 +163,7 @@ Small bug fix:
 
 * Fixed missed menu in category page
 
-### 0.3-beta.1 
+### 0.3-beta.1
 
 * Fixed pagination
 
@@ -173,7 +177,7 @@ Small bug fix:
 
 * removed displaying of PHP errors
 
-### 0.2-beta 
+### 0.2-beta
 
 First public release
 file:///home/irina/WP-Plugins/goods-catalog-dev/README.md

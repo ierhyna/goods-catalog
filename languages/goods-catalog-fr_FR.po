@@ -182,7 +182,7 @@ msgstr ""
 "l'élément de menu."
 
 #: inc/goods-options.php:326
-msgid " by default: goods_caregory"
+msgid " by default: goods_category"
 msgstr "par défaut : goods_category"
 
 #: inc/goods-options.php:329

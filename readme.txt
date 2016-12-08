@@ -3,7 +3,7 @@ Contributors: oriolo
 Tags: goods catalog, products catalog, catalog, products, goods
 Stable tag: trunk
 Requires at least: 3.3.0
-Tested up to: 4.6.5
+Tested up to: 4.7.0
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: http://oriolo.ru/dev/goods-catalog/donate
@@ -98,7 +98,7 @@ Also, you can send me your language files and I'll add them to the release.
 = How to customize title meta tag on catalog or category page? =
 The simpliest way is to use some SEO plugins that allow to customize titles: ex., [WordPress SEO by Yoast](https://wordpress.org/plugins/wordpress-seo/) or [All in One SEO Pack](https://wordpress.org/plugins/all-in-one-seo-pack/).
 
-Or you can manually change your theme's header.php (see [here](http://wordpress.stackexchange.com/questions/130747/custom-post-type-archive-page-title)). 
+Or you can manually change your theme's header.php (see [here](http://wordpress.stackexchange.com/questions/130747/custom-post-type-archive-page-title)).
 
 Another option is to change the plugin files see the discussion [here](https://wordpress.org/support/topic/how-to-modify-the-catalog-title-page). It is not recommended: you will lose the changes after the plugin update.
 
@@ -110,9 +110,9 @@ You can use my plugin [Comments by Post Type](https://wordpress.org/plugins/comm
 
 == Changelog ==
 
-= 1.1.1 =
+= 2.0.0 =
 
-* Fix taxonomy images
+* New template system
 
 = 1.0.0 =
 
@@ -163,9 +163,9 @@ You can use my plugin [Comments by Post Type](https://wordpress.org/plugins/comm
 
 = 0.7 =
 
-* Updated breadcrumbs function. The last breadcrumb is not a link now. Bug fixes: [issue #27](https://github.com/ierhyna/goods-catalog/issues/27) 
+* Updated breadcrumbs function. The last breadcrumb is not a link now. Bug fixes: [issue #27](https://github.com/ierhyna/goods-catalog/issues/27)
 * Removed function get_goods_taxomonies(). Using WordPress core function get_the_term_list() instead
-* Minor bug fixes: templates and shortcodes 
+* Minor bug fixes: templates and shortcodes
 
 = 0.6.9 =
 
@@ -180,7 +180,7 @@ You can use my plugin [Comments by Post Type](https://wordpress.org/plugins/comm
 
 * New shortcode: [goods_tags] to display list of all products' tags
 * New shortcode: [goods_sitemap] to display sitemap of the catalog (testing mode)
-* Improved shortcode: [goods_categories] 
+* Improved shortcode: [goods_categories]
 
 = 0.6.6 =
 

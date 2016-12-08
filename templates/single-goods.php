@@ -2,9 +2,12 @@
 
 /**
  * Template: Single product page
- * 
+ *
  * You can edit this template by coping into your theme's folder
  */
+if (!isset($catalog_option)) {
+    global $catalog_option;
+}
 
 if (have_posts()) {
     while (have_posts()) {
@@ -31,7 +34,7 @@ if (have_posts()) {
                     <?php
                     // show product's details
                     echo get_the_product_price();
-                    
+
                     if (isset($catalog_option['show_product_sku_page'])) {
                         show_the_product_sku();
                     }

@@ -186,7 +186,7 @@ msgid "Enter the slug of catalog home page"
 msgstr "Введите префикс для главной страницы каталога"
 
 #: ../inc/class.settings-page.php:392
-msgid " by default: goods_caregory"
+msgid " by default: goods_category"
 msgstr "по-умолчанию: goods_category"
 
 #: ../inc/class.settings-page.php:404
