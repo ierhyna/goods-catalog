@@ -1,5 +1,7 @@
 # Goods Catalog
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f1f22c2889cf4e16971e93b16e4b5260)](https://www.codacy.com/app/ierhyna/goods-catalog?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ierhyna/goods-catalog&amp;utm_campaign=Badge_Grade) [![Build Status](https://travis-ci.org/ierhyna/goods-catalog.svg?branch=dev)](https://travis-ci.org/ierhyna/goods-catalog)
+
 Goods Catalog provides a catalog of products organized into categories. It is easy to use and fully customizable. Goods Catalog was created to help you organize a simple catalog of products on WordPress site.
 
 ## Main features
