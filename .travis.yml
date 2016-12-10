@@ -1,10 +1,14 @@
 language: php
 php:
-  - '5.4'
-  - '5.5'
-  - '5.6'
-  - '7.0'
-  - hhvm
-  - nightly
+- '5.4'
+- '5.5'
+- '5.6'
+- '7.0'
+- hhvm
+- nightly
 script:
-  - if find ./ -name "*.php" -exec php -l {} \; | grep "syntax error, unexpected"; then exit 1; fi
+- if find ./ -name "*.php" -exec php -l {} \; | grep "syntax error, unexpected"; then
+  exit 1; fi
+notifications:
+  slack:
+    secure: hghEm8MoY2/Z3yA/MZ50S6hf5KXFp4RN0b//i332Q97Jk/M8iCe1ROosBE58+E7ku5sWGgNLv8wICTjHx3BjdFsC9QZ2m8rtlyTbDLtp9U6085SwAY0gmPx3SrPAujuBBmYRClhHlClO4DQKY+rbtLSTn6Ln1FxGNBWBauFltR+Av1b3vHmJVwGmtXe89gH472mHNzNLZCDQO5x687j3YtDevil7zcvvB4CobqJXvRBid4owfsmEeYdoS8y+WxvRwKZelyKnqYm3uH/q0EGApu0ZODy8ZX8susDFm1svB+PRK82yrbfsqqoykdpfIJGhEkdxcg8nnW9M94ZKAQEFbpSeSZFBKomvpDl5MAfOzS04WaBo4Rpo8PPT5yW/dU9mQPYrJrSbLLiZhZEVOjYPMiWkpdUmS3ZJtlere34H7HXMYG0F7uPtpVnXBUlFJ/3nzqwFKxYqwJuURGr7WK89laArgPhmwGcboxofJYqrar2pfXaJPP/768RIKwz08rmk+Yr6YUrRfVCblXAhmOTEhlbD/jNFSQH4OZm4Iw8pE8lQEjp9eHln7FiTKnx+/sxOXAb650SDkVbHFuT67YLYNeTppzxwhvZ0GXEZsU13gY9rfMgVj6NAfDjUOFu5yTd4Uv2PJGj5ITZwUKIxVr//TUbdnI3/gUJnJh5cOQ6XV7M=
