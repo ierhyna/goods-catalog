@@ -2,12 +2,14 @@
 /**
  * Template: Sidebar
  */
-global $catalog_option;
+if (!isset($catalog_option)) {
+	global $catalog_option;
+}
 
 if (isset($catalog_option['use_sidebar'])) {
     ?>
 
-    <aside class="goods-sidebar">';
+    <aside class="goods-sidebar">
         <?php if (!dynamic_sidebar('goods-sidebar')) { ?>
 
             <h3 class="widgettitle"><?= __('Goods Catalog Sidebar is Activated!', 'goods-catalog') ?></h3>

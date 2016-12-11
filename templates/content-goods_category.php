@@ -7,6 +7,8 @@
  * taxonomy-goods_category.php
  *
  */
+global $catalog_option;
+
 // check if current taxonomy doesn't have childs
 if (empty($category_list)) {
 //     echo "There are no subcategories";
@@ -63,7 +65,7 @@ else {
                                     <img class="goods-item-thumb"
                                          src="<?= esc_url(GOODS_CATALOG_PLUGIN_URL . '/img/gc.png') ?>"
                                          alt="">
-                                </a>';
+                                </a>
 
                                 <?php
                             }
