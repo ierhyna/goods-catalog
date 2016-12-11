@@ -13,8 +13,8 @@
  * @param string $separator     Template for separator
  */
 function categories_chain(
-        $item_template = '<a href="%1s">%2s</a>',
-        $separator = ' &gt; '
+	$item_template = '<a href="%1s">%2s</a>',
+	$separator = ' &gt; '
 ) {
 	$output = '';
 	$category = 'goods_category';
@@ -60,10 +60,10 @@ function categories_chain(
  *
  */
 function gc_breadcrumbs(
-        $id = null,
-        $item_template = '<a href="%1s">%2s</a>',
-        $item_active_template = '%s',
-        $separator = ' &gt; '
+		$id = null,
+		$item_template = '<a href="%1s">%2s</a>',
+		$item_active_template = '%s',
+		$separator = ' &gt; '
 ) {
 	$output = '';
 	$output .= sprintf($item_template, home_url(), __('Home', 'goods-catalog')) . $separator;
@@ -81,15 +81,14 @@ function gc_breadcrumbs(
 	if (is_single()) {
 		global $post;
 		$output .= categories_chain();
-//		$output .= get_the_term_list ($post->ID, 'goods_category', '', ', ', ' &gt; ');
+		// $output .= get_the_term_list ($post->ID, 'goods_category', '', ', ', ' &gt; ');
 
-                // New template settings for product terms
-                $arTerms = array();
-                foreach (get_the_terms($post, 'goods_category') as $term) {
-                    $arTerms[] = sprintf($item_template, get_term_link($term), $term->name);
-                }
-                $output .= implode(', ', $arTerms) . $separator;
-
+		// New template settings for product terms
+		$arTerms = array();
+		foreach (get_the_terms($post, 'goods_category') as $term) {
+			$arTerms[] = sprintf($item_template, get_term_link($term), $term->name);
+		}
+		$output .= implode(', ', $arTerms) . $separator;
 
 		$output .= sprintf($item_active_template, get_the_title());
 	}
@@ -127,23 +126,23 @@ function gc_breadcrumbs(
  *
  */
 function show_gc_breadcrumbs(
-    $before = '<div class="breadcrumbs">',
-    $after = '</div>'
+	$before = '<div class="breadcrumbs">',
+	$after = '</div>'
 ) {
 
-    $output = '';
-    if (!is_search() || !is_404()) {
-        global $post;
-        if ($post != null) {
-            $output .= $before . gc_breadcrumbs($post->post_parent) . $after;
-        } else {
-            $output .= $before . gc_breadcrumbs() . $after;
-        }
-    } else {
-        $output .= '&nbsp';
-    }
+	$output = '';
+	if (!is_search() || !is_404()) {
+		global $post;
+		if ($post != null) {
+			$output .= $before . gc_breadcrumbs($post->post_parent) . $after;
+		} else {
+			$output .= $before . gc_breadcrumbs() . $after;
+		}
+	} else {
+		$output .= '&nbsp';
+	}
 
-    print $output;
+	print $output;
 }
 
 /**
@@ -159,28 +158,27 @@ function show_gc_breadcrumbs(
  * @author Alex Chizhov <ac@alexchizhov.com>
  */
 function get_gc_breadcrumbs(
-    $block_template = '<div class="breadcrumbs">%s</div>',
-    $item_template = '<a href="%1s">%2s</a>',
-    $item_active_template = '<span class="active">%s</span>',
-    $item_separator = ' &gt; '
+	$block_template = '<div class="breadcrumbs">%s</div>',
+	$item_template = '<a href="%1s">%2s</a>',
+	$item_active_template = '<span class="active">%s</span>',
+	$item_separator = ' &gt; '
 ) {
 
-    $output = '';
-    if (!is_search() || !is_404()) {
-        global $post;
+	$output = '';
+	if (!is_search() || !is_404()) {
+		global $post;
 
-        if ($post != null) {
-            $id = $post->post_parent;
-        } else {
-            $id = null;
-        }
+		if ($post != null) {
+			$id = $post->post_parent;
+		} else {
+			$id = null;
+		}
 
-        $output .= sprintf($block_template, gc_breadcrumbs($id, $item_template, $item_active_template, $item_separator));
+		$output .= sprintf($block_template, gc_breadcrumbs($id, $item_template, $item_active_template, $item_separator));
 
-    } else {
-        $output .= '&nbsp';
-    }
+	} else {
+		$output .= '&nbsp';
+	}
 
-    print $output;
-
+	print $output;
 }

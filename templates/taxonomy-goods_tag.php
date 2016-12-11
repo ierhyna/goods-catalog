@@ -19,11 +19,11 @@ echo '<h2 class="single-category-title">' . single_cat_title('', false) . '</h2>
 goods_grid();
 ?>
 <div class="navigation">
-    <?php
-    // Display navigation to next/previous pages when applicable
-    if (function_exists('goods_pagination'))
-        goods_pagination();
-    else
-        posts_nav_link();
-    ?>
+	<?php
+	// Display navigation to next/previous pages when applicable
+	if (function_exists('goods_pagination'))
+		goods_pagination();
+	else
+		posts_nav_link();
+	?>
 </div>

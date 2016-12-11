@@ -15,93 +15,91 @@ if (empty($category_list)) {
 }
 // if has
 else {
-    ?>
+	?>
 
-    <div class="goods-categories-container">
+	<div class="goods-categories-container">
 
-        <?php
-        foreach ($category_list as $categories_item) {
+		<?php
+		foreach ($category_list as $categories_item) {
 
-            // show categories titles
-            ?>
+			// show categories titles
+			?>
 
-            <div class="grid">
-                <div class="goods-category-list-title">
-                    <a href="<?= esc_url(get_term_link($categories_item, $categories_item->taxonomy)) ?>"
-                       title="<?= sprintf(__("Go to cetegory %s", 'goods-catalog'), $categories_item->name) ?>">
-                           <?= $categories_item->name ?>
-                    </a>
-                </div>
+			<div class="grid">
+				<div class="goods-category-list-title">
+					<a href="<?= esc_url(get_term_link($categories_item, $categories_item->taxonomy)) ?>"
+					title="<?= sprintf(__("Go to cetegory %s", 'goods-catalog'), $categories_item->name) ?>">
+						<?= $categories_item->name ?>
+					</a>
+				</div>
 
-                <?php
-                // show categories images
-                if (isset($catalog_option['show_category_thumb'])) {
-                    ?>
+				<?php
+				// show categories images
+				if (isset($catalog_option['show_category_thumb'])) {
+					?>
 
-                    <div class="goods-category-thumb-container">
+					<div class="goods-category-thumb-container">
 
-                        <?php
-                        $terms = apply_filters('taxonomy-images-get-terms', '', array('taxonomy' => 'goods_category'));
-                        $flag = FALSE;
-                        if (!empty($terms)) {
-                            foreach ((array) $terms as $term) {
-                                if ($term->term_id == $categories_item->term_id) {
+						<?php
+						$terms = apply_filters('taxonomy-images-get-terms', '', array('taxonomy' => 'goods_category'));
+						$flag = FALSE;
+						if (!empty($terms)) {
+							foreach ((array) $terms as $term) {
+								if ($term->term_id == $categories_item->term_id) {
 
-                                    $img = wp_get_attachment_image($term->image_id, 'gc-image-thumb', '', array('class' => 'goods-category-thumb'));
-                                    ?>
+									$img = wp_get_attachment_image($term->image_id, 'gc-image-thumb', '', array('class' => 'goods-category-thumb'));
+									?>
 
-                                    <a href="<?= esc_url(get_term_link($term, $term->taxonomy)) ?>">
-                                        <?= $img ?>
-                                    </a>
+									<a href="<?= esc_url(get_term_link($term, $term->taxonomy)) ?>">
+										<?= $img ?>
+									</a>
 
-                                    <?php
-                                    $flag = TRUE;
-                                }
-                            }
-                            if ($flag == FALSE) {
-                                ?>
+									<?php
+									$flag = TRUE;
+								}
+							}
+							if ($flag == FALSE) {
+								?>
 
-                                <a href="<?= esc_url(get_term_link($categories_item, $categories_item->taxonomy)) ?>">
-                                    <img class="goods-item-thumb"
-                                         src="<?= esc_url(GOODS_CATALOG_PLUGIN_URL . '/img/gc.png') ?>"
-                                         alt="">
-                                </a>
+								<a href="<?= esc_url(get_term_link($categories_item, $categories_item->taxonomy)) ?>">
+									<img class="goods-item-thumb"
+										src="<?= esc_url(GOODS_CATALOG_PLUGIN_URL . '/img/gc.png') ?>"
+										alt="">
+								</a>
 
-                                <?php
-                            }
-                        }
-                        // show images if plugin Taxonomy Images not installed
-                        else {
-                            ?>
+								<?php
+							}
+						}
+						// show images if plugin Taxonomy Images not installed
+						else {
+							?>
 
-                            <a href="<?= esc_url(get_term_link($categories_item, $categories_item->taxonomy)) ?>">
-                                <img class="goods-item-thumb"
-                                     src="<?= esc_url(GOODS_CATALOG_PLUGIN_URL . '/img/gc.png') ?>"
-                                     alt="">
-                            </a>
+							<a href="<?= esc_url(get_term_link($categories_item, $categories_item->taxonomy)) ?>">
+								<img class="goods-item-thumb"
+									src="<?= esc_url(GOODS_CATALOG_PLUGIN_URL . '/img/gc.png') ?>"
+									alt="">
+							</a>
 
-                            <?php
-                        }
-                        ?>
+							<?php
+						}
+						?>
 
+					</div>
+					<?php
+				}
+				// show categories description
+				if (isset($catalog_option['show_category_descr_grid'])) {
+					echo '<p>' . $categories_item->category_description . '</p>';
+				}
+				?>
+			</div>
 
-                    </div>
+			<?php
+		}
+		?>
 
-                    <?php
-                }
-                // show categories description
-                if (isset($catalog_option['show_category_descr_grid'])) {
-                    echo '<p>' . $categories_item->category_description . '</p>';
-                }
-                ?>
-            </div>
+	</div>
+	<div class="clear"></div>
 
-            <?php
-        }
-        ?>
-
-    </div>
-    <div class="clear"></div>
-
-    <?php
+	<?php
 }

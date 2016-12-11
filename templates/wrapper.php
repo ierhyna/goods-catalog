@@ -11,22 +11,19 @@ get_header();
 
 <div class="goods-catalog-container">
 
-    <?php
-    // Load the sidebar
-    load_template(dirname(__FILE__) . '/sidebar-goods.php');
-    ?>
+	<?php
+	// Load the sidebar
+	load_template(dirname(__FILE__) . '/sidebar-goods.php');
+	?>
 
-    <div class="goods-catalog">
-        <div class="catalog-inner">
+	<div class="goods-catalog">
+		<div class="catalog-inner">
+			<?php show_gc_breadcrumbs(); ?>
+			<?php goods_template(); ?>
+		</div>
+	</div>
 
-            <?php show_gc_breadcrumbs(); ?>
-
-            <?php goods_template(); ?>
-
-        </div>
-    </div>
-
-    <div class="clear"></div>
+	<div class="clear"></div>
 
 </div>
 
