@@ -60,9 +60,7 @@ function goods_category($category_list) {
 	if (file_exists(get_stylesheet_directory() . '/content-goods_category.php')) {
 
 		include get_stylesheet_directory() . '/content-goods_category.php';
-	}
-	// If none found include default wrapper
-	else {
+	} else { // If none found include default wrapper
 		include GOODS_CATALOG_PLUGIN_TEMPLATES . '/content-goods_category.php';
 	}
 
@@ -77,9 +75,7 @@ function goods_grid() {
 	if (file_exists(get_stylesheet_directory() . '/content-goods_grid.php')) {
 
 		include get_stylesheet_directory() . '/content-goods_grid.php';
-	}
-	// If none found include default wrapper
-	else {
+	} else { // If none found include default wrapper
 		include GOODS_CATALOG_PLUGIN_TEMPLATES . '/content-goods_grid.php';
 	}
 
