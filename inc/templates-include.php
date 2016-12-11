@@ -35,9 +35,7 @@ function goods_wrapper($template) {
 		// Check if there is a wrapper template in child theme
 		if (file_exists(get_stylesheet_directory() . '/goods-wrapper.php')) {
 			$template = get_stylesheet_directory() . '/goods-wrapper.php';
-		}
-		// If none found include default wrapper
-		else {
+		} else { // If none found include default wrapper
 			$template = GOODS_CATALOG_PLUGIN_TEMPLATES . '/wrapper.php';
 		}
 	}
