@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Template: Category page
  *
@@ -18,6 +17,7 @@ if (have_posts()) { // fix 'undefined offset 0'
 ob_start();
 
 echo '<h2 class="single-category-title">' . single_cat_title('', false) . '</h2>';
+
 if (isset($catalog_option['show_category_descr_page'])) {
 	echo '<p>' . category_description() . '</p>';
 }
@@ -37,32 +37,22 @@ if (!is_paged()) {
 
 	$category_list = get_categories($args);
 
-	/**
-	 * Include the list of subcategories in grid.
-	 *
-	 * If you edit this template by coping into your theme's folder, please change this functions with the following:
-	 * include WP_PLUGIN_DIR  . '/goods-catalog/templates/content-goods_category.php';
-	 */
-	include 'content-goods_category.php';
+	// Include the list of subcategories in grid.
+	goods_category($category_list);
 
 	echo "<hr>";
 }
 
-/**
- * Include the list of products in grid.
- *
- * If you edit this template by coping into your theme's folder, please change this functions with the following:
- * load_template(WP_PLUGIN_DIR  . '/goods-catalog/templates/content-goods_grid.php');
- */
-
-load_template(dirname(__FILE__) . '/content-goods_grid.php');
+// Include the list of products in grid.
+goods_grid();
 ?>
 <div class="navigation">
 	<?php
 	// Display navigation to next/previous pages when applicable
-	if (function_exists('goods_pagination'))
+	if (function_exists('goods_pagination')) {
 		goods_pagination();
-	else
+	} else {
 		posts_nav_link();
+	}
 	?>
 </div>

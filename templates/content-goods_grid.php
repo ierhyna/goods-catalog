@@ -16,7 +16,7 @@ if (have_posts()) {
 		?>
 		<div class="grid">
 			<article <?php post_class(); ?>>
-				<div class="goods-item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
+				<div class="goods-item-title"><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></div>
 				<div class="goods-item-content">
 					<?php
 					// show thumbnails
