@@ -10,9 +10,9 @@
  */
 function get_goods_directory()
 {
-    global $wp_version;
+	global $wp_version;
 
-    return $wp_version >= 4.7 ? get_theme_file_path() : get_stylesheet_directory();
+	return $wp_version >= 4.7 ? get_theme_file_path() : get_stylesheet_directory();
 }
 
 /**
@@ -26,11 +26,11 @@ function get_goods_directory()
  */
 function goods_template($custom_templates_path = '')
 {
-    if ($custom_templates_path && file_exists($custom_templates_path)) {
-        require_once $custom_templates_path;
-    } else {
-        require_once GOODS_CATALOG_PLUGIN_INC . '/templates.php';
-    }
+	if ($custom_templates_path && file_exists($custom_templates_path)) {
+		require_once $custom_templates_path;
+	} else {
+		require_once GOODS_CATALOG_PLUGIN_INC . '/templates.php';
+	}
 }
 
 /**
@@ -45,21 +45,21 @@ function goods_template($custom_templates_path = '')
 function goods_wrapper($template)
 {
 
-    if (
-            is_post_type_archive('goods') ||
-            is_tax('goods_category') ||
-            is_tax('goods_tag') ||
-            is_singular('goods')
-    ) {
-        // Check if there is a wrapper template in child theme
-        if (file_exists(get_goods_directory() . '/goods-wrapper.php')) {
-            $template = get_goods_directory() . '/goods-wrapper.php';
-        } else { // If none found include default wrapper
-            $template = GOODS_CATALOG_PLUGIN_TEMPLATES . '/wrapper.php';
-        }
-    }
+	if (
+			is_post_type_archive('goods') ||
+			is_tax('goods_category') ||
+			is_tax('goods_tag') ||
+			is_singular('goods')
+	) {
+		// Check if there is a wrapper template in child theme
+		if (file_exists(get_goods_directory() . '/goods-wrapper.php')) {
+			$template = get_goods_directory() . '/goods-wrapper.php';
+		} else { // If none found include default wrapper
+			$template = GOODS_CATALOG_PLUGIN_TEMPLATES . '/wrapper.php';
+		}
+	}
 
-    return $template;
+	return $template;
 }
 
 add_filter('template_include', 'goods_wrapper', 99);
@@ -73,18 +73,18 @@ add_filter('template_include', 'goods_wrapper', 99);
  */
 function goods_category($category_list)
 {
-    ob_start();
+	ob_start();
 
-    // Check if there is a wrapper template in child theme
-    if (file_exists(get_goods_directory() . '/content-goods_category.php')) {
-        include get_goods_directory() . '/content-goods_category.php';
-    } else { // If none found include default wrapper
-        include GOODS_CATALOG_PLUGIN_TEMPLATES . '/content-goods_category.php';
-    }
+	// Check if there is a wrapper template in child theme
+	if (file_exists(get_goods_directory() . '/content-goods_category.php')) {
+		include get_goods_directory() . '/content-goods_category.php';
+	} else { // If none found include default wrapper
+		include GOODS_CATALOG_PLUGIN_TEMPLATES . '/content-goods_category.php';
+	}
 
-    $template = ob_get_clean();
+	$template = ob_get_clean();
 
-    echo $template;
+	echo $template;
 }
 
 /**
@@ -95,15 +95,15 @@ function goods_category($category_list)
  */
 function goods_grid()
 {
-    ob_start();
+	ob_start();
 
-    if (file_exists(get_goods_directory() . '/content-goods_grid.php')) {
-        include get_goods_directory() . '/content-goods_grid.php';
-    } else { // If none found include default wrapper
-        include GOODS_CATALOG_PLUGIN_TEMPLATES . '/content-goods_grid.php';
-    }
+	if (file_exists(get_goods_directory() . '/content-goods_grid.php')) {
+		include get_goods_directory() . '/content-goods_grid.php';
+	} else { // If none found include default wrapper
+		include GOODS_CATALOG_PLUGIN_TEMPLATES . '/content-goods_grid.php';
+	}
 
-    $template = ob_get_clean();
+	$template = ob_get_clean();
 
-    echo $template;
+	echo $template;
 }
