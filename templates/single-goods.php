@@ -15,19 +15,20 @@ if (have_posts()) {
 
 		<article <?php post_class(); ?>>
 			<header>
-				<?php
-				echo '<div class="goods-single-thumb-container">';
-				if (has_post_thumbnail()) {
-					$large_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large');
-					echo '<a href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >';
-					the_post_thumbnail('medium', array('class' => 'goods-single-thumb'));
-					echo '</a>';
-				} else {
-					// show default image if the thumbnail is not found
-					echo '<img class="goods-item-thumb" src="' . plugins_url('/img/gi.png', dirname(__FILE__)) . '" alt="">';
-				}
-				echo '</div>';
-				?>
+                                <div class="goods-single-thumb-container">
+                                        <?php
+                                        echo '';
+                                        if (has_post_thumbnail()) {
+                                                $large_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large');
+                                                echo '<a href="' . esc_url($large_image_url[0]) . '" title="' . esc_attr(the_title_attribute('echo=0')) . '" >';
+                                                the_post_thumbnail('medium', array('class' => 'goods-single-thumb'));
+                                                echo '</a>';
+                                        } else {
+                                                // show default image if the thumbnail is not found
+                                                echo '<img class="goods-item-thumb" src="' . esc_url(plugins_url('/img/gi.png', dirname(__FILE__))) . '" alt="">';
+                                        }
+                                        ?>
+				</div>
 				<div class="goods-info">
 					<h2 class="entry-title"><?php the_title(); ?></h2>
 					<?php
