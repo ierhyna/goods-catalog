@@ -41,7 +41,16 @@ else {
 					<div class="goods-category-thumb-container">
 
 						<?php
-						$terms = apply_filters('taxonomy-images-get-terms', '', array('taxonomy' => 'goods_category'));
+						/**
+						 * Added term_args parameter to show images for categories that are empty
+						 *
+						 * hide_empty set to false
+						 * https://developer.wordpress.org/reference/functions/get_terms/
+						 *
+						 * @sinse 2.1.0
+						 */
+						$terms = apply_filters('taxonomy-images-get-terms', '', array('taxonomy' => 'goods_category', 'term_args' => array('hide_empty' => false)));
+
 						$flag = FALSE;
 						if (!empty($terms)) {
 							foreach ((array) $terms as $term) {
