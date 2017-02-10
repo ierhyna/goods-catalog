@@ -17,8 +17,7 @@ function GoodsSitemap($atts) {
 			'exclude_category' => '',
 		),
 		$atts)
-	);
-	
+	);	
 	$terms_args = array(
 		'taxonomy' => 'goods_category', // get goods categories
 		'orderby' => 'term_group',
