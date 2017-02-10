@@ -15,12 +15,13 @@ function GoodsSitemap($atts) {
 		array(
 			'include_category' => '',
 			'exclude_category' => '',
+			'orderby' => 'term_group',
 		),
 		$atts)
-	);	
+	);
 	$terms_args = array(
 		'taxonomy' => 'goods_category', // get goods categories
-		'orderby' => 'term_group',
+		'orderby' => $orderby,
 		'hierarchical' => 1, // do not hide empty parent categories
 		'include' => $include_category,
 		'exclude' => $exclude_category,
