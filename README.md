@@ -19,7 +19,7 @@ The catalog created with Goods Catalog is easy to navigate: at the main catalog 
 * Use shortcode [goods_newest] to display the newest products anywhere in the site: on post or page. For example, to show 6 products, type: [goods_newest number=6]
 * [goods_categories] to display the list of goods categories (many thanks to Alexander Chizhov & Pineapple Design Studio)
 * [goods_tags] to display list of all products' tags
-* [goods_sitemap] to display sitemap of the catalog (testing mode)
+* [goods_sitemap] to display sitemap of the catalog (testing mode). Usage: [goods_sitemap include_category=55,54 orderby=include]
 * [goods_term] to display category or tag by ID. Usage: [goods_term goods_category|goods_tag id=X], ex.: [goods_term goods_category id=3] to display category with ID=3, or [goods_term goods_tag id=5] to display tag with ID=5. It only displays title with link and description, without image.
 
 ### Languages
