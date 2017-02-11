@@ -2,6 +2,10 @@
 
 ## Changelog
 
+### 2.2.0
+
+* Add a optional attribute include_category, exclude_category. [goods_sitemap include_category=55,54 orderby=include]
+
 ### 2.1.0
 
 * Fix get_the_product_price() $title argument (https://github.com/ierhyna/goods-catalog/issues/56)

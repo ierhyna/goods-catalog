@@ -95,6 +95,6 @@ Please find the changelog [here](https://github.com/ierhyna/goods-catalog/blob/m
 
 You can contribute code and localizations to this plugin via [GitHub](https://github.com/ierhyna/goods-catalog)
 
-License: [GNU General Public License v2](http://www.gnu.org/licenses/gpl-2.0.html)
+License: [GNU General Public License v3](http://www.gnu.org/licenses/gpl-3.0.html)
 
 Donate link: http://oriolo.ru/dev/goods-catalog/donate
