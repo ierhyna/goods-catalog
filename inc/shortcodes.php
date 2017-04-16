@@ -10,6 +10,7 @@
  * Usage: [goods_sitemap]
  */
 function GoodsSitemap($atts) {
+	$output='';
 	// Attributes
 	extract(shortcode_atts(
 		array(
@@ -28,17 +29,16 @@ function GoodsSitemap($atts) {
 	);
 	$terms = get_terms('goods_category', $terms_args);
 	if ($terms) :
-		echo '<ul class="parents">';
+		$output .= '<ul class="parents">';
 		foreach ($terms as $term) :
 			if ($parent = $term->parent) :
 				$class = 'child';
 			else :
 				$class = 'parent';
 			endif;
-
-			echo '<li class="' . $class . '"><h3><a href="' . get_term_link($term) . '">' . $term->name . '</a></h3></li>';
+			$output .= '<li class="' . $class . '"><h3><a href="' . get_term_link($term) . '">' . $term->name . '</a></h3></li>';
 			$parent = $term->parent;
-			echo '<ul>';
+			$output .= '<ul>';
 			$query_args = array(
 				'post_type' => 'goods',
 				'posts_per_page' => -1,
@@ -54,14 +54,14 @@ function GoodsSitemap($atts) {
 			$new = new WP_Query($query_args);
 			while ($new->have_posts()) :
 				$new->the_post();
-				echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+				$output .= '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
 			endwhile;
-			echo '</ul>';
+			$output .= '</ul>';
 		endforeach;
-		echo '</ul>';
+		$output .= '</ul>';
 	endif;
+	return $output;
 }
-
 add_shortcode('goods_sitemap', 'GoodsSitemap');
 
 
