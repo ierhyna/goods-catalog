@@ -80,7 +80,7 @@ function gc_breadcrumbs(
 	 */
 	if (is_single()) {
 		global $post;
-		$output .= categories_chain();
+		$output .= categories_chain($item_template, $separator);
 		// $output .= get_the_term_list ($post->ID, 'goods_category', '', ', ', ' &gt; ');
 
 		// New template settings for product terms
