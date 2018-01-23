@@ -68,10 +68,10 @@ add_action('pre_get_posts', 'goods_query', 1);
  * For example:
  *
  * 1) Get goods categories list:
- * echo get_the_term_list ($post->ID, 'goods_category', '<p>' . __("Categories", "gcat") . ':&nbsp;', ', ', '</p>');
+ * echo get_the_term_list ($post->ID, 'goods_category', '<p>' . __("Categories", "goods-catalog") . ':&nbsp;', ', ', '</p>');
  *
  * 1) Get goods tags list:
- * echo get_the_term_list ($post->ID, 'goods_tag', '<p>' . __("Tags", "gcat") . ':&nbsp;', ', ', '</p>');
+ * echo get_the_term_list ($post->ID, 'goods_tag', '<p>' . __("Tags", "goods-catalog") . ':&nbsp;', ', ', '</p>');
  *
  *
  * @since 0.4.5

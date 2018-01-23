@@ -449,14 +449,14 @@ class Goods_Catalog_Settings_Page {
 			'<input type="number" id="container_width" class="small-text" name="goods_option_name[container_width]" value="%s" />', isset($this->options['container_width']) ? esc_attr($this->options['container_width']) : '100'
 		);
 		echo '%, ' . __('by default 100', 'goods-catalog');
-		echo '<p class="description">' . __("If the catalog's container is bigger than your theme's container, change it here", "gcat") . '</p>';
+		echo '<p class="description">' . __("If the catalog's container is bigger than your theme's container, change it here", "goods-catalog") . '</p>';
 	}
 
 	public function center_container_callback() {
 		?>
 		<input type="checkbox" name="goods_option_name[center_container]" id="center_container" value="1" <?php checked(isset($this->options['center_container']), 1); ?> />
 		<?php
-		echo  '<p class="description">' . __("Add 'margin: 0 auto;' to the container. If you have changed container's width, you should also turn on this option", "gcat") . '</p>';
+		echo  '<p class="description">' . __("Add 'margin: 0 auto;' to the container. If you have changed container's width, you should also turn on this option", "goods-catalog") . '</p>';
 	}
 
 	public function info_width_callback() {
@@ -464,7 +464,7 @@ class Goods_Catalog_Settings_Page {
 			'<input type="number" id="info_width" class="small-text" name="goods_option_name[info_width]" value="%s" />', isset($this->options['info_width']) ? esc_attr($this->options['info_width']) : '60'
 		);
 		echo '%, ' . __('by default 60', 'goods-catalog');
-		echo '<p class="description">'  . __("Set width of Product Info Container on single product page. In that container are located: name, price, SKU, short description, categories and tags of the product. With the smaller width the container will be on the right of product thumbnail, with the bigger width it will be under product thumbnail", "gcat") . '</p>';
+		echo '<p class="description">'  . __("Set width of Product Info Container on single product page. In that container are located: name, price, SKU, short description, categories and tags of the product. With the smaller width the container will be on the right of product thumbnail, with the bigger width it will be under product thumbnail", "goods-catalog") . '</p>';
 	}
 
 	/*
@@ -491,7 +491,7 @@ class Goods_Catalog_Settings_Page {
 		);
 		_e('px', 'goods-catalog');
 
-		echo '<p class="description">' . __("Set size of thumbnails for categories and products. After that please use <a href='http://wordpress.org/plugins/regenerate-thumbnails/'>Regenerate Thumbnails</a> plugin to rebuild images' sizes. Please notice, that default images for category and product will not be resized", "gcat") . '</p>';
+		echo '<p class="description">' . __("Set size of thumbnails for categories and products. After that please use <a href='http://wordpress.org/plugins/regenerate-thumbnails/'>Regenerate Thumbnails</a> plugin to rebuild images' sizes. Please notice, that default images for category and product will not be resized", "goods-catalog") . '</p>';
 	}
 
 	public function show_category_descr_callback() {
@@ -562,7 +562,7 @@ class Goods_Catalog_Settings_Page {
 		?>
 		<input type="checkbox" name="goods_option_name[use_sidebar]" id="use_sidebar" value="1" <?php checked(isset($this->options['use_sidebar']), 1); ?> />
 		<?php
-		echo '<p class="description">' . __("Please turn the option on, if you would like to use the special sidebar for catalog", "gcat") . '</p>';
+		echo '<p class="description">' . __("Please turn the option on, if you would like to use the special sidebar for catalog", "goods-catalog") . '</p>';
 	}
 
 	public function sidebar_width_callback() {
@@ -570,7 +570,7 @@ class Goods_Catalog_Settings_Page {
 			'<input type="number" id="sidebar_width" class="small-text" name="goods_option_name[sidebar_width]" value="%s" />', isset($this->options['sidebar_width']) ? esc_attr($this->options['sidebar_width']) : '20'
 		);
 		echo '%, ' . __('by default 20', 'goods-catalog');
-		echo '<p class="description">' . __("Set width of the Sidebar", "gcat") . '</p>';
+		echo '<p class="description">' . __("Set width of the Sidebar", "goods-catalog") . '</p>';
 	}
 }
 
