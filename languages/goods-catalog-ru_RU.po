@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Goods Catalog\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/goods-catalog\n"
 "POT-Creation-Date: 2018-01-24 04:03+0500\n"
-"PO-Revision-Date: 2018-01-24 04:05+0500\n"
+"PO-Revision-Date: 2018-01-24 13:31+0500\n"
 "Last-Translator: Irina Sokolovskaja <sokolovskaja.irina@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -94,7 +94,7 @@ msgstr "Метки"
 
 #: ../inc/class.goods-tags-taxonomy.php:24
 msgid "All Items"
-msgstr "Все "
+msgstr "Все"
 
 #: ../inc/class.goods-tags-taxonomy.php:25
 msgid "Parent Item"
@@ -102,7 +102,7 @@ msgstr "Родительский элемент"
 
 #: ../inc/class.goods-tags-taxonomy.php:26
 msgid "Parent Item:"
-msgstr "Родительский элемент"
+msgstr "Родительский элемент:"
 
 #: ../inc/class.goods-tags-taxonomy.php:27
 msgid "New Item Name"
@@ -327,11 +327,11 @@ msgid ""
 msgstr ""
 "Вы можете использовать специальный сайдбар, который появится только на "
 "страницах каталога. Встроенный сайдбар из большинства тем на плагином не "
-"поддерживается, и на страницах каталога выведен не будет."
+"поддерживается, и на страницах каталога выведен не будет"
 
 #: ../inc/class.settings-page.php:378
 msgid " by default: catalog"
-msgstr "по-умолчанию: catalog"
+msgstr " по-умолчанию: catalog"
 
 #: ../inc/class.settings-page.php:381
 msgid "Enter the slug of catalog home page"
@@ -339,11 +339,11 @@ msgstr "Введите префикс для главной страницы к�
 
 #: ../inc/class.settings-page.php:390
 msgid " by default: goods_category"
-msgstr "по-умолчанию: goods_category"
+msgstr " по-умолчанию: goods_category (нельзя использовать существующий или зарезервированный слэг, к примеру, category, но можно - cat)"
 
 #: ../inc/class.settings-page.php:402
 msgid " by default: goods_tag"
-msgstr "по-умолчанию: goods_tag"
+msgstr " по-умолчанию: goods_tag"
 
 #: ../inc/class.settings-page.php:418
 msgid "none"
@@ -433,7 +433,7 @@ msgstr ""
 "В этом контейнере расположены название, цена, артикул, короткое описание, "
 "рубрики и метки товара. Если установить меньшую ширину, то этот контейнер "
 "будет находиться справа от изображения товара, если большую - то под "
-"изображением."
+"изображением"
 
 #: ../inc/class.settings-page.php:477 ../inc/class.settings-page.php:501
 #: ../inc/class.settings-page.php:516 ../inc/class.settings-page.php:527
@@ -451,7 +451,7 @@ msgstr "Ширина: "
 
 #: ../inc/class.settings-page.php:486 ../inc/class.settings-page.php:492
 msgid "px"
-msgstr "пикс. "
+msgstr "пикс"
 
 #: ../inc/class.settings-page.php:488
 msgid "Height: "
@@ -468,7 +468,7 @@ msgstr ""
 "воспользуйтесь плагином <a href='http://wordpress.org/plugins/regenerate-"
 "thumbnails/'>Regenerate Thumbnails</a> чтобы пересоздать миниатюры для "
 "изображений с новыми размерами. Обратите внимание, что размер изображений-"
-"заглушек изменен не будет."
+"заглушек изменен не будет"
 
 #: ../inc/class.settings-page.php:505
 msgid "in category page"
@@ -485,7 +485,7 @@ msgstr "на странице товара"
 
 #: ../inc/class.settings-page.php:538 ../inc/class.settings-page.php:550
 msgid " by default: empty"
-msgstr "по-умолчанию: пусто"
+msgstr " по-умолчанию: пусто"
 
 #: ../inc/class.settings-page.php:541
 msgid ""
