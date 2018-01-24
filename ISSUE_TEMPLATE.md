@@ -17,7 +17,9 @@
 ### Versions
 
 **PHP version:**
+
 **WordPress version:**
+
 **Goods Catalog version:**
 
 ### Additional Information
