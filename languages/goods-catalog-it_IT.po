@@ -215,7 +215,7 @@ msgstr ""
 # @ gcat
 #: inc/goods-options.php:347
 msgid " by default: goods_category"
-msgstr "Impostazione predefinita: goods_category"
+msgstr "Impostazione predefinita: goods_category (non posso - category, puoi - cat)"
 
 # @ gcat
 #: inc/goods-options.php:350

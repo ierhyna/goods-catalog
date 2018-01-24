@@ -43,10 +43,10 @@ if (have_posts()) {
 					}
 
 					// show category
-					echo get_the_term_list($post->ID, 'goods_category', '<p>' . __("Categories", "gcat") . ':&nbsp;', ', ', '</p>');
+					echo get_the_term_list($post->ID, 'goods_category', '<p>' . __("Categories", "goods-catalog") . ':&nbsp;', ', ', '</p>');
 
 					// show tags
-					echo get_the_term_list($post->ID, 'goods_tag', '<p>' . __("Tags", "gcat") . ':&nbsp;', ', ', '</p>');
+					echo get_the_term_list($post->ID, 'goods_tag', '<p>' . __("Tags", "goods-catalog") . ':&nbsp;', ', ', '</p>');
 					?>
 				</div>
 				<div class="clear"></div>
