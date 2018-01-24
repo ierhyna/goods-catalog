@@ -182,7 +182,7 @@ msgstr ""
 
 #: ../inc/goods-options.php:326
 msgid " by default: goods_category"
-msgstr "por defecto: goods_category"
+msgstr "por defecto: goods_category (no puede - category, tu puedes - cat)"
 
 #: ../inc/goods-options.php:329
 #, php-format
