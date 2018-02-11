@@ -149,3 +149,34 @@
 .goods-tile {
 	width: 300px;
 }
+
+/* media-queries for phones */
+@media (min-width: 320px) and (max-width: 599px) {
+
+	.goods-catalog-container {
+		width: 100% !important;
+		box-sizing: border-box;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.goods-catalog .grid {
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
+
+	.goods-single-thumb-container {
+		margin-right: 0;
+		float: none;
+	}
+
+	.goods-single-thumb-container {
+		text-align: center;
+	}
+
+	.goods-info {
+		width: 100% !important;
+	}
+
+}
