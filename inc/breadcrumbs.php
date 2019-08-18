@@ -10,12 +10,16 @@
  * Generate chains of categories
  *
  * @param string $item_template Template for each link in the breadcrumbs
- * @param string $separator     Template for separator
+ * @param string $separator Template for separator
+ * @param int $indexLast last index
+ * @return string
  */
 function categories_chain(
 	$item_template = '<a href="%1s">%2s</a>',
-	$separator = ' &gt; '
-) {
+	$separator = ' / ',
+	$indexLast = 1
+)
+{
 	$output = '';
 	$category = 'goods_category';
 
@@ -36,57 +40,63 @@ function categories_chain(
 		 */
 		$category_id = get_queried_object()->term_id;
 	}
-	$ancestors_reverse = get_ancestors( $category_id, $category );
-	$ancestors = array_reverse( $ancestors_reverse );
-	//var_dump($ancestors);
-	foreach ( $ancestors as $a ) {
-		$ancestor = get_term( $a, $category );
+	$ancestors_reverse = get_ancestors($category_id, $category);
+	$ancestors = array_reverse($ancestors_reverse);
+	$i = 1;
+	foreach ($ancestors as $a) {
+		$ancestor = get_term($a, $category);
 		$ancestor_name = $ancestor->name;
-		$ancestor_link = sprintf($item_template, get_term_link( $ancestor->slug, $category ), $ancestor_name) . $separator;
+		$ancestor_link = sprintf($item_template, get_term_link($ancestor->slug, $category), $ancestor_name, $indexLast + $i) . $separator;
 		$output .= $ancestor_link;
+		$i++;
 	}
+
 	return $output;
 }
 
 /**
  * Generate and return full breadcrumbs path
  *
- * @since 0.9.0
- *
  * @param int $id
- * @param string $item_template         Template for each link in the breadcrumbs
- * @param string $item_active_template  Template for current (active) breadcrumbs item
- * @param string $separator             Template for separator
+ * @param string $item_template Template for each link in the breadcrumbs
+ * @param string $item_active_template Template for current (active) breadcrumbs item
+ * @param string $separator Template for separator
+ *
+ * @return string
+ * @since 0.9.0
  *
  */
 function gc_breadcrumbs(
-		$id = null,
-		$item_template = '<a href="%1s">%2s</a>',
-		$item_active_template = '%s',
-		$separator = ' &gt; '
-) {
+	$id = null,
+	$item_template = '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="%1s"><span itemprop="name">%2s</span></a><meta itemprop="position" content="%s" /></li>',
+	$item_active_template = '%s',
+	$separator = ' / '
+)
+{
+	$i = 1;
 	$output = '';
-	$output .= sprintf($item_template, home_url(), __('Home', 'goods-catalog')) . $separator;
+	$output .= sprintf($item_template, home_url(), __('Home', 'goods-catalog'), $i) . $separator;
 	/**
 	 * if current page is not the Catalog main page, show link and separator
 	 */
+	$i++;
 	if (is_post_type_archive('goods')) {
 		$output .= sprintf($item_active_template, __('Catalog', 'goods-catalog'));
 	} else {
-		$output .= sprintf($item_template, get_post_type_archive_link('goods'), __('Catalog', 'goods-catalog')) . $separator;
+		$output .= sprintf($item_template, get_post_type_archive_link('goods'), __('Catalog', 'goods-catalog'), $i) . $separator;
 	}
 	/**
 	 * Links on Product page
 	 */
 	if (is_single()) {
 		global $post;
-		$output .= categories_chain($item_template, $separator);
-		// $output .= get_the_term_list ($post->ID, 'goods_category', '', ', ', ' &gt; ');
+		$output .= categories_chain($item_template, $separator, $i);
 
 		// New template settings for product terms
 		$arTerms = array();
-		foreach (get_the_terms($post, 'goods_category') as $term) {
-			$arTerms[] = sprintf($item_template, get_term_link($term), $term->name);
+		$categoryCount = $i + count(get_the_terms($post, 'goods_category')) + 1;
+		foreach (get_the_terms($post, 'goods_category') as $i => $term) {
+			$arTerms[] = sprintf($item_template, get_term_link($term), $term->name, $categoryCount - $i);
 		}
 		$output .= implode(', ', $arTerms) . $separator;
 
@@ -96,7 +106,7 @@ function gc_breadcrumbs(
 	 * Links on Category page
 	 */
 	if (is_tax('goods_category')) {
-		$output .= categories_chain($item_template, $separator);
+		$output .= categories_chain($item_template, $separator, $i);
 		/**
 		 * Return term title
 		 *
@@ -113,22 +123,24 @@ function gc_breadcrumbs(
 	if (is_tax('goods_tag')) {
 		$output .= sprintf($item_active_template, single_tag_title('', false)); // return the tag title without the link
 	}
+
 	return $output;
 }
 
 /**
  * Show breadcrumbs
  *
- * @since 0.9.0
- *
  * @param string $before Text to output before chain
  * @param string $after Text to output after chain
  *
+ * @since 0.9.0
+ *
  */
 function show_gc_breadcrumbs(
-	$before = '<div class="breadcrumbs">',
-	$after = '</div>'
-) {
+	$before = '<ul itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">',
+	$after = '</ul>'
+)
+{
 
 	$output = '';
 	if (!is_search() || !is_404()) {
@@ -148,21 +160,22 @@ function show_gc_breadcrumbs(
 /**
  * Prints out styled breadcrumbs
  *
- * @global WP_Post $post
+ * @param string $block_template Template for the whole breadcrumbs block
+ * @param string $item_template Template for each link in the breadcrumbs
+ * @param string $item_active_template Template for current (active) breadcrumbs item
+ * @param string $item_separator Template for separator
  *
- * @param string $block_template        Template for the whole breadcrumbs block
- * @param string $item_template         Template for each link in the breadcrumbs
- * @param string $item_active_template  Template for current (active) breadcrumbs item
- * @param string $item_separator        Template for separator
+ * @global WP_Post $post
  *
  * @author Alex Chizhov <ac@alexchizhov.com>
  */
 function get_gc_breadcrumbs(
-	$block_template = '<div class="breadcrumbs">%s</div>',
-	$item_template = '<a href="%1s">%2s</a>',
+	$block_template = '<ul itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">%s</ul>',
+	$item_template = '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="%1s"><span itemprop="name">%2s</span></a></li>',
 	$item_active_template = '<span class="active">%s</span>',
-	$item_separator = ' &gt; '
-) {
+	$item_separator = ' / '
+)
+{
 
 	$output = '';
 	if (!is_search() || !is_404()) {
