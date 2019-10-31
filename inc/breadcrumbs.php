@@ -84,11 +84,16 @@ function gc_breadcrumbs(
 		// $output .= get_the_term_list ($post->ID, 'goods_category', '', ', ', ' &gt; ');
 
 		// New template settings for product terms
+		$terms = get_the_terms($post, 'goods_category');
+		
 		$arTerms = array();
-		foreach (get_the_terms($post, 'goods_category') as $term) {
-			$arTerms[] = sprintf($item_template, get_term_link($term), $term->name);
+		
+		if ($terms) {
+			foreach ($terms as $term) {
+				$arTerms[] = sprintf($item_template, get_term_link($term), $term->name);
+			}
+			$output .= implode(', ', $arTerms) . $separator;
 		}
-		$output .= implode(', ', $arTerms) . $separator;
 
 		$output .= sprintf($item_active_template, get_the_title());
 	}
