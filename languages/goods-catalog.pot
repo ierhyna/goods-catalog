@@ -505,3 +505,11 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://oriolo.ru/"
 msgstr ""
+
+#: templates/single-goods.php:65
+msgid "Previous product"
+msgstr ""
+
+#: templates/single-goods.php:66
+msgid "Next product"
+msgstr ""
