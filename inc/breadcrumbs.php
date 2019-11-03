@@ -93,12 +93,17 @@ function gc_breadcrumbs(
 		$output .= categories_chain($item_template, $separator, $i);
 
 		// New template settings for product terms
+		$terms = get_the_terms($post, 'goods_category');
+		
 		$arTerms = array();
-		$categoryCount = $i + count(get_the_terms($post, 'goods_category')) + 1;
-		foreach (get_the_terms($post, 'goods_category') as $i => $term) {
-			$arTerms[] = sprintf($item_template, get_term_link($term), $term->name, $categoryCount - $i);
-		}
-		$output .= implode(', ', $arTerms) . $separator;
+    $categoryCount = $i + count(get_the_terms($post, 'goods_category')) + 1;
+    
+    if ($terms) {
+			foreach ($terms as $i => $term) {
+        $arTerms[] = sprintf($item_template, get_term_link($term), $term->name, $categoryCount - $i);
+			}
+			$output .= implode(', ', $arTerms) . $separator;
+    }
 
 		$output .= sprintf($item_active_template, get_the_title());
 	}
