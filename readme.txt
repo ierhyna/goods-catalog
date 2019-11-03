@@ -3,7 +3,7 @@ Contributors: oriolo
 Tags: goods catalog, products catalog, catalog, products, goods
 Stable tag: trunk
 Requires at least: 3.3.0
-Tested up to: 4.9.2
+Tested up to: 5.2.4
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: http://oriolo.ru/dev/goods-catalog/donate
