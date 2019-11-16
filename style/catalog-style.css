@@ -140,6 +140,10 @@
 	margin: 10px 0 20px 0;
 }
 
+.goods-catalog .breadcrumbs li {
+	display: inline-block;
+}
+
 /* Common */
 .clear {
 	clear: both;
